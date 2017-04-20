@@ -1,0 +1,21 @@
+select 
+  MP.cohorte,
+  M.nombre,
+  A.nombre,
+  P.nombre,
+  count(C.id) as totClases,
+  sum(HOUR(horaFin)-HOUR(fecha)) as totHoras
+from 
+  Mater_Perio MP,
+  Asignatura A,
+  Materia M,
+  Profesor P,
+  Clase C
+WHERE 
+  MP.Materia_id=M.id and 
+  M.Asignatura_id=A.id and
+  P.id=MP.Profesor_id and
+  C.Mater_Cohor_Materia_id=MP.Materia_id and
+  C.Mater_Cohor_cohorte=MP.cohorte and
+  MP.Periodo_id='1'
+  group by C.Mater_Cohor_cohorte,C.Mater_Cohor_Materia_id;
