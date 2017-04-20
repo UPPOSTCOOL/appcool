@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>        
+    </settings>
+    
+    <typeAliases>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Comentario' alias='Comentario'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Suscriptor' alias='Suscriptor'/>
+    </typeAliases>        
+
+        
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="org.postgresql.Driver" />
+                <property name="url" value="jdbc:postgresql://ec2-54-243-185-132.compute-1.amazonaws.com:5432/d89mtnt556nli?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory"/>
+                <property name="username" value="qdjzkuvqwqqynx" />
+                <property name="password" value="4d781a2d4ef3331e999ebaadb2c85d5e48e012294529342df9d9be156454a9c9" />
+            </dataSource>
+        </environment>
+    </environments>
+        
+    <mappers>
+        <mapper resource="mappers/ComentarioMapper.xml"></mapper>                
+    </mappers> 
+        
+        
+</configuration>
