@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Reporte Salones</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h:form id="formularioReportes">
+            <p:dataTable id="formularioReportes" var="informacion"  selectionMode="single">
+                    
+                    <f:facet name="header">
+                        Reporte Salones
+                    </f:facet>
+                    <p:column headerText="Fecha">
+                        <h:outputLabel value="#{informacion.fecha}"></h:outputLabel>
+                    </p:column>                        
+                    <p:column headerText="Hora">
+                        <h:outputLabel value="#{informacion.hora}"></h:outputLabel>
+                    </p:column> 
+                    <p:column headerText="Caracteristicas Solicitud">
+                        <h:outputLabel value="#{informacion.caracteristicas}"></h:outputLabel>                        
+                    </p:column>
+                   
+                    
+                    <f:facet name="footer">
+                        <p:commandButton update="formularioReportes" value="Regresar" immediate="true"/>
+                           
+                    </f:facet>
+            </p:dataTable>
+        </h:form>
+    </body>
+</html>
