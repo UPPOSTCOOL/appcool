@@ -10,15 +10,17 @@ and open the template in the editor.
       xmlns:p="http://primefaces.org/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <head>
-        <title>Reporte Salones</title>
+        <title>Reporte Salones </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
+         <img src="Imagenes/eci2.jpg" height="100" />
         <h:form id="formularioReportes">
-            <p:dataTable id="formularioReportes" var="informacion"  selectionMode="single">
+            <p:dataTable id="formularioReportes" var="informacion" >
                     
                     <f:facet name="header">
-                        Reporte Salones
+                        
+                       <p align="center"> <h2> Reporte Salones </h2></p>
                     </f:facet>
                     <p:column headerText="Fecha">
                         <h:outputLabel value="#{informacion.fecha}"></h:outputLabel>
