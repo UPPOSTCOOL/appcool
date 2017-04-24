@@ -14,11 +14,11 @@ import java.security.Timestamp;
  * @author 
  */
 public class Clase implements Serializable{
-    private int id;
+    private int id=0;
     private Recurso descripcion;
     private Timestamp fecha;
     private Timestamp horafin;
-    private int idMateria;
+    private int idMateria=0;
     
 
     public Clase(int id, Recurso descripcion,Timestamp fecha, Timestamp horafin, int idMateria) {

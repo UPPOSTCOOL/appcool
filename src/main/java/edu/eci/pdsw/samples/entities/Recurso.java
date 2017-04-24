@@ -10,6 +10,14 @@ package edu.eci.pdsw.samples.entities;
  * @author 2095957
  */
 public class Recurso {
+    
+    private int id;
+    private String nombre;
+
+    public Recurso() {
+        id=0;
+        nombre=null;
+    }
 
     public int getId() {
         return id;
@@ -27,11 +35,7 @@ public class Recurso {
         this.nombre = nombre;
     }
 
-    private int id;
-    private String nombre;
-
-    public Recurso() {
-    }
+ 
     
     
     

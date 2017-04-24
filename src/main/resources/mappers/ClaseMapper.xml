@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ClaseMapper">
+
+    <select parameterType="map" id="getClase" resultMap="ClaseResult">
+    
+   <!--En construcción-->
+        
+    </select>
+  
+
+    
+    <resultMap type='Clase' id='ClaseResult' >
+        <id property='id' column='id'/>
+        <result property='fecha' column='fecha'/>
+        <result property='horaFin' column='horaFin'/>  
+        <association property= 'IdMateria' column='Materia_Cohor_Materia_id'/> 
+       
+        <collection property='recurso' ofType='Clase_Recur' resultMap='Recurso' columnPrefix='Clase_Recur_'></collection>
+    </resultMap>       
+             
+    <resultMap type='Recurso' id='RecursoResult'>
+        <id property='id' column='id'/>
+        <result property='nombre' column='nombre'/>
+       </resultMap>        
+    
+   
+    
+    <resultMap type='Clase_Recur' id='Clase_RecurResult'>
+        <id property='id' column='id'/>
+          
+    </resultMap>
+                           	
+</mapper>
