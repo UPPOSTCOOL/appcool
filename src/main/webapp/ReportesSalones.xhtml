@@ -14,9 +14,9 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-         <img src="Imagenes/eci2.jpg" height="100" />
+         <img src="Imagenes/eci2.jpg" height="100" /> 
         <h:form id="formularioReportes">
-            <p:dataTable id="formularioReportes" var="informacion" >
+            <p:dataTable id="formularioReportes" var="informacion"  value="#{RegsemBean.salones}">
                     
                     <f:facet name="header">
                         
@@ -26,10 +26,10 @@ and open the template in the editor.
                         <h:outputLabel value="#{informacion.fecha}"></h:outputLabel>
                     </p:column>                        
                     <p:column headerText="Hora">
-                        <h:outputLabel value="#{informacion.hora}"></h:outputLabel>
+                        <h:outputLabel value="#{informacion.horafin}"></h:outputLabel>
                     </p:column> 
                     <p:column headerText="Caracteristicas Solicitud">
-                        <h:outputLabel value="#{informacion.caracteristicas}"></h:outputLabel>                        
+                        <h:outputLabel value="#{informacion.descripcion.nombre}"></h:outputLabel>                        
                     </p:column>
                    
                     

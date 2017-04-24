@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package pdsw.upcool.managebeans;
+import edu.eci.pdsw.samples.entities.Clase;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,78 +20,90 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "RegsemBean")
 @SessionScoped
 public class Reg_semestral implements Serializable{
-    private List<String> periodo;
-    private List<String> cohorte;
-    private List<String> asignaturas;
-    private List<String> profesor;
-    private List<String> horas;
-    private List<String> dias;
-    private List<String> sesion;
-             
+    private ArrayList<String> periodo;
+    private ArrayList<String> cohorte;
+    private ArrayList<String> asignaturas;
+    private ArrayList<String> profesor;
+    private ArrayList<String> horas;
+    private ArrayList<String> dias;
+    private ArrayList<String> sesion;
+    private ArrayList<Clase> clase;
+
+   
+
     
     public Reg_semestral (){        
         periodo = new ArrayList<String>();
-        cohorte = new ArrayList<String>();;
-        asignaturas = new ArrayList<String>();;
-        profesor = new ArrayList<String>();;
-        horas = new ArrayList<String>();;
-        dias = new ArrayList<String>();;
-        sesion = new ArrayList<String>();;
+        cohorte = new ArrayList<String>();
+        asignaturas = new ArrayList<String>();
+        profesor = new ArrayList<String>();
+        horas = new ArrayList<String>();
+        dias = new ArrayList<String>();
+        sesion = new ArrayList<String>();
+        clase = new ArrayList<Clase>();
     }
 
-    public List<String> getPeriodo() {
+    public ArrayList<String> getPeriodo() {
         return periodo;
     }
 
-    public void setPeriodo(List<String> periodo) {
+    public void setPeriodo(ArrayList<String> periodo) {
         this.periodo = periodo;
     }
 
-    public List<String> getCohorte() {
+    public ArrayList<Clase> getSalones() {
+        return clase;
+    }
+
+    public void setSalones(ArrayList<Clase> salones) {
+        this.clase = salones;
+    }
+
+    public ArrayList<String> getCohorte() {
         return cohorte;
     }
 
-    public void setCohorte(List<String> cohorte) {
+    public void setCohorte(ArrayList<String> cohorte) {
         this.cohorte = cohorte;
     }
 
-    public List<String> getAsignaturas() {
+    public ArrayList<String> getAsignaturas() {
         return asignaturas;
     }
 
-    public void setAsignaturas(List<String> asignaturas) {
+    public void setAsignaturas(ArrayList<String> asignaturas) {
         this.asignaturas = asignaturas;
     }
 
-    public List<String> getProfesor() {
+    public ArrayList<String> getProfesor() {
         return profesor;
     }
 
-    public void setProfesor(List<String> profesor) {
+    public void setProfesor(ArrayList<String> profesor) {
         this.profesor = profesor;
     }
 
-    public List<String> getHoras() {
+    public ArrayList<String> getHoras() {
         return horas;
     }
 
-    public void setHoras(List<String> horas) {
+    public void setHoras(ArrayList<String> horas) {
         this.horas = horas;
     }
 
-    public List<String> getDias() {
+    public ArrayList<String> getDias() {
         return dias;
     }
 
-    public void setDias(List<String> dias) {
+    public void setDias(ArrayList<String> dias) {
         this.dias = dias;
     }
 
-    public List<String> getSesion() {
+    public ArrayList<String> getSesion() {
         return sesion;
     }
 
-    public void setSesion(List<String> sesion) {
+    public void setSesion(ArrayList<String> sesion) {
         this.sesion = sesion;
     }
     
