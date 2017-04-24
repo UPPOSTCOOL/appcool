@@ -9,7 +9,7 @@ import static com.google.inject.Guice.createInjector;
 import com.google.inject.Injector;
 
 import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
-import edu.eci.pdsw.sampleprj.dao.mybatisimpl.MyBatisDaoClase;
+import edu.eci.pdsw.sample.dao.mybatisimpl.MyBatisDaoClase;
 import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImpl;
 
 import org.mybatis.guice.XMLMyBatisModule;
