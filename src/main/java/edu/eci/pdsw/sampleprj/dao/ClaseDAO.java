@@ -22,6 +22,6 @@ public interface ClaseDAO {
     
     public List<Clase> loadClases()throws PersistenceException;
     
-    public List<Clase> loadItemRentado(Timestamp fechainicio) throws PersistenceException ;
+    //public List<Clase> loadItemRentado(Timestamp fechainicio) throws PersistenceException ;
     
 }

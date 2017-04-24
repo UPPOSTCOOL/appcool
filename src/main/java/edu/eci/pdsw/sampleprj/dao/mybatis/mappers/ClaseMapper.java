@@ -12,8 +12,5 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface ClaseMapper {
     
-  
-  
-    
-    
+    public Clase consultarClase(@Param("idclase") int id);
 }

@@ -13,7 +13,7 @@ import java.security.Timestamp;
  *
  * @author 
  */
-public class Clase implements Serializable{
+public class Clase {
     private int id=0;
     private Recurso descripcion;
     private Timestamp fecha;
