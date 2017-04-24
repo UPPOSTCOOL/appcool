@@ -1,0 +1,4 @@
+Direcciones Proyecto:
+
+reporte salones: http://localhost:8080/faces/ReportesSalones.xhtml
+reporte semestral: http://localhost:8080/faces/ReportesPeriodo.xhtml
