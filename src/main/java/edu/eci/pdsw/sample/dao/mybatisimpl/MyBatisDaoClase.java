@@ -9,6 +9,7 @@ import com.google.inject.Inject;
 import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
 import edu.eci.pdsw.sampleprj.dao.PersistenceException;
 import edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper;
+import edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaMapper;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
@@ -23,6 +24,8 @@ public class MyBatisDaoClase implements ClaseDAO{
     
     @Inject
     private ClaseMapper pmap=null;
+    @Inject
+    private MateriaMapper mmap=null;
 
     @Override
     public void save(Clase c) throws PersistenceException {
@@ -42,7 +45,8 @@ public class MyBatisDaoClase implements ClaseDAO{
 
     @Override
     public ArrayList<Materia> consultarMateriasDAO(int semestre, int anio) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return mmap.consultarMateriasClase(semestre,anio);
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
