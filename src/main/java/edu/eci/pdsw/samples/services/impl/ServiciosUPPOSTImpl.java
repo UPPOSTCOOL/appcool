@@ -7,6 +7,7 @@ package edu.eci.pdsw.samples.services.impl;
 
 import com.google.inject.Inject;
 import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
+import edu.eci.pdsw.sampleprj.dao.PersistenceException;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
@@ -23,7 +24,12 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     @Override
     public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            return daoc.load(id);
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar clase, ServiciosUPPOSTImpl inicio de excepcion", ex);
+        }
+        
     }
 
     @Override

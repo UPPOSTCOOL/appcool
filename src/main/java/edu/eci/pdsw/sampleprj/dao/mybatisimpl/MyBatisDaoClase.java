@@ -27,8 +27,9 @@ public class MyBatisDaoClase implements ClaseDAO{
     }
 
     @Override
-    public Clase load(long id) throws PersistenceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Clase load(int id) throws PersistenceException {
+        return pmap.consultarClase(id);
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

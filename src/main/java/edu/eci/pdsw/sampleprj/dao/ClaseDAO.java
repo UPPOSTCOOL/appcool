@@ -18,7 +18,7 @@ public interface ClaseDAO {
     
     public void save(Clase c) throws PersistenceException;
     
-   public Clase load(long id) throws PersistenceException;
+   public Clase load(int id) throws PersistenceException;
     
     public List<Clase> loadClases()throws PersistenceException;
     
