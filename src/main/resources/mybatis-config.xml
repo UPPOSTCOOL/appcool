@@ -8,9 +8,11 @@
     </settings>
     
     <typeAliases>
-        <typeAlias type='edu.eci.pdsw.samples.entities.Comentario' alias='Comentario'/>
-        <typeAlias type='edu.eci.pdsw.samples.entities.Suscriptor' alias='Suscriptor'/>
-    </typeAliases>        
+        <typeAlias type='edu.eci.pdsw.samples.entities.Clase' alias='Clase'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Materia' alias='Materia'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Profesor' alias='Profesor'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Asignatura' alias='Asignatura'/>
+    </typeAliases> 
 
         
     <environments default="development">
@@ -26,7 +28,10 @@
     </environments>
         
     <mappers>
-        <mapper resource="mappers/ComentarioMapper.xml"></mapper>                
+        <mapper resource="mappers/ClaseMapper.xml"></mapper> 
+        <mapper resource="mappers/MateriaMapper.xml"></mapper> 
+        <mapper resource="mappers/ProfesorMapper.xml"></mapper> 
+        <mapper resource="mappers/AsignaturaMapper.xml"></mapper>                
     </mappers> 
         
         

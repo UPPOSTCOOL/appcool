@@ -1,4 +1,4 @@
-package edu.eci.pdsw.sampleprj.dao.mybatis.mappers;
+package edu.eci.pdsw.samples.dao.mybatis.mappers;
 
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Recurso;
