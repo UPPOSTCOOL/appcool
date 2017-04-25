@@ -6,6 +6,7 @@
 package edu.eci.pdsw.samples.services;
 
 import edu.eci.pdsw.samples.entities.Clase;
+import edu.eci.pdsw.samples.entities.PeriodoAcademico;
 import java.util.List;
 
 /**
@@ -39,7 +40,15 @@ public interface ServiciosUPPOST {
      * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
      * a nivel de base de datos, la clase no existe
      */
-    public abstract List<Clase> consultarClasesPeriodo() throws ExcepcionServiciosUPPOST;
+    public abstract List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST;
+    
+    /**
+     * Consulta  los periodos academicos
+     * @return Una lista de los ultimos 4 periodos academicos
+     * @throws ExcepcionServiciosUPPOST si se presenta un error
+     * a nivel de base de datos
+     */
+    public abstract List<PeriodoAcademico> consultarPAcademicos() throws ExcepcionServiciosUPPOST;
     
     
 }

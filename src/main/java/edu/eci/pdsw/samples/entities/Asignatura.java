@@ -12,8 +12,12 @@ import java.io.Serializable;
  * @author kvn
  */
 public class Asignatura implements Serializable{
+    
     private int id;
     private String nombre;
+    
+    //secuencia de materias la asignatura la compone diferentes materias
+    
 
     public Asignatura(int id, String nombre) {
         this.id = id;
