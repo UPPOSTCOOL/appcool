@@ -24,9 +24,7 @@ public class MyBatisDaoClase implements ClaseDAO{
     
     @Inject
     private ClaseMapper pmap=null;
-    @Inject
-    private MateriaMapper mmap=null;
-
+    
     @Override
     public void save(Clase c) throws PersistenceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -41,11 +39,6 @@ public class MyBatisDaoClase implements ClaseDAO{
     @Override
     public List<Clase> loadClases() throws PersistenceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Materia> consultarMateriasDAO(int semestre, int anio) throws ExcepcionServiciosUPPOST {
-        return mmap.consultarMateriasClase(semestre,anio);
     }
     
 }

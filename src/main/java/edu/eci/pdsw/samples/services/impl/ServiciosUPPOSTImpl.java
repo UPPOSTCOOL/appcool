@@ -7,6 +7,7 @@ package edu.eci.pdsw.samples.services.impl;
 
 import com.google.inject.Inject;
 import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
+import edu.eci.pdsw.sampleprj.dao.MateriaDAO;
 import edu.eci.pdsw.sampleprj.dao.PersistenceException;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
@@ -23,6 +24,8 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     
     @Inject
     private ClaseDAO daoc;
+    @Inject
+    private MateriaDAO daom;
 
     @Override
     public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
@@ -46,7 +49,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     
     @Override
     public List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST {
-        return daoc.consultarMateriasDAO(semestre,anio);
+        return daom.consultarMateriasDAO(semestre,anio);
     }
     
 }
