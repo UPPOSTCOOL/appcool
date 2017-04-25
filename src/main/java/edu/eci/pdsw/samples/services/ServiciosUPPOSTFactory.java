@@ -71,4 +71,7 @@ public class ServiciosUPPOSTFactory {
     public static ServiciosUPPOSTFactory getInstance(){
         return instance;
     }
+    public static void main(String a[]) throws ExcepcionServiciosUPPOST{
+       //System.out.println(ServiciosSuscripcionesFactory.getInstance().getSuscriptionServices().comenteriosMasBajosPorRangoEdad(1, 10));
+    }
 }

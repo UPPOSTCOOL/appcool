@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ClaseMapper">
+<mapper namespace="edu.eci.pdsw.sample.dao.mybatis.mappers.ClaseMapper">
 
     <select parameterType="map" id="consultarClase" resultMap="ClaseResult">
     

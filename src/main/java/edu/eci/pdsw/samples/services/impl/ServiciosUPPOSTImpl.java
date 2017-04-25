@@ -45,9 +45,8 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
     
     @Override
-    public ArrayList<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST {
+    public List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST {
         return daoc.consultarMateriasDAO(semestre,anio);
-
     }
     
 }

@@ -43,7 +43,7 @@ public class Reg_semestralBean implements Serializable{
         clase = new ArrayList<Clase>();
     }
 
-    public ArrayList<Materia> reportesMaterias() throws ExcepcionServiciosUPPOST{
+    public List<Materia> getReportesMaterias() throws ExcepcionServiciosUPPOST{
         return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
     }
     

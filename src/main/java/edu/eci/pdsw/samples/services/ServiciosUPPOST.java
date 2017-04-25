@@ -51,7 +51,7 @@ public interface ServiciosUPPOST {
      * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
      * a nivel de base de datos, la clase no existe
      */
-    public abstract ArrayList<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
+    public abstract List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
     
     
 }

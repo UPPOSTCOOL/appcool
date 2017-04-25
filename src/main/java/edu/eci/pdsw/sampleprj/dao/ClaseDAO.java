@@ -27,6 +27,6 @@ public interface ClaseDAO {
 
     //public List<Clase> loadItemRentado(Timestamp fechainicio) throws PersistenceException ;
     
-    public ArrayList<Materia> consultarMateriasDAO(int semestre,int anio) throws ExcepcionServiciosUPPOST;
+    public List<Materia> consultarMateriasDAO(int semestre,int anio) throws ExcepcionServiciosUPPOST;
     
 }

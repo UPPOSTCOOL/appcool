@@ -44,9 +44,8 @@ public class MyBatisDaoClase implements ClaseDAO{
     }
 
     @Override
-    public ArrayList<Materia> consultarMateriasDAO(int semestre, int anio) throws ExcepcionServiciosUPPOST {
+    public List<Materia> consultarMateriasDAO(int semestre, int anio) throws ExcepcionServiciosUPPOST {
         return mmap.consultarMateriasClase(semestre,anio);
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

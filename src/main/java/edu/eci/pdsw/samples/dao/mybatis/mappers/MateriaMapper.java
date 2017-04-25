@@ -13,5 +13,5 @@ public interface MateriaMapper {
     /*
     * consulta el listado de clases de asignaturas en el semestre=1|2 y anio
     */
-    public ArrayList<Materia> consultarMateriasClase(@Param("anio") int anio,@Param("semestre") int semestre);
+    public List<Materia> consultarMateriasClase(@Param("anio") int anio,@Param("semestre") int semestre);
 }
