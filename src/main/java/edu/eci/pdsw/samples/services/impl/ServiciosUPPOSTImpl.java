@@ -8,6 +8,7 @@ package edu.eci.pdsw.samples.services.impl;
 import com.google.inject.Inject;
 import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
 import edu.eci.pdsw.samples.entities.Clase;
+import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import java.util.List;
@@ -33,6 +34,11 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     @Override
     public List<Clase> consultarClasesPeriodo() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
