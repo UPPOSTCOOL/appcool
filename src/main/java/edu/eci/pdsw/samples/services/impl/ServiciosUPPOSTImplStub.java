@@ -20,21 +20,21 @@ import java.util.List;
  *
  * @author juan
  */
-public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
+public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     
-    @Inject
-    private ClaseDAO daoc;
-    @Inject
-    private MateriaDAO daom;
+    private final ArrayList<Materia> materias;
+    
+    
+    public ServiciosUPPOSTImplStub(){
+        materias = new ArrayList<Materia>();
+        poblar();
+    }
+    
+    
 
     @Override
     public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
-        try {
-            return daoc.load(id);
-        } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosUPPOST("Error al consultar clase, ServiciosUPPOSTImpl inicio de excepcion", ex);
-        }
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -46,10 +46,20 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     public List<Clase> consultarClasesPeriodo() throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
-    public List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST {
-        return daom.consultarMateriasDAO(semestre,anio);
-    }   
+    public List<Materia> consultarMaterias(int semestre, int anio) throws ExcepcionServiciosUPPOST {
+        return materias;
+    }
     
+    private void poblar(){
+        
+       /*
+       
+        crear el relleno :)
+        
+       */ 
+        
+        
+    }
 }
