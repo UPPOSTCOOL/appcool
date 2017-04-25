@@ -11,6 +11,7 @@ import edu.eci.pdsw.sampleprj.dao.MateriaDAO;
 import edu.eci.pdsw.sampleprj.dao.PersistenceException;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
+import edu.eci.pdsw.samples.entities.PeriodoAcademico;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import java.util.ArrayList;
@@ -43,11 +44,6 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     }
 
     @Override
-    public List<Clase> consultarClasesPeriodo() throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public List<Materia> consultarMaterias(int semestre, int anio) throws ExcepcionServiciosUPPOST {
         return materias;
     }
@@ -61,5 +57,15 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
        */ 
         
         
+    }
+
+    @Override
+    public List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<PeriodoAcademico> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -6,21 +6,29 @@
 package edu.eci.pdsw.samples.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *
  * @author kvn
  */
 public class Materia implements Serializable{
+    
     private int id;
     private String nombre;
+    
     private int cohorte;
     private int numClases;
     private int numHoras;
+    
     private Profesor profesor;
     private Asignatura asignatura;
+    
+    private List<Clase> clases;
 
-    public Materia(int id, String nombre, int cohorte, int numClases, int numHoras, Profesor profesor, Asignatura asignatura) {
+    public Materia(int id, String nombre, int cohorte, int numClases, int numHoras,
+            Profesor profesor, Asignatura asignatura, List<Clase> clases) {
+        
         this.id = id;
         this.nombre = nombre;
         this.cohorte = cohorte;
@@ -28,7 +36,17 @@ public class Materia implements Serializable{
         this.numHoras = numHoras;
         this.profesor = profesor;
         this.asignatura = asignatura;
+        this.clases = clases;
     }
+
+    public List<Clase> getClases() {
+        return clases;
+    }
+
+    public void setClases(List<Clase> clases) {
+        this.clases = clases;
+    }
+
 
     public int getId() {
         return id;
