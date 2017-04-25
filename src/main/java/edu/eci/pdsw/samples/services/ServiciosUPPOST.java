@@ -7,6 +7,7 @@ package edu.eci.pdsw.samples.services;
 
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,7 +51,7 @@ public interface ServiciosUPPOST {
      * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
      * a nivel de base de datos, la clase no existe
      */
-    public abstract List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
+    public abstract ArrayList<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
     
     
 }

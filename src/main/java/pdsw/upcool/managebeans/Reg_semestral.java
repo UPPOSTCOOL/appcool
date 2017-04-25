@@ -6,6 +6,7 @@
 package pdsw.upcool.managebeans;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
+import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class Reg_semestral implements Serializable{
         clase = new ArrayList<Clase>();
     }
 
-    public ArrayList<Materia> reportesMaterias(){
+    public ArrayList<Materia> reportesMaterias() throws ExcepcionServiciosUPPOST{
         return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
     }
     
@@ -109,9 +110,4 @@ public class Reg_semestral implements Serializable{
     public void setSesion(ArrayList<String> sesion) {
         this.sesion = sesion;
     }
-    
-    
-    
-    
-    
 }
