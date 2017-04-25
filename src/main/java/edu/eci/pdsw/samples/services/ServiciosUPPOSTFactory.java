@@ -30,7 +30,9 @@ public class ServiciosUPPOSTFactory {
 
                     @Override
                     protected void initialize() {
+
                         install(JdbcHelper.PostgreSQL);                        
+
                         setClassPathResource("mybatis-config.xml");                        
                         bind(ServiciosUPPOST.class).to(ServiciosUPPOSTImpl.class);
                         bind(ClaseDAO.class).to(MyBatisDaoClase.class);
