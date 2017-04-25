@@ -22,7 +22,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "RegsemBean")
 @SessionScoped
-public class Reg_semestral implements Serializable{
+public class Reg_semestralBean implements Serializable{
     private ArrayList<String> periodo;
     private ArrayList<String> cohorte;
     private ArrayList<String> asignaturas;
@@ -32,7 +32,7 @@ public class Reg_semestral implements Serializable{
     private ArrayList<String> sesion;
     private ArrayList<Clase> clase;
     
-    public Reg_semestral (){        
+    public Reg_semestralBean (){        
         periodo = new ArrayList<String>();
         cohorte = new ArrayList<String>();
         asignaturas = new ArrayList<String>();

@@ -10,6 +10,9 @@ import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
 import edu.eci.pdsw.sampleprj.dao.PersistenceException;
 import edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper;
 import edu.eci.pdsw.samples.entities.Clase;
+import edu.eci.pdsw.samples.entities.Materia;
+import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,6 +37,11 @@ public class MyBatisDaoClase implements ClaseDAO{
 
     @Override
     public List<Clase> loadClases() throws PersistenceException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Materia> consultarMateriasDAO(int semestre, int anio) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
