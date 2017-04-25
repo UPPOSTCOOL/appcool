@@ -6,6 +6,8 @@
 package edu.eci.pdsw.samples.services;
 
 import edu.eci.pdsw.samples.entities.Clase;
+import edu.eci.pdsw.samples.entities.Materia;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,6 +42,16 @@ public interface ServiciosUPPOST {
      * a nivel de base de datos, la clase no existe
      */
     public abstract List<Clase> consultarClasesPeriodo() throws ExcepcionServiciosUPPOST;
+    
+    /**
+     * Consulta las materias de un periodo
+     * @param semestre numero de semestre identificado con 1 o 2
+     * @param anio año de que se desea consultar
+     * @return La clase con todo sus detalles y recursos
+     * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
+     * a nivel de base de datos, la clase no existe
+     */
+    public abstract ArrayList<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
     
     
 }
