@@ -3,25 +3,26 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ClaseMapper">
+<mapper namespace="edu.eci.pdsw.sample.dao.mybatis.mappers.MateriaMapper">
     <resultMap type='Materia' id='MateriaResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
         <result property='cohorte' column='cohorte'/>
         <result property='numClases' column='totClases'/>
         <result property='numHoras' column='totHoras'/>
-        <association property="profesor" javaType="Profesor" resultMap='ProfesorResult' columnPrefix='profesor_'></association>
-        <association property="asignatura" javaType="Asignatura" resultMap='AsignaturaResult' columnPrefix='asignatura_'></association>
+        <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.ProfesorMapper' columnPrefix='profesor_'></association>
+        <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.AsignaturaMapper' columnPrefix='asignatura_'></association>
     </resultMap>
-    <resultMap type='Profesor' id='ClienteResult'>
+    <!--
+    <resultMap type='Profesor' id='ProfesorResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
     </resultMap>
-    <resultMap type='Asignatura' id='ClienteResult'>
+    <resultMap type='Asignatura' id='AsignaturaResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
     </resultMap>
-    
+    -->
     <select parameterType="map" id="consultarMateriasClase" resultMap="MateriaResult">
         select 
             M.id as id,
@@ -47,8 +48,8 @@
             C.Mater_Cohor_Materia_id=MP.Materia_id and
             C.Mater_Cohor_cohorte=MP.cohorte and
             MP.Periodo_id=PE.id and
-            PE.ano='2017' and
-            PE.semestre='1'
+            PE.ano=#{anio} and
+            PE.semestre=#{semestre}
         group by C.Mater_Cohor_cohorte,C.Mater_Cohor_Materia_id;
     </select>
 </mapper>
