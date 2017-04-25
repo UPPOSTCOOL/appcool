@@ -9,7 +9,11 @@ import com.google.inject.Inject;
 import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
 import edu.eci.pdsw.sampleprj.dao.PersistenceException;
 import edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper;
+import edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaMapper;
 import edu.eci.pdsw.samples.entities.Clase;
+import edu.eci.pdsw.samples.entities.Materia;
+import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +24,7 @@ public class MyBatisDaoClase implements ClaseDAO{
     
     @Inject
     private ClaseMapper pmap=null;
-
+    
     @Override
     public void save(Clase c) throws PersistenceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -10,6 +10,8 @@ import com.google.inject.Injector;
 
 import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
 import edu.eci.pdsw.sample.dao.mybatisimpl.MyBatisDaoClase;
+import edu.eci.pdsw.sample.dao.mybatisimpl.MyBatisDaoMateria;
+import edu.eci.pdsw.sampleprj.dao.MateriaDAO;
 import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImpl;
 
 import org.mybatis.guice.XMLMyBatisModule;
@@ -30,10 +32,13 @@ public class ServiciosUPPOSTFactory {
 
                     @Override
                     protected void initialize() {
-                        install(JdbcHelper.MySQL);                        
+
+                        install(JdbcHelper.PostgreSQL);                        
+
                         setClassPathResource("mybatis-config.xml");                        
                         bind(ServiciosUPPOST.class).to(ServiciosUPPOSTImpl.class);
                         bind(ClaseDAO.class).to(MyBatisDaoClase.class);
+                        bind(MateriaDAO.class).to(MyBatisDaoMateria.class);
                         
                     }
 
@@ -45,10 +50,11 @@ public class ServiciosUPPOSTFactory {
 
                     @Override
                     protected void initialize() {
-                        install(JdbcHelper.MySQL);                        
+                        install(JdbcHelper.PostgreSQL);                        
                         setClassPathResource("h2-mybatis-config.xml");                        
                         bind(ServiciosUPPOST.class).to(ServiciosUPPOSTImpl.class);
                         bind(ClaseDAO.class).to(MyBatisDaoClase.class);
+                        bind(MateriaDAO.class).to(MyBatisDaoMateria.class);
                         
                     }
 
@@ -71,6 +77,7 @@ public class ServiciosUPPOSTFactory {
     public static ServiciosUPPOSTFactory getInstance(){
         return instance;
     }
-    
-    
+    public static void main(String a[]) throws ExcepcionServiciosUPPOST{
+       //System.out.println(ServiciosSuscripcionesFactory.getInstance().getSuscriptionServices().comenteriosMasBajosPorRangoEdad(1, 10));
+    }
 }

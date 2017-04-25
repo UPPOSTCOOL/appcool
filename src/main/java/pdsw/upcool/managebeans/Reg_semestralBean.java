@@ -5,6 +5,9 @@
  */
 package pdsw.upcool.managebeans;
 import edu.eci.pdsw.samples.entities.Clase;
+import edu.eci.pdsw.samples.entities.Materia;
+import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
+import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +22,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "RegsemBean")
 @SessionScoped
-public class Reg_semestral implements Serializable{
+public class Reg_semestralBean implements Serializable{
     private ArrayList<String> periodo;
     private ArrayList<String> cohorte;
     private ArrayList<String> asignaturas;
@@ -28,11 +31,8 @@ public class Reg_semestral implements Serializable{
     private ArrayList<String> dias;
     private ArrayList<String> sesion;
     private ArrayList<Clase> clase;
-
-   
-
     
-    public Reg_semestral (){        
+    public Reg_semestralBean (){        
         periodo = new ArrayList<String>();
         cohorte = new ArrayList<String>();
         asignaturas = new ArrayList<String>();
@@ -43,6 +43,10 @@ public class Reg_semestral implements Serializable{
         clase = new ArrayList<Clase>();
     }
 
+    public List<Materia> getReportesMaterias() throws ExcepcionServiciosUPPOST{
+        return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
+    }
+    
     public ArrayList<String> getPeriodo() {
         return periodo;
     }
@@ -106,9 +110,4 @@ public class Reg_semestral implements Serializable{
     public void setSesion(ArrayList<String> sesion) {
         this.sesion = sesion;
     }
-    
-    
-    
-    
-    
 }

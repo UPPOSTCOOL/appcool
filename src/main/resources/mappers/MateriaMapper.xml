@@ -10,8 +10,8 @@
         <result property='cohorte' column='cohorte'/>
         <result property='numClases' column='totClases'/>
         <result property='numHoras' column='totHoras'/>
-        <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.ProfesorMapper' columnPrefix='profesor_'></association>
-        <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.AsignaturaMapper' columnPrefix='asignatura_'></association>
+        <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
+        <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
     </resultMap>
     <!--
     <resultMap type='Profesor' id='ProfesorResult'>

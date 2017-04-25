@@ -16,7 +16,7 @@ and open the template in the editor.
     <body>
         <img src="Imagenes/eci2.jpg" height="100" />
         <h:form id="formularioReporte">  
-            <p:dataTable id="reporte" var="Reporte" value="#{RegsemBean.periodo}">
+            <p:dataTable id="reporte" var="Reporte" value="#{RegsemBean.reportesMaterias}">
                 <p:column headerText="Cohorte">
                     <h:outputText value="#{Reporte.cohorte}" />
                 </p:column>
