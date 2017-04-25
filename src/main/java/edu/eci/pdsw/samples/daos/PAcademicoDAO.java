@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.pdsw.sampleprj.dao;
+package edu.eci.pdsw.samples.daos;
 
 import edu.eci.pdsw.samples.entities.PeriodoAcademico;
 import java.util.List;
@@ -14,9 +14,7 @@ import java.util.List;
  */
 public interface PAcademicoDAO {
 
-    public void save(PeriodoAcademico c) throws PersistenceException;
-
-    public PeriodoAcademico load(int id) throws PersistenceException;
+   
 
     public List<PeriodoAcademico> loadAll() throws PersistenceException;
 

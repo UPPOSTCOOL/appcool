@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.pdsw.sampleprj.dao;
+package edu.eci.pdsw.samples.daos;
 
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
@@ -17,13 +17,6 @@ import java.util.List;
  *
  * @author appcool
  */
-public interface ClaseDAO {
-    
-    public void save(Clase c) throws PersistenceException;
-
-    public Clase load(int id) throws PersistenceException;
-
-    public List<Clase> loadClases() throws PersistenceException;
-
-    //public List<Clase> loadItemRentado(Timestamp fechainicio) throws PersistenceException ;
+public interface MateriaDAO {
+    public List<Materia> consultarMateriasDAO(int semestre,int anio) throws ExcepcionServiciosUPPOST;
 }

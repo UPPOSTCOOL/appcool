@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pdsw.upcool.managebeans;
+package edu.eci.pdsw.samples.managedbeans;
 
 import edu.eci.pdsw.samples.entities.PeriodoAcademico;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
@@ -28,7 +28,7 @@ public class PeriodoBean implements Serializable{
     public PeriodoAcademico periodo;
 
     public PeriodoBean() throws ExcepcionServiciosUPPOST {
-        periodos = sp.consultarPAcademicos();
+        //periodos = sp.consultarPAcademicos();
     }
 
     public List<PeriodoAcademico> getPeriodos() {

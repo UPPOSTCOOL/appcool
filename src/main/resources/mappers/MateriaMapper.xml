@@ -3,7 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="edu.eci.pdsw.sample.dao.mybatis.mappers.MateriaMapper">
+<mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaMapper">
+
     <resultMap type='Materia' id='MateriaResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
@@ -12,7 +13,9 @@
         <result property='numHoras' column='totHoras'/>
         <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
         <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
+        <collection property="clases" ofType="Clase" resultMap="edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult"></collection>
     </resultMap>
+    
     <!--
     <resultMap type='Profesor' id='ProfesorResult'>
         <id property='id' column='id'/>
@@ -23,6 +26,7 @@
         <result property='nombre' column='nombre'/>
     </resultMap>
     -->
+    
     <select parameterType="map" id="consultarMateriasClase" resultMap="MateriaResult">
         select 
             M.id as id,
@@ -32,15 +36,17 @@
             sum(HOUR(horaFin)-HOUR(fecha)) as totHoras,
             A.id as asignatura_id,
             A.nombre as asignatura_nombre,
-            P.id as profesor_id
+            P.id as profesor_id,
             P.nombre as profesor_nombre
+           
         from 
             Mater_Perio MP,
             Asignatura A,
             Materia M,
             Profesor P,
             Clase C,
-            Periodo PE,
+            Periodo PE
+        
         WHERE 
             MP.Materia_id=M.id and 
             M.Asignatura_id=A.id and
@@ -52,4 +58,5 @@
             PE.semestre=#{semestre}
         group by C.Mater_Cohor_cohorte,C.Mater_Cohor_Materia_id;
     </select>
+
 </mapper>

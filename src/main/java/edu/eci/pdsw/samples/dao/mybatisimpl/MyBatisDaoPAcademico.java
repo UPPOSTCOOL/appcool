@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.pdsw.sample.dao.mybatisimpl;
+package edu.eci.pdsw.samples.dao.mybatisimpl;
 
 import com.google.inject.Inject;
-import edu.eci.pdsw.sampleprj.dao.PAcademicoDAO;
-import edu.eci.pdsw.sampleprj.dao.PersistenceException;
+import edu.eci.pdsw.samples.daos.PAcademicoDAO;
+import edu.eci.pdsw.samples.daos.PersistenceException;
 import edu.eci.pdsw.samples.dao.mybatis.mappers.PAcademicoMapper;
 import edu.eci.pdsw.samples.entities.PeriodoAcademico;
 import java.util.List;
@@ -19,18 +19,10 @@ import java.util.List;
 public class MyBatisDaoPAcademico implements PAcademicoDAO{
     
     @Inject
-    private PAcademicoMapper pmap=null;
+    private PAcademicoMapper pmap;
 
 
-    @Override
-    public void save(PeriodoAcademico c) throws PersistenceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    @Override
-    public PeriodoAcademico load(int id) throws PersistenceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public List<PeriodoAcademico> loadAll() throws PersistenceException {

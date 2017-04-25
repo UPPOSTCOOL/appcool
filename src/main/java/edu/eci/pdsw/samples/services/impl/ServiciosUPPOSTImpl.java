@@ -6,11 +6,13 @@
 package edu.eci.pdsw.samples.services.impl;
 
 import com.google.inject.Inject;
-import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
-import edu.eci.pdsw.sampleprj.dao.PAcademicoDAO;
+import edu.eci.pdsw.samples.daos.AsignaturaDAO;
+import edu.eci.pdsw.samples.daos.ClaseDAO;
+import edu.eci.pdsw.samples.daos.PAcademicoDAO;
 import edu.eci.pdsw.samples.entities.PeriodoAcademico;
-import edu.eci.pdsw.sampleprj.dao.MateriaDAO;
-import edu.eci.pdsw.sampleprj.dao.PersistenceException;
+import edu.eci.pdsw.samples.daos.MateriaDAO;
+import edu.eci.pdsw.samples.daos.PersistenceException;
+import edu.eci.pdsw.samples.daos.ProfesorDAO;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
@@ -22,23 +24,22 @@ import java.util.List;
  * @author juan
  */
 public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
-    
+
     @Inject
     private ClaseDAO daoc;
-    
     @Inject
     private PAcademicoDAO daoPA;
     @Inject
     private MateriaDAO daom;
+    @Inject
+    private ProfesorDAO daoPO;
+    @Inject
+    private AsignaturaDAO daoA;
 
     @Override
     public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
-        try {
-            return daoc.load(id);
-        } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosUPPOST("Error al consultar clase, ServiciosUPPOSTImpl inicio de excepcion", ex);
-        }
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
@@ -60,9 +61,9 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
-    public List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST {
-        return daom.consultarMateriasDAO(semestre,anio);
+    public List<Materia> consultarMaterias(int semestre, int anio) throws ExcepcionServiciosUPPOST {
+        return daom.consultarMateriasDAO(semestre, anio);
     }
 }
