@@ -5,23 +5,43 @@
  */
 package edu.eci.pdsw.samples.entities;
 
-import java.io.Serializable;
+import java.util.List;
 
 /**
  *
- * @author 2095112
+ * @author 2092815
  */
-public class Periodo implements Serializable {
-    private int id;
-    private int anio; //año
-    private int periodo; // 1 o 2
+public class Periodo {
     
-    public Periodo(int id, int anio, int periodo){
+    private int id;
+    private List<Materia> materias;
+    private int ano;
+    private int semestre;
+
+    public Periodo(int id, List<Materia> materias, int ano, int semestre) {
         this.id = id;
-        this.anio = anio;
-        this.periodo = periodo;
+        this.materias = materias;
+        this.ano = ano;
+        this.semestre = semestre;
     }
 
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public int getSemestre() {
+        return semestre;
+    }
+
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
+
+ 
     public int getId() {
         return id;
     }
@@ -30,26 +50,15 @@ public class Periodo implements Serializable {
         this.id = id;
     }
 
-    public int getAnio() {
-        return anio;
+    public List<Materia> getMaterias() {
+        return materias;
     }
 
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
-
-    public int getPeriodo() {
-        return periodo;
-    }
-
-    public void setPeriodo(int periodo) {
-        this.periodo = periodo;
+    public void setMaterias(List<Materia> materias) {
+        this.materias = materias;
     }
     
     
-    @Override
-    public String toString() {
-        return "Periodo{" + "id=" + id + ", año=" + anio + ", periodo=" + anio + '}';
-    }
+    
     
 }

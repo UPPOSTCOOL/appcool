@@ -5,13 +5,13 @@
  */
 package edu.eci.pdsw.samples.services.impl;
 
-import com.google.inject.Inject;
+
 import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
 import edu.eci.pdsw.sampleprj.dao.MateriaDAO;
 import edu.eci.pdsw.sampleprj.dao.PersistenceException;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
-import edu.eci.pdsw.samples.entities.PeriodoAcademico;
+import edu.eci.pdsw.samples.entities.Periodo;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import java.util.ArrayList;
@@ -65,7 +65,56 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     }
 
     @Override
-    public List<PeriodoAcademico> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
+    public List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
+
+
+
+
+
+/*
+    public class Asignatura implements Serializable{
+    
+    private int id;
+    private String nombre;
+
+    public class Clase {
+    
+    private int id=0;
+    private Recurso descripcion;
+    private Timestamp fecha;
+    private Timestamp horafin;
+    private int idMateria=0;
+
+    public class Materia implements Serializable{
+    
+    private int id;
+    private String nombre;
+    
+    private int cohorte;
+    private int numClases;
+    private int numHoras;
+    
+    private Profesor profesor;
+    private Asignatura asignatura;
+    
+    private List<Clase> clases;
+
+
+    public class Periodo {
+    
+    private int id;
+    private List<Materia> materias;
+    private int ano;
+    private int semestre;
+
+
+    public class Profesor implements Serializable{
+    private int id;
+    private String nombre;
+
+    
+
+*/

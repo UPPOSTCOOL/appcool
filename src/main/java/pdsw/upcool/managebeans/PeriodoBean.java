@@ -5,7 +5,7 @@
  */
 package pdsw.upcool.managebeans;
 
-import edu.eci.pdsw.samples.entities.PeriodoAcademico;
+import edu.eci.pdsw.samples.entities.Periodo;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
@@ -24,26 +24,26 @@ public class PeriodoBean implements Serializable{
     
     ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     
-    public List<PeriodoAcademico> periodos;
-    public PeriodoAcademico periodo;
+    public List<Periodo> periodos;
+    public Periodo periodo;
 
     public PeriodoBean() throws ExcepcionServiciosUPPOST {
         periodos = sp.consultarPAcademicos();
     }
 
-    public List<PeriodoAcademico> getPeriodos() {
+    public List<Periodo> getPeriodos() {
         return periodos;
     }
 
-    public void setPeriodos(List<PeriodoAcademico> periodos) {
+    public void setPeriodos(List<Periodo> periodos) {
         this.periodos = periodos;
     }
 
-    public PeriodoAcademico getPeriodo() {
+    public Periodo getPeriodo() {
         return periodo;
     }
 
-    public void setPeriodo(PeriodoAcademico periodo) {
+    public void setPeriodo(Periodo periodo) {
         this.periodo = periodo;
     }
     
