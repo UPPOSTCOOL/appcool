@@ -6,12 +6,12 @@
 package edu.eci.pdsw.samples.services.impl;
 
 
-import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
-import edu.eci.pdsw.sampleprj.dao.MateriaDAO;
-import edu.eci.pdsw.sampleprj.dao.PersistenceException;
+import edu.eci.pdsw.samples.entities.Asignatura;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Periodo;
+import edu.eci.pdsw.samples.entities.PostGrado;
+import edu.eci.pdsw.samples.entities.Profesor;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import java.util.ArrayList;
@@ -23,15 +23,16 @@ import java.util.List;
  */
 public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     
-    private final ArrayList<Materia> materias;
-    
+        private ArrayList<Asignatura> asignaturas;
+        private ArrayList<Clase> clases;
+        private ArrayList<Materia> materias;
+        private ArrayList<Periodo> periodos;
+        private ArrayList<Profesor> profesores;
     
     public ServiciosUPPOSTImplStub(){
         materias = new ArrayList<Materia>();
         poblar();
     }
-    
-    
 
     @Override
     public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
@@ -51,11 +52,17 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     private void poblar(){
         
        /*
-       
-        crear el relleno :)
-        
-       */ 
-        
+        Asignatura:    
+    int id;
+    String nombre;
+        */
+       Asignatura asig1 = new Asignatura(1, "c&h gerenciales");
+       Profesor prof1 = new Profesor(1,"german");
+       List<Asignatura> lista = new ArrayList<Asignatura>();
+       lista.add(asig1);
+       PostGrado post1 = new PostGrado(prof1, lista);
+       //PostGrado pos1 = new PostGrado(prof1, {asig1});
+       //asignaturas = {asig1,  };
         
     }
 
@@ -75,46 +82,32 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
 
 /*
-    public class Asignatura implements Serializable{
-    
-    private int id;
-    private String nombre;
-
-    public class Clase {
-    
-    private int id=0;
-    private Recurso descripcion;
-    private Timestamp fecha;
-    private Timestamp horafin;
-    private int idMateria=0;
-
-    public class Materia implements Serializable{
-    
-    private int id;
-    private String nombre;
-    
-    private int cohorte;
-    private int numClases;
-    private int numHoras;
-    
-    private Profesor profesor;
-    private Asignatura asignatura;
-    
-    private List<Clase> clases;
 
 
-    public class Periodo {
+Clase:
+    int id=0;
+    Recurso descripcion;
+    Timestamp fecha;
+    Timestamp horafin;
+    int idMateria=0;
+
+Materia:    
+    int id;
+    String nombre;
+    int cohorte;
+    int numClases;
+    int numHoras;    
+    Profesor profesor;
+    Asignatura asignatura;    
+    List<Clase> clases;
+
+Periodo:    
+    int id;
+    List<Materia> materias;
+    int ano;
+    int semestre;
     
-    private int id;
-    private List<Materia> materias;
-    private int ano;
-    private int semestre;
-
-
-    public class Profesor implements Serializable{
-    private int id;
-    private String nombre;
-
-    
-
+Profesor:
+    int id;
+    String nombre;
 */
