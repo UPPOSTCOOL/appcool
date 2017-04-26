@@ -27,12 +27,12 @@ public class PeriodoBean implements Serializable{
     public List<PeriodoAcademico> periodos;
     public PeriodoAcademico periodo;
 
-    public PeriodoBean() throws ExcepcionServiciosUPPOST {
+    public PeriodoBean() {
         //periodos = sp.consultarPAcademicos();
     }
 
-    public List<PeriodoAcademico> getPeriodos() {
-        return periodos;
+    public List<PeriodoAcademico> getPeriodos() throws ExcepcionServiciosUPPOST {
+        return sp.consultarPAcademicos();
     }
 
     public void setPeriodos(List<PeriodoAcademico> periodos) {
