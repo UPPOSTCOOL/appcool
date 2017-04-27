@@ -9,20 +9,25 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <head>
-        <title>Reporte Salones </title>
+    <head> 
+        <title>Reporte Programacion Semestral </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
         <img src="Imagenes/eci2.jpg" height="100" />
-        <h:form id="formularioReporte">  
-            <p:dataTable id="reporte" var="Reporte" value="#{RegsemBean.reportesMaterias}">
+        <h:form id="formularioProgramacion">  
+            <p:dataTable id="reporte" var="Reporte" <!--value="{ProgramacionBean.}"-->>
+                         
                 <p:column headerText="Cohorte">
                     <h:outputText value="#{Reporte.cohorte}" />
                 </p:column>
 
                 <p:column headerText="Asignaturas">
                     <h:outputText value="#{Reporte.asignaturas}" />
+                </p:column>
+                         
+                <p:column headerText="Materias">
+                    <h:outputText value="#{Reporte.materias}" />
                 </p:column>
 
                 <p:column headerText="Profesor">
