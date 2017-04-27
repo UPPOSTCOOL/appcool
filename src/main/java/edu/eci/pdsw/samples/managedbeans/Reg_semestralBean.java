@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package edu.eci.pdsw.samples.managedbeans;
+import edu.eci.pdsw.samples.entities.Asignatura;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Periodo;

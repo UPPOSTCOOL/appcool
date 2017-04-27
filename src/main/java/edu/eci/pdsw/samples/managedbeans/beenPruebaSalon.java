@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pdsw.upcool.managebeans;
+//package pdsw.upcool.managebeans;
+package edu.eci.pdsw.samples.managedbeans;
 
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Recurso;

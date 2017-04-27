@@ -26,6 +26,11 @@ public class Asignatura implements Serializable{
         this.postgrado = postgrado;
     }
 
+    public Asignatura(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
     public PostGrado getPostgrado() {
         return postgrado;
     }
