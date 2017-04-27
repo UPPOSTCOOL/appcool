@@ -4,12 +4,28 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.PAcademicoMapper">
+<<<<<<< HEAD
 
+=======
+<!--
+>>>>>>> origin/HU2
     <select parameterType="map" id="consultarPAcademicos" resultMap="PAcademicoResult">
-        select id, ano, semestre
-        FROM Periodo 
-   
         
+        select
+    
+        p.id as P_id,
+        p.ano as P_ano,
+        p.semestre as P_semestre,
+
+        
+        m.id as M_materiaID,
+	m.nombre as M_nombre  
+	
+
+        FROM periodo as p 
+        left join mater_perio as mp on p.id=mp.periodo_id 
+        left join materia as m on mp.materia_id = m.id
+         
     </select>
   
 
@@ -18,9 +34,9 @@
         <id property='id' column='id'/>
         <result property='ano' column='ano'/>
         <result property='semestre' column='semestre'/>  
-        <collection property='materias' ofType='Materia' resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.MateriaMapper.MateriaResult'></collection>
+        <collection property='materias' ofType='Materia' resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.MateriaMapper.MateriaResult' columnPrefix="M_"></collection>
     </resultMap>       
              
 
-                           	
+                   -->        	
 </mapper>

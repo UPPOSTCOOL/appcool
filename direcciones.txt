@@ -1,4 +1,9 @@
 Direcciones Proyecto
+<<<<<<< HEAD
+=======
+
+reporte salones: http://localhost:8080/faces/Periodos.xhtml
+>>>>>>> origin/HU2
 
 reporte salones: http://localhost:8080/faces/ReportesSalones.xhtml
 reporte semestral: http://localhost:8080/faces/ReportesProgramacion.xhtml

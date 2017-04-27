@@ -4,13 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper">
+<<<<<<< HEAD
 
     <select parameterType="map" id="consultarClase" resultMap="ClaseResult">
+=======
+<!--
+>>>>>>> origin/HU2
     
-   <!--En construcción-->
-        
-    </select>
-  
 
     
     <resultMap type='Clase' id='ClaseResult' >
@@ -33,5 +33,7 @@
         <id property='id' column='id'/>
           
     </resultMap>
+    -->
+
                            	
 </mapper>

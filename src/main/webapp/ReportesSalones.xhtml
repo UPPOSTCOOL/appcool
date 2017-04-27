@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -42,3 +43,66 @@ and open the template in the editor.
         </h:form>
     </body>
 </html>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Reporte Salones </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <img src="Imagenes/eci2.jpg" height="80" /> 
+        <h1 style="text-align:center;" bordercolor="red">Reporte de salones</h1>
+        <!--Seleccionar el periodo-->
+        
+        <select name="periodos">
+            <option>2016-1</option>
+            <option>2016-2</option>
+            <option>2017-1</option>
+            <option>2017-2</option>
+        </select>
+        <h:form id="formularioSalon">
+            <h:dataTable  value="#{PruebaSalonBean.listaSalones}" var="curso" border='1' bgcolor="#D3D3D3"  style="margin: 0 auto;">
+            <!-- <caption>Salones por periodo</caption>-->
+            <p:column>  
+                <f:facet name="header">
+                <h:outputText value="fecha inicio"></h:outputText>
+                    </f:facet>
+                <h:outputText value="#{curso.fecha}"></h:outputText>
+            </p:column>  
+            <p:column>  
+                <f:facet name="header">
+                <h:outputText value="fecha fin"></h:outputText>
+                    </f:facet>
+                <h:outputText value="#{curso.horafin}"></h:outputText>
+            </p:column> 
+            <p:column>  
+                <f:facet name="header">
+                    <h:outputText value="Descripcion"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{curso.descripcion.nombre}"></h:outputText>
+            </p:column> 
+           <f:facet name="footer">
+                <p:commandButton update=":formularioSalon" value="Regresar" action="ReportesPeriodo" immediate="true"/>
+            </f:facet>  
+            
+
+            </h:dataTable>
+             
+        </h:form>
+
+        
+
+
+    </body>
+</html>
+>>>>>>> origin/HU2
