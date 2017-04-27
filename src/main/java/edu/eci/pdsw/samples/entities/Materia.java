@@ -18,13 +18,10 @@ public class Materia implements Serializable{
     private String nombre;
     
     private int cohorte;
-    private int numClases;
-    private int numHoras;
     
     private Profesor profesor;
     private Asignatura asignatura;
     
-    private List<Clase> clases;
 
     public Materia(int id, String nombre, int cohorte, int numClases, int numHoras,
             Profesor profesor, Asignatura asignatura, List<Clase> clases) {
@@ -32,22 +29,11 @@ public class Materia implements Serializable{
         this.id = id;
         this.nombre = nombre;
         this.cohorte = cohorte;
-        this.numClases = numClases;
-        this.numHoras = numHoras;
         this.profesor = profesor;
         this.asignatura = asignatura;
-        this.clases = clases;
+        
     }
-
-    public List<Clase> getClases() {
-        return clases;
-    }
-
-    public void setClases(List<Clase> clases) {
-        this.clases = clases;
-    }
-
-
+   
     public int getId() {
         return id;
     }
@@ -72,21 +58,10 @@ public class Materia implements Serializable{
         this.cohorte = cohorte;
     }
 
-    public int getNumClases() {
-        return numClases;
-    }
+    
 
-    public void setNumClases(int numClases) {
-        this.numClases = numClases;
-    }
-
-    public int getNumHoras() {
-        return numHoras;
-    }
-
-    public void setNumHoras(int numHoras) {
-        this.numHoras = numHoras;
-    }
+    
+    
 
     public Profesor getProfesor() {
         return profesor;
@@ -106,7 +81,7 @@ public class Materia implements Serializable{
 
     @Override
     public String toString() {
-        return "Materia{" + "id=" + id + ", nombre=" + nombre + ", cohorte=" + cohorte + ", numClases=" + numClases + ", numHoras=" + numHoras + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
+        return "Materia{" + "id=" + id + ", nombre=" + nombre + ", cohorte=" + cohorte + ", numClases=" + ", numHoras=" + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
     }
     
     

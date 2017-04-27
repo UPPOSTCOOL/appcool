@@ -17,7 +17,7 @@ import javax.faces.bean.ManagedBean;
  *
  * @author Carol
  */
-@ManagedBean
+@ManagedBean(name = "beenPruebaSalon")
 public class beenPruebaSalon {
     private List<Clase> listaC = new ArrayList<Clase>();
  

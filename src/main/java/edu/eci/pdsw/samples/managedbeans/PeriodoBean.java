@@ -32,7 +32,7 @@ public class PeriodoBean implements Serializable{
     }
 
     public List<PeriodoAcademico> getPeriodos() throws ExcepcionServiciosUPPOST {
-        return sp.consultarPAcademicos();
+        return periodos;
     }
 
     public void setPeriodos(List<PeriodoAcademico> periodos) {

@@ -21,7 +21,8 @@ public class Clase {
     private Timestamp fecha;
     private Timestamp horafin;
     private int idMateria=0;
-    
+    private String salon;
+    private Materia materia;
 
     public Clase(int id, Recurso descripcion, java.sql.Timestamp fecha, java.sql.Timestamp horafin, int idMateria) {
            this.id = id;
