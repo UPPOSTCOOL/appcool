@@ -50,15 +50,12 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
     private void poblar() {
         
+        // PARA EL PERIODO 1
         
-
-   
-        Asignatura asig1 = new Asignatura(1, "conocimiento y habilidad es gerenciales");
-        Asignatura asig2 = new Asignatura(2, "tdgp");
-        Asignatura asig3 = new Asignatura(3, "semi");
-        Asignatura asig4 = new Asignatura(4, "conf");
-        Asignatura asig5 = new Asignatura(5, "ejecucuion");
-
+        List<Asignatura> lista1 = new ArrayList<>();
+        List<Asignatura> lista2 = new ArrayList<>();        
+        
+        
         Profesor prof1 = new Profesor(1, "german");
         Profesor prof2 = new Profesor(2, "maria");
         Profesor prof3 = new Profesor(3, "sonia");
@@ -74,9 +71,17 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Profesor prof13 = new Profesor(13, "hercules");
         Profesor prof14 = new Profesor(14, "alquimedes");
         Profesor prof15 = new Profesor(15, "ivanovich");
+        
+        PostGrado post1 = new PostGrado(prof1, lista1);
+        PostGrado post2 = new PostGrado(prof1, lista2);
 
-        List<Asignatura> lista1 = new ArrayList<Asignatura>();
-        List<Asignatura> lista2 = new ArrayList<Asignatura>();
+   
+        Asignatura asig1 = new Asignatura(1, "conocimiento y habilidad es gerenciales", post1);
+        Asignatura asig2 = new Asignatura(2, "tdgp", post1);
+        Asignatura asig3 = new Asignatura(3, "semi", post2);
+        Asignatura asig4 = new Asignatura(4, "conf", post2);
+        Asignatura asig5 = new Asignatura(5, "ejecucuion", post2);
+        
         
         lista1.add(asig1); 
         lista1.add(asig2); 
@@ -84,7 +89,11 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         lista2.add(asig4); 
         lista2.add(asig5); 
 
-        PostGrado post1 = new PostGrado(prof1, lista);
+        
+
+        
+
+        
         //PostGrado pos1 = new PostGrado(prof1, {asig1});
         //asignaturas = {asig1,  };
 
@@ -125,9 +134,5 @@ Periodo:
     int id;
     List<Materia> materias;
     int ano;
-    int semestre;
-    
-Profesor:
-    int id;
-    String nombre;
+    int semestre
 */
