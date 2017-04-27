@@ -121,6 +121,9 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Timestamp dt177 = new Timestamp(2017,7,1,1,0,0,0);
         Timestamp dt1710= new Timestamp(2017,7,1,10,0,0,0);
         
+        Timestamp dt777= new Timestamp(2017,7,1,7,0,0,0);
+        Timestamp dt7710= new Timestamp(2017,7,1,10,0,0,0);
+        
         Timestamp dt877 = new Timestamp(2017,7,8,7,0,0,0);
         Timestamp dt8710 = new Timestamp(2017,7,8,10,0,0,0);
         
@@ -157,6 +160,20 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Timestamp dt9619f = new Timestamp(2017,6,9,19,0,0,0);
                 
         
+        /*
+        Clase:
+        int id=0;
+        Recurso descripcion;
+        Timestamp fecha;
+        Timestamp horafin;
+        int idMateria=0;
+        */
+                                    cambiar  cambiar    
+        Clase cla1 = new Clase(1,"",dt777, dt21610, 1);
+        Clase cla2 = new Clase(2,"",dt777, dt21610, 1);
+        Clase cla3 = new Clase(3,"",dt777, dt21610, 1);
+        
+        
          // PERIODO 2
         
     }
@@ -173,14 +190,6 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 }
 
 /*
-
-
-Clase:
-    int id=0;
-    Recurso descripcion;
-    Timestamp fecha;
-    Timestamp horafin;
-    int idMateria=0;
 
 Materia:    
     int id;
