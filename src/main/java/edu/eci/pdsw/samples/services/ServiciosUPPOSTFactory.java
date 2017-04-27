@@ -13,6 +13,7 @@ import edu.eci.pdsw.sample.dao.mybatisimpl.MyBatisDaoClase;
 import edu.eci.pdsw.sample.dao.mybatisimpl.MyBatisDaoMateria;
 import edu.eci.pdsw.sampleprj.dao.MateriaDAO;
 import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImpl;
+import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
@@ -26,6 +27,7 @@ public class ServiciosUPPOSTFactory {
     
     private static Injector injector;
     private static Injector testingInjector;
+    private static Injector local;
     
     private ServiciosUPPOSTFactory(){
         injector = createInjector(new XMLMyBatisModule() {
@@ -62,6 +64,19 @@ public class ServiciosUPPOSTFactory {
                 
         );
         
+        local = createInjector(new XMLMyBatisModule() {
+
+                    @Override
+                    protected void initialize() {
+                        install(JdbcHelper.PostgreSQL);                        
+                        setClassPathResource("h2-mybatis-config.xml");                        
+                        bind(ServiciosUPPOST.class).to(ServiciosUPPOSTImplStub.class);
+                    }
+
+                }
+                
+        );
+        
     }
 
     public ServiciosUPPOST getUPPOSTServices(){
@@ -72,6 +87,9 @@ public class ServiciosUPPOSTFactory {
         return testingInjector.getInstance(ServiciosUPPOST.class);   
     }
 
+    public ServiciosUPPOST getUPPOSTServicesLocal(){
+        return local.getInstance(ServiciosUPPOST.class);   
+    }
 
     
     public static ServiciosUPPOSTFactory getInstance(){

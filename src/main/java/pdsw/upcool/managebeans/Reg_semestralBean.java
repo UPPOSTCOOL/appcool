@@ -82,7 +82,8 @@ public class Reg_semestralBean implements Serializable{
     }
 
     public List<Materia> getReportesMaterias() throws ExcepcionServiciosUPPOST{
-        return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
+        //return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
+        return ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesLocal().consultarMaterias(1,2017);
     }
     
     
