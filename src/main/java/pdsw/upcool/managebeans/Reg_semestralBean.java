@@ -30,6 +30,7 @@ public class Reg_semestralBean implements Serializable{
     private List<Materia> materias;
     private List<Asignatura> asignaturas;
     private List<Profesor> profesores; 
+    private ArrayList<Clase> clase;
     
     public Reg_semestralBean (){      
         periodos = new ArrayList<Periodo>();
@@ -79,8 +80,7 @@ public class Reg_semestralBean implements Serializable{
     public void setClase(ArrayList<Clase> clase) {
         this.clase = clase;
     }
-    private ArrayList<Clase> clase;
-    
+        
     public List<Materia> getReportesMaterias() throws ExcepcionServiciosUPPOST{
         //return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
         materias = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesLocal().consultarMaterias(1,2017);

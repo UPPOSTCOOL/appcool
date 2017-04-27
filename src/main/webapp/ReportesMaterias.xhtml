@@ -10,13 +10,40 @@ and open the template in the editor.
       xmlns:p="http://primefaces.org/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <head>
-        <title>Reporte Salones </title>
+        <title>Reporte Materias </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
         <img src="Imagenes/eci2.jpg" height="100" />
-        <h:form id="formularioReporte">  
-            
+        <h:form id="formulario">  
+            <h:dataTable value="#{RegsemBean.reportesMaterias}" var="resbean">
+                <h:column>    				
+                <f:facet name="header">Comentario</f:facet>    				
+                    #{rebean.id}
+                </h:column>
+                <h:column>    				
+                <f:facet name="header">Comentario</f:facet>    				
+                    #{rebean.nombre}
+                </h:column>
+                <h:column>    				
+                <f:facet name="header">Comentario</f:facet>    				
+                    #{rebean.cohorte}
+                </h:column>
+                <h:column>    				
+                <f:facet name="header">Comentario</f:facet>    				
+                    #{rebean.numClases}
+                </h:column>
+                <h:column>    				
+                <f:facet name="header">Comentario</f:facet>    				
+                    #{rebean.numHoras}
+                </h:column>
+                <h:column>    				
+                <f:facet name="header">Comentario</f:facet>    				
+                    #{rebean.profesor}
+                </h:column>
+                
+            </h:dataTable> 
         </h:form>
     </body>
 </html>
+
