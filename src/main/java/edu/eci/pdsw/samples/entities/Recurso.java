@@ -14,7 +14,7 @@ public class Recurso {
     private int id;
     private String nombre;
 
-    public Recurso() {
+    public Recurso(int id,String nombre) {
         id=0;
         nombre=null;
     }
