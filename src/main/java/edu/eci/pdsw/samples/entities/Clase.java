@@ -20,15 +20,18 @@ public class Clase {
     private Recurso descripcion;
     private Timestamp fecha;
     private Timestamp horafin;
-    private int idMateria=0;
+    
+    private Materia materia;
+    private String salon;
     
 
-    public Clase(int id, Recurso descripcion, java.sql.Timestamp fecha, java.sql.Timestamp horafin, int idMateria) {
-           this.id = id;
+    public Clase(int id, Recurso descripcion, java.sql.Timestamp fecha, java.sql.Timestamp horafin,Materia Materia, String salon) {
+        this.id = id;
         this.descripcion = descripcion;
         this.fecha=fecha;
         this.horafin=horafin;
-        this.idMateria=idMateria;
+        this.materia = materia;
+        this.salon = salon;
     }
 
     public int getId() {
@@ -41,6 +44,14 @@ public class Clase {
 
     public Recurso getDescripcion() {
         return descripcion;
+    }
+
+    public String getSalon() {
+        return salon;
+    }
+
+    public void setSalon(String salon) {
+        this.salon = salon;
     }
 
   
@@ -61,18 +72,13 @@ public class Clase {
         this.horafin = horafin;
     }
 
-    public int getIdMateria() {
-        return idMateria;
-    }
-
-    public void setIdMateria(int idMateria) {
-        this.idMateria = idMateria;
-    }
 
   
-   // @Override
-   // public String toString() {
-   //     return "clase{" + "id=" + id + ", descripcion=" + descripcion + '}';
-  //  }
+
+  
+   @Override
+   public String toString() {
+        return "clase{" + "id=" + id + ", descripcion=" + descripcion + '}';
+  }
     
 }

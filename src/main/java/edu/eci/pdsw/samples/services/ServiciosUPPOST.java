@@ -34,15 +34,7 @@ public interface ServiciosUPPOST {
      */
     public abstract List<Clase> consultarClases() throws ExcepcionServiciosUPPOST;
     
-    /**
-     * Consulta la clase de la materia
-     * @param id identificados de la clase
-     * @return La clase con todo sus detalles y recursos
-     * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
-     * a nivel de base de datos, la clase no existe
-     */
-    public abstract List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST;
-    
+
     /**
      * Consulta  los periodos academicos
      * @return Una lista de los ultimos 4 periodos academicos

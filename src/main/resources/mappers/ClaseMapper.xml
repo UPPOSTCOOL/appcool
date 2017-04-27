@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper">
-<!--
+
     
 
     
@@ -28,7 +28,7 @@
         <id property='id' column='id'/>
           
     </resultMap>
-    -->
+    
 
                            	
 </mapper>

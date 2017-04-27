@@ -12,22 +12,26 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 /**
  *
  * @author Carol
  */
-@ManagedBean
+@ManagedBean(name = "PruebaSalonBean")
+@SessionScoped
 public class beenPruebaSalon {
+    
+    
     private List<Clase> listaC = new ArrayList<Clase>();
  
     public beenPruebaSalon(){
-        System.out.println("Inicio");
+        System.out.println("Iniciooooooooooo");
         initList();
     }
  
     private void initList(){
-        Calendar calendar = Calendar.getInstance();
+        /*Calendar calendar = Calendar.getInstance();
         Timestamp currentTimestamp = new java.sql.Timestamp(calendar.getTime().getTime());
         Recurso d=new Recurso(23,"pc");
         Clase c1 = new Clase(0, d, currentTimestamp, currentTimestamp, 23);
@@ -46,7 +50,7 @@ public class beenPruebaSalon {
         listaC.add(c3);
         listaC.add(c4);
         listaC.add(c5);
-        listaC.add(c6);
+        listaC.add(c6);*/
     }
     public List<Clase> getListaSalones() {
     return listaC;

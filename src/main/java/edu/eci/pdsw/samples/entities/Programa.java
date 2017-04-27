@@ -11,12 +11,12 @@ import java.util.List;
  *
  * @author 2092815
  */
-public class PostGrado {
+public class Programa {
     
     private Profesor coordinador;
     private List<Asignatura> asignaturas;
 
-    public PostGrado(Profesor coordinador, List<Asignatura> asignaturas) {
+    public Programa(Profesor coordinador, List<Asignatura> asignaturas) {
         this.coordinador = coordinador;
         this.asignaturas = asignaturas;
     }

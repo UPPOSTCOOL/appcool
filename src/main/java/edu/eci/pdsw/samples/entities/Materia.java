@@ -14,47 +14,46 @@ import java.util.List;
  */
 public class Materia implements Serializable{
     
-    private int id;
+    private String codigo;
+    
     private String nombre;
     
     private int cohorte;
-    private int numClases;
-    private int numHoras;
+ 
+   
     
     private Profesor profesor;
     private Asignatura asignatura;
     
-    private List<Clase> clases;
+    private String descripcion;
+    
+    
+    
 
-    public Materia(int id, String nombre, int cohorte, int numClases, int numHoras,
-            Profesor profesor, Asignatura asignatura, List<Clase> clases) {
+    public Materia(String codigo, String nombre, int cohorte, int numClases,
+            Profesor profesor, Asignatura asignatura,String descripcion ) {
         
-        this.id = id;
+        this.codigo = codigo;
         this.nombre = nombre;
         this.cohorte = cohorte;
-        this.numClases = numClases;
-        this.numHoras = numHoras;
+
+
         this.profesor = profesor;
         this.asignatura = asignatura;
-        this.clases = clases;
+        
+        this.descripcion = descripcion;
+        
+        
     }
 
-    public List<Clase> getClases() {
-        return clases;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setClases(List<Clase> clases) {
-        this.clases = clases;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getNombre() {
         return nombre;
@@ -72,21 +71,6 @@ public class Materia implements Serializable{
         this.cohorte = cohorte;
     }
 
-    public int getNumClases() {
-        return numClases;
-    }
-
-    public void setNumClases(int numClases) {
-        this.numClases = numClases;
-    }
-
-    public int getNumHoras() {
-        return numHoras;
-    }
-
-    public void setNumHoras(int numHoras) {
-        this.numHoras = numHoras;
-    }
 
     public Profesor getProfesor() {
         return profesor;
@@ -106,7 +90,7 @@ public class Materia implements Serializable{
 
     @Override
     public String toString() {
-        return "Materia{" + "id=" + id + ", nombre=" + nombre + ", cohorte=" + cohorte + ", numClases=" + numClases + ", numHoras=" + numHoras + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
+        return "Materia{" + "Codigo=" + codigo + ", nombre=" + nombre + ", cohorte=" + cohorte   + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
     }
     
     
