@@ -56,7 +56,6 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         List<Asignatura> lista1 = new ArrayList<>();
         
-        
         Profesor prof1 = new Profesor(1, "German Motta");
         Profesor prof2 = new Profesor(2, "Maria Pajon");
         Profesor prof3 = new Profesor(3, "Sonia Alcala");
@@ -87,9 +86,6 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         asig3 = new Asignatura(3, "semi", post1);
         asig4 = new Asignatura(4, "conf", post1);
         asig5 = new Asignatura(5, "ejecucuion", post1);  
-            
-         
-        
         
 
         // Timestamp para Fecha  267: 2 de Junio (6) a las 7:00
@@ -265,7 +261,30 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Materia mat14 = new Materia(14, "Requerimientos", 25, 1, 1, prof5, asig5, clasesM14 );
         Materia mat15 = new Materia(15, "Construccion", 25, 1, 1, prof5, asig5, clasesM15 );
         
+        // todas las materias
         
+        ArrayList<Materia> matAll= new ArrayList<>();
+        matAll.add(mat1);
+        matAll.add(mat2);
+        matAll.add(mat3);
+        matAll.add(mat4);
+        matAll.add(mat5);
+        matAll.add(mat6);
+        matAll.add(mat7);
+        matAll.add(mat8);
+        matAll.add(mat9);
+        matAll.add(mat10);
+        matAll.add(mat11);
+        matAll.add(mat12);
+        matAll.add(mat13);
+        matAll.add(mat14);
+        matAll.add(mat15);
+                     
+        
+        // Para Periodo
+        
+        Periodo per1 = new Periodo(1,matAll,2017,1);
+       
         
          // PERIODO 2
         
@@ -281,14 +300,3 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
-
-/*
-
-
-
-Periodo:    
-    int id;
-    List<Materia> materias;
-    int ano;
-    int semestre
-*/
