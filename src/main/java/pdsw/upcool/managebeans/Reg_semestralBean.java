@@ -26,51 +26,10 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "RegsemBean")
 @SessionScoped
 public class Reg_semestralBean implements Serializable{
-    private ArrayList<Periodo> periodos;
-    private ArrayList<Materia> materias;
-    private ArrayList<Asignatura> asignaturas;
-    private ArrayList<Profesor> profesores; 
-
-    public ArrayList<Periodo> getPeriodos() {
-        return periodos;
-    }
-
-    public void setPeriodos(ArrayList<Periodo> periodos) {
-        this.periodos = periodos;
-    }
-
-    public ArrayList<Materia> getMaterias() {
-        return materias;
-    }
-
-    public void setMaterias(ArrayList<Materia> materias) {
-        this.materias = materias;
-    }
-
-    public ArrayList<Asignatura> getAsignaturas() {
-        return asignaturas;
-    }
-
-    public void setAsignaturas(ArrayList<Asignatura> asignaturas) {
-        this.asignaturas = asignaturas;
-    }
-
-    public ArrayList<Profesor> getProfesores() {
-        return profesores;
-    }
-
-    public void setProfesores(ArrayList<Profesor> profesores) {
-        this.profesores = profesores;
-    }
-
-    public ArrayList<Clase> getClase() {
-        return clase;
-    }
-
-    public void setClase(ArrayList<Clase> clase) {
-        this.clase = clase;
-    }
-    private ArrayList<Clase> clase;
+    private List<Periodo> periodos;
+    private List<Materia> materias;
+    private List<Asignatura> asignaturas;
+    private List<Profesor> profesores; 
     
     public Reg_semestralBean (){      
         periodos = new ArrayList<Periodo>();
@@ -81,9 +40,51 @@ public class Reg_semestralBean implements Serializable{
         
     }
 
+    public List<Periodo> getPeriodos() {
+        return periodos;
+    }
+
+    public void setPeriodos(ArrayList<Periodo> periodos) {
+        this.periodos = periodos;
+    }
+
+    public List<Materia> getMaterias() {
+        return materias;
+    }
+
+    public void setMaterias(ArrayList<Materia> materias) {
+        this.materias = materias;
+    }
+
+    public List<Asignatura> getAsignaturas() {
+        return asignaturas;
+    }
+
+    public void setAsignaturas(ArrayList<Asignatura> asignaturas) {
+        this.asignaturas = asignaturas;
+    }
+
+    public List<Profesor> getProfesores() {
+        return profesores;
+    }
+
+    public void setProfesores(ArrayList<Profesor> profesores) {
+        this.profesores = profesores;
+    }
+
+    public List<Clase> getClase() {
+        return clase;
+    }
+
+    public void setClase(ArrayList<Clase> clase) {
+        this.clase = clase;
+    }
+    private ArrayList<Clase> clase;
+    
     public List<Materia> getReportesMaterias() throws ExcepcionServiciosUPPOST{
         //return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
-        return ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesLocal().consultarMaterias(1,2017);
+        materias = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesLocal().consultarMaterias(1,2017);
+        return materias;
     }
     
     
