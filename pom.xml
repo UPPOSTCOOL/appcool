@@ -181,6 +181,8 @@
                     <path>/</path>
                 </configuration>
             </plugin>
+            
+            <!-- Plugin duplicado. -->
             <plugin>		
                 <groupId>org.apache.maven.plugins</groupId>		
                 <artifactId>maven-dependency-plugin</artifactId>		
