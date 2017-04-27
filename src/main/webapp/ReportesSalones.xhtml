@@ -14,30 +14,47 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-         <img src="Imagenes/eci2.jpg" height="100" /> 
-        <h:form id="formularioReportes">
-            <p:dataTable id="formularioReportes" var="informacion"  value="#{RegsemBean.salones}">
-                    
-                    <f:facet name="header">
-                        
-                       <p align="center"> <h2> Reporte Salones </h2></p>
+        <img src="Imagenes/eci2.jpg" height="80" /> 
+        <h1 style="text-align:center;" bordercolor="red">Reporte de salones</h1>
+        <!--Seleccionar el periodo-->
+        
+        <select name="periodos">
+            <option>2016-1</option>
+            <option>2016-2</option>
+            <option>2017-1</option>
+            <option>2017-2</option>
+        </select>
+        <h:form id="formularioSalon">
+            <h:dataTable  value="#{beenPruebaSalon.listaSalones}" var="curso" border='1' bgcolor="#D3D3D3"  style="margin: 0 auto;">
+            <!-- <caption>Salones por periodo</caption>-->
+            <p:column>  
+                <f:facet name="header">
+                <h:outputText value="fecha inicio"></h:outputText>
                     </f:facet>
-                    <p:column headerText="Fecha">
-                        <h:outputLabel value="#{informacion.fecha}"></h:outputLabel>
-                    </p:column>                        
-                    <p:column headerText="Hora">
-                        <h:outputLabel value="#{informacion.horafin}"></h:outputLabel>
-                    </p:column> 
-                    <p:column headerText="Caracteristicas Solicitud">
-                        <h:outputLabel value="#{informacion.descripcion.nombre}"></h:outputLabel>                        
-                    </p:column>
-                   
-                    
-                    <f:facet name="footer">
-                        <p:commandButton update="formularioReportes" value="Regresar" action="ReportesPeriodo" immediate="true"/>
-                           
+                <h:outputText value="#{curso.fecha}"></h:outputText>
+            </p:column>  
+            <p:column>  
+                <f:facet name="header">
+                <h:outputText value="fecha fin"></h:outputText>
                     </f:facet>
-            </p:dataTable>
+                <h:outputText value="#{curso.horafin}"></h:outputText>
+            </p:column> 
+                <p:column>  
+                <f:facet name="header">
+                <h:outputText value="Descripcion"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{curso.descripcion.nombre}"></h:outputText>
+            </p:column> 
+                
+                 
+        </h:dataTable>
         </h:form>
+
+        <f:facet name="footer">
+            <p:commandButton update="TablaSalones" value="Regresar" action="Periodos" immediate="true"/>
+
+        </f:facet>
+
+
     </body>
 </html>

@@ -7,7 +7,8 @@ package edu.eci.pdsw.samples.entities;
 
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
 import java.io.Serializable;
-import java.security.Timestamp;
+import java.sql.Timestamp;
+
 
 /**
  *
@@ -22,8 +23,8 @@ public class Clase {
     private int idMateria=0;
     
 
-    public Clase(int id, Recurso descripcion,Timestamp fecha, Timestamp horafin, int idMateria) {
-        this.id = id;
+    public Clase(int id, Recurso descripcion, java.sql.Timestamp fecha, java.sql.Timestamp horafin, int idMateria) {
+           this.id = id;
         this.descripcion = descripcion;
         this.fecha=fecha;
         this.horafin=horafin;
