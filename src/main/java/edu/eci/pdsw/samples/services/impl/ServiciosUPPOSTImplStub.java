@@ -57,25 +57,16 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         List<Asignatura> lista1 = new ArrayList<>();
         
         
-        Profesor prof1 = new Profesor(1, "german");
-        Profesor prof2 = new Profesor(2, "maria");
-        Profesor prof3 = new Profesor(3, "sonia");
-        Profesor prof4 = new Profesor(4, "paula");
-        Profesor prof5 = new Profesor(5, "dora");
-        Profesor prof6 = new Profesor(6, "jasinta");
-        Profesor prof7 = new Profesor(7, "matilde");
-        Profesor prof8 = new Profesor(8, "hector");
-        Profesor prof9 = new Profesor(9, "oswaldo");
-        Profesor prof10 = new Profesor(10, "santiago");
-        Profesor prof11 = new Profesor(11, "david");
-        Profesor prof12 = new Profesor(12, "oscar");
-        Profesor prof13 = new Profesor(13, "hercules");
-        Profesor prof14 = new Profesor(14, "alquimedes");
-        Profesor prof15 = new Profesor(15, "ivanovich");
+        Profesor prof1 = new Profesor(1, "German Motta");
+        Profesor prof2 = new Profesor(2, "Maria Pajon");
+        Profesor prof3 = new Profesor(3, "Sonia Alcala");
+        Profesor prof4 = new Profesor(4, "Paula Apple");
+        Profesor prof5 = new Profesor(5, "Ivanovich Kravchenko");
+        
         
         // para siganturas, se crea el prostgrado con las mismas asignaturas
         
-        PostGrado post1 = new PostGrado(prof1, lista1); // lista 1 es vacia
+        PostGrado post1 = new PostGrado(prof5, lista1); // lista 1 es vacia
                   
         Asignatura asig1 = new Asignatura(1, "conocimiento y habilidad es gerenciales", post1);
         Asignatura asig2 = new Asignatura(2, "tdgp", post1);
@@ -89,7 +80,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         lista1.add(asig4); 
         lista1.add(asig5); 
         
-        post1 = new PostGrado(prof1, lista1);
+        post1 = new PostGrado(prof5, lista1);
         
         asig1 = new Asignatura(1, "conocimiento y habilidad es gerenciales", post1);
         asig2 = new Asignatura(2, "tdgp", post1);
@@ -207,15 +198,15 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Clase cl4a = new Clase(1,recurso,dt7712, dt7713, 1);      
         Clase cl5a = new Clase(1,recurso,dt7713, dt7714, 1);      
         Clase cl6a = new Clase(1,recurso,dt7714, dt7715, 1);
-        Clase cl7a = new Clase(1,recurso,dt1067, dt1068, 1);  // ----------------
-        Clase cl8a = new Clase(1,recurso,dt1068, dt10610, 1); 
-        Clase cl9a = new Clase(1,recurso,dt10610, dt10611, 1);
-        Clase cl10a = new Clase(1,recurso,dt10611, dt10612, 1); 
-        Clase cl11a = new Clase(1,recurso,dt10612, dt10613, 1); 
-        Clase cl12a = new Clase(1,recurso,dt10613, dt10614, 1); 
-        Clase cl13a = new Clase(1,recurso,dt3067, dt30610, 1);  // ---------------- //
-        Clase cl14a = new Clase(1,recurso,dt30610, dt30611, 1);
-        Clase cl15a = new Clase(1,recurso,dt30611, dt30612, 1);
+        Clase cl7a = new Clase(1,recurso,dt1067, dt1068, 2);  // ----------------
+        Clase cl8a = new Clase(1,recurso,dt1068, dt10610, 2); 
+        Clase cl9a = new Clase(1,recurso,dt10610, dt10611, 2);
+        Clase cl10a = new Clase(1,recurso,dt10611, dt10612, 2); 
+        Clase cl11a = new Clase(1,recurso,dt10612, dt10613, 3); 
+        Clase cl12a = new Clase(1,recurso,dt10613, dt10614, 4); 
+        Clase cl13a = new Clase(1,recurso,dt3067, dt30610, 5);  // ---------------- //
+        Clase cl14a = new Clase(1,recurso,dt30610, dt30611, 5);
+        Clase cl15a = new Clase(1,recurso,dt30611, dt30612, 5);
         
         // lista clases para materias
         ArrayList<Clase> clasesM1 = new ArrayList<>();
@@ -252,6 +243,30 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         clasesM14.add(cl14a); 
         clasesM15.add(cl15a);     
         
+        // Materias son 5 grupos de materias
+              
+        Materia mat1 = new Materia(1, "Gerencia de riesgos", 24, 1, 1, prof1, asig1, clasesM1 );
+        Materia mat2 = new Materia(2, "G cominicaciones", 24, 1, 1, prof1, asig1, clasesM2 );
+        Materia mat3 = new Materia(3, "G calidad", 24, 1, 1, prof1, asig1, clasesM3 );
+        Materia mat4 = new Materia(4, "Liderazgoy trabajo", 24, 1, 1, prof1, asig1, clasesM4 );
+        Materia mat5 = new Materia(5, "Negociación", 24, 1, 1, prof1, asig1, clasesM5 );
+        Materia mat6 = new Materia(6, "Creatividad Inn", 24, 1, 1, prof1, asig1, clasesM6 );
+        
+        Materia mat7 = new Materia(7, "Taller trabajo grado", 24, 1, 1, prof2, asig2, clasesM7 );
+        Materia mat8 = new Materia(8, "Taller trabajo grado2", 24, 1, 1, prof2, asig2, clasesM8 );
+        Materia mat9 = new Materia(9, "Sustentacion grup", 24, 1, 1, prof2, asig2, clasesM9 );
+        Materia mat10 = new Materia(10, "Intro a la Investigacion", 24, 1, 1, prof2, asig2, clasesM10 );
+        
+        Materia mat11 = new Materia(11, "Proyecto de vida", 23, 1, 1, prof3, asig3, clasesM11 );
+        
+        Materia mat12 = new Materia(12, "Etica", 23, 1, 1, prof4, asig4, clasesM12 );
+        
+        Materia mat13 = new Materia(13, "Intro a ejecucion", 25, 1, 1, prof5, asig5, clasesM13 );
+        Materia mat14 = new Materia(14, "Requerimientos", 25, 1, 1, prof5, asig5, clasesM14 );
+        Materia mat15 = new Materia(15, "Construccion", 25, 1, 1, prof5, asig5, clasesM15 );
+        
+        
+        
          // PERIODO 2
         
     }
@@ -269,15 +284,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
 /*
 
-Materia:    
-    int id;
-    String nombre;
-    int cohorte;
-    int numClases;
-    int numHoras;    
-    Profesor profesor;
-    Asignatura asignatura;    
-    List<Clase> clases;
+
 
 Periodo:    
     int id;
