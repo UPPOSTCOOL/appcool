@@ -5,13 +5,14 @@
  */
 package edu.eci.pdsw.samples.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author 2092815
  */
-public class PeriodoAcademico {
+public class PeriodoAcademico implements Serializable {
     
     private int id;
     private List<Materia> materias;
@@ -58,6 +59,10 @@ public class PeriodoAcademico {
         this.materias = materias;
     }
     
+    @Override
+    public String toString() {
+        return "PeriodoAcademico{" + "id=" + id + ", año=" + ano + ", semestre=" + semestre   + ", Materias=" +  '}';
+    }
     
     
     

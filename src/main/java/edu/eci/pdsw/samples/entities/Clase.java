@@ -16,8 +16,9 @@ import java.sql.Timestamp;
  */
 public class Clase {
     
-    private int id=0;
+    private int id;
     private Recurso descripcion;
+    
     private Timestamp fecha;
     private Timestamp horafin;
     
