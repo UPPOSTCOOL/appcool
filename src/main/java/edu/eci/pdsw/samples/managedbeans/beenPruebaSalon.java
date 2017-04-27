@@ -12,18 +12,19 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 /**
  *
  * @author Carol
  */
-@ManagedBean
+@ManagedBean(name = "PruebaSalonBean")
+@SessionScoped
 public class beenPruebaSalon {
     private List<Clase> listaC = new ArrayList<Clase>();
  
     public beenPruebaSalon(){
-        System.out.println("Inicio");
-        initList();
+            initList();
     }
  
     private void initList(){

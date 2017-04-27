@@ -25,7 +25,7 @@ and open the template in the editor.
             <option>2017-2</option>
         </select>
         <h:form id="formularioSalon">
-            <h:dataTable  value="#{beenPruebaSalon.listaSalones}" var="curso" border='1' bgcolor="#D3D3D3"  style="margin: 0 auto;">
+            <h:dataTable  value="#{PruebaSalonBean.listaSalones}" var="curso" border='1' bgcolor="#D3D3D3"  style="margin: 0 auto;">
             <!-- <caption>Salones por periodo</caption>-->
             <p:column>  
                 <f:facet name="header">
@@ -39,21 +39,22 @@ and open the template in the editor.
                     </f:facet>
                 <h:outputText value="#{curso.horafin}"></h:outputText>
             </p:column> 
-                <p:column>  
+            <p:column>  
                 <f:facet name="header">
-                <h:outputText value="Descripcion"></h:outputText>
-                    </f:facet>
-                    <h:outputText value="#{curso.descripcion.nombre}"></h:outputText>
+                    <h:outputText value="Descripcion"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{curso.descripcion.nombre}"></h:outputText>
             </p:column> 
-                
-                 
-        </h:dataTable>
+           <f:facet name="footer">
+                <p:commandButton update=":formularioSalon" value="Regresar" action="ReportesPeriodo" immediate="true"/>
+            </f:facet>  
+            
+
+            </h:dataTable>
+             
         </h:form>
 
-        <f:facet name="footer">
-            <p:commandButton update="TablaSalones" value="Regresar" action="Periodos" immediate="true"/>
-
-        </f:facet>
+        
 
 
     </body>
