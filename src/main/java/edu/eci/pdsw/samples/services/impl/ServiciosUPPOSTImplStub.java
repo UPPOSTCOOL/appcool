@@ -29,8 +29,14 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     private ArrayList<Materia> materias;
     private ArrayList<Periodo> periodos;
     private ArrayList<Profesor> profesores;
+    
+    private ArrayList<Clase> clasesAll;
+    private ArrayList<Periodo> periodosAll;
+    private ArrayList<Materia> materiasAll;
 
     public ServiciosUPPOSTImplStub() {
+        clasesAll = new ArrayList<Clase>();
+        periodosAll = new ArrayList<Periodo>();
         materias = new ArrayList<Materia>();
         poblar();
     }
@@ -239,6 +245,25 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         clasesM14.add(cl14a); 
         clasesM15.add(cl15a);     
         
+        // tdas las clases del periodo
+                
+        clasesAll.add(cl1a);
+        clasesAll.add(cl2a);
+        clasesAll.add(cl3a);
+        clasesAll.add(cl4a);
+        clasesAll.add(cl5a);
+        clasesAll.add(cl6a);
+        clasesAll.add(cl7a);
+        clasesAll.add(cl8a);
+        clasesAll.add(cl9a);
+        clasesAll.add(cl10a);
+        clasesAll.add(cl11a);
+        clasesAll.add(cl12a);
+        clasesAll.add(cl13a);
+        clasesAll.add(cl14a);
+        clasesAll.add(cl15a);
+        
+        
         // Materias son 5 grupos de materias
               
         Materia mat1 = new Materia(1, "Gerencia de riesgos", 24, 1, 1, prof1, asig1, clasesM1 );
@@ -285,18 +310,19 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         Periodo per1 = new Periodo(1,matAll,2017,1);
        
+        periodosAll.add(per1);
         
-         // PERIODO 2
+         // PERIODO 2 - sin datos
         
     }
 
     @Override
     public List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return clasesAll;
     }
 
     @Override
     public List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return periodosAll;
     }
 }
