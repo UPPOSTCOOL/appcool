@@ -13,6 +13,7 @@ import edu.eci.pdsw.samples.entities.PostGrado;
 import edu.eci.pdsw.samples.entities.Profesor;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,21 +83,64 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Asignatura asig4 = new Asignatura(4, "conf", post2);
         Asignatura asig5 = new Asignatura(5, "ejecucuion", post2);
         
-        
         lista1.add(asig1); 
         lista1.add(asig2); 
         lista2.add(asig3); 
         lista2.add(asig4); 
         lista2.add(asig5); 
 
+        // Timestamp para Fecha 
+        Timestamp dt10 = new Timestamp(2017,6,2,7,0,0,0);
+        Timestamp dt13 = new Timestamp(2017,6,2,13,0,0,0);
+        Timestamp dt14 = new Timestamp(2017,6,2,16,0,0,0);
         
-
+        Timestamp dt2 = new Timestamp(2017,6,3,7,0,0,0);
+        Timestamp dt5 = new Timestamp(2017,6,3,10,0,0,0);
         
-
+        Timestamp dt7 = new Timestamp(2017,6,9,10,0,0,0);
         
-        //PostGrado pos1 = new PostGrado(prof1, {asig1});
-        //asignaturas = {asig1,  };
-
+        Timestamp dt3 = new Timestamp(2017,6,10,7,0,0,0);
+        Timestamp dt4 = new Timestamp(2017,6,10,10,0,0,0);
+        
+        Timestamp dt8 = new Timestamp(2017,6,16,7,0,0,0);
+        
+        Timestamp dt15 = new Timestamp(2017,6,17,10,0,0,0);
+        
+        Timestamp dt6 = new Timestamp(2017,6,23,10,0,0,0);
+        
+        Timestamp dt1 = new Timestamp(2017,7,7,7,0,0,0);
+        
+        Timestamp dt9 = new Timestamp(2017,7,14,7,0,0,0);
+        
+        Timestamp dt11 = new Timestamp(2017,7,22,10,0,0,0);
+        Timestamp dt12 = new Timestamp(2017,7,22,7,0,0,0);
+        
+                
+        
+        // Timestamp para horainicio 
+        Timestamp dt1f = new Timestamp(2017,7,21,10,0,0,0);
+        Timestamp dt2f = new Timestamp(2017,7,21,13,0,0,0);
+        Timestamp dt3f = new Timestamp(2017,7,8,10,0,0,0);
+        
+        Timestamp dt4f = new Timestamp(2017,7,1,13,0,0,0);
+        Timestamp dt5f = new Timestamp(2017,7,8,13,0,0,0);
+        Timestamp dt6f = new Timestamp(2017,7,7,13,0,0,0);
+        
+        Timestamp dt7f = new Timestamp(2017,6,9,13,0,0,0);
+        Timestamp dt8f = new Timestamp(2017,6,16,10,0,0,0);
+        Timestamp dt9f = new Timestamp(2017,7,14,13,0,0,0);
+        
+        Timestamp dt10f = new Timestamp(2017,6,9,10,0,0,0);
+        Timestamp dt11f = new Timestamp(2017,7,22,13,0,0,0);
+        Timestamp dt12f = new Timestamp(2017,7,22,10,0,0,0);
+        
+        Timestamp dt13f = new Timestamp(2017,6,2,16,0,0,0);
+        Timestamp dt14f = new Timestamp(2017,6,9,19,0,0,0);
+        Timestamp dt15f = new Timestamp(2017,7,8,13,0,0,0);  
+        
+        
+         // PERIODO 2
+        
     }
 
     @Override
