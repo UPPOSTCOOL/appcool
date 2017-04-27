@@ -4,23 +4,38 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.PAcademicoMapper">
-<!--
+
     <select parameterType="map" id="consultarPAcademicos" resultMap="PAcademicoResult">
         
         select
-    
+
         p.id as P_id,
         p.ano as P_ano,
         p.semestre as P_semestre,
 
-        
-        m.id as M_materiaID,
-	m.nombre as M_nombre  
-	
+        m.codigo as M_materiaID,
+        m.nombre as M_nombre,
 
-        FROM periodo as p 
-        left join mater_perio as mp on p.id=mp.periodo_id 
-        left join materia as m on mp.materia_id = m.id
+        mp.cohorte as M_cohorte,
+
+        pr.id as PR_id,
+        pr.nombre as PR_nombre,
+
+        a.nombre as as_nombre,
+        a.id as as_id,
+        a.posgrado_id as as_programaId
+
+        FROM periodo as p, mater_perio as mp, profesor as pr, asignatura as a, materia as m
+
+        WHERE
+
+        p.id = mp.periodo_id AND
+        mp.profesor_id = p.id AND
+        mp.materia_id = m.codigo AND
+        m.asignatura_id = a.id 
+
+
+
          
     </select>
   
@@ -34,5 +49,5 @@
     </resultMap>       
              
 
-                   -->        	
+                         	
 </mapper>

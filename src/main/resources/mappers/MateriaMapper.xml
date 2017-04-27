@@ -9,11 +9,9 @@
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
         <result property='cohorte' column='cohorte'/>
-        <result property='numClases' column='totClases'/>
-        <result property='numHoras' column='totHoras'/>
-        <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
-        <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
-        <collection property="clases" ofType="Clase" resultMap="edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult"></collection>
+        <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='PR_'></association>
+        <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='as_'></association>
+        
     </resultMap>
     
     <!--
