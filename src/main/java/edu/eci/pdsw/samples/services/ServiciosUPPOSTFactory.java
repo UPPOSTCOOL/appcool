@@ -29,7 +29,6 @@ public class ServiciosUPPOSTFactory {
     
     private ServiciosUPPOSTFactory(){
         injector = createInjector(new XMLMyBatisModule() {
-
                     @Override
                     protected void initialize() {
 

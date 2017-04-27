@@ -20,6 +20,8 @@ public class Clase {
     private Timestamp fecha;
     private Timestamp horafin;
     private int idMateria=0;
+    private int cohorte;
+    private Materia materia;
     
 
     public Clase(int id, Recurso descripcion,Timestamp fecha, Timestamp horafin, int idMateria) {
@@ -73,5 +75,21 @@ public class Clase {
    // public String toString() {
    //     return "clase{" + "id=" + id + ", descripcion=" + descripcion + '}';
   //  }
+
+    public int getCohorte() {
+        return cohorte;
+    }
+
+    public void setCohorte(int cohorte) {
+        this.cohorte = cohorte;
+    }
+
+    public Materia getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
+    }
     
 }

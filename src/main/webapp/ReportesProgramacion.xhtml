@@ -16,35 +16,40 @@ and open the template in the editor.
     <body>
         <img src="Imagenes/eci2.jpg" height="100" />
         <h:form id="formularioProgramacion">  
-            <p:dataTable id="reporte" var="Reporte" <!--value="{ProgramacionBean.}"-->>
+            <!--value="{ProgramacionBean.clases}"-->
+            <p:dataTable id="reporte" var="reporte" >
                          
                 <p:column headerText="Cohorte">
-                    <h:outputText value="#{Reporte.cohorte}" />
+                    <h:outputText value="#{reporte.cohorte}" />
                 </p:column>
 
                 <p:column headerText="Asignaturas">
-                    <h:outputText value="#{Reporte.asignaturas}" />
+                    <h:outputText value="#{reporte.materia.asignatura.nombre}" />
                 </p:column>
                          
                 <p:column headerText="Materias">
-                    <h:outputText value="#{Reporte.materias}" />
+                    <h:outputText value="#{reporte.idMateria}" />
                 </p:column>
 
                 <p:column headerText="Profesor">
-                    <h:outputText value="#{Reporte.profesor}" />
+                    <h:outputText value="#{reporte.materia.profesor.nombre}" />
                 </p:column>
 
                 <p:column headerText="Horas">
-                    <h:outputText value="#{Reporte.horas}" />
+                    <h:outputText value="#{reporte.horafin}" />
                 </p:column>
 
                 <p:column headerText="Dias">
-                    <h:outputText value="#{Reporte.dias}" />
+                    <h:outputText value="#{reporte.fecha}" />
                 </p:column>
 
-                <p:column headerText="Sesion">
-                    <h:outputText value="#{Reporte.sesion}" />
-                </p:column>                        
+                <f:facet name="footer">
+                        <p:commandButton update=":formularioProgramacion" value="Elegir Periodo" action="Periodos" immediate="true"/>
+                </f:facet>                   
+                
+                <f:facet name="footer">
+                        <p:commandButton update=":formularioProgramacion" value="Consultar Reporte" action="ReportesSalones" immediate="true"/>
+                </f:facet>                   
             </p:dataTable>
         </h:form>
     </body>

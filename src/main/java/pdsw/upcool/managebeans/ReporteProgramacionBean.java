@@ -12,49 +12,58 @@ import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author paula
+ * @author Paula
  */
 
 @ManagedBean(name = "ProgramacionBean")
 @SessionScoped
 public class ReporteProgramacionBean implements Serializable{
+    /**
     ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     
-    public List<Periodo> periodos;
-    public Map<Materia,Clase> clases;
-   // public Map<String,Integer>descripcion;
+    Periodo periodo;
+   
+    public List<Periodo> getPeriodos() throws ExcepcionServiciosUPPOST {
+        return sp.consultarPAcademicos();
+    }
+     
+    public List<Materia> getMaterias() throws ExcepcionServiciosUPPOST {
+        return sp.consultarMaterias(0, 0);
+    }
+   
+    public List<Periodo> getCohortes() throws ExcepcionServiciosUPPOST {
+        return sp.consultarPAcademico(periodo);
+    }
     
     
-    public ReporteProgramacionBean() throws ExcepcionServiciosUPPOST{
-        periodos=sp.consultarPAcademicos();
-        clases= new TreeMap<Materia,Clase>();      
-        
-        
-        
+    public String getProfesor(Clase clase) throws ExcepcionServiciosUPPOST {
+        return sp.consultarProfesor(clase.getCohorte(), clase.getMateria().getProfesor().getNombre()).toString();
     }
-
     
-    public List<Periodo> getPeriodos() {
-        return periodos;
+    
+    public List<Clase> getClases() throws ExcepcionServiciosUPPOST {
+        return sp.consultarClasePeriodo(periodo);
     }
-
-    public void setPeriodos(List<Periodo> periodos) {
-        this.periodos = periodos;
+    
+    
+    public List<Date> getFechas() throws ExcepcionServiciosUPPOST {
+        List<Date> fechas= sp.consultarFechas(periodo);
+        return fechas;
     }
-
-    public Map<Materia, Clase> getClases() {
-        return clases;
+    
+    public Periodo getPeriodo() {
+        return periodo;
     }
-
-    public void setClases(Map<Materia, Clase> clases) {
-        this.clases = clases;
+    
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
     }
+    * */
 }
