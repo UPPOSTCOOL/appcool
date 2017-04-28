@@ -11,6 +11,7 @@ import edu.eci.pdsw.samples.entities.Periodo;
 import edu.eci.pdsw.samples.entities.Profesor;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
+import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -83,7 +84,8 @@ public class Reg_semestralBean implements Serializable{
         
     public List<Materia> getReportesMaterias() throws ExcepcionServiciosUPPOST{
         //return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
-        materias = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesLocal().consultarMaterias(1,2017);
+        ServiciosUPPOSTImplStub inp = new ServiciosUPPOSTImplStub();
+        materias = inp.consultarMaterias(1,2017);
         return materias;
     }
     
