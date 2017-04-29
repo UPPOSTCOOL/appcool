@@ -5,36 +5,28 @@
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaMapper">
     <resultMap type='Materia' id='MateriaResult'>
-        <id property='id' column='id'/>
+        <id property='codigo' column='codigo'/>
         <result property='nombre' column='nombre'/>
         <result property='cohorte' column='cohorte'/>
         <result property='numClases' column='totClases'/>
         <result property='numHoras' column='totHoras'/>
+        <result property='numHoras' column='totHoras'/>
         <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
         <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
     </resultMap>
-    <!--
-    <resultMap type='Profesor' id='ProfesorResult'>
-        <id property='id' column='id'/>
-        <result property='nombre' column='nombre'/>
-    </resultMap>
-    <resultMap type='Asignatura' id='AsignaturaResult'>
-        <id property='id' column='id'/>
-        <result property='nombre' column='nombre'/>
-    </resultMap>
-    -->
     <select parameterType="map" id="consultarMateriasClase" resultMap="MateriaResult">
         select 
             M.codigo,
             M.nombre,
             MP.cohorte,
+            c_.totClases,
+            c_.totHoras,
             A.id as asignatura_id,
             A.nombre as asignatura_nombre,
             P.id as profesor_id,
             P.nombre as profesor_nombre,
+            C.id as clase_id,
             C.fecha as clase_fecha,
-            c_.totClases,
-            c_.totHoras,
             CONCAT(Extract(hour from fecha),' a ',Extract(hour from horaFin)) as clase_rangoHoras
         from 
             Mater_Perio MP
