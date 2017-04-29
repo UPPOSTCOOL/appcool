@@ -25,7 +25,7 @@
     -->
     <select parameterType="map" id="consultarMateriasClase" resultMap="MateriaResult">
         select 
-            M.id as id,
+            M.codigo as id,
             M.nombre as nombre,
             MP.cohorte as cohorte,
             A.id as asignatura_id,
@@ -40,11 +40,11 @@
             Clase C,
             Periodo PE
         WHERE 
-            MP.Materia_id=M.id and 
+            MP.Materia_id=M.codigo and 
             M.Asignatura_id=A.id and
             P.id=MP.Profesor_id and
-            C.Mater_Cohor_Materia_id=MP.Materia_id and
-            C.Mater_Cohor_cohorte=MP.cohorte and
+            C.Mater_Perio_Materia_id=MP.Materia_id and
+            C.Mater_Perio_cohorte=MP.cohorte and
             MP.Periodo_id=PE.id and
             PE.ano=2017 and
             PE.semestre=1;
