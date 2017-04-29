@@ -10,11 +10,9 @@ import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Periodo;
 import edu.eci.pdsw.samples.entities.Profesor;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
 import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -50,7 +48,11 @@ public class Reg_semestralBean implements Serializable{
         this.periodos = periodos;
     }
 
-    public List<Materia> getMaterias() {
+    public List<Materia> getMaterias() throws ExcepcionServiciosUPPOST {
+        ServiciosUPPOSTImplStub inp = new ServiciosUPPOSTImplStub();
+        materias = inp.consultarMaterias(1,2017);
+        System.out.println("getMaterias");
+        System.out.println(materias.size());
         return materias;
     }
 
@@ -86,6 +88,7 @@ public class Reg_semestralBean implements Serializable{
         //return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
         ServiciosUPPOSTImplStub inp = new ServiciosUPPOSTImplStub();
         materias = inp.consultarMaterias(1,2017);
+        System.out.println("getRepotesMaterias");
         return materias;
     }
     

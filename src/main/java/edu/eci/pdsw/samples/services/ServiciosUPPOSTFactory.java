@@ -63,7 +63,7 @@ public class ServiciosUPPOSTFactory {
                 }
                 
         );
-        
+        /*
         local = createInjector(new XMLMyBatisModule() {
 
                     @Override
@@ -78,7 +78,7 @@ public class ServiciosUPPOSTFactory {
                 }
                 
         );
-        
+     */   
     }
 
     public ServiciosUPPOST getUPPOSTServices(){
@@ -89,9 +89,10 @@ public class ServiciosUPPOSTFactory {
         return testingInjector.getInstance(ServiciosUPPOST.class);   
     }
 
+    /*
     public ServiciosUPPOST getUPPOSTServicesLocal(){
         return local.getInstance(ServiciosUPPOST.class);   
-    }
+    }*/
 
     
     public static ServiciosUPPOSTFactory getInstance(){

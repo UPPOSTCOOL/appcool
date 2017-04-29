@@ -288,27 +288,27 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         // todas las materias
         
-        ArrayList<Materia> matAll= new ArrayList<>();
-        matAll.add(mat1);
-        matAll.add(mat2);
-        matAll.add(mat3);
-        matAll.add(mat4);
-        matAll.add(mat5);
-        matAll.add(mat6);
-        matAll.add(mat7);
-        matAll.add(mat8);
-        matAll.add(mat9);
-        matAll.add(mat10);
-        matAll.add(mat11);
-        matAll.add(mat12);
-        matAll.add(mat13);
-        matAll.add(mat14);
-        matAll.add(mat15);
+        //ArrayList<Materia> matAll= new ArrayList<>();
+        materias.add(mat1);
+        materias.add(mat2);
+        materias.add(mat3);
+        materias.add(mat4);
+        materias.add(mat5);
+        materias.add(mat6);
+        materias.add(mat7);
+        materias.add(mat8);
+        materias.add(mat9);
+        materias.add(mat10);
+        materias.add(mat11);
+        materias.add(mat12);
+        materias.add(mat13);
+        materias.add(mat14);
+        materias.add(mat15);
                      
         
         // Para Periodo
         
-        Periodo per1 = new Periodo(1,matAll,2017,1);
+        Periodo per1 = new Periodo(1,materias,2017,1);
        
         periodosAll.add(per1);
         
@@ -318,6 +318,9 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
     @Override
     public List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST {
+        for(int i=0;i<clasesAll.size();i++){
+            System.out.println(clasesAll.get(i));
+        }
         return clasesAll;
     }
 
