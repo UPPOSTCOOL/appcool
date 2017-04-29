@@ -9,31 +9,31 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <head>
-        <title>Periodos Academicos</title>
+    <h:head>
+        <title>Reporte Programacion Semestral </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <img src="Imagenes/eci2.jpg" height="100" />
-        <h:form id="formularioPeriodo">  
-            <p:dataTable var="periodo" value="#{PeriodoBean.periodos}" 
-                         selectionMode="single" selection="#{PeriodoBean.periodo}" 
-                         rowKey="#{periodo.id}">
+    </h:head>
 
-                <p:column headerText="Periodo Academico">
-                    <h:outputText value="#{periodo.id}" />
-                </p:column>
-                
-    
+    <h:body>
+        <img src="Imagenes/eci2.jpg" height="80" />
 
-                <f:facet name="footer">
-                    <p:commandButton value="ReporteGeneral" action="ReportesProgramacion.xhtml"/>
-                </f:facet>
-                
-                <f:facet name="footer">
-                    <p:commandButton value="ReporteSalones" action="ReportesSalones.xhtml"/>
-                </f:facet>
-            </p:dataTable>
+        <h:form id="periodo" style="text-align: center;">
+            <h1>Consultar Reportes Periodo</h1>
+            <p>Ingrese el año</p>
+            <p:inputText id="Año" ></p:inputText>     
+            <p>Ingrese el semestre</p>         
+
+            <select name="periodos">
+                <option>1</option>
+                <option>2</option>
+                <option>Intersemestral</option>
+
+            </select>
+            <!--<p:inputText id="Semestre" value="{reporteBean.semestre}" label="SemestredelPrograma"></p:inputText> </p>            -->
+            <f:facet name="footer">
+                <p:commandButton update=":periodo" value="Reporte Programación" action="ReportesProgramacion" immediate="true"/>
+            </f:facet> 
         </h:form>
-    </body>
+    </h:body>
 </html>
+
