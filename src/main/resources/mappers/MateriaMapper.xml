@@ -34,7 +34,8 @@
             P.nombre as profesor_nombre,
             C.fecha as clase_fecha,
             c_.totClases,
-            c_.totHoras
+            c_.totHoras,
+            CONCAT(Extract(hour from fecha),' a ',Extract(hour from horaFin)) as clase_rangoHoras
         from 
             Mater_Perio MP
             inner join (select Mater_Perio_Materia_id,Mater_Perio_cohorte,count(*) as totClases, SUM(Extract(hour from horaFin)-Extract(hour from fecha)) as totHoras
