@@ -31,9 +31,17 @@
             A.id as asignatura_id,
             A.nombre as asignatura_nombre,
             P.id as profesor_id,
-            P.nombre as profesor_nombre
+            P.nombre as profesor_nombre,
+            C.fecha as clase_fecha,
+            c_.totHoras
         from 
-            Mater_Perio MP,
+            Mater_Perio MP
+            	inner join (select Mater_Perio_Materia_id,Mater_Perio_cohorte,count(*) as totHoras
+	            from Clase
+	            group by Mater_Perio_Materia_id,Mater_Perio_cohorte
+	            ) c_ on
+	                c_.Mater_Perio_Materia_id=MP.Materia_id and 
+	                c_.Mater_Perio_cohorte=MP.cohorte,
             Asignatura A,
             Materia M,
             Profesor P,
