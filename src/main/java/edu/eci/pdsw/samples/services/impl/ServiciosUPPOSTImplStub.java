@@ -192,21 +192,21 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         Recurso recurso = new Recurso(100, "recurso");        
         
-        Clase cl1a = new Clase(1,recurso,dt777, dt778, 1);
-        Clase cl2a = new Clase(1,recurso,dt778, dt7710, 2);        
-        Clase cl3a = new Clase(1,recurso,dt7710, dt7711, 3);      
-        Clase cl4a = new Clase(1,recurso,dt7712, dt7713, 4);      
-        Clase cl5a = new Clase(1,recurso,dt7713, dt7714, 5);      
-        Clase cl6a = new Clase(1,recurso,dt7714, dt7715, 6);
-        Clase cl7a = new Clase(1,recurso,dt1067, dt1068, 7);  // ----------------
-        Clase cl8a = new Clase(1,recurso,dt1068, dt10610, 8); 
-        Clase cl9a = new Clase(1,recurso,dt10610, dt10611, 9);
-        Clase cl10a = new Clase(1,recurso,dt10611, dt10612, 10); 
-        Clase cl11a = new Clase(1,recurso,dt10612, dt10613, 11); 
-        Clase cl12a = new Clase(1,recurso,dt10613, dt10614, 12); 
-        Clase cl13a = new Clase(1,recurso,dt3067, dt30610, 13);  // ---------------- //
-        Clase cl14a = new Clase(1,recurso,dt30610, dt30611, 14);
-        Clase cl15a = new Clase(1,recurso,dt30611, dt30612, 15);
+        Clase cl1a = new Clase(1,recurso,dt777, dt778, "7 a 8", "M1",24);
+        Clase cl2a = new Clase(2,recurso,dt778, dt7710, "8 a 10","M2",24);        
+        Clase cl3a = new Clase(3,recurso,dt7710, dt7711,"10 a 11","M3",24);      
+        Clase cl4a = new Clase(4,recurso,dt7712, dt7713,"12 a 13","M4",24);      
+        Clase cl5a = new Clase(5,recurso,dt7713, dt7714,"13 a 14","M5",24);      
+        Clase cl6a = new Clase(6,recurso,dt7714, dt7715,"14 a 15","M6",24);      
+        Clase cl7a = new Clase(7,recurso,dt1067, dt1068,"7 a 8","M7",24);        // ----------------
+        Clase cl8a = new Clase(8,recurso,dt1068, dt10610,"8 a 10","M8",24);      
+        Clase cl9a = new Clase(9,recurso,dt10610, dt10611,"10 a 11","M9",24);      
+        Clase cl10a = new Clase(10,recurso,dt10611, dt10612,"11 a 12","M10",24);       
+        Clase cl11a = new Clase(11,recurso,dt10612, dt10613,"12 a 13","M11",23);       
+        Clase cl12a = new Clase(12,recurso,dt10613, dt10614,"13 a 14","M12",23);       
+        Clase cl13a = new Clase(13,recurso,dt3067, dt30610,"7 a 10","M13",25);        // ---------------- //
+        Clase cl14a = new Clase(14,recurso,dt30610, dt30611,"10 a 11","M14",25);      
+        Clase cl15a = new Clase(15,recurso,dt30611, dt30612,"11 a 12","M115",25);      
         
         // lista clases para materias
         ArrayList<Clase> clasesM1 = new ArrayList<>();
@@ -264,25 +264,25 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         // Materias son 5 grupos de materias
               
-        Materia mat1 = new Materia(1, "Gerencia de riesgos", 24, 1, 1, prof1, asig1, clasesM1 );
-        Materia mat2 = new Materia(2, "G cominicaciones", 24, 1, 1, prof1, asig1, clasesM2 );
-        Materia mat3 = new Materia(3, "G calidad", 24, 1, 1, prof1, asig1, clasesM3 );
-        Materia mat4 = new Materia(4, "Liderazgoy trabajo", 24, 1, 1, prof1, asig1, clasesM4 );
-        Materia mat5 = new Materia(5, "Negociación", 24, 1, 1, prof1, asig1, clasesM5 );
-        Materia mat6 = new Materia(6, "Creatividad Inn", 24, 1, 1, prof1, asig1, clasesM6 );
+        Materia mat1 = new Materia("M1", "Gerencia de riesgos", 24, 1, 1, prof1, asig1, clasesM1 );
+        Materia mat2 = new Materia("M2", "G cominicaciones", 24, 1, 1, prof1, asig1, clasesM2 );
+        Materia mat3 = new Materia("M3", "G calidad", 24, 1, 1, prof1, asig1, clasesM3 );
+        Materia mat4 = new Materia("M4", "Liderazgoy trabajo", 24, 1, 1, prof1, asig1, clasesM4 );
+        Materia mat5 = new Materia("M5", "Negociación", 24, 1, 1, prof1, asig1, clasesM5 );
+        Materia mat6 = new Materia("M6", "Creatividad Inn", 24, 1, 1, prof1, asig1, clasesM6 );
         
-        Materia mat7 = new Materia(7, "Taller trabajo grado", 24, 1, 1, prof2, asig2, clasesM7 );
-        Materia mat8 = new Materia(8, "Taller trabajo grado2", 24, 1, 1, prof2, asig2, clasesM8 );
-        Materia mat9 = new Materia(9, "Sustentacion grup", 24, 1, 1, prof2, asig2, clasesM9 );
-        Materia mat10 = new Materia(10, "Intro a la Investigacion", 24, 1, 1, prof2, asig2, clasesM10 );
+        Materia mat7 = new Materia("M7", "Taller trabajo grado", 24, 1, 1, prof2, asig2, clasesM7 );
+        Materia mat8 = new Materia("M8", "Taller trabajo grado2", 24, 1, 1, prof2, asig2, clasesM8 );
+        Materia mat9 = new Materia("M9", "Sustentacion grup", 24, 1, 1, prof2, asig2, clasesM9 );
+        Materia mat10 = new Materia("M10", "Intro a la Investigacion", 24, 1, 1, prof2, asig2, clasesM10 );
         
-        Materia mat11 = new Materia(11, "Proyecto de vida", 23, 1, 1, prof3, asig3, clasesM11 );
+        Materia mat11 = new Materia("M11", "Proyecto de vida", 23, 1, 1, prof3, asig3, clasesM11 );
         
-        Materia mat12 = new Materia(12, "Etica", 23, 1, 1, prof4, asig4, clasesM12 );
+        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12 );
         
-        Materia mat13 = new Materia(13, "Intro a ejecucion", 25, 1, 1, prof5, asig5, clasesM13 );
-        Materia mat14 = new Materia(14, "Requerimientos", 25, 1, 1, prof5, asig5, clasesM14 );
-        Materia mat15 = new Materia(15, "Construccion", 25, 1, 1, prof5, asig5, clasesM15 );
+        Materia mat13 = new Materia("M13", "Intro a ejecucion", 25, 1, 1, prof5, asig5, clasesM13 );
+        Materia mat14 = new Materia("M14", "Requerimientos", 25, 1, 1, prof5, asig5, clasesM14 );
+        Materia mat15 = new Materia("M15", "Construccion", 25, 1, 1, prof5, asig5, clasesM15 );
         
         // todas las materias
         
@@ -450,21 +450,21 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         Recurso recurso = new Recurso(100, "recurso -2");        
         
-        Clase cl1a = new Clase(1,recurso,dt777, dt778, 31);
-        Clase cl2a = new Clase(1,recurso,dt778, dt7710, 32);        
-        Clase cl3a = new Clase(1,recurso,dt7710, dt7711, 33);      
-        Clase cl4a = new Clase(1,recurso,dt7712, dt7713, 34);      
-        Clase cl5a = new Clase(1,recurso,dt7713, dt7714, 35);      
-        Clase cl6a = new Clase(1,recurso,dt7714, dt7715, 36);
-        Clase cl7a = new Clase(1,recurso,dt1067, dt1068, 37);  // ----------------
-        Clase cl8a = new Clase(1,recurso,dt1068, dt10610, 38); 
-        Clase cl9a = new Clase(1,recurso,dt10610, dt10611, 39);
-        Clase cl10a = new Clase(1,recurso,dt10611, dt10612, 40); 
-        Clase cl11a = new Clase(1,recurso,dt10612, dt10613, 41); 
-        Clase cl12a = new Clase(1,recurso,dt10613, dt10614, 42); 
-        Clase cl13a = new Clase(1,recurso,dt3067, dt30610, 43);  // ---------------- //
-        Clase cl14a = new Clase(1,recurso,dt30610, dt30611, 44);
-        Clase cl15a = new Clase(1,recurso,dt30611, dt30612, 45);
+        Clase cl1a = new Clase(1,recurso,dt777, dt778, "7 a 8", "M1",24);
+        Clase cl2a = new Clase(2,recurso,dt778, dt7710, "8 a 10","M2",24);        
+        Clase cl3a = new Clase(3,recurso,dt7710, dt7711,"10 a 11","M3",24);      
+        Clase cl4a = new Clase(4,recurso,dt7712, dt7713,"12 a 13","M4",24);      
+        Clase cl5a = new Clase(5,recurso,dt7713, dt7714,"13 a 14","M5",24);      
+        Clase cl6a = new Clase(6,recurso,dt7714, dt7715,"14 a 15","M6",24);      
+        Clase cl7a = new Clase(7,recurso,dt1067, dt1068,"7 a 8","M7",24);        // ----------------
+        Clase cl8a = new Clase(8,recurso,dt1068, dt10610,"8 a 10","M8",24);      
+        Clase cl9a = new Clase(9,recurso,dt10610, dt10611,"10 a 11","M9",24);      
+        Clase cl10a = new Clase(10,recurso,dt10611, dt10612,"11 a 12","M10",24);       
+        Clase cl11a = new Clase(11,recurso,dt10612, dt10613,"12 a 13","M11",23);       
+        Clase cl12a = new Clase(12,recurso,dt10613, dt10614,"13 a 14","M12",23);       
+        Clase cl13a = new Clase(13,recurso,dt3067, dt30610,"7 a 10","M13",25);        // ---------------- //
+        Clase cl14a = new Clase(14,recurso,dt30610, dt30611,"10 a 11","M14",25);      
+        Clase cl15a = new Clase(15,recurso,dt30611, dt30612,"11 a 12","M115",25); 
         
         // lista clases para materias
         ArrayList<Clase> clasesM1 = new ArrayList<>();
@@ -522,25 +522,25 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         // Materias son 5 grupos de materias
               
-        Materia mat1 = new Materia(1, "Gerencia de riesgos", 24, 1, 1, prof1, asig1, clasesM1 );
-        Materia mat2 = new Materia(2, "G cominicaciones", 24, 1, 1, prof1, asig1, clasesM2 );
-        Materia mat3 = new Materia(3, "G calidad", 24, 1, 1, prof1, asig1, clasesM3 );
-        Materia mat4 = new Materia(4, "Liderazgoy trabajo", 24, 1, 1, prof1, asig1, clasesM4 );
-        Materia mat5 = new Materia(5, "Negociación", 24, 1, 1, prof1, asig1, clasesM5 );
-        Materia mat6 = new Materia(6, "Creatividad Inn", 24, 1, 1, prof1, asig1, clasesM6 );
+        Materia mat1 = new Materia("M1", "Gerencia de riesgos 2", 24, 1, 1, prof1, asig1, clasesM1 );
+        Materia mat2 = new Materia("M2", "G cominicaciones 2", 24, 1, 1, prof1, asig1, clasesM2 );
+        Materia mat3 = new Materia("M3", "G calidad 2", 24, 1, 1, prof1, asig1, clasesM3 );
+        Materia mat4 = new Materia("M4", "Liderazgoy trabajo 2", 24, 1, 1, prof1, asig1, clasesM4 );
+        Materia mat5 = new Materia("M5", "Negociación 2", 24, 1, 1, prof1, asig1, clasesM5 );
+        Materia mat6 = new Materia("M6", "Creatividad Inn 2", 24, 1, 1, prof1, asig1, clasesM6 );
         
-        Materia mat7 = new Materia(7, "Taller trabajo grado", 24, 1, 1, prof2, asig2, clasesM7 );
-        Materia mat8 = new Materia(8, "Taller trabajo grado2", 24, 1, 1, prof2, asig2, clasesM8 );
-        Materia mat9 = new Materia(9, "Sustentacion grup", 24, 1, 1, prof2, asig2, clasesM9 );
-        Materia mat10 = new Materia(10, "Intro a la Investigacion", 24, 1, 1, prof2, asig2, clasesM10 );
+        Materia mat7 = new Materia("M7", "Taller trabajo grado 2", 24, 1, 1, prof2, asig2, clasesM7 );
+        Materia mat8 = new Materia("M8", "Taller trabajo grado2 w2", 24, 1, 1, prof2, asig2, clasesM8 );
+        Materia mat9 = new Materia("M9", "Sustentacion grup 2", 24, 1, 1, prof2, asig2, clasesM9 );
+        Materia mat10 = new Materia("M10", "Intro a la Investigacion 2", 24, 1, 1, prof2, asig2, clasesM10 );
         
-        Materia mat11 = new Materia(11, "Proyecto de vida", 23, 1, 1, prof3, asig3, clasesM11 );
+        Materia mat11 = new Materia("M11", "Proyecto de vida 2", 23, 1, 1, prof3, asig3, clasesM11 );
         
-        Materia mat12 = new Materia(12, "Etica", 23, 1, 1, prof4, asig4, clasesM12 );
+        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12 );
         
-        Materia mat13 = new Materia(13, "Intro a ejecucion", 25, 1, 1, prof5, asig5, clasesM13 );
-        Materia mat14 = new Materia(14, "Requerimientos", 25, 1, 1, prof5, asig5, clasesM14 );
-        Materia mat15 = new Materia(15, "Construccion", 25, 1, 1, prof5, asig5, clasesM15 );
+        Materia mat13 = new Materia("M13", "Intro a ejecucion 2", 25, 1, 1, prof5, asig5, clasesM13 );
+        Materia mat14 = new Materia("M14", "Requerimientos 2", 25, 1, 1, prof5, asig5, clasesM14 );
+        Materia mat15 = new Materia("M15", "Construccion 2", 25, 1, 1, prof5, asig5, clasesM15 );
         
         // todas las materias
         
