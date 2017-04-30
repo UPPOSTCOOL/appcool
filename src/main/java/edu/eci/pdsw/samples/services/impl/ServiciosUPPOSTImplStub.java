@@ -38,11 +38,11 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     private List<Materia> materiasAll2;
 
     public ServiciosUPPOSTImplStub() {
-        clasesAll1 = new ArrayList<Clase>();
-        materiasAll1 = new ArrayList<Materia>();
-        clasesAll2 = new ArrayList<Clase>();
-        materiasAll2 = new ArrayList<Materia>();
-        periodosAll = new ArrayList<Periodo>();
+        clasesAll1 = new ArrayList<>();
+        materiasAll1 = new ArrayList<>();
+        clasesAll2 = new ArrayList<>();
+        materiasAll2 = new ArrayList<>();
+        periodosAll = new ArrayList<>();
         poblar();
     }
 
@@ -574,44 +574,57 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     @Override
     public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
         Clase clx = null;
-        List<Clase> all = new ArrayList<>();
-        /*
-        all = Stream.of(clasesAll1, clasesAll2);
+        List<Clase> all = (List<Clase>) Stream.of(clasesAll1, clasesAll2);
         try {
-            for(int i=0;){
+            
+            for(int i=0;i<all.size();i++){
+                if(id==all.get(i).getId()){ clx = all.get(i); }
             }
+            
+            if(clx== null) System.err.println(all.size());
         } catch (Exception e) {
+            System.err.println("Consulatar clase: "+e);            
         }
-        
-        for(){
-        }
-        
-        */
        return clx;
     }
 
     @Override
     public List<Clase> consultarClases() throws ExcepcionServiciosUPPOST {
-         // id periodo - 0: todos, 1: per 1, 2: per2
-         /*
-        if(id == 0){
-            
-        }*/
+         List<Clase> all = (List<Clase>) Stream.of(clasesAll1, clasesAll2);
          
-       return null;
+       return all;
     }
 
     @Override
     public List<Materia> consultarMaterias(int semestre, int anio) throws ExcepcionServiciosUPPOST {
-        return materias;
+        List<Materia> clx= new ArrayList<>();
+        /*
+        List<Materia> all = (List<Materia>) Stream.of(materiasAll1, materiasAll2);
+        Materia mat;
+        try {
+            
+            for(int i=0;i<all.size();i++){
+                mat = all.get(i);
+                
+                if(mat.getFecha().anio == anio and mat.getSemestre() == semestre){clx.add(mat)}             
+            }
+            
+            if(clx== null) System.err.println(all.size());
+        } catch (Exception e) {
+            System.err.println("Consulatar clase: "+e);            
+        }
+        */
+        if(semestre == 2){ clx = materiasAll2;}
+        else{clx = materiasAll1;}
+           
+        
+        if(clx.isEmpty()){System.err.println("Consulatar Materias vacio");  }
+        return clx;
     }
     
     @Override
     public List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST {
-        /*
-        for(int i=0;i<clasesAll.size();i++){
-            System.out.println(clasesAll.get(i));
-        } */
+       
         return clasesAll1;
     }
 

@@ -22,6 +22,8 @@ public class Materia implements Serializable{
     private Profesor profesor;
     private Asignatura asignatura;
     private List<Clase> clases;
+    // private int semestre;
+    // private anio;
 
     public Materia(String codigo, String nombre, int cohorte, int numClases, int numHoras,
             Profesor profesor, Asignatura asignatura, List<Clase> clases) {
