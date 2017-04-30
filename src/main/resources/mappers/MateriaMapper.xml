@@ -10,9 +10,9 @@
         <result property='cohorte' column='cohorte'/>
         <result property='numClases' column='totClases'/>
         <result property='numHoras' column='totHoras'/>
-        <result property='numHoras' column='totHoras'/>
         <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
         <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
+        <association property="clases" javaType="Clase" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='clase_'></association>
     </resultMap>
     <select parameterType="map" id="consultarMateriasClase" resultMap="MateriaResult">
         select 
@@ -48,7 +48,7 @@
             C.Mater_Perio_Materia_id=MP.Materia_id and
             C.Mater_Perio_cohorte=MP.cohorte and
             MP.Periodo_id=PE.id and
-            PE.ano=2017 and
-            PE.semestre=1;
+            PE.ano=#{anio} and
+            PE.semestre=#{semestre};
     </select>
 </mapper>
