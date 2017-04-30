@@ -19,6 +19,7 @@ import edu.eci.pdsw.samples.daos.MateriaDAO;
 import edu.eci.pdsw.samples.daos.PAcademicoDAO;
 import edu.eci.pdsw.samples.daos.ProfesorDAO;
 import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImpl;
+import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
@@ -73,21 +74,23 @@ public class ServiciosUPPOSTFactory {
 
         }
         );
-
     }
-
+    
     public ServiciosUPPOST getUPPOSTServices() {
         return injector.getInstance(ServiciosUPPOST.class);
     }
+
 
     public ServiciosUPPOST getUPPOSTServicesForTesting() {
         return testingInjector.getInstance(ServiciosUPPOST.class);
     }
 
+
     public static ServiciosUPPOSTFactory getInstance() {
         return instance;
     }
     
+
     public AsignaturaDAO getAsignaturaDAO(){
         return injector.getInstance(AsignaturaDAO.class);
     }
@@ -131,5 +134,6 @@ public class ServiciosUPPOSTFactory {
 
     public static void main(String a[]) throws ExcepcionServiciosUPPOST {
         //System.out.println(ServiciosSuscripcionesFactory.getInstance().getSuscriptionServices().comenteriosMasBajosPorRangoEdad(1, 10));
+
     }
 }

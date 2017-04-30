@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.samples.managedbeans;
 
+
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.PeriodoAcademico;
 import edu.eci.pdsw.samples.entities.Recurso;
@@ -36,10 +37,10 @@ public class PeriodoBean implements Serializable{
     }
     
     
-
     public List<PeriodoAcademico> getPeriodos() throws ExcepcionServiciosUPPOST {
-        return sp.consultarPAcademicos();
+        return periodos;
     }
+
 
     public void setPeriodos(List<PeriodoAcademico> periodos) {
         this.periodos = periodos;

@@ -4,8 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.AsignaturaMapper">
- <resultMap type='Asignatura' id='AsignaturaResult'>
+<!--
+    <resultMap type='Asignatura' id='AsignaturaResult'>
+
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
-    </resultMap> 
+    </resultMap>
+    --> 
 </mapper>

@@ -12,8 +12,9 @@ import java.util.List;
  *
  * @author 2092815
  */
+
 public class PeriodoAcademico implements Serializable {
-    
+
     private int id;
     private List<Materia> materias;
     private int ano;

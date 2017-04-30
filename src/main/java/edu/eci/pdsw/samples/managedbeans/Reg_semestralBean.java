@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package edu.eci.pdsw.samples.managedbeans;
+
+import edu.eci.pdsw.samples.entities.Asignatura;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
+import edu.eci.pdsw.samples.entities.PeriodoAcademico;
+import edu.eci.pdsw.samples.entities.Profesor;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
+import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -23,91 +27,74 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "RegsemBean")
 @SessionScoped
 public class Reg_semestralBean implements Serializable{
-    private ArrayList<String> periodo;
-    private ArrayList<String> cohorte;
-    private ArrayList<String> asignaturas;
-    private ArrayList<String> profesor;
-    private ArrayList<String> horas;
-    private ArrayList<String> dias;
-    private ArrayList<String> sesion;
+    private ServiciosUPPOSTImplStub inp = new ServiciosUPPOSTImplStub();
+    
+    private List<PeriodoAcademico> periodos;
+    private List<Materia> materias;
+    private List<Asignatura> asignaturas;
+    private List<Profesor> profesores; 
     private ArrayList<Clase> clase;
     
-    public Reg_semestralBean (){        
-        periodo = new ArrayList<String>();
-        cohorte = new ArrayList<String>();
-        asignaturas = new ArrayList<String>();
-        profesor = new ArrayList<String>();
-        horas = new ArrayList<String>();
-        dias = new ArrayList<String>();
-        sesion = new ArrayList<String>();
+    public Reg_semestralBean (){      
+        periodos = new ArrayList<PeriodoAcademico>();
+        materias = new ArrayList<Materia>();        
+        asignaturas = new ArrayList<Asignatura>();
+        profesores = new ArrayList<Profesor>(); 
         clase = new ArrayList<Clase>();
+        
     }
 
-    public List<Materia> getReportesMaterias() throws ExcepcionServiciosUPPOST{
-        return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
-    }
-    
-    public ArrayList<String> getPeriodo() {
-        return periodo;
+    public List<PeriodoAcademico> getPeriodos() {
+        return periodos;
     }
 
-    public void setPeriodo(ArrayList<String> periodo) {
-        this.periodo = periodo;
+    public void setPeriodos(ArrayList<PeriodoAcademico> periodos) {
+        this.periodos = periodos;
     }
 
-    public ArrayList<Clase> getSalones() {
-        return clase;
+    public List<Materia> getMaterias() throws ExcepcionServiciosUPPOST {
+        //ServiciosUPPOSTImplStub inp = new ServiciosUPPOSTImplStub();
+        materias = inp.consultarMaterias(1,2017);
+        System.out.println("getMaterias");
+        System.out.println(materias.size());
+        return materias;
     }
 
-    public void setSalones(ArrayList<Clase> salones) {
-        this.clase = salones;
+    public void setMaterias(ArrayList<Materia> materias) {
+        this.materias = materias;
     }
 
-    public ArrayList<String> getCohorte() {
-        return cohorte;
-    }
-
-    public void setCohorte(ArrayList<String> cohorte) {
-        this.cohorte = cohorte;
-    }
-
-    public ArrayList<String> getAsignaturas() {
+    public List<Asignatura> getAsignaturas() {
         return asignaturas;
     }
 
-    public void setAsignaturas(ArrayList<String> asignaturas) {
+    public void setAsignaturas(ArrayList<Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
     }
 
-    public ArrayList<String> getProfesor() {
-        return profesor;
+    public List<Profesor> getProfesores() {
+        return profesores;
     }
 
-    public void setProfesor(ArrayList<String> profesor) {
-        this.profesor = profesor;
+    public void setProfesores(ArrayList<Profesor> profesores) {
+        this.profesores = profesores;
     }
 
-    public ArrayList<String> getHoras() {
-        return horas;
+    public List<Clase> getClase() {
+        return clase;
     }
 
-    public void setHoras(ArrayList<String> horas) {
-        this.horas = horas;
+    public void setClase(ArrayList<Clase> clase) {
+        this.clase = clase;
     }
-
-    public ArrayList<String> getDias() {
-        return dias;
+        
+    public List<Materia> getReportesMaterias() throws ExcepcionServiciosUPPOST{
+        //return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
+        //ServiciosUPPOSTImplStub inp = new ServiciosUPPOSTImplStub();
+        materias = inp.consultarMaterias(1,2017);
+        System.out.println("getRepotesMaterias");
+        return materias;
     }
-
-    public void setDias(ArrayList<String> dias) {
-        this.dias = dias;
-    }
-
-    public ArrayList<String> getSesion() {
-        return sesion;
-    }
-
-    public void setSesion(ArrayList<String> sesion) {
-        this.sesion = sesion;
-    }
+    
+    
 }

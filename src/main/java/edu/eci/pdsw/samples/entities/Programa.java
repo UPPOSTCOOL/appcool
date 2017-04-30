@@ -23,6 +23,8 @@ public class Programa implements Serializable {
         this.asignaturas = asignaturas;
         this.nombre = nombre;
     }
+    
+    
 
     public Profesor getCoordinador() {
         return coordinador;

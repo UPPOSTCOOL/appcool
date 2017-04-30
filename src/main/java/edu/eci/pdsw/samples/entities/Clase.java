@@ -14,7 +14,7 @@ import java.sql.Timestamp;
  *
  * @author 
  */
-public class Clase {
+public class Clase implements Serializable {
     
     private int id;
     private Recurso descripcion;
@@ -26,7 +26,9 @@ public class Clase {
     private String salon;
     
 
-    public Clase(int id, Recurso descripcion, java.sql.Timestamp fecha, java.sql.Timestamp horafin,Materia Materia, String salon) {
+    public Clase(int id, Recurso descripcion, java.sql.Timestamp fecha,
+            java.sql.Timestamp horafin,Materia materia, String salon) {
+        
         this.id = id;
         this.descripcion = descripcion;
         this.fecha=fecha;
@@ -55,6 +57,14 @@ public class Clase {
         this.salon = salon;
     }
 
+    public Materia getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
+    }
+
   
 
     public Timestamp getFecha() {
@@ -73,13 +83,11 @@ public class Clase {
         this.horafin = horafin;
     }
 
-
-  
-
   
    @Override
    public String toString() {
-        return "clase{" + "id=" + id + ", descripcion=" + descripcion + '}';
+        return "clase{" + "id=" + id + ", descripcion=" + descripcion + ", Materia=" + materia + '}';
   }
     
 }
+

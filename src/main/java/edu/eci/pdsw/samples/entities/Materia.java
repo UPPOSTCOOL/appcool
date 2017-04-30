@@ -30,8 +30,8 @@ public class Materia implements Serializable{
     
     
 
-    public Materia(String codigo, String nombre, int cohorte, int numClases,
-            Profesor profesor, Asignatura asignatura,String descripcion ) {
+    public Materia(String codigo, String nombre, int cohorte,Profesor profesor,
+            Asignatura asignatura,String descripcion ) {
         
         this.codigo = codigo;
         this.nombre = nombre;

@@ -6,6 +6,7 @@
 package edu.eci.pdsw.samples.services.impl;
 
 import com.google.inject.Inject;
+
 import edu.eci.pdsw.samples.daos.AsignaturaDAO;
 import edu.eci.pdsw.samples.daos.ClaseDAO;
 import edu.eci.pdsw.samples.daos.PAcademicoDAO;
@@ -13,6 +14,7 @@ import edu.eci.pdsw.samples.entities.PeriodoAcademico;
 import edu.eci.pdsw.samples.daos.MateriaDAO;
 import edu.eci.pdsw.samples.daos.PersistenceException;
 import edu.eci.pdsw.samples.daos.ProfesorDAO;
+
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
@@ -63,4 +65,5 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     public List<Materia> consultarMaterias(int semestre, int anio) throws ExcepcionServiciosUPPOST {
         return daom.consultarMateriasDAO(semestre, anio);
     }
+
 }

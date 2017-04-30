@@ -53,5 +53,6 @@ public interface ServiciosUPPOST {
      */
     public abstract List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
     
+
     
 }

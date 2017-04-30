@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaMapper">
-
+    <!--
     <resultMap type='Materia' id='MateriaResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
@@ -16,7 +16,7 @@
         <collection property="clases" ofType="Clase" resultMap="edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult"></collection>
     </resultMap>
     
-    <!--
+
     <resultMap type='Profesor' id='ProfesorResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
@@ -25,7 +25,7 @@
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
     </resultMap>
-    -->
+    
     
     <select parameterType="map" id="consultarMateriasClase" resultMap="MateriaResult">
         select 
@@ -58,5 +58,5 @@
             PE.semestre=#{semestre}
         group by C.Mater_Cohor_cohorte,C.Mater_Cohor_Materia_id;
     </select>
-
+-->
 </mapper>

@@ -14,8 +14,14 @@ import java.util.List;
  */
 public interface PAcademicoDAO {
 
-   
+
+    public void save(PeriodoAcademico c) throws PersistenceException;
+
+    public PeriodoAcademico load(int id) throws PersistenceException;
+
 
     public List<PeriodoAcademico> loadAll() throws PersistenceException;
+    
+    public void saveAll() throws PersistenceException;
 
 }
