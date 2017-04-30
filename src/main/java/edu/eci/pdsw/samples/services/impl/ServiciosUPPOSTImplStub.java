@@ -350,7 +350,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         asig5 = new Asignatura(5, "ejecucuion 2", post2);  
         
 
-        // Timestamp para Fecha  267: 2 de Junio (6) a las 7:00
+        // 2222222 Timestamp para Fecha  267: 2 de Junio (6) a las 7:00
         Timestamp dt267 = new Timestamp(2017,6,2,7,0,0,0);
         Timestamp dt2613 = new Timestamp(2017,6,2,13,0,0,0);
         Timestamp dt2616 = new Timestamp(2017,6,2,16,0,0,0);
@@ -362,8 +362,8 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Timestamp dt9610 = new Timestamp(2017,6,9,10,0,0,0);
         Timestamp dt9616 = new Timestamp(2017,6,9,16,0,0,0);
         
-        Timestamp dt1067 = new Timestamp(2017,6,10,7,0,0,0);
-        Timestamp dt10610 = new Timestamp(2017,6,10,10,0,0,0);
+        Timestamp dt1077 = new Timestamp(2017,7,10,7,0,0,0);
+        Timestamp dt10710 = new Timestamp(2017,7,10,10,0,0,0);
                 
         Timestamp dt1667 = new Timestamp(2017,6,16,7,0,0,0);
         
@@ -376,14 +376,14 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Timestamp dt2467 = new Timestamp(2017,6,24,7,0,0,0);
         Timestamp dt24610 = new Timestamp(2017,6,24,10,0,0,0);
         
-        Timestamp dt3067 = new Timestamp(2017,6,30,7,0,0,0);
-        Timestamp dt30610 = new Timestamp(2017,6,30,10,0,0,0);
+        Timestamp dt3077 = new Timestamp(2017,7,30,7,0,0,0);
+        Timestamp dt30710 = new Timestamp(2017,7,30,10,0,0,0);
         
         Timestamp dt177 = new Timestamp(2017,7,1,1,0,0,0);
         Timestamp dt1710= new Timestamp(2017,7,1,10,0,0,0);
         
-        Timestamp dt777= new Timestamp(2017,7,1,7,0,0,0);
-        Timestamp dt7710= new Timestamp(2017,7,1,10,0,0,0);
+        Timestamp dt787= new Timestamp(2017,8,1,7,0,0,0);
+        Timestamp dt7810= new Timestamp(2017,8,1,10,0,0,0);
         
         Timestamp dt877 = new Timestamp(2017,7,8,7,0,0,0);
         Timestamp dt8710 = new Timestamp(2017,7,8,10,0,0,0);
@@ -425,7 +425,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         Timestamp dt1713 = new Timestamp(2017,7,1,13,0,0,0);
         Timestamp dt8713 = new Timestamp(2017,7,8,13,0,0,0);
-        Timestamp dt7713 = new Timestamp(2017,7,7,13,0,0,0);
+        Timestamp dt7813 = new Timestamp(2017,8,7,13,0,0,0);
         
         Timestamp dt9613 = new Timestamp(2017,6,9,13,0,0,0);
         Timestamp dt16610 = new Timestamp(2017,6,16,10,0,0,0);
@@ -435,36 +435,36 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         Timestamp dt9619 = new Timestamp(2017,6,9,19,0,0,0);        
         
-        Timestamp dt778 = new Timestamp(2017,7,7,8,0,0,0);
-        Timestamp dt7711 = new Timestamp(2017,7,7,11,0,0,0);
-        Timestamp dt7712 = new Timestamp(2017,7,7,12,0,0,0);
-        Timestamp dt1068 = new Timestamp(2017,6,10,8,0,0,0);
-        Timestamp dt10611= new Timestamp(2017,6,10,11,0,0,0);
-        Timestamp dt10612= new Timestamp(2017,6,10,12,0,0,0);
-        Timestamp dt10613= new Timestamp(2017,6,10,13,0,0,0);
-        Timestamp dt10614= new Timestamp(2017,6,10,14,0,0,0);
-        Timestamp dt30611= new Timestamp(2017,6,30,11,0,0,0);
-        Timestamp dt30612= new Timestamp(2017,6,30,12,0,0,0);
-        Timestamp dt7714= new Timestamp(2017,7,7,14,0,0,0);
-        Timestamp dt7715= new Timestamp(2017,7,7,15,0,0,0);
+        Timestamp dt788 = new Timestamp(2017,8,7,8,0,0,0);
+        Timestamp dt7811 = new Timestamp(2017,8,7,11,0,0,0);
+        Timestamp dt7812 = new Timestamp(2017,8,7,12,0,0,0);
+        Timestamp dt1078 = new Timestamp(2017,7,10,8,0,0,0);
+        Timestamp dt10711= new Timestamp(2017,7,10,11,0,0,0);
+        Timestamp dt10712= new Timestamp(2017,7,10,12,0,0,0);
+        Timestamp dt10713= new Timestamp(2017,7,10,13,0,0,0);
+        Timestamp dt10714= new Timestamp(2017,7,10,14,0,0,0);
+        Timestamp dt30711= new Timestamp(2017,7,30,11,0,0,0);
+        Timestamp dt30712= new Timestamp(2017,7,30,12,0,0,0);
+        Timestamp dt7814= new Timestamp(2017,8,7,14,0,0,0);
+        Timestamp dt7815= new Timestamp(2017,8,7,15,0,0,0);
         
         Recurso recurso = new Recurso(100, "recurso -2");        
         
-        Clase cl1a = new Clase(1,recurso,dt777, dt778, "7 a 8", "M1",24);
-        Clase cl2a = new Clase(2,recurso,dt778, dt7710, "8 a 10","M2",24);        
-        Clase cl3a = new Clase(3,recurso,dt7710, dt7711,"10 a 11","M3",24);      
-        Clase cl4a = new Clase(4,recurso,dt7712, dt7713,"12 a 13","M4",24);      
-        Clase cl5a = new Clase(5,recurso,dt7713, dt7714,"13 a 14","M5",24);      
-        Clase cl6a = new Clase(6,recurso,dt7714, dt7715,"14 a 15","M6",24);      
-        Clase cl7a = new Clase(7,recurso,dt1067, dt1068,"7 a 8","M7",24);        // ----------------
-        Clase cl8a = new Clase(8,recurso,dt1068, dt10610,"8 a 10","M8",24);      
-        Clase cl9a = new Clase(9,recurso,dt10610, dt10611,"10 a 11","M9",24);      
-        Clase cl10a = new Clase(10,recurso,dt10611, dt10612,"11 a 12","M10",24);       
-        Clase cl11a = new Clase(11,recurso,dt10612, dt10613,"12 a 13","M11",23);       
-        Clase cl12a = new Clase(12,recurso,dt10613, dt10614,"13 a 14","M12",23);       
-        Clase cl13a = new Clase(13,recurso,dt3067, dt30610,"7 a 10","M13",25);        // ---------------- //
-        Clase cl14a = new Clase(14,recurso,dt30610, dt30611,"10 a 11","M14",25);      
-        Clase cl15a = new Clase(15,recurso,dt30611, dt30612,"11 a 12","M115",25); 
+        Clase cl1a = new Clase(1,recurso,dt787, dt788, "7 a 8", "M1",24);
+        Clase cl2a = new Clase(2,recurso,dt788, dt7810, "8 a 10","M2",24);        
+        Clase cl3a = new Clase(3,recurso,dt7810, dt7811,"10 a 11","M3",24);      
+        Clase cl4a = new Clase(4,recurso,dt7812, dt7813,"12 a 13","M4",24);      
+        Clase cl5a = new Clase(5,recurso,dt7813, dt7814,"13 a 14","M5",24);      
+        Clase cl6a = new Clase(6,recurso,dt7814, dt7815,"14 a 15","M6",24);      
+        Clase cl7a = new Clase(7,recurso,dt1077, dt1078,"7 a 8","M7",24);        // ----------------
+        Clase cl8a = new Clase(8,recurso,dt1078, dt10710,"8 a 10","M8",24);      
+        Clase cl9a = new Clase(9,recurso,dt10710, dt10711,"10 a 11","M9",24);      
+        Clase cl10a = new Clase(10,recurso,dt10711, dt10712,"11 a 12","M10",24);       
+        Clase cl11a = new Clase(11,recurso,dt10712, dt10713,"12 a 13","M11",23);       
+        Clase cl12a = new Clase(12,recurso,dt10713, dt10714,"13 a 14","M12",23);       
+        Clase cl13a = new Clase(13,recurso,dt3077, dt30710,"7 a 10","M13",25);        // ---------------- //
+        Clase cl14a = new Clase(14,recurso,dt30710, dt30711,"10 a 11","M14",25);      
+        Clase cl15a = new Clase(15,recurso,dt30711, dt30712,"11 a 12","M115",25); 
         
         // lista clases para materias
         ArrayList<Clase> clasesM1 = new ArrayList<>();
