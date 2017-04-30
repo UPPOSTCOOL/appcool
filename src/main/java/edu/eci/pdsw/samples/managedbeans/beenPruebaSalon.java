@@ -57,5 +57,6 @@ public class beenPruebaSalon {
     public void setListaUsuarios(List<Clase> listaC) {
         this.listaC = listaC;
     }
+    
 }
 
