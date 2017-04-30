@@ -39,7 +39,7 @@ public class ServiciosUPPOSTFactory {
 
                         setClassPathResource("mybatis-config.xml");                        
                         bind(ServiciosUPPOST.class).to(ServiciosUPPOSTImpl.class);
-                        bind(ClaseDAO.class).to(MyBatisDaoClase.class);
+                        //bind(ClaseDAO.class).to(MyBatisDaoClase.class);
                         bind(MateriaDAO.class).to(MyBatisDaoMateria.class);
                         
                     }
@@ -55,7 +55,7 @@ public class ServiciosUPPOSTFactory {
                         install(JdbcHelper.PostgreSQL);                        
                         setClassPathResource("h2-mybatis-config.xml");                        
                         bind(ServiciosUPPOST.class).to(ServiciosUPPOSTImpl.class);
-                        bind(ClaseDAO.class).to(MyBatisDaoClase.class);
+                        //bind(ClaseDAO.class).to(MyBatisDaoClase.class);
                         bind(MateriaDAO.class).to(MyBatisDaoMateria.class);
                         
                     }

@@ -33,11 +33,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     @Override
     public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
-        try {
-            return daoc.load(id);
-        } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosUPPOST("Error al consultar clase, ServiciosUPPOSTImpl inicio de excepcion", ex);
-        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         
     }
 

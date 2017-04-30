@@ -13,19 +13,22 @@ import java.sql.Timestamp;
  */
 public class Clase {
     
-    private int id=0;
+    private int id;
     private Recurso descripcion;
     private Timestamp fecha;
-    private Timestamp horafin;
-    private int idMateria=0;
-    
+    private Timestamp horaFin;
+    private String rangoHoras;
+    private String idMateria;
+    private int cohorte;
 
-    public Clase(int id, Recurso descripcion,Timestamp fecha, Timestamp horafin, int idMateria) {
+    public Clase(int id, Recurso descripcion, Timestamp fecha, Timestamp horaFin, String rangoHoras, String idMateria, int cohorte) {
         this.id = id;
         this.descripcion = descripcion;
-        this.fecha=fecha;
-        this.horafin=horafin;
-        this.idMateria=idMateria;
+        this.fecha = fecha;
+        this.horaFin = horaFin;
+        this.rangoHoras = rangoHoras;
+        this.idMateria = idMateria;
+        this.cohorte = cohorte;
     }
 
     public int getId() {
@@ -40,7 +43,9 @@ public class Clase {
         return descripcion;
     }
 
-  
+    public void setDescripcion(Recurso descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public Timestamp getFecha() {
         return fecha;
@@ -50,26 +55,37 @@ public class Clase {
         this.fecha = fecha;
     }
 
-    public Timestamp getHorafin() {
-        return horafin;
+    public Timestamp getHoraFin() {
+        return horaFin;
     }
 
-    public void setHorafin(Timestamp horafin) {
-        this.horafin = horafin;
+    public void setHoraFin(Timestamp horaFin) {
+        this.horaFin = horaFin;
     }
 
-    public int getIdMateria() {
+    public String getRangoHoras() {
+        return rangoHoras;
+    }
+
+    public void setRangoHoras(String rangoHoras) {
+        this.rangoHoras = rangoHoras;
+    }
+
+    public String getIdMateria() {
         return idMateria;
     }
 
-    public void setIdMateria(int idMateria) {
+    public void setIdMateria(String idMateria) {
         this.idMateria = idMateria;
     }
 
-  
-   // @Override
-   // public String toString() {
-   //     return "clase{" + "id=" + id + ", descripcion=" + descripcion + '}';
-  //  }
+    public int getCohorte() {
+        return cohorte;
+    }
+
+    public void setCohorte(int cohorte) {
+        this.cohorte = cohorte;
+    }
+    
     
 }
