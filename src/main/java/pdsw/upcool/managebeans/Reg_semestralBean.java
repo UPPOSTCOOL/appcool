@@ -50,9 +50,7 @@ public class Reg_semestralBean implements Serializable{
 
     public List<Materia> getMaterias() throws ExcepcionServiciosUPPOST {
         ServiciosUPPOSTImplStub inp = new ServiciosUPPOSTImplStub();
-        materias = inp.consultarMaterias(1,2017);
-        System.out.println("getMaterias");
-        System.out.println(materias.size());
+        materias = inp.consultarMaterias(1,2017);        
         return materias;
     }
 
@@ -82,15 +80,8 @@ public class Reg_semestralBean implements Serializable{
 
     public void setClase(ArrayList<Clase> clase) {
         this.clase = clase;
-    }
-        
-    public List<Materia> getReportesMaterias() throws ExcepcionServiciosUPPOST{
-        //return ServiciosUPPOSTFactory.getInstance().getUPPOSTServices().consultarMaterias(1,2017);
-        ServiciosUPPOSTImplStub inp = new ServiciosUPPOSTImplStub();
-        materias = inp.consultarMaterias(1,2017);
-        System.out.println("getRepotesMaterias");
-        return materias;
-    }
+    }      
+   
     
     
 }
