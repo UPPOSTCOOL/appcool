@@ -4,10 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.ProfesorMapper">
-<<<<<<< HEAD
-=======
-    
->>>>>>> origin/HU2
     <resultMap type='Profesor' id='ProfesorResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>

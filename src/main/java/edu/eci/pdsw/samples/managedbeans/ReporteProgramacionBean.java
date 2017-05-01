@@ -84,7 +84,10 @@ public class ReporteProgramacionBean implements Serializable{
     private int anio;
     private int semestre;
     //se eligen base de datos local o POSTGRES
-    private final ServiciosUPPOST inp=new ServiciosUPPOSTImplStub();
+    //POSTGRES
+    private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
+    //LOCAL
+    //private final ServiciosUPPOST inp=new ServiciosUPPOSTImplStub();
         
     
     public ReporteProgramacionBean(){

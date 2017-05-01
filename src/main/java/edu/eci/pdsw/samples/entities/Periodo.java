@@ -18,6 +18,9 @@ public class Periodo {
     private int ano;
     private int semestre;
 
+    public Periodo() {
+    }
+
     public Periodo(int id, List<Materia> materias, int ano, int semestre) {
         this.id = id;
         this.materias = materias;

@@ -11,7 +11,8 @@
         <result property='rangoHoras' column='rangoHoras'/>
         <association property= 'IdMateria' column='Materia_Perio_Materia_id'/>
         <association property= 'cohorte' column='Materia_Perio_cohorte'/>
-        <collection property='recurso' ofType='Clase_Recur' resultMap='Recurso' columnPrefix='Clase_Recur_'></collection>
+        <!--<association property= 'descripcion' column='recurso'/>-->
+        <!--<collection property='recurso' ofType='Clase_Recur' resultMap='Recurso' columnPrefix='Clase_Recur_'></collection>-->
     </resultMap>
     <!-- 
     <resultMap type='Recurso' id='RecursoResult'>

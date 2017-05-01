@@ -18,6 +18,9 @@ public class Asignatura implements Serializable{
     private PostGrado postgrado;
     
     //secuencia de materias la asignatura la compone diferentes materias
+
+    public Asignatura() {
+    }
     
 
     public Asignatura(int id, String nombre, PostGrado postgrado) {

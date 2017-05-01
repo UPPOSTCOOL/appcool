@@ -14,16 +14,19 @@ import java.sql.Timestamp;
 public class Clase {
     
     private int id;
-    private Recurso descripcion;
+    private Recurso descripcion=new Recurso();
     private Timestamp fecha;
     private Timestamp horaFin;
     private String rangoHoras;
     private String idMateria;
     private int cohorte;
 
+    public Clase() {
+    }
+    
     public Clase(int id, Recurso descripcion, Timestamp fecha, Timestamp horaFin, String rangoHoras, String idMateria, int cohorte) {
         this.id = id;
-        this.descripcion = descripcion;
+        this.descripcion =new Recurso();
         this.fecha = fecha;
         this.horaFin = horaFin;
         this.rangoHoras = rangoHoras;

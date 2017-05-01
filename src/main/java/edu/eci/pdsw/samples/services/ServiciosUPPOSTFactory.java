@@ -40,6 +40,7 @@ public class ServiciosUPPOSTFactory {
         injector = createInjector(new XMLMyBatisModule() {
             @Override
             protected void initialize() {
+                install(JdbcHelper.PostgreSQL);
                 setClassPathResource("mybatis-config.xml");
                 bind(ServiciosUPPOST.class).to(ServiciosUPPOSTImpl.class);
                 bind(ClaseDAO.class).to(MyBatisDaoClase.class);
@@ -48,7 +49,6 @@ public class ServiciosUPPOSTFactory {
                 bind(ProfesorDAO.class).to(MyBatisDaoProfesor.class);
                 bind(AsignaturaDAO.class).to(MyBatisDaoAsignatura.class);
             }
-
         });
 
         testingInjector = createInjector(new XMLMyBatisModule() {
@@ -69,10 +69,6 @@ public class ServiciosUPPOSTFactory {
 
     public ServiciosUPPOST getUPPOSTServices() {
         return injector.getInstance(ServiciosUPPOST.class);
-    }
-    
-    public ServiciosUPPOST getUPPOSTServicesLocal() {
-        return new ServiciosUPPOSTImplStub();
     }
 
     public ServiciosUPPOST getUPPOSTServicesForTesting() {
