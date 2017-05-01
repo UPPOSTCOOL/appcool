@@ -19,7 +19,7 @@ and open the template in the editor.
         
         <h:form id="formularioProgramacion">  
             <!--value="{ProgramacionBean.materias}"-->
-            <h:dataTable var="reporte" value="#{ProgramacionBean.materia}" border="1" bgcolor="#D3D3D3" style="margin: 0 auto;" >
+            <h:dataTable var="reporte" value="#{ProgramacionBean.obtenerLista()}" border="1" bgcolor="#D3D3D3" style="margin: 0 auto;" >
                          
                 <p:column>
                     <f:facet name="header">

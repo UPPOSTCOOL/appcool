@@ -34,25 +34,22 @@ public class ServiciosUPPOSTFactory {
 
     private static Injector injector;
     private static Injector testingInjector;
-    private static Injector local;
 
     private ServiciosUPPOSTFactory() {
+        
         injector = createInjector(new XMLMyBatisModule() {
             @Override
             protected void initialize() {
                 setClassPathResource("mybatis-config.xml");
-
                 bind(ServiciosUPPOST.class).to(ServiciosUPPOSTImpl.class);
                 bind(ClaseDAO.class).to(MyBatisDaoClase.class);
                 bind(MateriaDAO.class).to(MyBatisDaoMateria.class);
                 bind(PAcademicoDAO.class).to(MyBatisDaoPAcademico.class);
                 bind(ProfesorDAO.class).to(MyBatisDaoProfesor.class);
                 bind(AsignaturaDAO.class).to(MyBatisDaoAsignatura.class);
-
             }
 
-        }
-        );
+        });
 
         testingInjector = createInjector(new XMLMyBatisModule() {
             @Override
@@ -60,18 +57,22 @@ public class ServiciosUPPOSTFactory {
                 install(JdbcHelper.PostgreSQL);
                 setClassPathResource("h2-mybatis-config.xml");
                 bind(ServiciosUPPOST.class).to(ServiciosUPPOSTImpl.class);
-                //bind(ClaseDAO.class).to(MyBatisDaoClase.class);
+                bind(ClaseDAO.class).to(MyBatisDaoClase.class);
                 bind(MateriaDAO.class).to(MyBatisDaoMateria.class);
-
+                bind(PAcademicoDAO.class).to(MyBatisDaoPAcademico.class);
+                bind(ProfesorDAO.class).to(MyBatisDaoProfesor.class);
+                bind(AsignaturaDAO.class).to(MyBatisDaoAsignatura.class);
             }
-
-        }
-        );
+        });
 
     }
 
     public ServiciosUPPOST getUPPOSTServices() {
         return injector.getInstance(ServiciosUPPOST.class);
+    }
+    
+    public ServiciosUPPOST getUPPOSTServicesLocal() {
+        return new ServiciosUPPOSTImplStub();
     }
 
     public ServiciosUPPOST getUPPOSTServicesForTesting() {

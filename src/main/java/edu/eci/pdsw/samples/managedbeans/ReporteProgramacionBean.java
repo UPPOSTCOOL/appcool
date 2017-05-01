@@ -10,10 +10,15 @@ import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Profesor;
 import edu.eci.pdsw.samples.entities.Recurso;
+import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
+import edu.eci.pdsw.samples.services.ServiciosUPPOST;
+import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
+import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -74,60 +79,40 @@ public class ReporteProgramacionBean implements Serializable{
     */
     
     
-    private ArrayList<Clase> clases=new ArrayList<Clase>();
-    private ArrayList<Materia> materia=new ArrayList<Materia>();
-    
+    private List<Clase> clases=new ArrayList<>();
+    private List<Materia> materia=new ArrayList<>();
+    private int anio;
+    private int semestre;
+    //se eligen base de datos local o POSTGRES
+    private final ServiciosUPPOST inp=new ServiciosUPPOSTImplStub();
+        
     
     public ReporteProgramacionBean(){
-        initList();  
-    
+        // se elimina initList();  para trabajar directamente acá...
+        //se asume que se ha eligido semestre y anio
+        semestre=1;
+        anio=2017;
     }
     
-    private void initList(){
-        /*
-        Profesor profe1= new Profesor(5, "cadavid");
-        Asignatura asig1= new Asignatura(4, "conocimiento y habilidades gerenciales");
+    public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST{
         
-        Calendar calendar = Calendar.getInstance();
-        Timestamp currentTimestamp = new java.sql.Timestamp(calendar.getTime().getTime());
-        Recurso d=new Recurso(23,"pc");
-        Clase c1 = new Clase(0, d, currentTimestamp, currentTimestamp, 23);
-        Recurso d1 = new Recurso(25, "portatiles");
-        Clase c2 = new Clase(1, d1, currentTimestamp, currentTimestamp, 22);
-        Recurso d2 = new Recurso(223, "video");
-        Clase c3 = new Clase(2, d2, currentTimestamp, currentTimestamp, 2453);
-        Recurso d6 = new Recurso(223, "Marcadores Borrables");
-        Clase c4 = new Clase(2, d6, currentTimestamp, currentTimestamp, 2231);
-        Recurso d3 = new Recurso(223, "sala MAC");
-        Clase c5 = new Clase(2, d3, currentTimestamp, currentTimestamp, 2231);
-        Recurso d4 = new Recurso(223, "Consolas");
-        Clase c6 = new Clase(2, d4, currentTimestamp, currentTimestamp, 2446);
-        
-        clases.add(c1);
-        clases.add(c2);
-        clases.add(c3);
-        clases.add(c4);
-        clases.add(c5);
-        
-       
-        Materia m1= new Materia(1,"gerencia de riesgos",3,5,6,profe1,asig1,clases);
-        materia.add(m1);   */
-    
-    }
-
-    public ArrayList<Clase> getClases() {
-        return clases;
-    }
-
-    public void setClases(ArrayList<Clase> clases) {
-        this.clases = clases;
-    }
-
-    public ArrayList<Materia> getMateria() {
+        materia = inp.consultarMaterias(anio, semestre);
         return materia;
     }
 
-    public void setMateria(ArrayList<Materia> materia) {
+    public List<Clase> getClases() {
+        return clases;
+    }
+
+    public void setClases(List<Clase> clases) {
+        this.clases = clases;
+    }
+
+    public List<Materia> getMateria() {
+        return materia;
+    }
+
+    public void setMateria(List<Materia> materia) {
         this.materia = materia;
     }
     
