@@ -26,6 +26,17 @@ public class Asignatura implements Serializable{
         this.postgrado = postgrado;
     }
 
+    public PostGrado getPostgrado() {
+        return postgrado;
+    }
+
+    public void setPostgrado(PostGrado postgrado) {
+        this.postgrado = postgrado;
+    }
+    
+    
+    
+
     public int getId() {
         return id;
     }
@@ -41,14 +52,6 @@ public class Asignatura implements Serializable{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public PostGrado getPostgrado() {
-        return postgrado;
-    }
-
-    public void setPostgrado(PostGrado postgrado) {
-        this.postgrado = postgrado;
-    }    
     
     @Override
     public String toString() {

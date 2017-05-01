@@ -6,15 +6,19 @@
 package edu.eci.pdsw.samples.services.impl;
 
 import com.google.inject.Inject;
-import edu.eci.pdsw.sampleprj.dao.ClaseDAO;
-import edu.eci.pdsw.sampleprj.dao.PAcademicoDAO;
 import edu.eci.pdsw.samples.entities.Periodo;
-import edu.eci.pdsw.sampleprj.dao.MateriaDAO;
-import edu.eci.pdsw.sampleprj.dao.PersistenceException;
+import edu.eci.pdsw.samples.daos.AsignaturaDAO;
+import edu.eci.pdsw.samples.daos.ClaseDAO;
+import edu.eci.pdsw.samples.daos.PAcademicoDAO;
+import edu.eci.pdsw.samples.daos.MateriaDAO;
+import edu.eci.pdsw.samples.daos.PersistenceException;
+import edu.eci.pdsw.samples.daos.ProfesorDAO;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
+import edu.eci.pdsw.samples.entities.Profesor;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,19 +26,21 @@ import java.util.List;
  * @author juan
  */
 public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
-    
+
     @Inject
     private ClaseDAO daoc;
-    
     @Inject
     private PAcademicoDAO daoPA;
     @Inject
     private MateriaDAO daom;
+    @Inject
+    private ProfesorDAO daoPO;
+    @Inject
+    private AsignaturaDAO daoA;
 
     @Override
     public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        
     }
 
     @Override
@@ -56,12 +62,38 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST {
         return daom.consultarMateriasDAO(semestre,anio);
 
     }   
+    
+    //.....//
+    @Override
+    public List<Periodo> consultarPAcademico(Periodo periodo) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Profesor consultarProfesor(int cohorte, String materia) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Clase> consultarClasePeriodo(Periodo periodo) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
 }

@@ -1,10 +1,13 @@
-Direcciones Proyecto:
-
+Direcciones Proyecto
+reporte salones: 
+http://localhost:8080/faces/Periodos.xhtml
 reporte salones: 
 http://localhost:8080/faces/ReportesSalones.xhtml
-
 reporte semestral: 
 http://localhost:8080/faces/ReportesPeriodo.xhtml
-
 reporte materias:
 http://localhost:8080/faces/ReportesMaterias.xhtml
+reporte salones: 
+http://localhost:8080/faces/ReportesSalones.xhtml
+reporte semestral: 
+http://localhost:8080/faces/ReportesProgramacion.xhtml

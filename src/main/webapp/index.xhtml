@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+      <h:head>
+        <title>UNIDAD DEPROYECTOS </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body style="text-align:center">
+        <img src="Imagenes/eci2.jpg" height="80" /> 
+        <h1 style="text-align:center;" bordercolor="red">UNIDAD DEPROYECTOS</h1>
+        <p:growl id="mensajes" showDetail="true" life="2000" />
+        <h:form>
+            <p:panel header="Login" style="width:300px">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel for="username" value="Usuario:" />
+                    <p:inputText value="#{loginBean.name}" id="username"
+                                 required="true" label="username" />
+                    <h:outputLabel for="password" value="Clave:" />
+                    <p:password value="#{loginBean.password}" id="password" required="true"
+                                label="password" />
+                    <f:facet name="footer">
+                        <p:commandButton id="loginButton" value="Login"
+                                         actionListener="#{loginBean.login}" update=":mensajes"
+                                         oncomplete="manejarLogin(xhr, status, args)" />
+                    </f:facet>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+    <script type="text/javascript">
+       
+        //<![CDATA[
+        function manejarLogin(xhr, status, args) {
+            if (!args.validationFailed && args.estaLogeado) {
+                setTimeout(function () {
+                    location.assign("http://localhost:8080/faces/Periodos.xhtml")
+                }, 500);
+            }
+        }
+    //]]>
+    </script>
+</html>
