@@ -5,36 +5,5 @@
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.PAcademicoMapper">
 
-<!--
-
-    <select parameterType="map" id="consultarPAcademicos" resultMap="PAcademicoResult">
-        
-        select
-    
-        p.id as P_id,
-        p.ano as P_ano,
-        p.semestre as P_semestre,
-
-        
-        m.id as M_materiaID,
-	m.nombre as M_nombre  
-	
-
-        FROM periodo as p 
-        left join mater_perio as mp on p.id=mp.periodo_id 
-        left join materia as m on mp.materia_id = m.id
-         
-    </select>
-  
-
-    
-    <resultMap type='PeriodoAcademico' id='PAcademicoResult' >
-        <id property='id' column='id'/>
-        <result property='ano' column='ano'/>
-        <result property='semestre' column='semestre'/>  
-        <collection property='materias' ofType='Materia' resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.MateriaMapper.MateriaResult' columnPrefix="M_"></collection>
-    </resultMap>       
-             
-
-                   -->        	
+   	
 </mapper>

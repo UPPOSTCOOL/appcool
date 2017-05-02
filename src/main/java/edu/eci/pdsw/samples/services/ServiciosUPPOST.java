@@ -53,6 +53,13 @@ public interface ServiciosUPPOST {
      */
     public abstract List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
     
-
+    /**
+     * Consulta las clases de un periodo academico
+     * @param periodo PeriodoAcademico al que se le quiere consultar sus clases
+     * @return Retorna una lista de clases
+     * @throws ExcepcionServiciosUPPOST si se presenta un error
+     * a nivel de base de datos.e
+     */
+    public abstract List<Clase> consultarClasesxPeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST;
     
 }

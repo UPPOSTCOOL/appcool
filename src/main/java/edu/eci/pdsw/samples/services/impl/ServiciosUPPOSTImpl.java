@@ -66,4 +66,9 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         return daom.consultarMateriasDAO(semestre, anio);
     }
 
+    @Override
+    public List<Clase> consultarClasesxPeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

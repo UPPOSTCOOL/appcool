@@ -313,4 +313,9 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     public List<PeriodoAcademico> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
         return periodosAll;
     }
+
+    @Override
+    public List<Clase> consultarClasesxPeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
