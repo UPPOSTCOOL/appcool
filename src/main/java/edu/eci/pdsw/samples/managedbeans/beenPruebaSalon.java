@@ -1,12 +1,16 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pdsw.upcool.managebeans;
+//package pdsw.upcool.managebeans;
+package edu.eci.pdsw.samples.managedbeans;
 
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Recurso;
+import edu.eci.pdsw.samples.services.ServiciosUPPOST;
+import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -18,21 +22,22 @@ import javax.faces.bean.SessionScoped;
  *
  * @author Carol
  */
-
 @ManagedBean(name = "PruebaSalonBean")
 @SessionScoped
 public class beenPruebaSalon {
-    
-    
     private List<Clase> listaC = new ArrayList<Clase>();
+    private int anio;
+    private int semestre;
+     private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
  
     public beenPruebaSalon(){
-        System.out.println("Iniciooooooooooo");
-        initList();
+            semestre=1;
+             anio=2016;
     }
  
     private void initList(){
-        /*Calendar calendar = Calendar.getInstance();
+        /*
+        Calendar calendar = Calendar.getInstance();
         Timestamp currentTimestamp = new java.sql.Timestamp(calendar.getTime().getTime());
         Recurso d=new Recurso(23,"pc");
         Clase c1 = new Clase(0, d, currentTimestamp, currentTimestamp, 23);
@@ -60,5 +65,7 @@ public class beenPruebaSalon {
     public void setListaUsuarios(List<Clase> listaC) {
         this.listaC = listaC;
     }
+    
 }
+
 

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head> 
+        <title>Reporte Programacion Semestral </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script>
+            function ocultar(m) {
+                document.getElementById("formularioProgramacion").style.display = "none";
+                document.getElementById("calendario").style.display = "block";
+                document.getElementById("materia").innerHTML = "Calendario de clases de la materia:" + m;
+            }
+            function mostrar() {
+                document.getElementById("formularioProgramacion").style.display = "block";
+                document.getElementById("calendario").style.display = "none";
+            }
+        </script>
+    </h:head>
+    <h:body>
+        <img src="Imagenes/eci2.jpg" height="80" />
+        <h1 style="text-align: center;"> Reporte Programación Semestral </h1>
+        <!--border="1" bgcolor="#D3D3D3"-->
+
+            <p:dataTable  id="formularioProgramacion" var="reporte" value="#{ProgramacionBean.obtenerLista()}"  style="margin: 0 auto;">
+
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Cohorte"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.cohorte}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Asignaturas"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.asignatura.nombre}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Materias"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.nombre}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Profesor"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.profesor.nombre}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Horas"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.numHoras}" />
+                </p:column>
+
+                <p:column >
+                    <f:facet name="header">
+                        <h:outputText value="Sesion"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.numClases}" />
+                </p:column>
+
+                <p:column >
+                    <f:facet name="header">
+                    </f:facet>
+                    <input type="button" onclick="ocultar('#{reporte.nombre}');#{ProgramacionBean.setMateriaSelec(reporte.codigo)}" value="Consultar Salones" />
+                </p:column>
+
+            </p:dataTable>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div id='calendario' style='display:none;'>
+            <b id='materia'></b>
+            <p:dataTable var="reporte" value="#{ProgramacionBean.getClases()}"  style="margin: 0 auto;">
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Fecha Clase"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.fecha}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Hora Clase"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.horaFin}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Duración Horas"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.rangoHoras}" />
+                </p:column>
+
+            </p:dataTable>
+        </div>
+
+
+        <br></br>
+        <br></br>
+        <br></br>
+
+
+        <h:form id="op-button" style="text-align:center">
+            <h:commandButton id="open-r" value="Regresar" action="Periodos"  />
+        </h:form>
+    </h:body>
+</html>
+

@@ -20,7 +20,9 @@ public class PeriodoAcademico implements Serializable {
     private int ano;
     private int semestre;
 
+
     public PeriodoAcademico(int id, List<Materia> materias, int ano, int semestre) {
+
         this.id = id;
         this.materias = materias;
         this.ano = ano;

@@ -18,7 +18,9 @@ public class Programa implements Serializable {
     private Profesor coordinador;
     private List<Asignatura> asignaturas;
 
+
     public Programa(Profesor coordinador, List<Asignatura> asignaturas, String nombre) {
+
         this.coordinador = coordinador;
         this.asignaturas = asignaturas;
         this.nombre = nombre;

@@ -16,6 +16,9 @@ public class Recurso implements Serializable {
     private int id;
     private String nombre;
 
+    public Recurso() {
+    }
+
     public Recurso(int id, String nombre) {
         this.id=id;
         this.nombre=nombre;
@@ -42,4 +45,5 @@ public class Recurso implements Serializable {
         return "Recurso{" + "ID=" + id + ", nombre=" + nombre  + '}';
     }
     
+
 }

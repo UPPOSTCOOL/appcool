@@ -6,15 +6,10 @@
 package edu.eci.pdsw.samples.dao.mybatisimpl;
 
 import com.google.inject.Inject;
-import edu.eci.pdsw.samples.daos.ClaseDAO;
 import edu.eci.pdsw.samples.daos.MateriaDAO;
-import edu.eci.pdsw.samples.daos.PersistenceException;
-import edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper;
 import edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaMapper;
-import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

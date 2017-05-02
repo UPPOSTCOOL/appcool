@@ -9,6 +9,8 @@ import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import java.util.List;
+
 
 /**
  *
@@ -17,6 +19,7 @@ import java.sql.Timestamp;
 public class Clase implements Serializable {
     
     private int id;
+
     private Recurso descripcion;
     
     private Timestamp fecha;
@@ -24,6 +27,8 @@ public class Clase implements Serializable {
     
     private Materia materia;
     private String salon;
+    
+
     
 
     public Clase(int id, Recurso descripcion, java.sql.Timestamp fecha,
@@ -35,6 +40,8 @@ public class Clase implements Serializable {
         this.horafin=horafin;
         this.materia = materia;
         this.salon = salon;
+
+
     }
 
     public int getId() {
@@ -49,23 +56,9 @@ public class Clase implements Serializable {
         return descripcion;
     }
 
-    public String getSalon() {
-        return salon;
+    public void setDescripcion(Recurso descripcion) {
+        this.descripcion = descripcion;
     }
-
-    public void setSalon(String salon) {
-        this.salon = salon;
-    }
-
-    public Materia getMateria() {
-        return materia;
-    }
-
-    public void setMateria(Materia materia) {
-        this.materia = materia;
-    }
-
-  
 
     public Timestamp getFecha() {
         return fecha;
@@ -83,6 +76,25 @@ public class Clase implements Serializable {
         this.horafin = horafin;
     }
 
+    public Materia getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
+    }
+
+    public String getSalon() {
+        return salon;
+    }
+
+    public void setSalon(String salon) {
+        this.salon = salon;
+    }
+
+
+
+
   
    @Override
    public String toString() {
@@ -90,4 +102,3 @@ public class Clase implements Serializable {
   }
     
 }
-

@@ -5,7 +5,8 @@
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.PAcademicoMapper">
 
-
+<!--
+>>>>>>> origin/HU1
     <select parameterType="map" id="consultarPAcademicos" resultMap="PAcademicoResult">
         
         select
@@ -49,7 +50,7 @@
         <collection property='materias' ofType='Materia' resultMap='edu.eci.pdsw.sample.dao.mybatis.mappers.MateriaMapper.MateriaResult' columnPrefix="M_"></collection>
     </resultMap>       
              
-
+-->
                          	
 
 </mapper>

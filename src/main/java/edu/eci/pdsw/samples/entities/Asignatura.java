@@ -19,6 +19,9 @@ public class Asignatura implements Serializable{
     private Programa postgrado;
 
     //secuencia de materias la asignatura la compone diferentes materias
+
+    public Asignatura() {
+    }
     
 
 

@@ -5,4 +5,10 @@
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.ProfesorMapper">
 
+    <resultMap type='Profesor' id='ProfesorResult'>
+        <id property='id' column='id'/>
+        <result property='nombre' column='nombre'/>
+    </resultMap>
+    
+
 </mapper>

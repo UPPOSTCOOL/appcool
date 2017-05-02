@@ -12,7 +12,7 @@
         <typeAlias type='edu.eci.pdsw.samples.entities.Materia' alias='Materia'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Profesor' alias='Profesor'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Asignatura' alias='Asignatura'/>
-        <typeAlias type='edu.eci.pdsw.samples.entities.PeriodoAcademico' alias='PeriodoAcademico'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Periodo' alias='Periodo'/>
     </typeAliases>        
     
     
@@ -33,8 +33,7 @@
         <mapper resource="mappers/MateriaMapper.xml"></mapper> 
         <mapper resource="mappers/ProfesorMapper.xml"></mapper> 
         <mapper resource="mappers/AsignaturaMapper.xml"></mapper> 
-        <mapper resource="mappers/PAcademicoMapper.xml"></mapper>               
-    </mappers>  
-
+        <mapper resource="mappers/PAcademicoMapper.xml"></mapper> 
+    </mappers>
         
 </configuration>

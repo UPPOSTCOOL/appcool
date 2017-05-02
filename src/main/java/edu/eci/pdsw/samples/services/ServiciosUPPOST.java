@@ -8,6 +8,8 @@ package edu.eci.pdsw.samples.services;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.PeriodoAcademico;
 import edu.eci.pdsw.samples.entities.Materia;
+import edu.eci.pdsw.samples.entities.Profesor;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,14 +36,6 @@ public interface ServiciosUPPOST {
      */
     public abstract List<Clase> consultarClases() throws ExcepcionServiciosUPPOST;
     
-
-    /**
-     * Consulta  los periodos academicos
-     * @return Una lista de los ultimos 4 periodos academicos
-     * @throws ExcepcionServiciosUPPOST si se presenta un error
-     * a nivel de base de datos
-     */
-    public abstract List<PeriodoAcademico> consultarPAcademicos() throws ExcepcionServiciosUPPOST;
     
     /**
      * Consulta las materias de un periodo
@@ -61,5 +55,34 @@ public interface ServiciosUPPOST {
      * a nivel de base de datos.e
      */
     public abstract List<Clase> consultarClasesxPeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST;
+
+    /**
+     * Consulta todos los profesores
+     * @return Una lista con los profesores
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+    public abstract List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST;
+    
+     /**
+     * Consulta un profesor
+     * @return profesor
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+    public abstract Profesor consultarProfesor(int cohorte, String materia) throws ExcepcionServiciosUPPOST;
+    
+     /**
+     * Consulta clases por periodo 
+     * @return Una lista con las clases de ese periodo
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+    public abstract List<Clase> consultarClasePeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST;
+    
+     /**
+     * Consultar fechas
+     * @return  una lista de fechas segun el periodo
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+    public abstract List<Date> consultarFechas(PeriodoAcademico fecha) throws ExcepcionServiciosUPPOST;
+
     
 }

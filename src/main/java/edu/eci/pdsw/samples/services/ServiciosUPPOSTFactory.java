@@ -19,7 +19,7 @@ import edu.eci.pdsw.samples.daos.MateriaDAO;
 import edu.eci.pdsw.samples.daos.PAcademicoDAO;
 import edu.eci.pdsw.samples.daos.ProfesorDAO;
 import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImpl;
-import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
+//import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
@@ -36,29 +36,22 @@ public class ServiciosUPPOSTFactory {
     private static Injector testingInjector;
 
     private ServiciosUPPOSTFactory() {
-        injector = createInjector(new XMLMyBatisModule() {
 
+        injector = createInjector(new XMLMyBatisModule() {
             @Override
             protected void initialize() {
-
                 install(JdbcHelper.PostgreSQL);
-
                 setClassPathResource("mybatis-config.xml");
-                
                 bind(ServiciosUPPOST.class).to(ServiciosUPPOSTImpl.class);
                 bind(ClaseDAO.class).to(MyBatisDaoClase.class);
                 bind(MateriaDAO.class).to(MyBatisDaoMateria.class);
                 bind(PAcademicoDAO.class).to(MyBatisDaoPAcademico.class);
                 bind(ProfesorDAO.class).to(MyBatisDaoProfesor.class);
                 bind(AsignaturaDAO.class).to(MyBatisDaoAsignatura.class);
-               
             }
-
-        }
-        );
+        });
 
         testingInjector = createInjector(new XMLMyBatisModule() {
-
             @Override
             protected void initialize() {
                 install(JdbcHelper.PostgreSQL);
@@ -69,66 +62,62 @@ public class ServiciosUPPOSTFactory {
                 bind(PAcademicoDAO.class).to(MyBatisDaoPAcademico.class);
                 bind(ProfesorDAO.class).to(MyBatisDaoProfesor.class);
                 bind(AsignaturaDAO.class).to(MyBatisDaoAsignatura.class);
-
             }
 
         }
         );
+
     }
-    
+
     public ServiciosUPPOST getUPPOSTServices() {
         return injector.getInstance(ServiciosUPPOST.class);
     }
-
 
     public ServiciosUPPOST getUPPOSTServicesForTesting() {
         return testingInjector.getInstance(ServiciosUPPOST.class);
     }
 
-
     public static ServiciosUPPOSTFactory getInstance() {
         return instance;
     }
-    
 
-    public AsignaturaDAO getAsignaturaDAO(){
+    public AsignaturaDAO getAsignaturaDAO() {
         return injector.getInstance(AsignaturaDAO.class);
     }
-    
-    public ClaseDAO getClaseDAO(){
+
+    public ClaseDAO getClaseDAO() {
         return injector.getInstance(ClaseDAO.class);
     }
-    
-    public MateriaDAO getMateriaDAO(){
+
+    public MateriaDAO getMateriaDAO() {
         return injector.getInstance(MateriaDAO.class);
     }
-    
-    public PAcademicoDAO getPAcademicoDAO(){
+
+    public PAcademicoDAO getPAcademicoDAO() {
         return injector.getInstance(PAcademicoDAO.class);
     }
-    
-    public ProfesorDAO getProfesorDAO(){
+
+    public ProfesorDAO getProfesorDAO() {
         return injector.getInstance(ProfesorDAO.class);
     }
-    
-    
-    public AsignaturaDAO getAsignaturaDAOTest(){
+
+    public AsignaturaDAO getAsignaturaDAOTest() {
         return testingInjector.getInstance(AsignaturaDAO.class);
     }
-    
-    public ClaseDAO getClaseDAOTest(){
+
+    public ClaseDAO getClaseDAOTest() {
         return testingInjector.getInstance(ClaseDAO.class);
     }
-    
-    public MateriaDAO getMateriaDAOTest(){
+
+    public MateriaDAO getMateriaDAOTest() {
         return testingInjector.getInstance(MateriaDAO.class);
     }
-    
-    public PAcademicoDAO getPAcademicoDAOTest(){
+
+    public PAcademicoDAO getPAcademicoDAOTest() {
         return testingInjector.getInstance(PAcademicoDAO.class);
     }
-    
-    public ProfesorDAO getProfesorDAOTest(){
+
+    public ProfesorDAO getProfesorDAOTest() {
         return testingInjector.getInstance(ProfesorDAO.class);
     }
 
