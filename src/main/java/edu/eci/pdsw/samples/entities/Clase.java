@@ -17,7 +17,7 @@ public class Clase {
     private Recurso descripcion=new Recurso();
     private Timestamp fecha;
     private Timestamp horaFin;
-    private String rangoHoras;
+    private String rangoHoras;//indica 10 a 2pm
     private String idMateria;
     private int cohorte;
 

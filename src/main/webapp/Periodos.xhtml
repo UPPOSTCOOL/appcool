@@ -18,7 +18,7 @@ and open the template in the editor.
         <img src="Imagenes/eci2.jpg" height="80" />
 
         <h:form id="periodo" style="text-align: center;">
-            <h1>Consultar Reportes Periodo</h1>
+            <h1>Seleccione el Periodo</h1>
             <p>Ingrese el año</p>
             <p:inputText id="Año" ></p:inputText>     
             <p>Ingrese el semestre</p>         
@@ -27,16 +27,16 @@ and open the template in the editor.
                 <option>1</option>
                 <option>2</option>
                 <option>Intersemestral</option>
-              
             </select>
-            <!--<p:inputText id="Semestre" value="{reporteBean.semestre}" label="SemestredelPrograma"></p:inputText> </p>            -->
-          
-            <f:facet name="footer">
-                        <p:commandButton update=":periodo" value="Reporte Programación" action="ReportesProgramacion" immediate="true"/>
-                </f:facet> 
-           
         </h:form>
-           
+        <br></br>
+        <br></br>
+        <br></br>
+        <h:form id="op-button" style="text-align:center">
+
+            <h:commandButton id="open-r" value="Ir a Reporte" action="ReportesProgramacion" />
+        </h:form>
+
     </h:body>
 </html>
 

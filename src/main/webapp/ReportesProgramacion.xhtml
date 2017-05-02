@@ -16,42 +16,42 @@ and open the template in the editor.
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
         <h1 style="text-align: center;"> Reporte Programación Semestral </h1>
-        
+
         <h:form id="formularioProgramacion">  
-            <!--value="{ProgramacionBean.materias}"-->
+
             <h:dataTable var="reporte" value="#{ProgramacionBean.obtenerLista()}" border="1" bgcolor="#D3D3D3" style="margin: 0 auto;" >
-                         
+
                 <p:column>
                     <f:facet name="header">
-                    <h:outputText value="Cohorte"/>
+                        <h:outputText value="Cohorte"/>
                     </f:facet>
                     <h:outputText value="#{reporte.cohorte}" />
                 </p:column>
-                
+
                 <p:column>
                     <f:facet name="header">
-                    <h:outputText value="Asignaturas"/>
+                        <h:outputText value="Asignaturas"/>
                     </f:facet>
                     <h:outputText value="#{reporte.asignatura.nombre}" />
                 </p:column>
-                
+
                 <p:column>
                     <f:facet name="header">
-                    <h:outputText value="Materias"/>
+                        <h:outputText value="Materias"/>
                     </f:facet>
                     <h:outputText value="#{reporte.nombre}" />
                 </p:column>
-                
+
                 <p:column>
                     <f:facet name="header">
-                    <h:outputText value="Profesor"/>
+                        <h:outputText value="Profesor"/>
                     </f:facet>
                     <h:outputText value="#{reporte.profesor.nombre}" />
                 </p:column>
-                
+
                 <p:column>
                     <f:facet name="header">
-                    <h:outputText value="Horas"/>
+                        <h:outputText value="Horas"/>
                     </f:facet>
                     <h:outputText value="#{reporte.numHoras}" />
                 </p:column>
@@ -62,21 +62,27 @@ and open the template in the editor.
                     </f:facet>
                     <h:outputText value="{reporte.}" />
                 </p:column>
-                
+                -->
                 <p:column >
                     <f:facet name="header">
-                    <h:outputText value="Sesion"/>
+                        <h:outputText value="Sesion"/>
                     </f:facet>
-                    <h:outputText value="{reporte.clases.fecha}" />
+                    <h:outputText value="#{reporte.numClases}" />
                 </p:column>
-                -->
-                
-                <f:facet name="footer">
-                        <p:commandButton update=":formularioProgramacion" value="Elegir Periodo" action="Periodos" immediate="true"/>
-                </f:facet>                   
-               
             </h:dataTable>
-            
+            <!--
+            <f:facet name="footer">
+                    <p:commandButton update=":formularioProgramacion" value="Elegir Periodo" action="Periodos" immediate="true"/>
+            </f:facet>  -->            
+
+        </h:form>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <h:form id="op-button" style="text-align:center">
+            <h:commandButton id="open-r" value="Elegir Periodo" action="Periodos" />
         </h:form>
     </h:body>
 </html>
+

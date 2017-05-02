@@ -94,7 +94,7 @@ public class ReporteProgramacionBean implements Serializable{
         // se elimina initList();  para trabajar directamente acá...
         //se asume que se ha eligido semestre y anio
         semestre=1;
-        anio=2017;
+        anio=2016;
     }
     
     public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST{
