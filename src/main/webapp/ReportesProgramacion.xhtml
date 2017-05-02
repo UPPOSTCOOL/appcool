@@ -12,14 +12,25 @@ and open the template in the editor.
     <h:head> 
         <title>Reporte Programacion Semestral </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script>
+            function ocultar(m) {
+                document.getElementById("formularioProgramacion").style.display = "none";
+                document.getElementById("calendario").style.display = "block";
+                document.getElementById("materia").innerHTML = "Calendario de clases de la materia:" + m;
+            }
+            function mostrar() {
+                document.getElementById("formularioProgramacion").style.display = "block";
+                document.getElementById("calendario").style.display = "none";
+            }
+        </script>
     </h:head>
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
         <h1 style="text-align: center;"> Reporte Programación Semestral </h1>
+        <!--border="1" bgcolor="#D3D3D3"-->
 
-        <h:form id="formularioProgramacion">  
+            <p:dataTable  id="formularioProgramacion" var="reporte" value="#{ProgramacionBean.obtenerLista()}"  style="margin: 0 auto;">
 
-            <h:dataTable var="reporte" value="#{ProgramacionBean.obtenerLista()}" border="1" bgcolor="#D3D3D3" style="margin: 0 auto;" >
 
                 <p:column>
                     <f:facet name="header">
@@ -55,33 +66,59 @@ and open the template in the editor.
                     </f:facet>
                     <h:outputText value="#{reporte.numHoras}" />
                 </p:column>
-                <!--
-                <p:column >
-                    <f:facet name="header">
-                    <h:outputText value="Dias"/>
-                    </f:facet>
-                    <h:outputText value="{reporte.}" />
-                </p:column>
-                -->
+
                 <p:column >
                     <f:facet name="header">
                         <h:outputText value="Sesion"/>
                     </f:facet>
                     <h:outputText value="#{reporte.numClases}" />
                 </p:column>
-            </h:dataTable>
-            <!--
-            <f:facet name="footer">
-                    <p:commandButton update=":formularioProgramacion" value="Elegir Periodo" action="Periodos" immediate="true"/>
-            </f:facet>  -->            
 
-        </h:form>
+                <p:column >
+                    <f:facet name="header">
+                    </f:facet>
+                    <input type="button" onclick="ocultar('#{reporte.nombre}');#{ProgramacionBean.setMateriaSelec(reporte.codigo)}" value="Consultar Salones" />
+                </p:column>
+
+            </p:dataTable>
         <br></br>
         <br></br>
         <br></br>
+        <div id='calendario' style='display:none;'>
+            <b id='materia'></b>
+            <p:dataTable var="reporte" value="#{ProgramacionBean.getClases()}"  style="margin: 0 auto;">
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Fecha Clase"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.fecha}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Hora Clase"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.horaFin}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Duración Horas"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.rangoHoras}" />
+                </p:column>
+
+            </p:dataTable>
+        </div>
+
+
+        <br></br>
+        <br></br>
+        <br></br>
+
 
         <h:form id="op-button" style="text-align:center">
-            <h:commandButton id="open-r" value="Elegir Periodo" action="Periodos" />
+            <h:commandButton id="open-r" value="Regresar" action="Periodos"  />
         </h:form>
     </h:body>
 </html>

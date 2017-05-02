@@ -83,6 +83,7 @@ public class ReporteProgramacionBean implements Serializable{
     private List<Materia> materia=new ArrayList<>();
     private int anio;
     private int semestre;
+    private String materiaSelec=null;
     //se eligen base de datos local o POSTGRES
     //POSTGRES
     private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
@@ -104,6 +105,12 @@ public class ReporteProgramacionBean implements Serializable{
     }
 
     public List<Clase> getClases() {
+        List<Clase> clases=null;
+        for(int i=0; i<materia.size();i++){
+            if(materia.get(i).getCodigo()==materiaSelec){
+                clases=materia.get(i).getClases();
+            }
+        }
         return clases;
     }
 
@@ -117,6 +124,14 @@ public class ReporteProgramacionBean implements Serializable{
 
     public void setMateria(List<Materia> materia) {
         this.materia = materia;
+    }
+
+    public String getMateriaSelec() {
+        return materiaSelec;
+    }
+
+    public void setMateriaSelec(String materiaSelec) {
+        this.materiaSelec = materiaSelec;
     }
     
     
