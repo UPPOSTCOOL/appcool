@@ -1,6 +1,8 @@
 Direcciones Proyecto
-reporte salones: 
-http://localhost:8080/faces/Periodos.xhtml
+reporte index: 
+http://localhost:8080/faces/index.xhtml
+usuario adm
+contraseña adm
 reporte salones: 
 http://localhost:8080/faces/ReportesSalones.xhtml
 reporte semestral: 
