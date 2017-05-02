@@ -18,6 +18,7 @@ import javax.faces.bean.SessionScoped;
  *
  * @author Carol
  */
+
 @ManagedBean(name = "PruebaSalonBean")
 @SessionScoped
 public class beenPruebaSalon {

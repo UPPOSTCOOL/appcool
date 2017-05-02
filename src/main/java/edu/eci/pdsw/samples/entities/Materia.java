@@ -19,16 +19,15 @@ public class Materia implements Serializable{
     private String nombre;
     
     private int cohorte;
- 
-   
-    
+
     private Profesor profesor;
     private Asignatura asignatura;
     
+
     private String descripcion;
     
     
-    
+
 
     public Materia(String codigo, String nombre, int cohorte,Profesor profesor,
             Asignatura asignatura,String descripcion ) {
@@ -36,6 +35,7 @@ public class Materia implements Serializable{
         this.codigo = codigo;
         this.nombre = nombre;
         this.cohorte = cohorte;
+
 
 
         this.profesor = profesor;
@@ -72,6 +72,7 @@ public class Materia implements Serializable{
     }
 
 
+
     public Profesor getProfesor() {
         return profesor;
     }
@@ -90,7 +91,9 @@ public class Materia implements Serializable{
 
     @Override
     public String toString() {
+
         return "Materia{" + "Codigo=" + codigo + ", nombre=" + nombre + ", cohorte=" + cohorte   + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
+
     }
     
     
