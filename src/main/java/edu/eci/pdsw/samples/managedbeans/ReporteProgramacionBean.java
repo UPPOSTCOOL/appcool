@@ -30,56 +30,8 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "ProgramacionBean")
 @SessionScoped
 public class ReporteProgramacionBean implements Serializable{
+       
     
-    /**
-    ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
-    
-    Periodo periodo;
-   
-    public List<Periodo> getPeriodos() throws ExcepcionServiciosUPPOST {
-        return sp.consultarPAcademicos();
-    }
-     
-    public List<Materia> getMaterias() throws ExcepcionServiciosUPPOST {
-        return sp.consultarMaterias(0, 0);
-    }
-   
-    public List<Periodo> getCohortes() throws ExcepcionServiciosUPPOST {
-        return sp.consultarPAcademico(periodo);
-    }
-    
-    
-    public String getProfesor(Clase clase) throws ExcepcionServiciosUPPOST {
-        return sp.consultarProfesor(clase.getCohorte(), clase.getMateria().getProfesor().getNombre()).toString();
-    }
-    
-    
-    public List<Clase> getClases() throws ExcepcionServiciosUPPOST {
-        return sp.consultarClasePeriodo(periodo);
-    }
-    
-    
-    public List<Date> getFechas() throws ExcepcionServiciosUPPOST {
-        List<Date> fechas= sp.consultarFechas(periodo);
-        return fechas;
-    }
-    
-    public Periodo getPeriodo() {
-        return periodo;
-    }
-    
-    public void setPeriodo(Periodo periodo) {
-        this.periodo = periodo;
-    }
-    
-    
-    public int getSesion() throws ExcepcionServiciosUPPOST {
-        return sp.consultarClasePeriodo(periodo).size();
-    }
-    */
-    
-    
-    private List<Clase> clases=new ArrayList<>();
     private List<Materia> materia=new ArrayList<>();
     private int anio;
     private int semestre;
@@ -107,16 +59,13 @@ public class ReporteProgramacionBean implements Serializable{
     public List<Clase> getClases() {
         List<Clase> clases=null;
         for(int i=0; i<materia.size();i++){
-            if(materia.get(i).getCodigo()==materiaSelec){
+            if(materia.get(i).getCodigo().equals(materiaSelec)){
                 clases=materia.get(i).getClases();
             }
         }
         return clases;
     }
 
-    public void setClases(List<Clase> clases) {
-        this.clases = clases;
-    }
 
     public List<Materia> getMateria() {
         return materia;
@@ -132,7 +81,28 @@ public class ReporteProgramacionBean implements Serializable{
 
     public void setMateriaSelec(String materiaSelec) {
         this.materiaSelec = materiaSelec;
+        
     }
+    
+    
+    
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public int getSemestre() {
+        return semestre;
+    }
+
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
+    
     
     
 }
