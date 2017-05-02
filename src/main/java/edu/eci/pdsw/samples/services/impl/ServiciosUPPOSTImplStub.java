@@ -192,7 +192,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Timestamp dt7715= new Timestamp(2017,7,7,15,0,0,0);
         
         Recurso recurso = new Recurso(100, "recurso");        
-        
+        /*
         Clase cl1a = new Clase(1,recurso,dt777, dt778, "7 a 8", "M1",24);
         Clase cl2a = new Clase(2,recurso,dt778, dt7710, "8 a 10","M2",24);        
         Clase cl3a = new Clase(3,recurso,dt7710, dt7711,"10 a 11","M3",24);      
@@ -304,7 +304,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         materiasAll1.add(mat14);
         materiasAll1.add(mat15);
                      
-        
+        */
         // Para Periodo
         
         Periodo per1 = new Periodo(1,materiasAll1,2017,1);
@@ -450,7 +450,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Timestamp dt7815= new Timestamp(2017,8,7,15,0,0,0);
         
         Recurso recurso = new Recurso(100, "recurso -2");        
-        
+        /*
         Clase cl1a = new Clase(1,recurso,dt787, dt788, "7 a 8", "M1",24);
         Clase cl2a = new Clase(2,recurso,dt788, dt7810, "8 a 10","M2",24);        
         Clase cl3a = new Clase(3,recurso,dt7810, dt7811,"10 a 11","M3",24);      
@@ -568,6 +568,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Periodo per2 = new Periodo(2,materiasAll2,2017,2);
        
         periodosAll.add(per2);
+        */
     
     }
     

@@ -12,7 +12,7 @@
         <result property='numHoras' column='totHoras'/>
         <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
         <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
-        <!--<association property="clases" javaType="Clase" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='clase_'></association>-->
+        <collection property='clases' ofType='Clase' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='clase_'></collection>
     </resultMap>
     <select parameterType="map" id="consultarMateriasClase" resultMap="MateriaResult">
         select 
@@ -26,7 +26,14 @@
             A.nombre as asignatura_nombre,
         
             P.id as profesor_id,
-            P.nombre as profesor_nombre
+            P.nombre as profesor_nombre,
+        
+            C.id as clase_id,
+            C.fecha as clase_fecha,
+            c.horaFin as clase_horaFin,
+            CONCAT(Extract(hour from fecha),' a ',Extract(hour from horaFin)) as clase_rangoHoras,
+            C.mater_perio_materia_id as clase_mater_perio_materia_id,
+            C.mater_perio_cohorte as clase_mater_perio_cohorte
         from 
             Mater_Perio MP
             inner join (
@@ -57,10 +64,3 @@
     </select>
 
 </mapper>
-<!-- 
-
-        
-            C.id as clase_id,
-            C.fecha as clase_fecha,
-            CONCAT(Extract(hour from fecha),' a ',Extract(hour from horaFin)) as clase_rangoHoras
-            -->

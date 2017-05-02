@@ -9,8 +9,8 @@
         <result property='fecha' column='fecha'/>
         <result property='horaFin' column='horaFin'/>
         <result property='rangoHoras' column='rangoHoras'/>
-        <association property= 'IdMateria' column='Materia_Perio_Materia_id'/>
-        <association property= 'cohorte' column='Materia_Perio_cohorte'/>
+        <result property= 'idMateria' column='mater_perio_materia_id'/>
+        <result property= 'cohorte' column='mater_perio_cohorte'/>
         <!--<association property= 'descripcion' column='recurso'/>-->
         <!--<collection property='recurso' ofType='Clase_Recur' resultMap='Recurso' columnPrefix='Clase_Recur_'></collection>-->
     </resultMap>
