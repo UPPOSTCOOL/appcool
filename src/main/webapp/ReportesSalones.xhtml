@@ -35,9 +35,9 @@ and open the template in the editor.
             </p:column>  
             <p:column>  
                 <f:facet name="header">
-                <h:outputText value="fecha fin"></h:outputText>
-                    </f:facet>
-                <h:outputText value="#{curso.horafin}"></h:outputText>
+                    <h:outputText value="fecha fin"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{curso.horaFin}"></h:outputText>
             </p:column> 
             <p:column>  
                 <f:facet name="header">
@@ -45,17 +45,22 @@ and open the template in the editor.
                 </f:facet>
                 <h:outputText value="#{curso.descripcion.nombre}"></h:outputText>
             </p:column> 
-           <f:facet name="footer">
-                        <p:commandButton update=":formularioSalon" value="Regresar" action="ReportesProgramacion"/>
-                </f:facet>                   
-                
+
+
 
             </h:dataTable>
-             
+
+
         </h:form>
+        <br></br>
+        <br></br>
+        <br></br>
 
-        
-
-
+        <h:form id="op-button" style="text-align:center">
+            <h:commandButton id="open-r" value="Elegir Periodo" action="Periodos" />
+        </h:form>
     </h:body>
+
+
+
 </html>
