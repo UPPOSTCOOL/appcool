@@ -22,34 +22,27 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class PeriodoBean implements Serializable{
     
-    ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
-    
-    public List<Periodo> periodos;
-    public Periodo periodo;
+    private int anio;
+    private int semestre;
 
     public PeriodoBean() {
-        //periodos = sp.consultarPAcademicos();
     }
 
-    public List<Periodo> getPeriodos() {
-        return periodos;
-        /*public List<PeriodoAcademico> getPeriodos() throws ExcepcionServiciosUPPOST {
-            return sp.consultarPAcademicos();
-        }*/
+    public int getAnio() {
+        return anio;
     }
 
-    public void setPeriodos(List<Periodo> periodos) {
-        this.periodos = periodos;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
-    public Periodo getPeriodo() {
-        return periodo;
+    public int getSemestre() {
+        return semestre;
     }
 
-    public void setPeriodo(Periodo periodo) {
-        this.periodo = periodo;
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
     }
-    
-    
+
     
 }
