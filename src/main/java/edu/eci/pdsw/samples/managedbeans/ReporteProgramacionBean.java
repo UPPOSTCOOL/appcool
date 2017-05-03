@@ -46,8 +46,6 @@ public class ReporteProgramacionBean implements Serializable{
         
     
     public ReporteProgramacionBean(){
-        // se elimina initList();  para trabajar directamente acá...
-        //se asume que se ha eligido semestre y anio
         semestre=cb.getSemestre();
         anio=cb.getAnio();
     }

@@ -28,12 +28,17 @@ public class PeriodoBean implements Serializable{
     public PeriodoBean() {
     }
 
-    public int getAnio() {
+    public int getAnio() {        System.out.println("se PIDE ANOW");
+
+        
         return anio;
     }
 
     public void setAnio(int anio) {
         this.anio = anio;
+        System.out.println("se guarda anio");
+        System.out.println(anio);
+
     }
 
     public int getSemestre() {
@@ -42,6 +47,8 @@ public class PeriodoBean implements Serializable{
 
     public void setSemestre(int semestre) {
         this.semestre = semestre;
+        System.out.println("se guarda semestre");
+        System.out.println(semestre);
     }
 
     
