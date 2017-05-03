@@ -18,6 +18,7 @@ import java.util.Calendar;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import org.primefaces.event.RowEditEvent;
 
 /**
  *
@@ -27,37 +28,40 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class PeriodoBean implements Serializable{
     
-    ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
+    //ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     
-    public List<PeriodoAcademico> periodos;
-    public PeriodoAcademico periodo;
-
+    private String anio;
+    private String semestre;
+    
+    
     public PeriodoBean() {
         //periodos = sp.consultarPAcademicos();
     }
 
-
-    public List<PeriodoAcademico> getPeriodos() {
-        return periodos;
-        /*public List<PeriodoAcademico> getPeriodos() throws ExcepcionServiciosUPPOST {
-            return sp.consultarPAcademicos();
-        }*/
-
+    public String getAnio() {
+        return anio;
     }
 
-
-    public void setPeriodos(List<PeriodoAcademico> periodos) {
-        this.periodos = periodos;
+    public void setAnio(String anio) {
+        this.anio = anio;
     }
 
-    public PeriodoAcademico getPeriodo() {
-        return periodo;
+    public String getSemestre() {
+        return semestre;
     }
 
-    public void setPeriodo(PeriodoAcademico periodo) {
-        this.periodo = periodo;
+    public void setSemestre(String semestre) {
+        this.semestre = semestre;
     }
     
+    public void nuevaEntradaAnio(RowEditEvent event){
+        System.out.println("entro");
+        String p= event.toString();
+        this.anio = p;
+    }
+    
+    
+
     
     
 }

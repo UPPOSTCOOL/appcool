@@ -15,6 +15,7 @@
         <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
         <collection property='clases' ofType='Clase' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='clase_'></collection>
     </resultMap>
+    
     <select parameterType="map" id="consultarMateriasClase" resultMap="MateriaResult">
         select 
             M.codigo as codigo,

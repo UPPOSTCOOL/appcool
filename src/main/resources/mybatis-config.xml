@@ -12,7 +12,7 @@
         <typeAlias type='edu.eci.pdsw.samples.entities.Materia' alias='Materia'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Profesor' alias='Profesor'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Asignatura' alias='Asignatura'/>
-        <typeAlias type='edu.eci.pdsw.samples.entities.Periodo' alias='Periodo'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.PeriodoAcademico' alias='PeriodoAcademico'/>
     </typeAliases> 
 
         

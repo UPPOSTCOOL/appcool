@@ -20,13 +20,15 @@ and open the template in the editor.
         <h:form id="periodo" style="text-align: center;">
             <h1>Seleccione el Periodo</h1>
             <p>Ingrese el año</p>
-            <p:inputText id="Año" ></p:inputText>     
+            <p:inputText id="Año" value="#{PeriodoBean.anio}">
+                <p:ajax listener="#{PeriodoBean.nuevaEntradaAnio()}" />
+            </p:inputText>     
             <p>Ingrese el semestre</p>         
 
             <select name="periodos">
-                <option>1</option>
-                <option>2</option>
-                <option>Intersemestral</option>
+                <option value="#{PeriodoBean.semestre}">1</option>
+                <option value="#{PeriodoBean.semestre}">2</option>
+                <option value="#{PeriodoBean.semestre}">Intersemestral</option>
             </select>
         </h:form>
         <br></br>

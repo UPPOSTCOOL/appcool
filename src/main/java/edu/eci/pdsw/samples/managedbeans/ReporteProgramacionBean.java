@@ -16,10 +16,12 @@ import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
 //import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.Clock;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 /**
@@ -31,59 +33,14 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class ReporteProgramacionBean implements Serializable{
     
-    /**
-    ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
-    
-    Periodo periodo;
-   
-    public List<Periodo> getPeriodos() throws ExcepcionServiciosUPPOST {
-        return sp.consultarPAcademicos();
-    }
-     
-    public List<Materia> getMaterias() throws ExcepcionServiciosUPPOST {
-        return sp.consultarMaterias(0, 0);
-    }
-   
-    public List<Periodo> getCohortes() throws ExcepcionServiciosUPPOST {
-        return sp.consultarPAcademico(periodo);
-    }
-    
-    
-    public String getProfesor(Clase clase) throws ExcepcionServiciosUPPOST {
-        return sp.consultarProfesor(clase.getCohorte(), clase.getMateria().getProfesor().getNombre()).toString();
-    }
-    
-    
-    public List<Clase> getClases() throws ExcepcionServiciosUPPOST {
-        return sp.consultarClasePeriodo(periodo);
-    }
-    
-    
-    public List<Date> getFechas() throws ExcepcionServiciosUPPOST {
-        List<Date> fechas= sp.consultarFechas(periodo);
-        return fechas;
-    }
-    
-    public Periodo getPeriodo() {
-        return periodo;
-    }
-    
-    public void setPeriodo(Periodo periodo) {
-        this.periodo = periodo;
-    }
-    
-    
-    public int getSesion() throws ExcepcionServiciosUPPOST {
-        return sp.consultarClasePeriodo(periodo).size();
-    }
-    */
-    
+    @ManagedProperty(value = "#{periodoBean}")
+    private PeriodoBean periodoBean;
     
     private List<Clase> clases=new ArrayList<>();
     private List<Materia> materia=new ArrayList<>();
-    private int anio;
-    private int semestre;
+   
     private String materiaSelec=null;
+    
     //se eligen base de datos local o POSTGRES
     //POSTGRES
     private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
@@ -94,13 +51,27 @@ public class ReporteProgramacionBean implements Serializable{
     public ReporteProgramacionBean(){
         // se elimina initList();  para trabajar directamente acá...
         //se asume que se ha eligido semestre y anio
-        semestre=1;
-        anio=2016;
     }
     
     public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST{
         
-        materia = inp.consultarMaterias(anio, semestre);
+        System.out.println("te encontre perror hpta null pointer malparido de mierda");
+        
+        System.out.println("año =" + periodoBean.getAnio());
+        System.out.println("semestre =" + periodoBean.getSemestre());
+        
+        int año = Integer.parseInt(periodoBean.getAnio());
+        int semestre = Integer.parseInt(periodoBean.getSemestre());
+        
+        if(periodoBean.getSemestre().equals("Intersemestral")){
+            semestre=3;
+        }
+        
+        System.out.println("año =" + año);
+        System.out.println("semestre =" + semestre);
+        
+        materia = inp.consultarMaterias(semestre, año);
+        
         return materia;
     }
 
@@ -132,6 +103,14 @@ public class ReporteProgramacionBean implements Serializable{
 
     public void setMateriaSelec(String materiaSelec) {
         this.materiaSelec = materiaSelec;
+    }
+
+    public PeriodoBean getPeriodoBean() {
+        return periodoBean;
+    }
+
+    public void setPeriodoBean(PeriodoBean periodoBean) {
+        this.periodoBean = periodoBean;
     }
     
     
