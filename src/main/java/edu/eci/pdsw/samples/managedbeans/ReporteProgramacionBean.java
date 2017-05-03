@@ -45,17 +45,9 @@ public class ReporteProgramacionBean implements Serializable{
     //private final ServiciosUPPOST inp=new ServiciosUPPOSTImplStub();
         
     
-    public ReporteProgramacionBean(){
-        semestre=cb.getSemestre();
-        anio=cb.getAnio();
-    }
-
-    public PeriodoBean getCb() {
-        return cb;
-    }
-
-    public void setCb(PeriodoBean cb) {
-        this.cb = cb;
+    public ReporteProgramacionBean(){/*
+        semestre=1;
+        anio=2016;*/
     }
     
     public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST{
@@ -67,16 +59,13 @@ public class ReporteProgramacionBean implements Serializable{
     public List<Clase> getClases() {
         List<Clase> clases=null;
         for(int i=0; i<materia.size();i++){
-            if(materia.get(i).getCodigo()==materiaSelec){
+            if(materia.get(i).getCodigo().equals(materiaSelec)){
                 clases=materia.get(i).getClases();
             }
         }
         return clases;
     }
 
-    public void setClases(List<Clase> clases) {
-        this.clases = clases;
-    }
 
     public List<Materia> getMateria() {
         return materia;
@@ -92,6 +81,37 @@ public class ReporteProgramacionBean implements Serializable{
 
     public void setMateriaSelec(String materiaSelec) {
         this.materiaSelec = materiaSelec;
+        
+    }
+    
+    
+    
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public int getSemestre() {
+        return semestre;
+    }
+
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
+
+    public PeriodoBean getCb() {
+        return cb;
+    }
+
+    public void setCb(PeriodoBean cb) {
+        this.cb = cb;
+        
+        semestre=cb.getSemestre();
+        anio=cb.getAnio();
     }
     
     
