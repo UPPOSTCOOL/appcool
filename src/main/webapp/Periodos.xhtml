@@ -17,20 +17,50 @@ and open the template in the editor.
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
 
-        <h:form id="periodo" style="text-align: center;">
-            <h1>Seleccione el Periodo</h1>
-            <p>Ingrese el año</p>
-            <p:inputText id="Año" value="#{PeriodoBean.anio}">
-                <p:ajax listener="#{PeriodoBean.nuevaEntradaAnio()}" />
-            </p:inputText>     
-            <p>Ingrese el semestre</p>         
+        <h:form id="periodosAcademicos">
+            <p:layout >
+                <p:layoutUnit position="north" resizable="true" size="100" minSize="40" maxSize="200">
+                    <p:dataTable var="cliente" value="#{PeriodoBean}" 
+                                 selectionMode="single" selection="#{AlquilerItems.cliente}" 
+                                 rowKey="#{cliente.documento}">
 
-            <select name="periodos">
-                <option value="#{PeriodoBean.semestre}">1</option>
-                <option value="#{PeriodoBean.semestre}">2</option>
-                <option value="#{PeriodoBean.semestre}">Intersemestral</option>
-            </select>
+                        <p:column headerText="Año">
+                            <h:outputText value="#{cliente.nombre}" />
+                        </p:column>
+                        <p:column headerText="Periodo">
+                            <h:outputText value="#{cliente.documento}" />
+                        </p:column>
+                        
+                        <f:facet name="footer">
+                            <p:commandButton value="Inspeccionar" action="RegistroClienteItem.xhtml"/>
+                            <p:commandButton value="Inspeccionar" action="RegistroClienteItem.xhtml"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <br/>
+                    Agregar nuevo Cliente: 
+                    NOMBRE:
+                    <h:inputText value="#{AlquilerItems.nombre}"/>
+                    DOCUMENTO:
+                    <h:inputText value="#{AlquilerItems.documento}"/>
+                    TELEFONO:
+                    <h:inputText value="#{AlquilerItems.telefono}"/>
+                    DIRECCION:
+                    <h:inputText value="#{AlquilerItems.direccion}"/>
+                    EMAIL:
+                    <h:inputText value="#{AlquilerItems.email}"/>
+
+                    <p:commandButton value="Cliente Nuevo" actionListener="#{AlquilerItems.clienteNuevo()}" update="clientes"/>
+
+                </p:layoutUnit>
+            </p:layout>
+
+
+
         </h:form>
+        
         <br></br>
         <br></br>
         <br></br>

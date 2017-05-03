@@ -33,8 +33,11 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class ReporteProgramacionBean implements Serializable{
     
+   //---------------------------------------------------------------------- JUAN
     @ManagedProperty(value = "#{periodoBean}")
     private PeriodoBean periodoBean;
+    
+   //---------------------------------------------------------------------- JUAN
     
     private List<Clase> clases=new ArrayList<>();
     private List<Materia> materia=new ArrayList<>();
@@ -76,6 +79,7 @@ public class ReporteProgramacionBean implements Serializable{
     }
 
     public List<Clase> getClases() {
+        
         List<Clase> clases=null;
         for(int i=0; i<materia.size();i++){
             if(materia.get(i).getCodigo()==materiaSelec){

@@ -28,7 +28,7 @@ import org.primefaces.event.RowEditEvent;
 @SessionScoped
 public class PeriodoBean implements Serializable{
     
-    //ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
+    ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     
     private String anio;
     private String semestre;
