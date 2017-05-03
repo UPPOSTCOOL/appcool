@@ -18,6 +18,8 @@ import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -51,7 +53,11 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     @Override
     public List<Materia> consultarMaterias(int semestre, int anio) throws ExcepcionServiciosUPPOST {
-        return daom.consultarMateriasDAO(semestre, anio);
+        try {
+            return daom.consultarMateriasDAO(semestre, anio);
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar materias del semestre: " + semestre + "y año: " + anio + ex);
+        }
     }
 
     @Override
@@ -77,6 +83,15 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     @Override
     public List<Date> consultarFechas(PeriodoAcademico fecha) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<PeriodoAcademico> consultarPeriodos() throws ExcepcionServiciosUPPOST {
+        try {
+            return  daoPA.loadAll();
+        } catch (PersistenceException ex) {
+             throw new ExcepcionServiciosUPPOST("Error al consultar periodos academicos: " + ex);
+        }
     }
 
 }

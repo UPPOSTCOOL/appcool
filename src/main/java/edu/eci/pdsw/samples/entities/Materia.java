@@ -17,16 +17,20 @@ public class Materia implements Serializable{
     private String codigo;
 
     private String nombre;
+    
     private int cohorte;
 
 
     private Profesor profesor;
+    
     private Asignatura asignatura;
     
 
     private String descripcion;
     
     private List<Clase> clases;
+    
+    
 
 
     public Materia(String codigo, String nombre, int cohorte,Profesor profesor,

@@ -83,6 +83,14 @@ public interface ServiciosUPPOST {
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
     public abstract List<Date> consultarFechas(PeriodoAcademico fecha) throws ExcepcionServiciosUPPOST;
+    
+    /**
+     * Consulta todos los periodos academicos de la base de datos
+     * @return Una lista de periodos academicos
+     * @throws ExcepcionServiciosUPPOST  si se presenta un error
+     * a nivel de base de datos
+     */
+    public abstract List<PeriodoAcademico> consultarPeriodos() throws ExcepcionServiciosUPPOST;
 
     
 }

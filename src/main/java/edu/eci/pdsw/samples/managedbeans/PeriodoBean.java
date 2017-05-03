@@ -30,38 +30,29 @@ public class PeriodoBean implements Serializable{
     
     ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     
-    private String anio;
-    private String semestre;
+    public PeriodoAcademico periodo;
+    
+    public List<PeriodoAcademico> periodos;
     
     
-    public PeriodoBean() {
-        //periodos = sp.consultarPAcademicos();
+
+    public PeriodoAcademico getPeriodo() {
+        return periodo;
     }
 
-    public String getAnio() {
-        return anio;
+    public void setPeriodo(PeriodoAcademico periodo) {
+        this.periodo = periodo;
     }
 
-    public void setAnio(String anio) {
-        this.anio = anio;
+    public List<PeriodoAcademico> getPeriodos() throws ExcepcionServiciosUPPOST {
+        return sp.consultarPeriodos();
     }
 
-    public String getSemestre() {
-        return semestre;
-    }
-
-    public void setSemestre(String semestre) {
-        this.semestre = semestre;
-    }
-    
-    public void nuevaEntradaAnio(RowEditEvent event){
-        System.out.println("entro");
-        String p= event.toString();
-        this.anio = p;
+    public void setPeriodos(List<PeriodoAcademico> periodos) {
+        this.periodos = periodos;
     }
     
     
 
-    
     
 }

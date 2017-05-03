@@ -58,22 +58,8 @@ public class ReporteProgramacionBean implements Serializable{
     
     public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST{
         
-        System.out.println("te encontre perror hpta null pointer malparido de mierda");
-        
-        System.out.println("año =" + periodoBean.getAnio());
-        System.out.println("semestre =" + periodoBean.getSemestre());
-        
-        int año = Integer.parseInt(periodoBean.getAnio());
-        int semestre = Integer.parseInt(periodoBean.getSemestre());
-        
-        if(periodoBean.getSemestre().equals("Intersemestral")){
-            semestre=3;
-        }
-        
-        System.out.println("año =" + año);
-        System.out.println("semestre =" + semestre);
-        
-        materia = inp.consultarMaterias(semestre, año);
+
+        materia = inp.consultarMaterias(periodoBean.periodo.getSemestre(), periodoBean.periodo.getAno());
         
         return materia;
     }

@@ -22,8 +22,6 @@ public class MyBatisDaoPAcademico implements PAcademicoDAO{
     private PAcademicoMapper pmap;
 
 
- 
-
     @Override
     public List<PeriodoAcademico> loadAll() throws PersistenceException {
         return pmap.consultarPAcademicos();

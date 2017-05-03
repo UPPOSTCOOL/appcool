@@ -17,58 +17,30 @@ and open the template in the editor.
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
 
-        <h:form id="periodosAcademicos">
-            <p:layout >
-                <p:layoutUnit position="north" resizable="true" size="100" minSize="40" maxSize="200">
-                    <p:dataTable var="cliente" value="#{PeriodoBean}" 
-                                 selectionMode="single" selection="#{AlquilerItems.cliente}" 
-                                 rowKey="#{cliente.documento}">
+        <h:form id="periodosAcademicos" style="text-align:center">
 
-                        <p:column headerText="Año">
-                            <h:outputText value="#{cliente.nombre}" />
-                        </p:column>
-                        <p:column headerText="Periodo">
-                            <h:outputText value="#{cliente.documento}" />
-                        </p:column>
-                        
-                        <f:facet name="footer">
-                            <p:commandButton value="Inspeccionar" action="RegistroClienteItem.xhtml"/>
-                            <p:commandButton value="Inspeccionar" action="RegistroClienteItem.xhtml"/>
-                        </f:facet>
-                    </p:dataTable>
-                </p:layoutUnit>
+            <p:dataTable var="periodo" value="#{PeriodoBean.periodos}" 
+                         selectionMode="single" selection="#{PeriodoBean.periodo}" 
+                         rowKey="#{periodo.id}">
 
-                <p:layoutUnit position="center">
-                    <br/>
-                    Agregar nuevo Cliente: 
-                    NOMBRE:
-                    <h:inputText value="#{AlquilerItems.nombre}"/>
-                    DOCUMENTO:
-                    <h:inputText value="#{AlquilerItems.documento}"/>
-                    TELEFONO:
-                    <h:inputText value="#{AlquilerItems.telefono}"/>
-                    DIRECCION:
-                    <h:inputText value="#{AlquilerItems.direccion}"/>
-                    EMAIL:
-                    <h:inputText value="#{AlquilerItems.email}"/>
+                <p:column headerText="id">
+                    <h:outputText value="#{periodo.id}" />
+                </p:column>
+                <p:column headerText="año">
+                    <h:outputText value="#{periodo.ano}" />
+                </p:column>
+                <p:column headerText="semestre">
+                    <h:outputText value="#{periodo.semestre}" />
+                </p:column>
 
-                    <p:commandButton value="Cliente Nuevo" actionListener="#{AlquilerItems.clienteNuevo()}" update="clientes"/>
-
-                </p:layoutUnit>
-            </p:layout>
-
-
+                <f:facet name="footer">
+                    <p:commandButton value="Ir a ReportesProgramacion" action="ReportesProgramacion.xhtml"/>
+                    <p:commandButton value="Ir a Reportes Salones" action="ReportesSalones.xhtml"/>
+                </f:facet>
+            </p:dataTable>
 
         </h:form>
-        
-        <br></br>
-        <br></br>
-        <br></br>
-        
-        <h:form id="op-button" style="text-align:center">
-            <h:commandButton id="open-r" value="Ir a Reporte Programación" action="ReportesProgramacion" />
-            <h:commandButton id="open-BinP" value="Ir a Reporte Salones" action="ReportesSalones" />
-        </h:form>
+
     </h:body>
 </html>
 
