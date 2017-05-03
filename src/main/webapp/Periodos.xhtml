@@ -12,31 +12,30 @@ and open the template in the editor.
     <h:head>
         <title>Reporte Programacion Semestral </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
     </h:head>
 
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
 
-        <h:form id="periodo" style="text-align: center;">
+        <div style="text-align: center;">
+        <h:form id="periodoo" style="text-align: center;">
             <h1>Seleccione el Periodo</h1>
             <p>Ingrese el año</p>
-            <p:inputText id="Año" ></p:inputText>     
+            <p:inputText value = "#{PeriodoBean.anio}" ></p:inputText>     
             <p>Ingrese el semestre</p>         
-
-            <select name="periodos">
-                <option>1</option>
-                <option>2</option>
-                <option>Intersemestral</option>
-            </select>
-        </h:form>
-        <br></br>
-        <br></br>
-        <br></br>
-        
-        <h:form id="op-button" style="text-align:center">
+            <h:selectOneMenu value = "#{PeriodoBean.semestre}"> 
+                <f:selectItem itemValue = "1" itemLabel = "1" /> 
+                <f:selectItem itemValue = "2" itemLabel = "2" /> 
+                <f:selectItem itemValue = "3" itemLabel = "Intersemestral" /> 
+            </h:selectOneMenu>
+            <br></br>
+            <br></br>
+            <br></br>
             <h:commandButton id="open-r" value="Ir a Reporte Programación" action="ReportesProgramacion" />
             <h:commandButton id="open-BinP" value="Ir a Reporte Salones" action="ReportesSalones" />
         </h:form>
+        </div>
     </h:body>
 </html>
 

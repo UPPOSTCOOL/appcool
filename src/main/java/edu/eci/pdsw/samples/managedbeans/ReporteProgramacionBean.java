@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 /**
@@ -30,12 +31,12 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "ProgramacionBean")
 @SessionScoped
 public class ReporteProgramacionBean implements Serializable{
-       
-    
     private List<Materia> materia=new ArrayList<>();
     private int anio;
     private int semestre;
     private String materiaSelec=null;
+    @ManagedProperty(value = "#{PeriodoBean}")
+    private PeriodoBean cb;
     //se eligen base de datos local o POSTGRES
     //POSTGRES
     private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
@@ -44,14 +45,11 @@ public class ReporteProgramacionBean implements Serializable{
         
     
     public ReporteProgramacionBean(){
-        // se elimina initList();  para trabajar directamente acá...
-        //se asume que se ha eligido semestre y anio
-        semestre=1;
-        anio=2016;
     }
     
     public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST{
-        
+        semestre=cb.getSemestre();
+        anio=cb.getAnio();
         materia = inp.consultarMaterias(anio, semestre);
         return materia;
     }
@@ -65,7 +63,6 @@ public class ReporteProgramacionBean implements Serializable{
         }
         return clases;
     }
-
 
     public List<Materia> getMateria() {
         return materia;
@@ -83,9 +80,6 @@ public class ReporteProgramacionBean implements Serializable{
         this.materiaSelec = materiaSelec;
         
     }
-    
-    
-    
 
     public int getAnio() {
         return anio;
@@ -102,7 +96,13 @@ public class ReporteProgramacionBean implements Serializable{
     public void setSemestre(int semestre) {
         this.semestre = semestre;
     }
-    
-    
+
+    public PeriodoBean getCb() {
+        return cb;
+    }
+
+    public void setCb(PeriodoBean cb) {
+        this.cb = cb; 
+    }
     
 }
