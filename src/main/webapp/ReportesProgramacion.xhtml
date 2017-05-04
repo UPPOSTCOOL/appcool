@@ -26,10 +26,13 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
-        <h1 style="text-align: center; color:firebrick "> Reporte Programación Semestral </h1>
+        <h1 style="text-align: center; color:firebrick " > Reporte Programación Semestral </h1>
+        
+        <!--<h:outputText value="{ProgramacionBean.hola}"/>-->
 
         <p:dataTable  id="formularioProgramacion" var="reporte" value="#{ProgramacionBean.obtenerLista()}"  style="margin: 0 auto;">
-
+            
+            
 
             <p:column>
                 <f:facet name="header">
@@ -86,19 +89,20 @@ and open the template in the editor.
         <br></br>
         <div id='calendario' style="display: none">
             <b id='materia'></b>
+           <!-- <h:outputText value="{ProgramacionBean.periodoSeleccionado}"/>-->
             <p:dataTable id="tablaFechas" var="reporte" value="#{ProgramacionBean.getClases()}">
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Fecha Clase"/>
                     </f:facet>
-                    <h:outputText value="#{reporte.fecha}" />
+                    <h:outputText value="#{reporte.formatoFecha}" />
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Hora Clase"/>
                     </f:facet>
-                    <h:outputText value="#{reporte.horaFin}" />
+                    <h:outputText value="#{reporte.hora}" />
                 </p:column>
 
                 <p:column>

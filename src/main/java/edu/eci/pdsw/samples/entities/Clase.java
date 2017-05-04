@@ -6,9 +6,7 @@
 package edu.eci.pdsw.samples.entities;
 
 import java.sql.Timestamp;
-import java.util.Calendar;
-import java.util.Date;
-
+import java.text.SimpleDateFormat;
 /**
  *
  * @author 
@@ -22,8 +20,6 @@ public class Clase {
     private String rangoHoras;//indica 10 a 2pm
     private String idMateria;
     private int cohorte;
-    
-    private Date hola;
 
     public Clase() {
     }
@@ -94,4 +90,21 @@ public class Clase {
         this.cohorte = cohorte;
     }
     
+    public String getHora(){
+        String hora = new SimpleDateFormat("HH:mm").format(horaFin);
+        return hora;
+    }
+    
+    public String getFormatoFecha(){
+        String fecha1 = new SimpleDateFormat("MM/dd/yy").format(fecha);
+        return fecha1;
+    }
+    
+   
+    
+    
+
+
+
+
 }
