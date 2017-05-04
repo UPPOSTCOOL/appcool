@@ -26,67 +26,67 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
-        <h1 style="text-align: center;"> Reporte Programación Semestral </h1>
-       
-            <p:dataTable  id="formularioProgramacion" var="reporte" value="#{ProgramacionBean.obtenerLista()}"  style="margin: 0 auto;">
+        <h1 style="text-align: center; color:firebrick "> Reporte Programación Semestral </h1>
+
+        <p:dataTable  id="formularioProgramacion" var="reporte" value="#{ProgramacionBean.obtenerLista()}"  style="margin: 0 auto;">
 
 
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Cohorte"/>
-                    </f:facet>
-                    <h:outputText value="#{reporte.cohorte}" />
-                </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Cohorte"/>
+                </f:facet>
+                <h:outputText value="#{reporte.cohorte}" />
+            </p:column>
 
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Asignaturas"/>
-                    </f:facet>
-                    <h:outputText value="#{reporte.asignatura.nombre}" />
-                </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Asignaturas"/>
+                </f:facet>
+                <h:outputText value="#{reporte.asignatura.nombre}" />
+            </p:column>
 
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Materias"/>
-                    </f:facet>
-                    <h:outputText value="#{reporte.nombre}" />
-                </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Materias"/>
+                </f:facet>
+                <h:outputText value="#{reporte.nombre}" />
+            </p:column>
 
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Profesor"/>
-                    </f:facet>
-                    <h:outputText value="#{reporte.profesor.nombre}" />
-                </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Profesor"/>
+                </f:facet>
+                <h:outputText value="#{reporte.profesor.nombre}" />
+            </p:column>
 
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Horas"/>
-                    </f:facet>
-                    <h:outputText value="#{reporte.numHoras}" />
-                </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Horas"/>
+                </f:facet>
+                <h:outputText value="#{reporte.numHoras}" />
+            </p:column>
 
-                <p:column >
-                    <f:facet name="header">
-                        <h:outputText value="Sesion"/>
-                    </f:facet>
-                    <h:outputText value="#{reporte.numClases}" />
-                </p:column>
+            <p:column >
+                <f:facet name="header">
+                    <h:outputText value="Sesion"/>
+                </f:facet>
+                <h:outputText value="#{reporte.numClases}" />
+            </p:column>
 
-                <p:column >
-                    <f:facet name="header">
-                    </f:facet>
-                    <p:commandButton value="Consultar Salones" onclick="ocultarMaterias('#{reporte.codigo}');" actionListener="#{ProgramacionBean.setMateriaSelec(reporte.codigo)}" update=":tablaFechas"></p:commandButton>
+            <p:column >
+                <f:facet name="header">
+                </f:facet>
+                <p:commandButton value="Consultar Salones" onclick="ocultarMaterias('#{reporte.codigo}');" actionListener="#{ProgramacionBean.setMateriaSelec(reporte.codigo)}" update=":tablaFechas"></p:commandButton>
 
-                </p:column>
+            </p:column>
 
-            </p:dataTable>
+        </p:dataTable>
         <br></br>
         <br></br>
         <br></br>
         <div id='calendario' style="display: none">
             <b id='materia'></b>
-            <p:dataTable id="tablaFechas" var="reporte" value="#{ProgramacionBean.getClases()}"  style="margin: 0 auto;">
+            <p:dataTable id="tablaFechas" var="reporte" value="#{ProgramacionBean.getClases()}">
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Fecha Clase"/>
@@ -107,18 +107,13 @@ and open the template in the editor.
                     </f:facet>
                     <h:outputText value="#{reporte.rangoHoras}" />
                 </p:column>
-                
-               
-                
             </p:dataTable>
-            
+            <br></br>           
+            <h:button value="Ver Materias" accesskey="ReportesProgramacion"/>
         </div>
-        
         <br></br>
-
-
         <h:form id="op-button" style="text-align:center">
-            <h:commandButton id="open-r" value="Regresar" action="Periodos"  />
+            <h:commandButton id="open-r" value="Seleccionar Periodo" action="Periodos"  />
         </h:form>
     </h:body>
 </html>

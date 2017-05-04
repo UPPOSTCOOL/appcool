@@ -6,6 +6,8 @@
 package edu.eci.pdsw.samples.entities;
 
 import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -20,6 +22,8 @@ public class Clase {
     private String rangoHoras;//indica 10 a 2pm
     private String idMateria;
     private int cohorte;
+    
+    private Date hola;
 
     public Clase() {
     }
@@ -53,7 +57,7 @@ public class Clase {
     public Timestamp getFecha() {
         return fecha;
     }
-
+    
     public void setFecha(Timestamp fecha) {
         this.fecha = fecha;
     }

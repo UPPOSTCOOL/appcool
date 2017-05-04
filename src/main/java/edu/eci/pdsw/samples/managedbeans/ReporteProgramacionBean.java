@@ -104,5 +104,4 @@ public class ReporteProgramacionBean implements Serializable{
     public void setCb(PeriodoBean cb) {
         this.cb = cb; 
     }
-    
 }
