@@ -22,6 +22,8 @@
         from periodo as p, mater_perio as m, clase as c, clase_Recur as cr, recurso as r
 
         where p.id = m.periodo_id
+        and p.ano=#{ano}
+        and p.semestre#{semestre}
         and m.materia_id = c.mater_perio_materia_id
         and m.cohorte = c.mater_perio_cohorte
         and c.id= cr.clase_id
