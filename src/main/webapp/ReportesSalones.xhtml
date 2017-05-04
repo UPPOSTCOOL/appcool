@@ -9,35 +9,54 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <head>
+    <h:head>
         <title>Reporte Salones </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-         <img src="Imagenes/eci2.jpg" height="100" /> 
-        <h:form id="formularioReportes">
-            <p:dataTable id="formularioReportes" var="informacion"  value="#{RegsemBean.salones}">
-                    
-                    <f:facet name="header">
-                        
-                       <p align="center"> <h2> Reporte Salones </h2></p>
+    </h:head>
+    <h:body>
+        <img src="Imagenes/eci2.jpg" height="80" /> 
+        <h1 style="text-align:center; color:firebrick">Reporte de salones</h1>
+        
+        <!--Seleccionar el periodo-->
+        
+      
+      
+            <p:dataTable id="formularioSalon" value="#{PruebaSalonBean.listaSalones}" var="curso" style="margin: 0 auto;">
+            <!-- <caption>Salones por periodo</caption>-->
+            <p:column>  
+                <f:facet name="header">
+                <h:outputText value="fecha inicio"></h:outputText>
                     </f:facet>
-                    <p:column headerText="Fecha">
-                        <h:outputLabel value="#{informacion.fecha}"></h:outputLabel>
-                    </p:column>                        
-                    <p:column headerText="Hora">
-                        <h:outputLabel value="#{informacion.horafin}"></h:outputLabel>
-                    </p:column> 
-                    <p:column headerText="Caracteristicas Solicitud">
-                        <h:outputLabel value="#{informacion.descripcion.nombre}"></h:outputLabel>                        
-                    </p:column>
-                   
-                    
-                    <f:facet name="footer">
-                        <p:commandButton update="formularioReportes" value="Regresar" action="ReportesPeriodo" immediate="true"/>
-                           
-                    </f:facet>
+                <h:outputText value="#{curso.fecha}"></h:outputText>
+            </p:column>  
+            <p:column>  
+                <f:facet name="header">
+                    <h:outputText value="fecha fin"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{curso.horaFin}"></h:outputText>
+            </p:column> 
+            <p:column>  
+                <f:facet name="header">
+                    <h:outputText value="Descripcion"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{curso.descripcion.nombre}"></h:outputText>
+            </p:column> 
+
+
+
             </p:dataTable>
+
+
+      
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <h:form id="op-button" style="text-align:center">
+            <h:commandButton id="open-r" value="Elegir Periodo" action="Periodos" />
         </h:form>
-    </body>
+    </h:body>
+
+
+
 </html>

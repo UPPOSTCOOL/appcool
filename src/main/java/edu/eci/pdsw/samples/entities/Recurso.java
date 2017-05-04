@@ -15,8 +15,11 @@ public class Recurso {
     private String nombre;
 
     public Recurso() {
-        id=0;
-        nombre=null;
+    }
+
+    public Recurso(int id, String nombre) {
+        this.id=id;
+        this.nombre=nombre;
     }
 
     public int getId() {

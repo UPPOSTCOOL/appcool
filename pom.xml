@@ -131,8 +131,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
@@ -146,6 +146,7 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -170,7 +171,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> --> 
             <!-- Tomcat embedded plugin. -->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
@@ -181,6 +182,8 @@
                     <path>/</path>
                 </configuration>
             </plugin>
+            
+            <!-- Plugin duplicado. -->
             <plugin>		
                 <groupId>org.apache.maven.plugins</groupId>		
                 <artifactId>maven-dependency-plugin</artifactId>		

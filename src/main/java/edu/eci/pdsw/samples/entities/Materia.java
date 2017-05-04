@@ -14,22 +14,24 @@ import java.util.List;
  */
 public class Materia implements Serializable{
     
-    private int id;
+    private String codigo;
     private String nombre;
-    
     private int cohorte;
     private int numClases;
     private int numHoras;
-    
     private Profesor profesor;
     private Asignatura asignatura;
-    
     private List<Clase> clases;
+    // private int semestre;
+    // private anio;
 
-    public Materia(int id, String nombre, int cohorte, int numClases, int numHoras,
+    public Materia() {
+    }
+
+    public Materia(String codigo, String nombre, int cohorte, int numClases, int numHoras,
             Profesor profesor, Asignatura asignatura, List<Clase> clases) {
         
-        this.id = id;
+        this.codigo = codigo;
         this.nombre = nombre;
         this.cohorte = cohorte;
         this.numClases = numClases;
@@ -48,12 +50,12 @@ public class Materia implements Serializable{
     }
 
 
-    public int getId() {
-        return id;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCodigo(String codigo) {
+        this.codigo= codigo;
     }
 
     public String getNombre() {
@@ -106,7 +108,7 @@ public class Materia implements Serializable{
 
     @Override
     public String toString() {
-        return "Materia{" + "id=" + id + ", nombre=" + nombre + ", cohorte=" + cohorte + ", numClases=" + numClases + ", numHoras=" + numHoras + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
+        return "Materia{" + "codigo=" + codigo + ", nombre=" + nombre + ", cohorte=" + cohorte + ", numClases=" + numClases + ", numHoras=" + numHoras + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
     }
     
     

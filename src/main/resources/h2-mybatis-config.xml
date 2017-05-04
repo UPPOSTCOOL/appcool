@@ -8,8 +8,11 @@
     </settings>
     
     <typeAliases>
-        <typeAlias type='edu.eci.pdsw.samples.entities.Comentario' alias='Comentario'/>
-        <typeAlias type='edu.eci.pdsw.samples.entities.Suscriptor' alias='Suscriptor'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Clase' alias='Clase'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Materia' alias='Materia'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Profesor' alias='Profesor'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Asignatura' alias='Asignatura'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Periodo' alias='Periodo'/>
     </typeAliases>        
     
     
@@ -26,15 +29,11 @@
     </environments>
         
     <mappers>
-        <!--<mapper resource="mappers/ClaseMapper.xml"></mapper> -->
+        <mapper resource="mappers/ClaseMapper.xml"></mapper>
         <mapper resource="mappers/MateriaMapper.xml"></mapper> 
         <mapper resource="mappers/ProfesorMapper.xml"></mapper> 
-<<<<<<< HEAD
-        <mapper resource="mappers/AsignaturaMapper.xml"></mapper>                
-    </mappers>  
-=======
-        <mapper resource="mappers/AsignaturaMapper.xml"></mapper>                  
-    </mappers> 
->>>>>>> HU1
+        <mapper resource="mappers/AsignaturaMapper.xml"></mapper> 
+        <mapper resource="mappers/PAcademicoMapper.xml"></mapper> 
+    </mappers>
         
 </configuration>

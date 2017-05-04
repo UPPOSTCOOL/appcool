@@ -15,14 +15,30 @@ public class Asignatura implements Serializable{
     
     private int id;
     private String nombre;
+    private PostGrado postgrado;
     
     //secuencia de materias la asignatura la compone diferentes materias
+
+    public Asignatura() {
+    }
     
 
-    public Asignatura(int id, String nombre) {
+    public Asignatura(int id, String nombre, PostGrado postgrado) {
         this.id = id;
         this.nombre = nombre;
+        this.postgrado = postgrado;
     }
+
+    public PostGrado getPostgrado() {
+        return postgrado;
+    }
+
+    public void setPostgrado(PostGrado postgrado) {
+        this.postgrado = postgrado;
+    }
+    
+    
+    
 
     public int getId() {
         return id;
@@ -39,7 +55,7 @@ public class Asignatura implements Serializable{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    
     @Override
     public String toString() {
         return "Asignatura{" + "id=" + id + ", nombre=" + nombre + '}';

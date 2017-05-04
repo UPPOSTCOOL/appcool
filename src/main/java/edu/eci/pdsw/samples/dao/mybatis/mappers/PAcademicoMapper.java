@@ -6,7 +6,7 @@
 package edu.eci.pdsw.samples.dao.mybatis.mappers;
 
 
-import edu.eci.pdsw.samples.entities.PeriodoAcademico;
+import edu.eci.pdsw.samples.entities.Periodo;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -16,6 +16,6 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface PAcademicoMapper {
     
-    public List<PeriodoAcademico> consultarPAcademicos();
+    public List<Periodo> consultarPAcademicos();
     
 }

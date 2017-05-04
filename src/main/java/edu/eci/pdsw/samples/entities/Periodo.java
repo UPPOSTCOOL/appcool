@@ -11,14 +11,17 @@ import java.util.List;
  *
  * @author 2092815
  */
-public class PeriodoAcademico {
+public class Periodo {
     
     private int id;
     private List<Materia> materias;
     private int ano;
     private int semestre;
 
-    public PeriodoAcademico(int id, List<Materia> materias, int ano, int semestre) {
+    public Periodo() {
+    }
+
+    public Periodo(int id, List<Materia> materias, int ano, int semestre) {
         this.id = id;
         this.materias = materias;
         this.ano = ano;

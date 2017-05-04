@@ -5,29 +5,33 @@
  */
 package edu.eci.pdsw.samples.entities;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
-import java.io.Serializable;
-import java.security.Timestamp;
-
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 /**
  *
  * @author 
  */
 public class Clase {
     
-    private int id=0;
-    private Recurso descripcion;
+    private int id;
+    private Recurso descripcion=new Recurso();
     private Timestamp fecha;
-    private Timestamp horafin;
-    private int idMateria=0;
-    
+    private Timestamp horaFin;
+    private String rangoHoras;//indica 10 a 2pm
+    private String idMateria;
+    private int cohorte;
 
-    public Clase(int id, Recurso descripcion,Timestamp fecha, Timestamp horafin, int idMateria) {
+    public Clase() {
+    }
+    
+    public Clase(int id, /*Recurso descripcion,*/ Timestamp fecha, Timestamp horaFin, String rangoHoras, String idMateria, int cohorte) {
         this.id = id;
-        this.descripcion = descripcion;
-        this.fecha=fecha;
-        this.horafin=horafin;
-        this.idMateria=idMateria;
+        this.descripcion =new Recurso();
+        this.fecha = fecha;
+        this.horaFin = horaFin;
+        this.rangoHoras = rangoHoras;
+        this.idMateria = idMateria;
+        this.cohorte = cohorte;
     }
 
     public int getId() {
@@ -42,36 +46,65 @@ public class Clase {
         return descripcion;
     }
 
-  
+    public void setDescripcion(Recurso descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public Timestamp getFecha() {
         return fecha;
     }
-
+    
     public void setFecha(Timestamp fecha) {
         this.fecha = fecha;
     }
 
-    public Timestamp getHorafin() {
-        return horafin;
+    public Timestamp getHoraFin() {
+        return horaFin;
     }
 
-    public void setHorafin(Timestamp horafin) {
-        this.horafin = horafin;
+    public void setHoraFin(Timestamp horaFin) {
+        this.horaFin = horaFin;
     }
 
-    public int getIdMateria() {
+    public String getRangoHoras() {
+        return rangoHoras;
+    }
+
+    public void setRangoHoras(String rangoHoras) {
+        this.rangoHoras = rangoHoras;
+    }
+
+    public String getIdMateria() {
         return idMateria;
     }
 
-    public void setIdMateria(int idMateria) {
+    public void setIdMateria(String idMateria) {
         this.idMateria = idMateria;
     }
 
-  
-   // @Override
-   // public String toString() {
-   //     return "clase{" + "id=" + id + ", descripcion=" + descripcion + '}';
-  //  }
+    public int getCohorte() {
+        return cohorte;
+    }
+
+    public void setCohorte(int cohorte) {
+        this.cohorte = cohorte;
+    }
     
+    public String getHora(){
+        String hora = new SimpleDateFormat("HH:mm").format(horaFin);
+        return hora;
+    }
+    
+    public String getFormatoFecha(){
+        String fecha1 = new SimpleDateFormat("MM/dd/yy").format(fecha);
+        return fecha1;
+    }
+    
+   
+    
+    
+
+
+
+
 }

@@ -16,6 +16,9 @@ public class PostGrado {
     private Profesor coordinador;
     private List<Asignatura> asignaturas;
 
+    public PostGrado() {
+    }
+
     public PostGrado(Profesor coordinador, List<Asignatura> asignaturas) {
         this.coordinador = coordinador;
         this.asignaturas = asignaturas;
