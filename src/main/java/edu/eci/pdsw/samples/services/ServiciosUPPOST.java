@@ -9,6 +9,7 @@ import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Periodo;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Profesor;
+import edu.eci.pdsw.samples.entities.Programa;
 import java.util.Date;
 import java.util.List;
 
@@ -97,5 +98,12 @@ public interface ServiciosUPPOST {
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
     public abstract List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST;
+    
+     /**
+     * Consultar programas
+     * @return  lista total de Programas
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+    public abstract List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST;
     
 }
