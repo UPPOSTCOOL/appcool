@@ -100,6 +100,11 @@ public class ReporteProgramacionBean implements Serializable{
         this.cb = cb; 
     }
     public String periodoSeleccionado() {
-        return "Periodo{" + "Anio=" + cb.getAnio() + ", semestre=" + cb.getSemestre() + '}';
+        if(cb.getSemestre()==3){
+            return cb.getAnio() + "-" + "Intersemestral" ;
+        }else{
+            return cb.getAnio() + "-" + cb.getSemestre() ;
+        }
+        
     }
 }
