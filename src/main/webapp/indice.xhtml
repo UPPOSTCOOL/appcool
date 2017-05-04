@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Indice </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    </h:head>
+
+    <h:body>
+        <img src="Imagenes/eci2.jpg" height="80" />
+        <h1 style="text-align:center;color:firebrick" >UNIDAD DE PROYECTOS</h1>        
+        <br></br>        
+        <h:form id="indice" style="color:firebrick">
+            <h1>Indice</h1>     
+          
+
+                <h:commandButton id="periodo" style="font-size: 20px; background-color: linen; padding: 4px; width: 350px" value="Reporte Programación Semestral" action="Periodos" />
+                <br></br>
+                <br></br>
+                 <h:commandButton id="registrarMate" style="font-size: 20px; background-color: linen; padding: 4px; width: 350px" value="Registrar Materia" action="RegistrarMateria"/>
+                <br></br>
+                <br></br>
+                 <h:commandButton id="progrPeriodo" style="font-size: 20px; background-color: linen; padding: 4px;width: 350px" value="Programación de Periodo" action="ReportesProgramacion" />
+                <br></br>
+                <br></br>
+                 <h:commandButton id="registroCohorte" style="font-size: 20px; background-color: linen; padding: 4px;width: 350px" value="Registro materia en Nueva Cohorte" action="ReportesProgramacion" />
+                <br></br>
+                <br></br>
+           
+        </h:form>
+
+    </h:body>
+</html>
+
