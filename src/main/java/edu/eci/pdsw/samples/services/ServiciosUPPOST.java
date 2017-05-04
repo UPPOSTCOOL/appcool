@@ -54,7 +54,7 @@ public interface ServiciosUPPOST {
      * @throws ExcepcionServiciosUPPOST si se presenta un error
      * a nivel de base de datos.e
      */
-    public abstract List<Clase> consultarClasesxPeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST;
+    public abstract List<Clase> consultarClasesxPeriodo(int periodo) throws ExcepcionServiciosUPPOST;
 
     /**
      * Consulta todos los profesores

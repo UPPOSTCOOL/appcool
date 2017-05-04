@@ -20,22 +20,22 @@ public class Clase implements Serializable {
     
     private int id;
 
-    private Recurso descripcion;
+    private String recurso;
     
     private Timestamp fecha;
     private Timestamp horafin;
     
-    private Materia materia;
+    private String materia;
     private String salon;
     
 
     
 
-    public Clase(int id, Recurso descripcion, java.sql.Timestamp fecha,
-            java.sql.Timestamp horafin,Materia materia, String salon) {
+    public Clase(int id, String recurso, java.sql.Timestamp fecha,
+            java.sql.Timestamp horafin,String materia, String salon) {
         
         this.id = id;
-        this.descripcion = descripcion;
+        this.recurso = recurso;
         this.fecha=fecha;
         this.horafin=horafin;
         this.materia = materia;
@@ -52,13 +52,9 @@ public class Clase implements Serializable {
         this.id = id;
     }
 
-    public Recurso getDescripcion() {
-        return descripcion;
-    }
+   
 
-    public void setDescripcion(Recurso descripcion) {
-        this.descripcion = descripcion;
-    }
+   
 
     public Timestamp getFecha() {
         return fecha;
@@ -76,13 +72,24 @@ public class Clase implements Serializable {
         this.horafin = horafin;
     }
 
-    public Materia getMateria() {
+    public String getRecurso() {
+        return recurso;
+    }
+
+    public void setRecurso(String recurso) {
+        this.recurso = recurso;
+    }
+
+    public String getMateria() {
         return materia;
     }
 
-    public void setMateria(Materia materia) {
+    public void setMateria(String materia) {
         this.materia = materia;
     }
+
+    
+  
 
     public String getSalon() {
         return salon;
@@ -92,13 +99,10 @@ public class Clase implements Serializable {
         this.salon = salon;
     }
 
-
-
-
   
    @Override
    public String toString() {
-        return "clase{" + "id=" + id + ", descripcion=" + descripcion + ", Materia=" + materia + '}';
+        return "clase{" + "id=" + id + ", descripcion=" + recurso + ", Materia=" + materia + '}';
   }
     
 }

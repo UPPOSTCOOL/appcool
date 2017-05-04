@@ -71,8 +71,13 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public List<Clase> consultarClasesxPeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Clase> consultarClasesxPeriodo(int periodo) throws ExcepcionServiciosUPPOST {
+        try {
+            return daoc.consultarClasesxPeriodo(periodo);
+        }catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar clases del periodo: " + periodo + ex);
+
+        }
     }
 
     @Override

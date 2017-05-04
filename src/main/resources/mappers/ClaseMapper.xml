@@ -5,28 +5,38 @@
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper">
 
+    <select parameterType="map" id="consultarClases" resultMap="ClaseResult">
+     
+        select  
+        
+        c.id, c.fecha, c.horaFin,
+        
+        r.nombre as recursos, 
+        
+        c.fecha, c.horaFin,
+        
+        m.materia_id as materia, 
+        
+        c.salon
+
+        from periodo as p, mater_perio as m, clase as c, clase_Recur as cr, recurso as r
+
+        where p.id = m.periodo_id
+        and m.materia_id = c.mater_perio_materia_id
+        and m.cohorte = c.mater_perio_cohorte
+        and c.id= cr.clase_id
+        and r.id = cr.recurso_id
+        
+    </select>
+    
     <resultMap type='Clase' id='ClaseResult' >
         <id property='id' column='id'/>
+        <result property='recurso'column='recurso'/>
         <result property='fecha' column='fecha'/>
         <result property='horaFin' column='horaFin'/>
-        <result property='rangoHoras' column='rangoHoras'/>
-        <result property= 'idMateria' column='mater_perio_materia_id'/>
-        <result property= 'cohorte' column='mater_perio_cohorte'/>
-        <!--<association property= 'descripcion' column='recurso'/>-->
-        <!--<collection property='recurso' ofType='Clase_Recur' resultMap='Recurso' columnPrefix='Clase_Recur_'></collection>-->
+        <result property= 'materia' column='materia_id'/>
+        <result property= 'salon' column='salon'/>
     </resultMap>
-    <!-- 
-    <resultMap type='Recurso' id='RecursoResult'>
-        <id property='id' column='id'/>
-        <result property='nombre' column='nombre'/>
-       </resultMap>        
-    
-   
-    
-    <resultMap type='Clase_Recur' id='Clase_RecurResult'>
-        <id property='id' column='id'/>
-          
-    </resultMap>
-    -->             	
+      	
 
 </mapper>
