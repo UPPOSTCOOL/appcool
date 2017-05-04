@@ -9,17 +9,36 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Programacion de periodo </title>
-        
+      <h:head> 
+        <title> Programación Periodo </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
+        <script>
+            function ocultarprograma(p) {
+                document.getElementById("formularioSeleccion").style.display = "none";
+                document.getElementById("formularioProgramacion").style.display = "block";
+              //  document.getElementById("materia").innerHTML = "Calendario de clases de la materia:" + m;
+            }
+            function mostrarProgramacionPeriodo() {
+                     document.getElementById("formularioSeleccion").style.display = "block";
+                document.getElementById("formularioProgramacion").style.display = "none";
+            }
+        </script>
     </h:head>
 
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
-        <h1 style="text-align:center;color:firebrick" >Programación de periodo</h1>
-        <h:form id="programacion" style="text-align:left">
+        <div>
+            <h1 style="text-align:center;color:firebrick" >Programación de periodo</h1>
+            <h:form id="formularioSeleccion" style="text-align: center; color:firebrick">
+
+                <h:selectOneMenu > 
+                    <f:selectItem itemValue = "gerencia proyectos" itemLabel = "gerencia proyectos" /> 
+                    <f:selectItem itemValue = "maestria" itemLabel = "maestria" /> 
+                    <f:selectItem itemValue = "educación continuada" itemLabel = "educación continuadal" /> 
+                </h:selectOneMenu>
+
+            </h:form>
+        </div>
         <div>
            
             <h2>Periodo</h2>
@@ -40,6 +59,6 @@ and open the template in the editor.
             <h2>Cohorte</h2>
            
         </div>
-            </h:form>
+           
     </h:body>
 </html>
