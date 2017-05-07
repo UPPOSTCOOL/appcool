@@ -13,7 +13,6 @@ import java.util.List;
  * @author kvn
  */
 public class Materia implements Serializable{
-    
     private String codigo;
     private String nombre;
     private int cohorte;
@@ -22,15 +21,13 @@ public class Materia implements Serializable{
     private Profesor profesor;
     private Asignatura asignatura;
     private List<Clase> clases;
-    // private int semestre;
-    // private anio;
+    private List<Materia> preRequisitos;
+    private List<Materia> coRequisitos;
 
     public Materia() {
     }
 
-    public Materia(String codigo, String nombre, int cohorte, int numClases, int numHoras,
-            Profesor profesor, Asignatura asignatura, List<Clase> clases) {
-        
+    public Materia(String codigo, String nombre, int cohorte, int numClases, int numHoras, Profesor profesor, Asignatura asignatura, List<Clase> clases, List<Materia> preRequisitos, List<Materia> coRequisitos) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cohorte = cohorte;
@@ -39,6 +36,24 @@ public class Materia implements Serializable{
         this.profesor = profesor;
         this.asignatura = asignatura;
         this.clases = clases;
+        this.preRequisitos = preRequisitos;
+        this.coRequisitos = coRequisitos;
+    }
+
+    public List<Materia> getPreRequisitos() {
+        return preRequisitos;
+    }
+
+    public void setPreRequisitos(List<Materia> preRequisitos) {
+        this.preRequisitos = preRequisitos;
+    }
+
+    public List<Materia> getCoRequisitos() {
+        return coRequisitos;
+    }
+
+    public void setCoRequisitos(List<Materia> coRequisitos) {
+        this.coRequisitos = coRequisitos;
     }
 
     public List<Clase> getClases() {
