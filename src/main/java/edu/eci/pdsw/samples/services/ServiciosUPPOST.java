@@ -65,11 +65,20 @@ public interface ServiciosUPPOST {
      * Consulta las materias de un periodo
      * @param semestre numero de semestre identificado con 1 o 2
      * @param anio año de que se desea consultar
-     * @return La clase con todo sus detalles y recursos
+     * @return Las materias de un periodo específico
      * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
      * a nivel de base de datos, la clase no existe
      */
     public abstract List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
+    
+    /**
+     * Consulta las materias de un programa
+     * @param id_programa
+     * @return Las materias de un programa específico
+     * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
+     * a nivel de base de datos, la clase no existe
+     */
+    public abstract List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST;
     
     /**
      * Consulta todos los profesores

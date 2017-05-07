@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.samples.daos;
 
+import edu.eci.pdsw.samples.entities.Programa;
 import java.util.List;
 
 /**
@@ -12,5 +13,5 @@ import java.util.List;
  * @author 2092815
  */
 public interface ProgramaDAO {
-    public List<ProgramaDAO> loadAll() throws PersistenceException;
+    public List<Programa> loadAll() throws PersistenceException;
 }

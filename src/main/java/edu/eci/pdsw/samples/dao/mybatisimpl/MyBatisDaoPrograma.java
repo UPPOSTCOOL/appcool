@@ -9,6 +9,7 @@ import com.google.inject.Inject;
 import edu.eci.pdsw.samples.dao.mybatis.mappers.ProgramaMapper;
 import edu.eci.pdsw.samples.daos.PersistenceException;
 import edu.eci.pdsw.samples.daos.ProgramaDAO;
+import edu.eci.pdsw.samples.entities.Programa;
 
 import java.util.List;
 
@@ -22,8 +23,8 @@ public class MyBatisDaoPrograma implements ProgramaDAO{
     private ProgramaMapper pmap;
 
     @Override
-    public List<ProgramaDAO> loadAll() throws PersistenceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Programa> loadAll() throws PersistenceException {
+        return pmap.consultarProgramas();
     }
     
 }

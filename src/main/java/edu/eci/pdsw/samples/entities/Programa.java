@@ -5,6 +5,8 @@
  */
 package edu.eci.pdsw.samples.entities;
 
+import java.util.List;
+
 /**
  *
  * @author 2083722
@@ -12,6 +14,7 @@ package edu.eci.pdsw.samples.entities;
 public class Programa {
     private int id;
     private String nombre;
+    private List<Asignatura> asignaturas;
 
     public Programa(int id, String nombre) {
         this.id = id;
@@ -34,4 +37,11 @@ public class Programa {
         this.nombre = nombre;
     }
 
+    public List<Asignatura> getAsignaturas() {
+        return asignaturas;
+    }
+
+    public void setAsignaturas(List<Asignatura> asignaturas) {
+        this.asignaturas = asignaturas;
+    }
 }
