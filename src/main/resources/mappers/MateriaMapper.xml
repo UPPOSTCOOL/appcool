@@ -13,6 +13,8 @@
         <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
         <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
         <collection property='clases' ofType='Clase' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='clase_'></collection>
+        <collection property='preRequisitos' ofType='Materia' resultMap='MateriaResult' columnPrefix='preReq_'></collection>
+        <collection property='coRequisitos' ofType='Materia' resultMap='MateriaResult' columnPrefix='coReq_'></collection>
     </resultMap>
     <select parameterType="map" id="consultarMateriasPorPrograma" resultMap="MateriaResult">
         select
