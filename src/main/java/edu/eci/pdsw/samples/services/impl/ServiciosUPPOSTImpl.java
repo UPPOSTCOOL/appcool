@@ -13,13 +13,17 @@ import edu.eci.pdsw.samples.daos.PAcademicoDAO;
 import edu.eci.pdsw.samples.daos.MateriaDAO;
 import edu.eci.pdsw.samples.daos.PersistenceException;
 import edu.eci.pdsw.samples.daos.ProfesorDAO;
+import edu.eci.pdsw.samples.daos.ProgramaDAO;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Profesor;
+import edu.eci.pdsw.samples.entities.Programa;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -37,6 +41,8 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     private ProfesorDAO daoPO;
     @Inject
     private AsignaturaDAO daoA;
+    @Inject
+    private ProgramaDAO daoP;
 
     @Override
     public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
@@ -66,8 +72,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     @Override
     public List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST {
         return daom.consultarMateriasDAO(semestre,anio);
-
-    }   
+    }
     
     //.....//
     @Override
@@ -94,6 +99,20 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     public List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 
+    @Override
+    public List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST {
+        List<Programa> res=null;
+        try {
+            res=daoP.loadAll();
+        } catch (PersistenceException ex) {
+            Logger.getLogger(ServiciosUPPOSTImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return res;
+    }
+
+    @Override
+    public List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST {
+        return daom.consultarMateriasPorProgramaDAO(id_programa);
+    }
 }

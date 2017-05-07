@@ -11,6 +11,7 @@ import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Periodo;
 import edu.eci.pdsw.samples.entities.PostGrado;
 import edu.eci.pdsw.samples.entities.Profesor;
+import edu.eci.pdsw.samples.entities.Programa;
 import edu.eci.pdsw.samples.entities.Recurso;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
@@ -657,6 +658,16 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
     @Override
     public List<Periodo> consultarPAcademico(Periodo periodo) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
