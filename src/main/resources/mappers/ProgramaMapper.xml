@@ -20,7 +20,7 @@
             Programa P,
             Asignatura A
         WHERE
-            A.programaId=P.id
+            A.Programa_id=P.id
         Order By P.nombre asc;
     </select>
 </mapper>

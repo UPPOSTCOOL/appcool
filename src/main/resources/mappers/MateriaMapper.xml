@@ -14,6 +14,19 @@
         <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
         <collection property='clases' ofType='Clase' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='clase_'></collection>
     </resultMap>
+    <select parameterType="map" id="consultarMateriasPorPrograma" resultMap="MateriaResult">
+        select
+            M.codigo as codigo,
+            M.nombre as nombre
+        from
+            Asignatura A,
+            Materia M
+        WHERE
+            M.Asignatura_id=A.id and
+            A.Programa_id=#{id_programa};
+        Order By M.nombre asc;
+    </select>
+
     <select parameterType="map" id="consultarMateriasClase" resultMap="MateriaResult">
         select 
             M.codigo as codigo,
@@ -62,5 +75,4 @@
             PE.ano=#{anio} and
             PE.semestre=#{semestre};
     </select>
-
 </mapper>
