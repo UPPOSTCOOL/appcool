@@ -21,12 +21,12 @@
             M.codigo as codigo,
             M.nombre as nombre
         from
-            Asignatura A,
-            Materia M
+            Materia M,
+            Materia M2
         WHERE
-            M.Asignatura_id=A.id and
-            A.posgrado_id=#{id_programa};
-        Order By M.nombre asc;
+            M.codigo=#{codigo} and
+            M.
+        limit 1;
     </select>
     
     <select parameterType="map" id="consultarMateriasPorPrograma" resultMap="MateriaResult">
@@ -38,7 +38,7 @@
             Materia M
         WHERE
             M.Asignatura_id=A.id and
-            A.posgrado_id=#{id_programa};
+            A.posgrado_id=#{id_programa}
         Order By M.nombre asc;
     </select>
 
