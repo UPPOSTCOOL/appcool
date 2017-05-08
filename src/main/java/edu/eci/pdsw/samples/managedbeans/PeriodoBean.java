@@ -28,30 +28,30 @@ import org.primefaces.event.RowEditEvent;
 @SessionScoped
 public class PeriodoBean implements Serializable{
     
-    ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
-    
-    public PeriodoAcademico periodo;
-    
-    public List<PeriodoAcademico> periodos;
-    
-    
 
-    public PeriodoAcademico getPeriodo() {
-        return periodo;
+    private int anio;
+    private int semestre;
+
+    public PeriodoBean() {
     }
 
-    public void setPeriodo(PeriodoAcademico periodo) {
-        this.periodo = periodo;
+    public int getAnio() {
+        return anio;
     }
 
-    public List<PeriodoAcademico> getPeriodos() throws ExcepcionServiciosUPPOST {
-        return sp.consultarPeriodos();
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
-    public void setPeriodos(List<PeriodoAcademico> periodos) {
-        this.periodos = periodos;
+    public int getSemestre() {
+        return semestre;
     }
-    
+
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+
+    }
+
     
 
     

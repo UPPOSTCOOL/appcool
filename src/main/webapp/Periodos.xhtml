@@ -12,34 +12,33 @@ and open the template in the editor.
     <h:head>
         <title>Reporte Programacion Semestral </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
     </h:head>
 
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
 
-        <h:form id="periodosAcademicos" style="text-align:center">
 
-            <p:dataTable var="periodo" value="#{PeriodoBean.periodos}" 
-                         selectionMode="single" selection="#{PeriodoBean.periodo}" 
-                         rowKey="#{periodo.id}">
-
-                <p:column headerText="id">
-                    <h:outputText value="#{periodo.id}" />
-                </p:column>
-                <p:column headerText="año">
-                    <h:outputText value="#{periodo.ano}" />
-                </p:column>
-                <p:column headerText="semestre">
-                    <h:outputText value="#{periodo.semestre}" />
-                </p:column>
-
-                <f:facet name="footer">
-                    <p:commandButton value="Ir a ReportesProgramacion" action="ReportesProgramacion.xhtml"/>
-                    <p:commandButton value="Ir a Reportes Salones" action="ReportesSalones.xhtml"/>
-                </f:facet>
-            </p:dataTable>
-
+        <div style="text-align: center;">
+        <h:form id="periodoo" style="text-align: center; color:firebrick">
+            <h1>Seleccione el Periodo</h1>
+            <p>Ingrese el año</p>
+            <p:inputText value = "#{PeriodoBean.anio}" ></p:inputText>     
+            <p>Ingrese el semestre</p>         
+            <h:selectOneMenu value = "#{PeriodoBean.semestre}"> 
+                <f:selectItem itemValue = "1" itemLabel = "1" /> 
+                <f:selectItem itemValue = "2" itemLabel = "2" /> 
+                <f:selectItem itemValue = "3" itemLabel = "Intersemestral" /> 
+            </h:selectOneMenu>
+            <br></br>
+            <br></br>
+            <br></br>
+            <h:commandButton id="open-r" value="Ir a Reporte Programación" action="ReportesProgramacion" />
+            <br></br>
+            <br></br>
+            <h:commandButton id="open-BinP" value="Ir a Reporte Salones" action="ReportesSalones" />
         </h:form>
+        </div>
 
     </h:body>
 </html>

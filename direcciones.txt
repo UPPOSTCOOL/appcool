@@ -13,3 +13,5 @@ reporte salones:
 http://localhost:8080/faces/ReportesSalones.xhtml
 reporte semestral: 
 http://localhost:8080/faces/ReportesProgramacion.xhtml
+Programacion periodo:
+http://localhost:8080/faces/programacionPeriodo.xhtml

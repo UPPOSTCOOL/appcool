@@ -9,8 +9,7 @@ import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-import java.util.List;
-
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -59,7 +58,7 @@ public class Clase implements Serializable {
     public Timestamp getFecha() {
         return fecha;
     }
-
+    
     public void setFecha(Timestamp fecha) {
         this.fecha = fecha;
     }
@@ -105,4 +104,23 @@ public class Clase implements Serializable {
         return "clase{" + "id=" + id + ", descripcion=" + recurso + ", Materia=" + materia + '}';
   }
     
+
+    public String getHora(){
+        String hora = new SimpleDateFormat("HH:mm").format(horafin);
+        return hora;
+    }
+    
+    public String getFormatoFecha(){
+        String fecha1 = new SimpleDateFormat("MM/dd/yy").format(fecha);
+        return fecha1;
+    }
+    
+   
+    
+    
+
+
+
+
 }
+

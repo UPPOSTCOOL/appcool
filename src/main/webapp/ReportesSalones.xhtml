@@ -15,17 +15,13 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" /> 
-        <h1 style="text-align:center;" bordercolor="red">Reporte de salones</h1>
+        <h1 style="text-align:center; color:firebrick">Reporte de salones</h1>
+        
         <!--Seleccionar el periodo-->
         
-        <select name="periodos">
-            <option>2016-1</option>
-            <option>2016-2</option>
-            <option>2017-1</option>
-            <option>2017-2</option>
-        </select>
-        <h:form id="formularioSalon">
-            <h:dataTable  value="#{PruebaSalonBean.listaSalones}" var="curso" border='1' bgcolor="#D3D3D3"  style="margin: 0 auto;">
+      
+      
+            <p:dataTable id="formularioSalon" value="#{PruebaSalonBean.listaSalones}" var="curso" style="margin: 0 auto;">
             <!-- <caption>Salones por periodo</caption>-->
             <p:column>  
                 <f:facet name="header">
@@ -48,10 +44,10 @@ and open the template in the editor.
 
 
 
-            </h:dataTable>
+            </p:dataTable>
 
 
-        </h:form>
+      
         <br></br>
         <br></br>
         <br></br>
