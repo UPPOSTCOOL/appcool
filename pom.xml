@@ -181,8 +181,7 @@
                     <port>8080</port>
                     <path>/</path>
                 </configuration>
-            </plugin>
-            
+            </plugin>            
             <!-- Plugin duplicado. -->
             <!-- Plugin configuration for Heroku compatibility. -->
             <!--plugin>		
@@ -209,8 +208,7 @@
                     </execution>		
         		
                 </executions>		
-            </plugin-->
-            
+            </plugin-->            
             <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
@@ -232,7 +230,6 @@
                 </execution>
             </executions>
         </plugin>
-            
         </plugins>
     </build>
     <repositories>		
