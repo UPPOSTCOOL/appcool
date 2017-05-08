@@ -31,7 +31,7 @@ public class MyBatisDaoMateria implements MateriaDAO{
     }
 
     @Override
-    public Materia consultarMateriaConRequisitosDAO(int id) throws ExcepcionServiciosUPPOST {
+    public Materia consultarMateriaConRequisitosDAO(String codigo) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
