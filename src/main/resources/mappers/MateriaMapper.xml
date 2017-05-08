@@ -16,6 +16,19 @@
         <collection property='preRequisitos' ofType='Materia' resultMap='MateriaResult' columnPrefix='preReq_'></collection>
         <collection property='coRequisitos' ofType='Materia' resultMap='MateriaResult' columnPrefix='coReq_'></collection>
     </resultMap>
+    <select parameterType="map" id="consultarMateriaConRequisitos" resultMap="MateriaResult">
+        select
+            M.codigo as codigo,
+            M.nombre as nombre
+        from
+            Asignatura A,
+            Materia M
+        WHERE
+            M.Asignatura_id=A.id and
+            A.posgrado_id=#{id_programa};
+        Order By M.nombre asc;
+    </select>
+    
     <select parameterType="map" id="consultarMateriasPorPrograma" resultMap="MateriaResult">
         select
             M.codigo as codigo,

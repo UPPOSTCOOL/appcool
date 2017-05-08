@@ -19,4 +19,9 @@ public interface MateriaMapper {
     * consulta el listado de materias de un programa específico
     */
     public List<Materia> consultarMateriasPorPrograma(@Param("id_programa") int id_programa);
+    
+    /*
+    * consulta una materia con su información y Co y Requisitos
+    */
+    public Materia consultarMateriaConRequisitos(@Param("id") int id);
 }
