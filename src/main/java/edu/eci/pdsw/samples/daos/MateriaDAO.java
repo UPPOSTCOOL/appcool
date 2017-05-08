@@ -16,5 +16,5 @@ import java.util.List;
 public interface MateriaDAO {
     public List<Materia> consultarMateriasDAO(int semestre,int anio) throws ExcepcionServiciosUPPOST;
     public List<Materia> consultarMateriasPorProgramaDAO(int id_programa) throws ExcepcionServiciosUPPOST;
-    public Materia consultarMateriaConRequisitosDAO(String codigo) throws ExcepcionServiciosUPPOST;
+    public Materia consultarMateriaConRequisitosDAO(String codigo,int id_programa) throws ExcepcionServiciosUPPOST;
 }
