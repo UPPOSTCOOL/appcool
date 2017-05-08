@@ -451,7 +451,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Timestamp dt7815= new Timestamp(2017,8,7,15,0,0,0);
         
         Recurso recurso = new Recurso(100, "recurso -2");        
-        /*
+        
         Clase cl1a = new Clase(1,recurso,dt787, dt788, "7 a 8", "M1",24);
         Clase cl2a = new Clase(2,recurso,dt788, dt7810, "8 a 10","M2",24);        
         Clase cl3a = new Clase(3,recurso,dt7810, dt7811,"10 a 11","M3",24);      
@@ -524,25 +524,25 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         // Materias son 5 grupos de materias
               
-        Materia mat1 = new Materia("M1", "Gerencia de riesgos 2", 24, 1, 1, prof1, asig1, clasesM1 );
-        Materia mat2 = new Materia("M2", "G cominicaciones 2", 24, 1, 1, prof1, asig1, clasesM2 );
-        Materia mat3 = new Materia("M3", "G calidad 2", 24, 1, 1, prof1, asig1, clasesM3 );
-        Materia mat4 = new Materia("M4", "Liderazgoy trabajo 2", 24, 1, 1, prof1, asig1, clasesM4 );
-        Materia mat5 = new Materia("M5", "Negociación 2", 24, 1, 1, prof1, asig1, clasesM5 );
-        Materia mat6 = new Materia("M6", "Creatividad Inn 2", 24, 1, 1, prof1, asig1, clasesM6 );
+        Materia mat1 = new Materia("M1", "Gerencia de riesgos 2", 24, 1, 1, prof1, asig1, clasesM1, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat2 = new Materia("M2", "G cominicaciones 2", 24, 1, 1, prof1, asig1, clasesM2, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat3 = new Materia("M3", "G calidad 2", 24, 1, 1, prof1, asig1, clasesM3, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat4 = new Materia("M4", "Liderazgoy trabajo 2", 24, 1, 1, prof1, asig1, clasesM4, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat5 = new Materia("M5", "Negociación 2", 24, 1, 1, prof1, asig1, clasesM5, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat6 = new Materia("M6", "Creatividad Inn 2", 24, 1, 1, prof1, asig1, clasesM6, new ArrayList<Materia>(), new ArrayList<Materia>()  );
         
-        Materia mat7 = new Materia("M7", "Taller trabajo grado 2", 24, 1, 1, prof2, asig2, clasesM7 );
-        Materia mat8 = new Materia("M8", "Taller trabajo grado2 w2", 24, 1, 1, prof2, asig2, clasesM8 );
-        Materia mat9 = new Materia("M9", "Sustentacion grup 2", 24, 1, 1, prof2, asig2, clasesM9 );
-        Materia mat10 = new Materia("M10", "Intro a la Investigacion 2", 24, 1, 1, prof2, asig2, clasesM10 );
+        Materia mat7 = new Materia("M7", "Taller trabajo grado 2", 24, 1, 1, prof2, asig2, clasesM7, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat8 = new Materia("M8", "Taller trabajo grado2 w2", 24, 1, 1, prof2, asig2, clasesM8, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat9 = new Materia("M9", "Sustentacion grup 2", 24, 1, 1, prof2, asig2, clasesM9, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat10 = new Materia("M10", "Intro a la Investigacion 2", 24, 1, 1, prof2, asig2, clasesM10, new ArrayList<Materia>(), new ArrayList<Materia>()  );
         
-        Materia mat11 = new Materia("M11", "Proyecto de vida 2", 23, 1, 1, prof3, asig3, clasesM11 );
+        Materia mat11 = new Materia("M11", "Proyecto de vida 2", 23, 1, 1, prof3, asig3, clasesM11, new ArrayList<Materia>(), new ArrayList<Materia>()  );
         
-        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12 );
+        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12, new ArrayList<Materia>(), new ArrayList<Materia>()  );
         
-        Materia mat13 = new Materia("M13", "Intro a ejecucion 2", 25, 1, 1, prof5, asig5, clasesM13 );
-        Materia mat14 = new Materia("M14", "Requerimientos 2", 25, 1, 1, prof5, asig5, clasesM14 );
-        Materia mat15 = new Materia("M15", "Construccion 2", 25, 1, 1, prof5, asig5, clasesM15 );
+        Materia mat13 = new Materia("M13", "Intro a ejecucion 2", 25, 1, 1, prof5, asig5, clasesM13, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat14 = new Materia("M14", "Requerimientos 2", 25, 1, 1, prof5, asig5, clasesM14, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat15 = new Materia("M15", "Construccion 2", 25, 1, 1, prof5, asig5, clasesM15, new ArrayList<Materia>(), new ArrayList<Materia>()  );
         
         // todas las materias
         
@@ -569,7 +569,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Periodo per2 = new Periodo(2,materiasAll2,2017,2);
        
         periodosAll.add(per2);
-        */
+        
     
     }
     

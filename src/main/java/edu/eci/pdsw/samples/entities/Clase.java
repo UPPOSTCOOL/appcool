@@ -11,8 +11,7 @@ import java.text.SimpleDateFormat;
  *
  * @author 
  */
-public class Clase {
-    
+public class Clase {    
     private int id;
     private Recurso descripcion=new Recurso();
     private Timestamp fecha;
@@ -24,7 +23,7 @@ public class Clase {
     public Clase() {
     }
     
-    public Clase(int id, /*Recurso descripcion,*/ Timestamp fecha, Timestamp horaFin, String rangoHoras, String idMateria, int cohorte) {
+    public Clase(int id, Recurso descripcion, Timestamp fecha, Timestamp horaFin, String rangoHoras, String idMateria, int cohorte) {
         this.id = id;
         this.descripcion =new Recurso();
         this.fecha = fecha;
@@ -99,12 +98,4 @@ public class Clase {
         String fecha1 = new SimpleDateFormat("MM/dd/yy").format(fecha);
         return fecha1;
     }
-    
-   
-    
-    
-
-
-
-
 }
