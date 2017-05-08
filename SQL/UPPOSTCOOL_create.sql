@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2017-04-27 18:04:40.138
+-- Last modification date: 2017-05-07 04:02:35.004
 
 -- tables
 -- Table: Asignatura
@@ -47,7 +47,8 @@ CREATE TABLE Comite (
 CREATE TABLE Corequisito (
     Materia_id varchar  NOT NULL,
     Materia_id_co varchar  NOT NULL,
-    CONSTRAINT Corequisito_pk PRIMARY KEY (Materia_id,Materia_id_co)
+    Programa_id int  NOT NULL,
+    CONSTRAINT Corequisito_pk PRIMARY KEY (Materia_id,Materia_id_co,Programa_id)
 );
 
 -- Table: HorarioProf
@@ -89,7 +90,8 @@ CREATE TABLE Periodo (
 CREATE TABLE Prerequisito (
     Materia_id varchar  NOT NULL,
     Materia_id_pre varchar  NOT NULL,
-    CONSTRAINT Prerequisito_pk PRIMARY KEY (Materia_id,Materia_id_pre)
+    Programa_id int  NOT NULL,
+    CONSTRAINT Prerequisito_pk PRIMARY KEY (Materia_id,Materia_id_pre,Programa_id)
 );
 
 -- Table: Profesor
@@ -199,6 +201,16 @@ ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia_CO
     INITIALLY IMMEDIATE
 ;
 
+-- Reference: Corequisito_Programa (table: Corequisito)
+ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Programa
+    FOREIGN KEY (Programa_id)
+    REFERENCES Programa (id)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
 -- Reference: HorarioProf_Profesor (table: HorarioProf)
 ALTER TABLE HorarioProf ADD CONSTRAINT HorarioProf_Profesor
     FOREIGN KEY (Profesor_id)
@@ -245,6 +257,16 @@ ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia
 ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia_PRE
     FOREIGN KEY (Materia_id_pre)
     REFERENCES Materia (codigo)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: Prerequisito_Programa (table: Prerequisito)
+ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Programa
+    FOREIGN KEY (Programa_id)
+    REFERENCES Programa (id)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
