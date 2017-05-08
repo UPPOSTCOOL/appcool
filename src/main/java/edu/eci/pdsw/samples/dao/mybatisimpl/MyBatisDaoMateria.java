@@ -29,5 +29,10 @@ public class MyBatisDaoMateria implements MateriaDAO{
     public List<Materia> consultarMateriasPorProgramaDAO(int id_programa) throws ExcepcionServiciosUPPOST {
         return mmap.consultarMateriasPorPrograma(id_programa);
     }
+
+    @Override
+    public Materia consultarMateriaConRequisitosDAO(int id) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
