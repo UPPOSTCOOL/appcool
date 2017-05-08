@@ -25,7 +25,7 @@
             Materia M
         WHERE
             M.Asignatura_id=A.id and
-            A.Programa_id=#{id_programa};
+            A.posgrado_id=#{id_programa};
         Order By M.nombre asc;
     </select>
 
