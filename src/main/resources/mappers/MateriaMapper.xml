@@ -18,14 +18,24 @@
     </resultMap>
     <select parameterType="map" id="consultarMateriaConRequisitos" resultMap="MateriaResult">
         select
-            M.codigo as codigo,
-            M.nombre as nombre
+            M.*,
+            M2.*,
+            M3.*
+            
         from
             Materia M,
-            Materia M2
+            Materia M2,
+            Materia M3,
+            Prerequisito P,
+            Corequisito C
         WHERE
             M.codigo=#{codigo} and
-            M.
+            P.Materia_id=M.codigo and
+            P.Programa_id=#{id_p} and
+            P.Materia_id_pre=M2.codigo and
+            C.Materia_id=M.codigo and
+            C.Programa_id=#{id_p} and
+            C.Materia_id_CO=M3.codigo
         limit 1;
     </select>
     
