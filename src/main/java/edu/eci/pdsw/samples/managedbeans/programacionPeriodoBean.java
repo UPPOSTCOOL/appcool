@@ -23,11 +23,22 @@ import javax.faces.bean.SessionScoped;
 public class programacionPeriodoBean {
     private List<Programa> programa=new ArrayList<>();
     private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
+    private String prog=" ";
 
+    
     public List<Programa> getPrograma() throws ExcepcionServiciosUPPOST {
         return inp.consultarProgramas();
+        
     }
 
+    public void SetSelected(String p){
+    prog=p;
+    
+    }
+   public String getSelected(){
+    return prog;
+    
+    }
     public void setPrograma(List<Programa> programa) {
         this.programa = programa;
     }

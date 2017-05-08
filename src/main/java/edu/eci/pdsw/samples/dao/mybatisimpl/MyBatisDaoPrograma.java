@@ -8,6 +8,7 @@ package edu.eci.pdsw.samples.dao.mybatisimpl;
 import com.google.inject.Inject;
 import edu.eci.pdsw.samples.dao.mybatis.mappers.ProgramaMapper;
 import edu.eci.pdsw.samples.daos.PersistenceException;
+import edu.eci.pdsw.samples.daos.ProfesorDAO;
 import edu.eci.pdsw.samples.daos.ProgramaDAO;
 import edu.eci.pdsw.samples.entities.Programa;
 
@@ -26,5 +27,7 @@ public class MyBatisDaoPrograma implements ProgramaDAO{
     public List<Programa> loadAll() throws PersistenceException {
         return pmap.consultarProgramas();
     }
+
+   
     
 }

@@ -13,7 +13,7 @@ and open the template in the editor.
         <title> Programación Periodo </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script>
-            function ocultarprograma(p) {
+            function ocultarprograma() {
                 document.getElementById("formularioSeleccion").style.display = "none";
                 document.getElementById("formularioProgramacion").style.display = "block";
               
@@ -30,18 +30,28 @@ and open the template in the editor.
         <div>
             <h1 style="text-align:center;color:firebrick" >Programación de periodo</h1>
             <h:form id="formularioSeleccion" style="text-align: center; color:firebrick">
+                <!--<p:selectOneMenu value="{ProgramacionPeriodoBean.selected}">
+                             <f:selectItem itemValue = "1" itemLabel = "1" /> 
+                <f:selectItem itemValue = "2" itemLabel = "2" /> 
+                <f:selectItem itemValue = "3" itemLabel = "Intersemestral" />      
+                   
 
-                <h:selectOneMenu > 
-                    <f:selectItem itemValue = "gerencia proyectos" itemLabel = "gerencia proyectos" /> 
-                    <f:selectItem itemValue = "maestria" itemLabel = "maestria" /> 
-                    <f:selectItem itemValue = "educación continuada" itemLabel = "educación continuadal" /> 
-                </h:selectOneMenu>
+                                  
+                </p:selectOneMenu>-->
+                <p:column>
+                    <p:commandButton value='Programacion de Periodo' onclick="ocultarprograma()"></p:commandButton>
+                </p:column>
 
             </h:form>
+         
         </div>
-        <div>
-           
+           <br></br>
+        <br></br>
+        <br></br>
+        <div >
+             <h:form id="formularioProgramacion" style="text-align: center; color:firebrick">
             <h2>Periodo</h2>
+             </h:form>
             
         </div>
         <div>

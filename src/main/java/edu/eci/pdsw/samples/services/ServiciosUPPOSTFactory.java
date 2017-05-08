@@ -122,6 +122,9 @@ public class ServiciosUPPOSTFactory {
     public ProfesorDAO getProfesorDAOTest() {
         return testingInjector.getInstance(ProfesorDAO.class);
     }
+      public ProgramaDAO getProgramaDAOTest() {
+        return testingInjector.getInstance(ProgramaDAO.class);
+    }
 
     public static void main(String a[]) throws ExcepcionServiciosUPPOST {
         //System.out.println(ServiciosSuscripcionesFactory.getInstance().getSuscriptionServices().comenteriosMasBajosPorRangoEdad(1, 10));
