@@ -184,6 +184,7 @@
             </plugin>
             
             <!-- Plugin duplicado. -->
+            <!-- Plugin configuration for Heroku compatibility. -->
             <plugin>		
                 <groupId>org.apache.maven.plugins</groupId>		
                 <artifactId>maven-dependency-plugin</artifactId>		
@@ -219,4 +220,35 @@
             <name>Repository for library PrimeFaces-maven-lib</name>		
         </repository>		
     </repositories>
+    <!--PROJECT REPORTS-->
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.4</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.18.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                </configuration>
+            </plugin>            
+        </plugins>
+    </reporting>
 </project>
