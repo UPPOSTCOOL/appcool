@@ -23,5 +23,5 @@ public interface MateriaMapper {
     /*
     * consulta una materia con su información y Co y Requisitos
     */
-    public Materia consultarMateriaConRequisitos(@Param("codigo") String codigo);
+    public Materia consultarMateriaConRequisitos(@Param("codigo") String codigo,@Param("id_p") int id_programa);
 }

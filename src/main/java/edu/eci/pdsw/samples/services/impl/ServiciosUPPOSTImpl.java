@@ -117,7 +117,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public Materia consultarMateriaConRequisitos(String codigo) throws ExcepcionServiciosUPPOST {
-        return daom.consultarMateriaConRequisitosDAO(codigo);
+    public Materia consultarMateriaConRequisitos(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
+        return daom.consultarMateriaConRequisitosDAO(codigo,id_programa);
     }
 }

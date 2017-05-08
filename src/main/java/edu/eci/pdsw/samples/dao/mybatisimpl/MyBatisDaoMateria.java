@@ -31,8 +31,8 @@ public class MyBatisDaoMateria implements MateriaDAO{
     }
 
     @Override
-    public Materia consultarMateriaConRequisitosDAO(String codigo) throws ExcepcionServiciosUPPOST {
-        return mmap.consultarMateriaConRequisitos(codigo);
+    public Materia consultarMateriaConRequisitosDAO(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
+        return mmap.consultarMateriaConRequisitos(codigo,id_programa);
     }
     
 }

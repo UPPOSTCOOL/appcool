@@ -672,7 +672,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     }
 
     @Override
-    public Materia consultarMateriaConRequisitos(String codigo) throws ExcepcionServiciosUPPOST {
+    public Materia consultarMateriaConRequisitos(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

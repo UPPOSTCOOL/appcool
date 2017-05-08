@@ -48,12 +48,13 @@ public interface ServiciosUPPOST {
     
     /**
      * Consulta la materia con Co y Pre requisitos 
-     * @param codigo identificados de la materia
+     * @param codigo identificado de la materia
+     * @param id_programa identificador del programa
      * @return La materia y sus características con sus co y pre requisitos
      * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
      * a nivel de base de datos, la clase no existe
      */
-    public abstract Materia consultarMateriaConRequisitos(String codigo) throws ExcepcionServiciosUPPOST;
+    public abstract Materia consultarMateriaConRequisitos(String codigo,int id_programa) throws ExcepcionServiciosUPPOST;
     
     /**
      * Consulta  los periodos academicos
