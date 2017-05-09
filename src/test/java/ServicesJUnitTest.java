@@ -41,8 +41,7 @@ import static org.junit.Assert.*;
  *      CE9: Prerrequisito = Correquisito: Error!
  *      CE10: Prerrequisito y  Correquisito, Vacios: Registra materia
  *      CE11: Prerrequisito != Correquisito: Registra materia
- *      CE12: 
- *      CE12: 
+ *      CE12: m0 -> m1 -> m2 NO puede m2 -> m0 NO m2 -> m1
  * 
  * 
  * 
@@ -59,7 +58,7 @@ public class ServicesJUnitTest {
     
     @After
     public void clearBD() throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=MYSQL", "anonymous", "");
+        Connection conn = DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=PostgreSQL", "anonymous", "");
         Statement stmt = conn.createStatement();
         stmt.execute("delete from SUS_COMENTARIOS");
         stmt.execute("delete from SUS_SUSCRIPTORES");
@@ -73,7 +72,7 @@ public class ServicesJUnitTest {
      * @throws SQLException 
      */
     private Connection getConnection() throws SQLException{
-        return DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=MYSQL", "anonymous", "");        
+        return DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=PostgreSQL", "anonymous", "");        
     }
 
    @Test
