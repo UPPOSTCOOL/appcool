@@ -13,8 +13,8 @@
         <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
         <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
         <collection property='clases' ofType='Clase' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='clase_'></collection>
-        <collection property='coRequisitos' ofType='Clase' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='coReq_'></collection>
-        <collection property='preRequisitos' ofType='Clase' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='preReq_'></collection>
+        <collection property='coRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='coReq_'></collection>
+        <collection property='preRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='preReq_'></collection>
     </resultMap>
     <select parameterType="map" id="consultarMateriaConRequisitos" resultMap="MateriaResult">
         (select
