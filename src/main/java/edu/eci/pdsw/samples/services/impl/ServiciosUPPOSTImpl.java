@@ -6,25 +6,28 @@
 package edu.eci.pdsw.samples.services.impl;
 
 import com.google.inject.Inject;
-import edu.eci.pdsw.samples.entities.Periodo;
-import edu.eci.pdsw.samples.daos.AsignaturaDAO;
-import edu.eci.pdsw.samples.daos.ClaseDAO;
-import edu.eci.pdsw.samples.daos.PAcademicoDAO;
-import edu.eci.pdsw.samples.daos.MateriaDAO;
-import edu.eci.pdsw.samples.daos.PersistenceException;
-import edu.eci.pdsw.samples.daos.ProfesorDAO;
-import edu.eci.pdsw.samples.entities.Clase;
-import edu.eci.pdsw.samples.entities.Materia;
-import edu.eci.pdsw.samples.entities.Profesor;
+
+
+
+import edu.eci.pdsw.samples.daos.*;
+
+
+import edu.eci.pdsw.samples.entities.*;
+
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
  * @author juan
  */
+
+
 public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     @Inject
@@ -49,30 +52,12 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
+    public List<Materia> consultarMaterias(int semestre, int anio) throws ExcepcionServiciosUPPOST {
         try {
-            return daoPA.loadAll();
+            return daom.consultarMateriasDAO(semestre, anio);
         } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosUPPOST("Error al consultar los periodos academicos, ServiciosUPPOSTImpl inicio de excepcion", ex);
+            throw new ExcepcionServiciosUPPOST("Error al consultar materias del semestre: " + semestre + "y año: " + anio + ex);
         }
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST {
-        return daom.consultarMateriasDAO(semestre,anio);
-
-    }   
-    
-    //.....//
-    @Override
-    public List<Periodo> consultarPAcademico(Periodo periodo) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -86,14 +71,32 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public List<Clase> consultarClasePeriodo(Periodo periodo) throws ExcepcionServiciosUPPOST {
+    public List<Clase> consultarClasesxPeriodo(int año, int semestre) throws ExcepcionServiciosUPPOST {
+        try {
+            return daoc.consultarClasesxPeriodo(año, semestre);
+        }catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar clases del periodo: " + año + ex);
+
+        }
+    }
+
+    @Override
+    public List<Clase> consultarClasePeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST {
+    public List<Date> consultarFechas(PeriodoAcademico fecha) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public List<PeriodoAcademico> consultarPeriodos() throws ExcepcionServiciosUPPOST {
+        try {
+            return  daoPA.loadAll();
+        } catch (PersistenceException ex) {
+             throw new ExcepcionServiciosUPPOST("Error al consultar periodos academicos: " + ex);
+        }
+    }
 
 }

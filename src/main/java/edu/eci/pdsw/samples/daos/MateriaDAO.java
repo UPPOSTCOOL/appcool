@@ -18,5 +18,6 @@ import java.util.List;
  * @author appcool
  */
 public interface MateriaDAO {
-    public List<Materia> consultarMateriasDAO(int semestre,int anio) throws ExcepcionServiciosUPPOST;
+    
+    public List<Materia> consultarMateriasDAO(int semestre,int anio) throws PersistenceException;
 }

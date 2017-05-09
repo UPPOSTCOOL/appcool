@@ -4,27 +4,52 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper">
-    <resultMap type='Clase' id='ClaseResult' >
-        <id property='id' column='id'/>
-        <result property='fecha' column='fecha'/>
-        <result property='horaFin' column='horaFin'/>
-        <result property='rangoHoras' column='rangoHoras'/>
-        <result property= 'idMateria' column='mater_perio_materia_id'/>
-        <result property= 'cohorte' column='mater_perio_cohorte'/>
-        <!--<association property= 'descripcion' column='recurso'/>-->
-        <!--<collection property='recurso' ofType='Clase_Recur' resultMap='Recurso' columnPrefix='Clase_Recur_'></collection>-->
-    </resultMap>
-    <!-- 
-    <resultMap type='Recurso' id='RecursoResult'>
-        <id property='id' column='id'/>
-        <result property='nombre' column='nombre'/>
-       </resultMap>        
+
+    <select parameterType="map" id="consultarClases" resultMap="ClaseResult">
+     
+        select  
+        
+        c.id, 
+        
+        r.nombre as recursos, 
+        
+        c.fecha, c.horaFin,
+                      
+        m.materia_id as materia, 
+        
+        c.salon
+
+        from periodo as p, mater_perio as m, clase as c, clase_Recur as cr, recurso as r
+
+        where p.id = m.periodo_id
+        and p.ano=#{ano}
+        and p.semestre=#{semestre}
+        and m.materia_id = c.mater_perio_materia_id
+        and m.cohorte = c.mater_perio_cohorte
+        and c.id= cr.clase_id
+        and r.id = cr.recurso_id
+        
+    </select>
     
-   
-    
-    <resultMap type='Clase_Recur' id='Clase_RecurResult'>
-        <id property='id' column='id'/>
-          
+    <resultMap type="Clase" id='ClaseResult' >
+        <constructor>
+            <idArg column="id" javaType="_int"/> 
+            <arg column="recursos" javaType="String"/> 
+            <arg column="fecha" javaType="java.sql.Timestamp"/> 
+            <arg column="horaFin" javaType="java.sql.Time"/> 
+            <arg column="materia" javaType="String"/> 
+            <arg column="salon" javaType="String"/> 
+        </constructor>
+     
     </resultMap>
-    -->             	
+      	
 </mapper>
+
+<!--   
+         <id property='id' column='id'/>
+        <result property='recurso' column='recursos'/>
+        <result property='fecha' column='fecha'/>
+        <result property='horafin' column='horaFin'/>
+        <result property= 'materia' column='materia'/>
+        <result property= 'salon' column='salon'/> 
+-->

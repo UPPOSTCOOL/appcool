@@ -6,7 +6,7 @@
 package edu.eci.pdsw.samples.services;
 
 import edu.eci.pdsw.samples.entities.Clase;
-import edu.eci.pdsw.samples.entities.Periodo;
+import edu.eci.pdsw.samples.entities.PeriodoAcademico;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Profesor;
 import java.util.Date;
@@ -36,29 +36,6 @@ public interface ServiciosUPPOST {
      */
     public abstract List<Clase> consultarClases() throws ExcepcionServiciosUPPOST;
     
-    /**
-     * Consulta la clase de la materia
-     * @param id identificados de la clase
-     * @return La clase con todo sus detalles y recursos
-     * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
-     * a nivel de base de datos, la clase no existe
-     */
-    public abstract List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST;
-    
-    /**
-     * Consulta  los periodos academicos
-     * @return Una lista de los ultimos 4 periodos academicos
-     * @throws ExcepcionServiciosUPPOST si se presenta un error
-     * a nivel de base de datos
-     */
-    public abstract List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST;
-    
-    /**
-     * Consulta  un periodo academico
-     * @return Una lista con el periodo academico
-     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
-     */
-    public abstract List<Periodo> consultarPAcademico(Periodo periodo) throws ExcepcionServiciosUPPOST;
     
     /**
      * Consulta las materias de un periodo
@@ -70,6 +47,15 @@ public interface ServiciosUPPOST {
      */
     public abstract List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
     
+    /**
+     * Consulta las clases de un periodo academico
+     * @param periodo PeriodoAcademico al que se le quiere consultar sus clases
+     * @return Retorna una lista de clases
+     * @throws ExcepcionServiciosUPPOST si se presenta un error
+     * a nivel de base de datos.e
+     */
+    public abstract List<Clase> consultarClasesxPeriodo(int año, int semestre) throws ExcepcionServiciosUPPOST;
+
     /**
      * Consulta todos los profesores
      * @return Una lista con los profesores
@@ -89,13 +75,22 @@ public interface ServiciosUPPOST {
      * @return Una lista con las clases de ese periodo
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
-    public abstract List<Clase> consultarClasePeriodo(Periodo periodo) throws ExcepcionServiciosUPPOST;
+    public abstract List<Clase> consultarClasePeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST;
     
      /**
      * Consultar fechas
      * @return  una lista de fechas segun el periodo
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
-    public abstract List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST;
+    public abstract List<Date> consultarFechas(PeriodoAcademico fecha) throws ExcepcionServiciosUPPOST;
+    
+    /**
+     * Consulta todos los periodos academicos de la base de datos
+     * @return Una lista de periodos academicos
+     * @throws ExcepcionServiciosUPPOST  si se presenta un error
+     * a nivel de base de datos
+     */
+    public abstract List<PeriodoAcademico> consultarPeriodos() throws ExcepcionServiciosUPPOST;
+
     
 }
