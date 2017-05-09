@@ -5,12 +5,8 @@
  */
 package edu.eci.pdsw.samples.daos;
 
-import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
-import edu.eci.pdsw.samples.entities.Recurso;
-import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
-import java.sql.Timestamp;
-import java.util.ArrayList;
+
 import java.util.List;
 
 /**
@@ -18,6 +14,10 @@ import java.util.List;
  * @author appcool
  */
 public interface MateriaDAO {
-    
+
     public List<Materia> consultarMateriasDAO(int semestre,int anio) throws PersistenceException;
+    
+    public List<Materia> consultarMateriasPorProgramaDAO(int id_programa) throws PersistenceException;
+    
+    public Materia consultarMateriaConRequisitosDAO(String codigo,int id_programa) throws PersistenceException;
 }

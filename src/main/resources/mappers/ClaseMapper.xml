@@ -5,6 +5,7 @@
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper">
 
+
     <select parameterType="map" id="consultarClases" resultMap="ClaseResult">
      
         select  

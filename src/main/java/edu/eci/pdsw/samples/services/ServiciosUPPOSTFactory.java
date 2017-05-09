@@ -14,10 +14,12 @@ import edu.eci.pdsw.samples.dao.mybatisimpl.MyBatisDaoClase;
 import edu.eci.pdsw.samples.dao.mybatisimpl.MyBatisDaoMateria;
 import edu.eci.pdsw.samples.dao.mybatisimpl.MyBatisDaoPAcademico;
 import edu.eci.pdsw.samples.dao.mybatisimpl.MyBatisDaoProfesor;
+import edu.eci.pdsw.samples.dao.mybatisimpl.MyBatisDaoPrograma;
 import edu.eci.pdsw.samples.daos.AsignaturaDAO;
 import edu.eci.pdsw.samples.daos.MateriaDAO;
 import edu.eci.pdsw.samples.daos.PAcademicoDAO;
 import edu.eci.pdsw.samples.daos.ProfesorDAO;
+import edu.eci.pdsw.samples.daos.ProgramaDAO;
 import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImpl;
 //import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 
@@ -48,6 +50,7 @@ public class ServiciosUPPOSTFactory {
                 bind(PAcademicoDAO.class).to(MyBatisDaoPAcademico.class);
                 bind(ProfesorDAO.class).to(MyBatisDaoProfesor.class);
                 bind(AsignaturaDAO.class).to(MyBatisDaoAsignatura.class);
+                bind(ProgramaDAO.class).to(MyBatisDaoPrograma.class);
             }
         });
 
@@ -62,6 +65,7 @@ public class ServiciosUPPOSTFactory {
                 bind(PAcademicoDAO.class).to(MyBatisDaoPAcademico.class);
                 bind(ProfesorDAO.class).to(MyBatisDaoProfesor.class);
                 bind(AsignaturaDAO.class).to(MyBatisDaoAsignatura.class);
+                bind(ProgramaDAO.class).to(MyBatisDaoPrograma.class);
             }
 
         }

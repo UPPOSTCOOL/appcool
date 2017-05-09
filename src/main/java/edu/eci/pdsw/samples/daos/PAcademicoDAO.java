@@ -5,7 +5,7 @@
  */
 package edu.eci.pdsw.samples.daos;
 
-import edu.eci.pdsw.samples.entities.PeriodoAcademico;
+import edu.eci.pdsw.samples.entities.Periodo;
 import java.util.List;
 
 /**
@@ -15,11 +15,11 @@ import java.util.List;
 public interface PAcademicoDAO {
 
 
-    public void save(PeriodoAcademico c) throws PersistenceException;
+    public void save(Periodo c) throws PersistenceException;
 
-    public PeriodoAcademico load(int id) throws PersistenceException;
+    public Periodo load(int id) throws PersistenceException;
 
-    public List<PeriodoAcademico> loadAll() throws PersistenceException;
+    public List<Periodo> loadAll() throws PersistenceException;
     
     public void saveAll() throws PersistenceException;
 

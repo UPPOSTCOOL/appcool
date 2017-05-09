@@ -14,19 +14,34 @@ import java.util.List;
  */
 public class Programa implements Serializable {
     
+    private int id;
     private String nombre;
     private Profesor coordinador;
     private List<Asignatura> asignaturas;
 
-
-    public Programa(Profesor coordinador, List<Asignatura> asignaturas, String nombre) {
-
+    public Programa(int id, String nombre, Profesor coordinador, List<Asignatura> asignaturas) {
+        this.id = id;
+        this.nombre = nombre;
         this.coordinador = coordinador;
         this.asignaturas = asignaturas;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    
+
 
     public Profesor getCoordinador() {
         return coordinador;

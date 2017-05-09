@@ -4,6 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.PAcademicoMapper">
+<!--
     
     <select  id="consultarPAcademicos" resultMap="PAcademicoResult">
         
@@ -30,7 +31,7 @@
 
     </resultMap>       
              
-             <!--
+             
     <select parameterType="map" id="consultarPAcademicos" resultMap="PAcademicoResult">
         
         select
@@ -75,5 +76,6 @@
     </resultMap>       
              
     -->            	
+
 
 </mapper>

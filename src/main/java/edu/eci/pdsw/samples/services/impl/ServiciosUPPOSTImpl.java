@@ -9,10 +9,12 @@ import com.google.inject.Inject;
 
 
 
+
 import edu.eci.pdsw.samples.daos.*;
 
 
 import edu.eci.pdsw.samples.entities.*;
+
 
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
@@ -40,6 +42,8 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     private ProfesorDAO daoPO;
     @Inject
     private AsignaturaDAO daoA;
+    @Inject
+    private ProgramaDAO daoP;
 
     @Override
     public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
@@ -60,10 +64,8 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         }
     }
 
-    @Override
-    public List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
+    
 
     @Override
     public Profesor consultarProfesor(int cohorte, String materia) throws ExcepcionServiciosUPPOST {
@@ -81,17 +83,17 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public List<Clase> consultarClasePeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST {
+    public List<Clase> consultarClasePeriodo(Periodo periodo) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Date> consultarFechas(PeriodoAcademico fecha) throws ExcepcionServiciosUPPOST {
+    public List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<PeriodoAcademico> consultarPeriodos() throws ExcepcionServiciosUPPOST {
+    public List<Periodo> consultarPeriodos() throws ExcepcionServiciosUPPOST {
         try {
             return  daoPA.loadAll();
         } catch (PersistenceException ex) {
@@ -99,4 +101,52 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         }
     }
 
+    @Override
+    public List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST {
+        List<Programa> res=null;
+        try {
+            res=daoP.loadAll();
+        } catch (PersistenceException ex) {
+            Logger.getLogger(ServiciosUPPOSTImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return res;
+    }
+
+    @Override
+    public List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST {
+        try {
+            return daom.consultarMateriasPorProgramaDAO(id_programa);
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar materias Programa en el IMPL: " + ex + id_programa);
+        }
+    }
+
+    @Override
+    public Materia consultarMateriaConRequisitos(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
+        try {
+            return daom.consultarMateriaConRequisitosDAO(codigo,id_programa);
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar materias con requisitos: " + ex + "codigo: " + codigo + "id_programa" + id_programa);
+        }
+    }
+
+    @Override
+    public List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Periodo> consultarPAcademico(Periodo periodo) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

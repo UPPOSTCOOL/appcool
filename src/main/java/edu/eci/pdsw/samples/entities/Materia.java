@@ -13,52 +13,65 @@ import java.util.List;
  * @author kvn
  */
 public class Materia implements Serializable{
-    
     private String codigo;
-
     private String nombre;
-    
     private int cohorte;
-
-
+    private int numClases;
+    private int numHoras;
     private Profesor profesor;
-    
     private Asignatura asignatura;
-    
-
-    private String descripcion;
-    
     private List<Clase> clases;
-    
-    
+    private List<Materia> preRequisitos;
+    private List<Materia> coRequisitos;
 
+    public Materia() {
+    }
 
-    public Materia(String codigo, String nombre, int cohorte,Profesor profesor,
-            Asignatura asignatura,String descripcion, List<Clase> clases ) {
-        
+    public Materia(String codigo, String nombre, int cohorte, int numClases, int numHoras, Profesor profesor, Asignatura asignatura, List<Clase> clases, List<Materia> preRequisitos, List<Materia> coRequisitos) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cohorte = cohorte;
-
-
-
+        this.numClases = numClases;
+        this.numHoras = numHoras;
         this.profesor = profesor;
         this.asignatura = asignatura;
-        
-        this.descripcion = descripcion;
-        
+        this.clases = clases;
+        this.preRequisitos = preRequisitos;
+        this.coRequisitos = coRequisitos;
+    }
+
+    public List<Materia> getPreRequisitos() {
+        return preRequisitos;
+    }
+
+    public void setPreRequisitos(List<Materia> preRequisitos) {
+        this.preRequisitos = preRequisitos;
+    }
+
+    public List<Materia> getCoRequisitos() {
+        return coRequisitos;
+    }
+
+    public void setCoRequisitos(List<Materia> coRequisitos) {
+        this.coRequisitos = coRequisitos;
+    }
+
+    public List<Clase> getClases() {
+        return clases;
+    }
+
+    public void setClases(List<Clase> clases) {
         this.clases = clases;
     }
+
 
     public String getCodigo() {
         return codigo;
     }
 
     public void setCodigo(String codigo) {
-        this.codigo = codigo;
+        this.codigo= codigo;
     }
-
-
 
     public String getNombre() {
         return nombre;
@@ -76,7 +89,21 @@ public class Materia implements Serializable{
         this.cohorte = cohorte;
     }
 
+    public int getNumClases() {
+        return numClases;
+    }
 
+    public void setNumClases(int numClases) {
+        this.numClases = numClases;
+    }
+
+    public int getNumHoras() {
+        return numHoras;
+    }
+
+    public void setNumHoras(int numHoras) {
+        this.numHoras = numHoras;
+    }
 
     public Profesor getProfesor() {
         return profesor;
@@ -94,29 +121,9 @@ public class Materia implements Serializable{
         this.asignatura = asignatura;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public List<Clase> getClases() {
-        return clases;
-    }
-
-    public void setClases(List<Clase> clases) {
-        this.clases = clases;
-    }
-    
-
     @Override
     public String toString() {
-
-        return "Materia{" + "Codigo=" + codigo + ", nombre=" + nombre + ", cohorte=" + cohorte   + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
-
-
+        return "Materia{" + "codigo=" + codigo + ", nombre=" + nombre + ", cohorte=" + cohorte + ", numClases=" + numClases + ", numHoras=" + numHoras + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
     }
     
     

@@ -12,6 +12,7 @@ import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.PeriodoAcademico;
 import edu.eci.pdsw.samples.entities.Programa;
 import edu.eci.pdsw.samples.entities.Profesor;
+import edu.eci.pdsw.samples.entities.Programa;
 import edu.eci.pdsw.samples.entities.Recurso;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
@@ -832,5 +833,22 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+<<<<<<< HEAD
+=======
+    @Override
+    public List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Materia consultarMateriaConRequisitos(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+>>>>>>> origin/HU3_kvn
 }
 **/

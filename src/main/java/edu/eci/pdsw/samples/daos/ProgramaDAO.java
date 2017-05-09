@@ -3,19 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.pdsw.samples.dao.mybatis.mappers;
+package edu.eci.pdsw.samples.daos;
 
-
-import edu.eci.pdsw.samples.entities.Periodo;
+import edu.eci.pdsw.samples.entities.Programa;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 /**
  *
  * @author 2092815
  */
-public interface PAcademicoMapper {
-    
-    public List<Periodo> consultarPAcademicos();
-    
+public interface ProgramaDAO {
+    public List<Programa> loadAll() throws PersistenceException;
 }
