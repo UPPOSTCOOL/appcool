@@ -1,7 +1,14 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2017-05-07 04:02:35.004
+-- Last modification date: 2017-05-09 00:24:18.38
 
 -- tables
+-- Table: Asign_Mater
+CREATE TABLE Asign_Mater (
+    Asignatura_id int  NOT NULL,
+    Materia_codigo varchar  NOT NULL,
+    CONSTRAINT Asign_Mater_pk PRIMARY KEY (Asignatura_id,Materia_codigo)
+);
+
 -- Table: Asignatura
 CREATE TABLE Asignatura (
     nombre varchar  NOT NULL,
@@ -73,7 +80,6 @@ CREATE TABLE Mater_Perio (
 CREATE TABLE Materia (
     codigo varchar  NOT NULL,
     nombre varchar  NOT NULL,
-    Asignatura_id int  NOT NULL,
     descripcion varchar  NOT NULL,
     CONSTRAINT Materia_pk PRIMARY KEY (codigo)
 );
@@ -117,6 +123,22 @@ CREATE TABLE Recurso (
 );
 
 -- foreign keys
+-- Reference: Asign_Mater_Asignatura (table: Asign_Mater)
+ALTER TABLE Asign_Mater ADD CONSTRAINT Asign_Mater_Asignatura
+    FOREIGN KEY (Asignatura_id)
+    REFERENCES Asignatura (id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: Asign_Mater_Materia (table: Asign_Mater)
+ALTER TABLE Asign_Mater ADD CONSTRAINT Asign_Mater_Materia
+    FOREIGN KEY (Materia_codigo)
+    REFERENCES Materia (codigo)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
 -- Reference: Asignatura_Programa (table: Asignatura)
 ALTER TABLE Asignatura ADD CONSTRAINT Asignatura_Programa
     FOREIGN KEY (Posgrado_id)
@@ -233,14 +255,6 @@ ALTER TABLE Mater_Perio ADD CONSTRAINT Mater_Cohor_Materia
 ALTER TABLE Mater_Perio ADD CONSTRAINT Mater_Cohor_Periodo
     FOREIGN KEY (Periodo_id)
     REFERENCES Periodo (id)  
-    NOT DEFERRABLE 
-    INITIALLY IMMEDIATE
-;
-
--- Reference: Materia_Asignatura (table: Materia)
-ALTER TABLE Materia ADD CONSTRAINT Materia_Asignatura
-    FOREIGN KEY (Asignatura_id)
-    REFERENCES Asignatura (id)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
