@@ -71,11 +71,11 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public List<Clase> consultarClasesxPeriodo(int periodo) throws ExcepcionServiciosUPPOST {
+    public List<Clase> consultarClasesxPeriodo(int año, int semestre) throws ExcepcionServiciosUPPOST {
         try {
-            return daoc.consultarClasesxPeriodo(periodo);
+            return daoc.consultarClasesxPeriodo(año, semestre);
         }catch (PersistenceException ex) {
-            throw new ExcepcionServiciosUPPOST("Error al consultar clases del periodo: " + periodo + ex);
+            throw new ExcepcionServiciosUPPOST("Error al consultar clases del periodo: " + año + ex);
 
         }
     }

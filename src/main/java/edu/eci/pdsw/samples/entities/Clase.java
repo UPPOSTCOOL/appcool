@@ -7,6 +7,7 @@ package edu.eci.pdsw.samples.entities;
 
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
 import java.io.Serializable;
+import java.sql.Time;
 import java.sql.Timestamp;
 
 import java.text.SimpleDateFormat;
@@ -22,7 +23,7 @@ public class Clase implements Serializable {
     private String recurso;
     
     private Timestamp fecha;
-    private Timestamp horafin;
+    private Time horafin;
     
     private String materia;
     private String salon;
@@ -31,7 +32,7 @@ public class Clase implements Serializable {
     
 
     public Clase(int id, String recurso, java.sql.Timestamp fecha,
-            java.sql.Timestamp horafin,String materia, String salon) {
+            java.sql.Time horafin,String materia, String salon) {
         
         this.id = id;
         this.recurso = recurso;
@@ -63,11 +64,11 @@ public class Clase implements Serializable {
         this.fecha = fecha;
     }
 
-    public Timestamp getHorafin() {
+    public Time getHorafin() {
         return horafin;
     }
 
-    public void setHorafin(Timestamp horafin) {
+    public void setHorafin(Time horafin) {
         this.horafin = horafin;
     }
 

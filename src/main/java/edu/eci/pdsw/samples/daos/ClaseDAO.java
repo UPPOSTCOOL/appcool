@@ -27,10 +27,11 @@ public interface ClaseDAO {
     /**
      *
      * @param ano
+     * @param semestre
      * @return
      * @throws edu.eci.pdsw.samples.daos.PersistenceException
      */
-    public List<Clase> consultarClasesxPeriodo(int ano) throws PersistenceException;
+    public List<Clase> consultarClasesxPeriodo(int ano , int semestre) throws PersistenceException;
     
     
 }

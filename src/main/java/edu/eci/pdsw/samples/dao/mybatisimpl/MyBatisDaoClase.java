@@ -29,8 +29,8 @@ public class MyBatisDaoClase implements ClaseDAO{
     }
 
     @Override
-    public List<Clase> consultarClasesxPeriodo(int ano) throws PersistenceException {
-         return pmap.consultarClases(ano);
+    public List<Clase> consultarClasesxPeriodo(int ano , int semestre) throws PersistenceException {
+         return pmap.consultarClases(ano, semestre);
     }
     
 }

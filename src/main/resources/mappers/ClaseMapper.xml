@@ -23,7 +23,7 @@
 
         where p.id = m.periodo_id
         and p.ano=#{ano}
-        and p.semestre#{semestre}
+        and p.semestre=#{semestre}
         and m.materia_id = c.mater_perio_materia_id
         and m.cohorte = c.mater_perio_cohorte
         and c.id= cr.clase_id
@@ -33,12 +33,11 @@
     
     <resultMap type='Clase' id='ClaseResult' >
         <id property='id' column='id'/>
-        <result property='recurso'column='recurso'/>
+        <result property='recurso' column='recurso'/>
         <result property='fecha' column='fecha'/>
         <result property='horaFin' column='horaFin'/>
         <result property= 'materia' column='materia_id'/>
         <result property= 'salon' column='salon'/>
     </resultMap>
       	
-
 </mapper>

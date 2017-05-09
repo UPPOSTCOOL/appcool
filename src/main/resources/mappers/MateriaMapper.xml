@@ -56,7 +56,9 @@
             Periodo PE
         WHERE 
             MP.Materia_id=M.codigo and 
+        
             M.Asignatura_id=A.id and
+        
             P.id=MP.Profesor_id and
             C.Mater_Perio_Materia_id=MP.Materia_id and
             C.Mater_Perio_cohorte=MP.cohorte and

@@ -1,5 +1,5 @@
 url archivo: https://jdbc.postgresql.org/download/postgresql-42.0.0.jar
 
-urlbd:jdbc:postgresql://ec2-54-243-185-132.compute-1.amazonaws.com:5432/d89mtnt556nli?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory
-user:qdjzkuvqwqqynx
-pass:4d781a2d4ef3331e999ebaadb2c85d5e48e012294529342df9d9be156454a9c9
+urlbd:jdbc:postgresql://ec2-54-83-205-71.compute-1.amazonaws.com:5432/db1liia9qurdk4?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory
+user:ecwmudumtvzhdj
+pass:69798290f3c47bd702ef216ccb2c071ce63482f1b417e96738d1b01bd68260a1
