@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 
-import edu.eci.pdsw.samples.entities.Asignatura;
-import edu.eci.pdsw.samples.entities.Materia;
-import edu.eci.pdsw.samples.entities.PostGrado;
-import edu.eci.pdsw.samples.entities.Profesor;
+import edu.eci.pdsw.samples.entities.*;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
@@ -36,20 +33,33 @@ import static org.junit.Assert.*;
 /**
  *
  * PRUEBAS - REGISTRAR MATERIA
- *                                        Resultado
- *      CE1: Nombre ya existe:  Nada
- *      CE2: Nombre no existe:  Agrega materia
- *      CE3: Codigo ya existe:  Nada
- *      CE4: Codigo no existe:  Agrega Materia
- *      CE5: Nombre y Codigo, vacios: Nada
- *      CE6: Nombre y Codigo, no Vacios: 
- *      CE7: Descipcion Vacia: Registra materia
- *      CE8: Descipcion no Vacia: Registra materia
- *      CE9: Prerrequisito = Correquisito: Error!
- *      CE10: Prerrequisito y  Correquisito, Vacios: Registra materia
- *      CE11: Prerrequisito != Correquisito: Registra materia
- *      CE12: m0 -> m1 -> m2 NO puede m2 -> m0 NO m2 -> m1
- * 
+ *                                                       Resultado
+ *      CE1: Nombre ya existe: No puede agregar un nombre existente a otra materia: 
+ *          Nada
+ *      CE2: Nombre no existe: Puede agregar el nombre a la materia: 
+ *          Agrega nombre a la materia en creación
+ *      CE3: Codigo ya existe: No puede agregar un codigo que es de otra materia: 
+ *          Nada
+ *      CE4: Codigo no existe: Puede agregar el codigo unico a la materia: 
+ *          Agrega codigo a la Materia en creación
+ *      CE5: Nombre y Codigo, vacios: No puede agregar una materia sin identificadores: 
+ *          Nada
+ *      CE6: Nombre y Codigo, no Vacios: Puede agregar atributos identificadores a la materia:  
+ *          Agrega nombre y codigo a la materia en creación
+ *      CE7: Descipcion Vacia: La materia puede no tener descripción: 
+ *          Agregar Materia
+ *      CE8: Descipcion no Vacia: Agrega la descripción a la materia: 
+ *          Registra materia
+ *      CE9: Prerrequisito = Correquisito: Una materia no peude tener otras materias como prerrequisito y correquisito a la vez: 
+ *          Error!
+ *      CE10: Prerrequisito y  Correquisito, Vacios: Puede registrar una materia que no tenga dependencia de otra: 
+ *          Registra materia
+ *      CE11: Prerrequisito != Correquisito: Una materia puede tener prerrequisitos y correquisitosRegistra:
+ *          Registra Materia
+ *      CE12: M.i -> M.j -> M.k "i< j< k< Total.Materias": Si una materia tiene prerrequisitos en comun con otra 
+ *          que es prerrequisito de ella, los prerrequisitos de la otra materia son tambien prerrequisitos de la primera,
+ *          No puede haber una materia que sea prerrequisito de otra y esta no sea prerequisito de ella:
+ *          Nada
  * 
  * 
  */
@@ -131,8 +141,64 @@ public class ServicesJUnitTest {
         List<Materia> materias=sp.consultarMaterias(2017,1);      
         
         
-        Assert.assertEquals("Deberia almacenas las materias agregadas, tamano > 0",1, materias.size());
+        Assert.assertEquals("Deberia almacenar las materias agregadas, tamano = 1",1, materias.size());
         
     }
+    
+    
+    @Test
+    public void CF2() throws SQLException, ExcepcionServiciosUPPOST {
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        sp.insertarMateria();
+        List<Materia> materias=sp.consultarMaterias(2017,1);      
+        
+        
+        Assert.assertEquals("Deberia almacenar las materias agregadas, tamano = 1",1, materias.size());
+        
+    }
+    
+    
+/**
+ *
+ * PRUEBAS - REGISTRAR MATERIA
+ *                                                       Resultado
+ *      CE1: Nombre ya existe: No puede agregar un nombre existente a otra materia: 
+ *          Nada
+ *      CE2: Nombre no existe: Puede agregar el nombre a la materia: 
+ *          Agrega nombre a la materia en creación
+ *      CE3: Codigo ya existe: No puede agregar un codigo que es de otra materia: 
+ *          Nada
+ *      CE4: Codigo no existe: Puede agregar el codigo unico a la materia: 
+ *          Agrega codigo a la Materia en creación
+ *      CE5: Nombre y Codigo, vacios: No puede agregar una materia sin identificadores: 
+ *          Nada
+ *      CE6: Nombre y Codigo, no Vacios: Puede agregar atributos identificadores a la materia:  
+ *          Agrega nombre y codigo a la materia en creación
+ *      CE7: Descipcion Vacia: La materia puede no tener descripción: 
+ *          Agregar Materia
+ *      CE8: Descipcion no Vacia: Agrega la descripción a la materia: 
+ *          Registra materia
+ *      CE9: Prerrequisito = Correquisito: Una materia no peude tener otras materias como prerrequisito y correquisito a la vez: 
+ *          Error!
+ *      CE10: Prerrequisito y  Correquisito, Vacios: Puede registrar una materia que no tenga dependencia de otra: 
+ *          Registra materia
+ *      CE11: Prerrequisito != Correquisito: Una materia puede tener prerrequisitos y correquisitosRegistra:
+ *          Registra Materia
+ *      CE12: M.i -> M.j -> M.k "i< j< k< Total.Materias": Si una materia tiene prerrequisitos en comun con otra 
+ *          que es prerrequisito de ella, los prerrequisitos de la otra materia son tambien prerrequisitos de la primera,
+ *          No puede haber una materia que sea prerrequisito de otra y esta no sea prerequisito de ella:
+ *          Nada
+ * 
+ * 
+ */
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
