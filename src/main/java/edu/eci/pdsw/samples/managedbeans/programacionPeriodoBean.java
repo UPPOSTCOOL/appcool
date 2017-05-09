@@ -6,6 +6,7 @@
 package edu.eci.pdsw.samples.managedbeans;
 
 import edu.eci.pdsw.samples.entities.Asignatura;
+import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Programa;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
@@ -52,6 +53,9 @@ public class programacionPeriodoBean {
        return inp.consultarAsignaturas();
         
     }
-   
+    public List<Materia> getMaterias() throws ExcepcionServiciosUPPOST {
+       return inp.consultarMateriasPrograma(0);
+        
+    }
     
 }
