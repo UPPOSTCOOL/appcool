@@ -12,63 +12,44 @@ and open the template in the editor.
       <h:head> 
         <title> Programación Periodo </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <script>
-            function ocultarprograma() {
-                document.getElementById("formularioSeleccion").style.display = "none";
-                document.getElementById("formularioProgramacion").style.display = "block";
+      <!--  <script>
+         function ocultarprograma() {
+                document.getElementById("formularioSeleccion").style.display = "block";
+                document.getElementById("formularioProgramacion").style.display = "none";
               
             }
-            function mostrarProgramacionPeriodo() {
-                     document.getElementById("formularioSeleccion").style.display = "block";
-                document.getElementById("formularioProgramacion").style.display = "none";
+            function trarProgramacionPeriodo() {
+                     document.getElementById("formularioSeleccion").style.display = "none";
+                document.getElementById("formularioProgramacion").style.display = "block";
             }
-        </script>
-    </h:head>
+          </script>-->
+      </h:head>
 
-    <h:body>
+    <h:body >
         <img src="Imagenes/eci2.jpg" height="80" />
-        <div>
+        <div id='formularioSeleccion'>
             <h1 style="text-align:center;color:firebrick" >Programación de periodo</h1>
             <h:form id="formularioSeleccion" style="text-align: center; color:firebrick" >
-                
-                <p:selectOneMenu id="programa" value="#{ProgramacionPeriodoBean.programa}" panelStyle="width:180px"
-                         effect="fade" var="t" style="width:160px" filter="true" filterMatchMode="startsWith">
+
+                <p:selectOneMenu id="programa" value="#{ProgramacionPeriodoBean.programa}" panelStyle="width:190px"
+                                 effect="fade" var="t" style="width:190px" filter="true" filterMatchMode="startsWith">
                     <f:selectItems value="#{ProgramacionPeriodoBean.programa}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
-                   
-
-                                  
                 </p:selectOneMenu>
-                <p:column>
-                    <p:commandButton value='Programacion de Periodo' onclick="ocultarprograma()"></p:commandButton>
-                </p:column>
-
+                <br></br>
+                <br></br>
             </h:form>
-         
+
         </div>
-           <br></br>
-        <br></br>
-        <br></br>
-        <div >
-             <h:form id="formularioProgramacion" style="text-align: center; color:firebrick">
-            <h2>Periodo</h2>
-             </h:form>
-            
-        </div>
-        <div>
-            
-            <h2>Asignatura</h2>
-          
-        </div>
-        <div>
-            
-            <h2>Materia</h2>
-           
-        </div>
-        <div>
-           
-            <h2>Cohorte</h2>
-           
-        </div>
-           
+
+        <h:form id="programacionPeriodo" style="text-align:center">
+            <br></br>
+            <br></br>
+            <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 8px;width: 220px;border-right-color: background " value="Programar Periodo" action="Programar" />
+            <br></br>
+            <br></br>
+
+        </h:form>
+
+
     </h:body>
 </html>
