@@ -26,17 +26,17 @@ insert into Materia
   ('DACO','datos completos',4,'avanzado datos informaticos');	--2,5
 
 insert into Prerequisito
-  (Materia_id,Materia_id_pre)
+  (Materia_id,Materia_id_pre,programa_id)
   values
-  ('RED2','RED1'),
-  ('SEG2','SEG1'),
-  ('DNSS','SEG1'),
-  ('GECO','DAGE');
+  ('RED2','RED1',1),
+  ('SEG2','SEG1',1),
+  ('DNSS','SEG1',2),
+  ('GECO','DAGE',2);
   
 insert into Corequisito
-  (Materia_id,Materia_id_co)
+  (Materia_id,Materia_id_co,programa_id)
   values
-  ('DAGE','SEG1');
+  ('DAGE','SEG1',1);
 
 insert into Periodo
   (id,ano,semestre)
