@@ -265,26 +265,28 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         
         // Materias son 5 grupos de materias
-              
-        Materia mat1 = new Materia("M1", "Gerencia de riesgos", 24, 1, 1, prof1, asig1, clasesM1, new ArrayList<Materia>(), new ArrayList<Materia>() );
-        Materia mat2 = new Materia("M2", "G cominicaciones", 24, 1, 1, prof1, asig1, clasesM2, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat3 = new Materia("M3", "G calidad", 24, 1, 1, prof1, asig1, clasesM3, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat4 = new Materia("M4", "Liderazgoy trabajo", 24, 1, 1, prof1, asig1, clasesM4, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat5 = new Materia("M5", "Negociación", 24, 1, 1, prof1, asig1, clasesM5, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat6 = new Materia("M6", "Creatividad Inn", 24, 1, 1, prof1, asig1, clasesM6, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+         
+        String descrip = "descripcion de materia P1";
         
-        Materia mat7 = new Materia("M7", "Taller trabajo grado", 24, 1, 1, prof2, asig2, clasesM7, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat8 = new Materia("M8", "Taller trabajo grado2", 24, 1, 1, prof2, asig2, clasesM8, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat9 = new Materia("M9", "Sustentacion grup", 24, 1, 1, prof2, asig2, clasesM9, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat10 = new Materia("M10", "Intro a la Investigacion", 24, 1, 1, prof2, asig2, clasesM10, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat1 = new Materia("M1", "Gerencia de riesgos", 24, 1, 1, prof1, asig1, clasesM1, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip );
+        Materia mat2 = new Materia("M2", "G cominicaciones", 24, 1, 1, prof1, asig1, clasesM2, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat3 = new Materia("M3", "G calidad", 24, 1, 1, prof1, asig1, clasesM3, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat4 = new Materia("M4", "Liderazgoy trabajo", 24, 1, 1, prof1, asig1, clasesM4, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat5 = new Materia("M5", "Negociación", 24, 1, 1, prof1, asig1, clasesM5, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat6 = new Materia("M6", "Creatividad Inn", 24, 1, 1, prof1, asig1, clasesM6, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat11 = new Materia("M11", "Proyecto de vida", 23, 1, 1, prof3, asig3, clasesM11, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat7 = new Materia("M7", "Taller trabajo grado", 24, 1, 1, prof2, asig2, clasesM7, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat8 = new Materia("M8", "Taller trabajo grado2", 24, 1, 1, prof2, asig2, clasesM8, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat9 = new Materia("M9", "Sustentacion grup", 24, 1, 1, prof2, asig2, clasesM9, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat10 = new Materia("M10", "Intro a la Investigacion", 24, 1, 1, prof2, asig2, clasesM10, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat11 = new Materia("M11", "Proyecto de vida", 23, 1, 1, prof3, asig3, clasesM11, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat13 = new Materia("M13", "Intro a ejecucion", 25, 1, 1, prof5, asig5, clasesM13, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat14 = new Materia("M14", "Requerimientos", 25, 1, 1, prof5, asig5, clasesM14, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat15 = new Materia("M15", "Construccion", 25, 1, 1, prof5, asig5, clasesM15, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        
+        Materia mat13 = new Materia("M13", "Intro a ejecucion", 25, 1, 1, prof5, asig5, clasesM13, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat14 = new Materia("M14", "Requerimientos", 25, 1, 1, prof5, asig5, clasesM14, new ArrayList<Materia>(), new ArrayList<Materia>() ,descrip );
+        Materia mat15 = new Materia("M15", "Construccion", 25, 1, 1, prof5, asig5, clasesM15, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
         // todas las materias
         
@@ -523,26 +525,28 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         
         // Materias son 5 grupos de materias
+        
+        String descrip = "descripcion materia P2";
               
-        Materia mat1 = new Materia("M1", "Gerencia de riesgos 2", 24, 1, 1, prof1, asig1, clasesM1, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat2 = new Materia("M2", "G cominicaciones 2", 24, 1, 1, prof1, asig1, clasesM2, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat3 = new Materia("M3", "G calidad 2", 24, 1, 1, prof1, asig1, clasesM3, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat4 = new Materia("M4", "Liderazgoy trabajo 2", 24, 1, 1, prof1, asig1, clasesM4, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat5 = new Materia("M5", "Negociación 2", 24, 1, 1, prof1, asig1, clasesM5, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat6 = new Materia("M6", "Creatividad Inn 2", 24, 1, 1, prof1, asig1, clasesM6, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat1 = new Materia("M1", "Gerencia de riesgos 2", 24, 1, 1, prof1, asig1, clasesM1, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat2 = new Materia("M2", "G cominicaciones 2", 24, 1, 1, prof1, asig1, clasesM2, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat3 = new Materia("M3", "G calidad 2", 24, 1, 1, prof1, asig1, clasesM3, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat4 = new Materia("M4", "Liderazgoy trabajo 2", 24, 1, 1, prof1, asig1, clasesM4, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat5 = new Materia("M5", "Negociación 2", 24, 1, 1, prof1, asig1, clasesM5, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat6 = new Materia("M6", "Creatividad Inn 2", 24, 1, 1, prof1, asig1, clasesM6, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat7 = new Materia("M7", "Taller trabajo grado 2", 24, 1, 1, prof2, asig2, clasesM7, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat8 = new Materia("M8", "Taller trabajo grado2 w2", 24, 1, 1, prof2, asig2, clasesM8, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat9 = new Materia("M9", "Sustentacion grup 2", 24, 1, 1, prof2, asig2, clasesM9, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat10 = new Materia("M10", "Intro a la Investigacion 2", 24, 1, 1, prof2, asig2, clasesM10, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat7 = new Materia("M7", "Taller trabajo grado 2", 24, 1, 1, prof2, asig2, clasesM7, new ArrayList<Materia>(), new ArrayList<Materia>() ,descrip );
+        Materia mat8 = new Materia("M8", "Taller trabajo grado2 w2", 24, 1, 1, prof2, asig2, clasesM8, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat9 = new Materia("M9", "Sustentacion grup 2", 24, 1, 1, prof2, asig2, clasesM9, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat10 = new Materia("M10", "Intro a la Investigacion 2", 24, 1, 1, prof2, asig2, clasesM10, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat11 = new Materia("M11", "Proyecto de vida 2", 23, 1, 1, prof3, asig3, clasesM11, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat11 = new Materia("M11", "Proyecto de vida 2", 23, 1, 1, prof3, asig3, clasesM11, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat13 = new Materia("M13", "Intro a ejecucion 2", 25, 1, 1, prof5, asig5, clasesM13, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat14 = new Materia("M14", "Requerimientos 2", 25, 1, 1, prof5, asig5, clasesM14, new ArrayList<Materia>(), new ArrayList<Materia>()  );
-        Materia mat15 = new Materia("M15", "Construccion 2", 25, 1, 1, prof5, asig5, clasesM15, new ArrayList<Materia>(), new ArrayList<Materia>()  );
+        Materia mat13 = new Materia("M13", "Intro a ejecucion 2", 25, 1, 1, prof5, asig5, clasesM13, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat14 = new Materia("M14", "Requerimientos 2", 25, 1, 1, prof5, asig5, clasesM14, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat15 = new Materia("M15", "Construccion 2", 25, 1, 1, prof5, asig5, clasesM15, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
         // todas las materias
         

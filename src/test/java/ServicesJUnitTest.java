@@ -39,7 +39,7 @@ import static org.junit.Assert.*;
  * materia en creación CE7: Descipcion Vacia: La materia puede no tener
  * descripción: Agregar Materia CE8: Descipcion no Vacia: Agrega la descripción
  * a la materia: Registra materia CE9: Prerrequisito = Correquisito: Una materia
- * no peude tener otras materias como prerrequisito y correquisito a la vez:
+ * no puede tener otras materias como prerrequisito y correquisito a la vez:
  * Error! CE10: Prerrequisito y Correquisito, Vacios: Puede registrar una
  * materia que no tenga dependencia de otra: Registra materia CE11:
  * Prerrequisito != Correquisito: Una materia puede tener prerrequisitos y
@@ -291,19 +291,131 @@ public class ServicesJUnitTest {
         Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getDescripcion());
     }
  
- /*      CE9: Prerrequisito = Correquisito: Una materia no peude tener otras materias como prerrequisito y correquisito a la vez: 
+ /*      CE9: Prerrequisito = Correquisito: Una materia no puede tener las mismas materias como prerrequisito y correquisito a la vez: 
  *          Error!
      */
+    
+    @Test
+    public void CF9() throws SQLException, ExcepcionServiciosUPPOST {
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+
+        String codigo = "COD1";
+        String nombre = "materia prueba";
+        String descripcion = "materia prueba con nombre codigo y descripcion";
+        Materia mat = new Materia();
+        Materia matP = new Materia();       
+        
+        mat.setNombre(nombre);
+        mat.setCodigo(codigo);
+        mat.setDescripcion(descripcion);
+        
+        List<Materia> pre = new ArrayList<>(); 
+        
+        pre.add(matP);
+        
+        mat.setPreRequisitos(pre);
+        mat.setCoRequisitos(pre);
+        
+        sp.insertarMateria();
+        
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+        
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 0, materias.size());
+    }
+    
+    
  /*      CE10: Prerrequisito y  Correquisito, Vacios: Puede registrar una materia que no tenga dependencia de otra: 
  *          Registra materia
      */
+    
+    @Test
+    public void CF10() throws SQLException, ExcepcionServiciosUPPOST {
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+
+        String codigo = "COD1";
+        String nombre = "materia prueba";
+        String descripcion = "materia prueba con nombre codigo y descripcion";
+        Materia mat = new Materia();      
+        
+        mat.setNombre(nombre);
+        mat.setCodigo(codigo);
+        mat.setDescripcion(descripcion);
+        
+        List<Materia> pre = new ArrayList<>();
+        List<Materia> cor = new ArrayList<>();
+        
+        mat.setPreRequisitos(pre);
+        mat.setCoRequisitos(cor);
+        
+        sp.insertarMateria();
+        
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+        
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getDescripcion());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 0, materias.get(0).getPreRequisitos().size());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 0, materias.get(0).getCoRequisitos().size());
+    }
+    
+    
  /*      CE11: Prerrequisito != Correquisito: Una materia puede tener prerrequisitos y correquisitosRegistra:
  *          Registra Materia
      */
+    
+    
+    @Test
+    public void CF11() throws SQLException, ExcepcionServiciosUPPOST {
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+
+        String codigo = "COD1";
+        String nombre = "materia prueba";
+        String descripcion = "materia prueba con nombre codigo y descripcion";
+        Materia mat = new Materia();
+        Materia matP = new Materia();
+        Materia matC = new Materia();
+        
+        mat.setNombre(nombre);
+        mat.setCodigo(codigo);
+        mat.setDescripcion(descripcion);
+        
+        matP.setNombre("pre");
+        matC.setNombre("cor");
+        
+        List<Materia> pre = new ArrayList<>();
+        List<Materia> cor = new ArrayList<>();
+        
+        pre.add(matP);
+        pre.add(matC);
+        
+        mat.setPreRequisitos(pre);
+        mat.setPreRequisitos(cor);
+        
+        sp.insertarMateria();
+        
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+        
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getDescripcion());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.get(0).getPreRequisitos().size());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 0, materias.get(0).getCoRequisitos().size());
+    }
+    
  /*      CE12: M.i -> M.j -> M.k "i< j< k< Total.Materias": Si una materia tiene prerrequisitos en comun con otra 
  *          que es prerrequisito de ella, los prerrequisitos de la otra materia son tambien prerrequisitos de la primera,
  *          No puede haber una materia que sea prerrequisito de otra y esta no sea prerequisito de ella:
  *          Nada
  * 
      */
+     @Test
+    public void CF12() throws SQLException, ExcepcionServiciosUPPOST {
+    
+    }
+    
+    
+    
+    
 }
