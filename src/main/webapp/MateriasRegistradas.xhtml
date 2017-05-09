@@ -12,62 +12,39 @@ and open the template in the editor.
     <h:head>
         <title> MateriasRegistradas </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
     </h:head>
-
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
-
-
         <h1 style="text-align:center;color:firebrick" >UNIDAD DE PROYECTOS</h1>        
-
-
-
-
         <h:form id="registrarMateria" style="color:firebrick">
             <h2>Materias registradas</h2>
 
             <p:dataTable  id="formularioMateriasRegistradas" var="registradas"   style="margin: 0 auto;">
-
-
-
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Asignatura"/>
                     </f:facet>
-                    
                 </p:column>
-
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Materia"/>
                     </f:facet>
-                   
                 </p:column>
-
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Acción"/>
                     </f:facet>
                     <p:commandButton value="Modificar materia" ></p:commandButton>
-                    
                 </p:column>
             </p:dataTable>
             
             <br></br>
             <br></br>
-            
-
             <div style="text-align: center"> 
                 <h:commandButton id="registrarNueva" value="Registrar Nueva Materia" action="RegistrarMateria" />                
                 <h:commandButton id="indice" value="Ir al indice" action="indice" style="margin-left: 30px" />                
-
-
-
-
             </div>
         </h:form>
-
     </h:body>
 </html>
 

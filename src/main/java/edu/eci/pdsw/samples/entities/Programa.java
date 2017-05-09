@@ -16,6 +16,9 @@ public class Programa {
     private String nombre;
     private List<Asignatura> asignaturas;
 
+    public Programa() {
+    }
+
     public Programa(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
@@ -44,4 +47,6 @@ public class Programa {
     public void setAsignaturas(List<Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
     }
+    
+   
 }
