@@ -102,7 +102,7 @@ public class Clase implements Serializable {
   
    @Override
    public String toString() {
-        return "clase{" + "id=" + id + ", descripcion=" + recurso + ", Materia=" + materia + '}';
+        return "clase{" + "id=" + id + ", descripcion=" + recurso + ", Fecha= " + fecha +", HoraFin=" + horafin +", Materia=" + materia +", Salon = " + salon +"}";
   }
     
 

@@ -26,22 +26,34 @@ and open the template in the editor.
             <!-- <caption>Salones por periodo</caption>-->
             <p:column>  
                 <f:facet name="header">
-                    <h:outputText value="fecha inicio"></h:outputText>
+                    <h:outputText value="Fecha y hora inicio"></h:outputText>
                 </f:facet>
-                <h:outputText value="#{}"></h:outputText>
+                <h:outputText value="#{curso.formatoFecha}"></h:outputText>
             </p:column>  
             <p:column>  
                 <f:facet name="header">
-                    <h:outputText value="fecha fin"></h:outputText>
+                    <h:outputText value="Hora fin"></h:outputText>
                 </f:facet>
-                <h:outputText value="#{curso.horaFin}"></h:outputText>
+                <h:outputText value="#{curso.hora}"></h:outputText>
             </p:column> 
             <p:column>  
                 <f:facet name="header">
-                    <h:outputText value="Descripcion"></h:outputText>
+                    <h:outputText value="Salon"></h:outputText>
                 </f:facet>
-                <h:outputText value="#{curso.descripcion.nombre}"></h:outputText>
+                <h:outputText value="#{curso.salon}"></h:outputText>
+            </p:column>  
+            <p:column>  
+                <f:facet name="header">
+                    <h:outputText value="Caracteristicas"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{curso.recurso}"></h:outputText>
             </p:column> 
+            <p:column>  
+                <f:facet name="header">
+                    <h:outputText value="Materia"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{curso.materia}"></h:outputText>
+            </p:column>  
 
 
 

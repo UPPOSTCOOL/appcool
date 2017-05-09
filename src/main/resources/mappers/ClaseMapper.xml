@@ -9,12 +9,12 @@
      
         select  
         
-        c.id, c.fecha, c.horaFin,
+        c.id, 
         
         r.nombre as recursos, 
         
         c.fecha, c.horaFin,
-        
+                      
         m.materia_id as materia, 
         
         c.salon
