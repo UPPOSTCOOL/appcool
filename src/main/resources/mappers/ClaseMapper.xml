@@ -31,13 +31,25 @@
         
     </select>
     
-    <resultMap type='Clase' id='ClaseResult' >
-        <id property='id' column='id'/>
-        <result property='recurso' column='recurso'/>
-        <result property='fecha' column='fecha'/>
-        <result property='horaFin' column='horaFin'/>
-        <result property= 'materia' column='materia_id'/>
-        <result property= 'salon' column='salon'/>
+    <resultMap type="Clase" id='ClaseResult' >
+        <constructor>
+            <idArg column="id" javaType="_int"/> 
+            <arg column="recursos" javaType="String"/> 
+            <arg column="fecha" javaType="java.sql.Timestamp"/> 
+            <arg column="horaFin" javaType="java.sql.Time"/> 
+            <arg column="materia" javaType="String"/> 
+            <arg column="salon" javaType="String"/> 
+        </constructor>
+     
     </resultMap>
       	
 </mapper>
+
+<!--   
+         <id property='id' column='id'/>
+        <result property='recurso' column='recursos'/>
+        <result property='fecha' column='fecha'/>
+        <result property='horafin' column='horaFin'/>
+        <result property= 'materia' column='materia'/>
+        <result property= 'salon' column='salon'/> 
+-->

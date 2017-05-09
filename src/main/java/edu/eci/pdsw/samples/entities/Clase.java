@@ -31,17 +31,13 @@ public class Clase implements Serializable {
 
     
 
-    public Clase(int id, String recurso, java.sql.Timestamp fecha,
-            java.sql.Time horafin,String materia, String salon) {
-        
+    public Clase(int id, String recurso, java.sql.Timestamp fecha, java.sql.Time horafin, String materia, String salon) {
         this.id = id;
         this.recurso = recurso;
-        this.fecha=fecha;
-        this.horafin=horafin;
+        this.fecha = fecha;
+        this.horafin = horafin;
         this.materia = materia;
         this.salon = salon;
-
-
     }
 
     public int getId() {
@@ -52,7 +48,7 @@ public class Clase implements Serializable {
         this.id = id;
     }
 
-   
+
 
    
 
@@ -87,6 +83,8 @@ public class Clase implements Serializable {
     public void setMateria(String materia) {
         this.materia = materia;
     }
+
+
 
     
   
