@@ -24,5 +24,15 @@ public class MyBatisDaoMateria implements MateriaDAO{
     public List<Materia> consultarMateriasDAO(int semestre, int anio) throws ExcepcionServiciosUPPOST {
         return mmap.consultarMateriasClase(semestre,anio);
     }
+
+    @Override
+    public List<Materia> consultarMateriasPorProgramaDAO(int id_programa) throws ExcepcionServiciosUPPOST {
+        return mmap.consultarMateriasPorPrograma(id_programa);
+    }
+
+    @Override
+    public Materia consultarMateriaConRequisitosDAO(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
+        return mmap.consultarMateriaConRequisitos(codigo,id_programa);
+    }
     
 }

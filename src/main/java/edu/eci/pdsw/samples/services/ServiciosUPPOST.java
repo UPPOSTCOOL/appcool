@@ -9,6 +9,7 @@ import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Periodo;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Profesor;
+import edu.eci.pdsw.samples.entities.Programa;
 import java.util.Date;
 import java.util.List;
 
@@ -46,6 +47,16 @@ public interface ServiciosUPPOST {
     public abstract List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST;
     
     /**
+     * Consulta la materia con Co y Pre requisitos 
+     * @param codigo identificado de la materia
+     * @param id_programa identificador del programa
+     * @return La materia y sus características con sus co y pre requisitos
+     * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
+     * a nivel de base de datos, la clase no existe
+     */
+    public abstract Materia consultarMateriaConRequisitos(String codigo,int id_programa) throws ExcepcionServiciosUPPOST;
+    
+    /**
      * Consulta  los periodos academicos
      * @return Una lista de los ultimos 4 periodos academicos
      * @throws ExcepcionServiciosUPPOST si se presenta un error
@@ -64,11 +75,20 @@ public interface ServiciosUPPOST {
      * Consulta las materias de un periodo
      * @param semestre numero de semestre identificado con 1 o 2
      * @param anio año de que se desea consultar
-     * @return La clase con todo sus detalles y recursos
+     * @return Las materias de un periodo específico
      * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
      * a nivel de base de datos, la clase no existe
      */
     public abstract List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
+    
+    /**
+     * Consulta las materias de un programa
+     * @param id_programa
+     * @return Las materias de un programa específico
+     * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
+     * a nivel de base de datos, la clase no existe
+     */
+    public abstract List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST;
     
     /**
      * Consulta todos los profesores
@@ -97,5 +117,12 @@ public interface ServiciosUPPOST {
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
     public abstract List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST;
+    
+     /**
+     * Consultar programas
+     * @return  lista total de Programas
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+    public abstract List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST;
     
 }
