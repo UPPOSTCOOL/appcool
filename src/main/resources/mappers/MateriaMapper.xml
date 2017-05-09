@@ -72,9 +72,11 @@
             M.nombre as nombre
         from
             Asignatura A,
-            Materia M
+            Materia M,
+            Asign_Mater AM
         WHERE
-            M.Asignatura_id=A.id and
+            M.codigo=AM.Materia_codigo and
+            AM.Asignatura_id=A.id and
             A.posgrado_id=#{id_programa}
         Order By M.nombre asc;
     </select>
@@ -116,10 +118,12 @@
             Materia M,
             Profesor P,
             Clase C,
-            Periodo PE
+            Periodo PE,
+            Asign_Mater AM
         WHERE 
             MP.Materia_id=M.codigo and 
-            M.Asignatura_id=A.id and
+            M.codigo=AM.Materia_codigo and
+            AM.Asignatura_id=A.id and
             P.id=MP.Profesor_id and
             C.Mater_Perio_Materia_id=MP.Materia_id and
             C.Mater_Perio_cohorte=MP.cohorte and
