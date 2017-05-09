@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.samples.services;
 
+import edu.eci.pdsw.samples.entities.Asignatura;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Periodo;
 import edu.eci.pdsw.samples.entities.Materia;
@@ -114,5 +115,11 @@ public interface ServiciosUPPOST {
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
     public abstract List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST;
+      /**
+     * Consultar asignaturas
+     * @return  lista total de Programas
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+     public abstract List<Asignatura> consultarAsignaturas()throws ExcepcionServiciosUPPOST;
     
 }

@@ -14,6 +14,7 @@ import edu.eci.pdsw.samples.daos.MateriaDAO;
 import edu.eci.pdsw.samples.daos.PersistenceException;
 import edu.eci.pdsw.samples.daos.ProfesorDAO;
 import edu.eci.pdsw.samples.daos.ProgramaDAO;
+import edu.eci.pdsw.samples.entities.Asignatura;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
 import edu.eci.pdsw.samples.entities.Profesor;
@@ -114,5 +115,9 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     @Override
     public List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST {
         return daom.consultarMateriasPorProgramaDAO(id_programa);
+    }
+     @Override
+    public List<Asignatura> consultarAsignaturas () throws ExcepcionServiciosUPPOST {
+        return null;
     }
 }

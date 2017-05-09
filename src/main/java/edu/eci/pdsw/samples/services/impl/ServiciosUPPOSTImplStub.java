@@ -39,7 +39,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     private List<Periodo> periodosAll;
     private List<Materia> materiasAll1;
     private List<Materia> materiasAll2;
-
+ private List<Asignatura> asignaturasAll;
     public ServiciosUPPOSTImplStub() {
         clasesAll1 = new ArrayList<>();
         materiasAll1 = new ArrayList<>();
@@ -47,6 +47,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         materiasAll2 = new ArrayList<>();
         periodosAll = new ArrayList<>();
         programasAll= new ArrayList<>();
+        asignaturasAll=new ArrayList();
         poblar();
     }
 
@@ -675,5 +676,9 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     @Override
     public List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+     @Override
+    public List<Asignatura> consultarAsignaturas() throws ExcepcionServiciosUPPOST {
+        return null;
     }
 }

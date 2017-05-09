@@ -13,26 +13,44 @@ and open the template in the editor.
         <title>Programacion de periodo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
-     <h:body>
+    <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
         <h1 style="text-align: center; color:firebrick " >Programación de periodo</h1>
-            
+
         <h:form id="formularioProgramar" style="text-align: left; color:firebrick" >
-            <h:outputText>
-                <h1>#{ProgramacionPeriodoBean.selected}</h1>
-            </h:outputText>
+           
+            <table>                    
+                
+                <td style="font-size:20px">
+                        Periodo
+                    </td>
+                    <td>
 
-                <p:selectOneMenu id="programa" value="#{ProgramacionPeriodoBean.programa}" panelStyle="width:190px"
-                                 effect="fade" var="t" style="width:190px" filter="true" filterMatchMode="startsWith">
-                    <f:selectItems value="#{ProgramacionPeriodoBean.programa}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
-                </p:selectOneMenu>
-                <br></br>
-                <br></br>
-            </h:form>
-          
-                <br></br>
-                <br></br>
-            
+                        <p:selectOneMenu id="periodo" value="#{PeriodoBean.periodo}" panelStyle="width:190px"> 
+                            <f:selectItems value="#{PeriodoBean.periodo}" var="theme" itemLabel="#{theme.ano}" itemValue="#{theme.ano}" />
+                        </p:selectOneMenu>
+                          <p:selectOneMenu id="per" value="#{PeriodoBean.periodo}" panelStyle="width:190px"> 
+                              <f:selectItems value="#{PeriodoBean.periodo}" var="peri" itemLabel="#{peri.semestre}" itemValue="#{peri.semestre}" />
+                        </p:selectOneMenu>
+                    </td>
+                <tr>
+                     <td style="font-size:20px">
+                        Asignatura
+                    </td>
+                    <td>
 
-    </h:body>
-</html>
+                     
+                    </td> 
+                    
+                    
+                </tr>
+            </table>
+                    <br></br>
+                    <br></br>
+                    </h:form>
+
+
+
+
+                    </h:body>
+                    </html>
