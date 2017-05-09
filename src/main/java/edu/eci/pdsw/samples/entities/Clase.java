@@ -110,7 +110,7 @@ public class Clase implements Serializable {
     }
     
     public String getFormatoFecha(){
-        String fecha1 = new SimpleDateFormat("MM/dd/yy").format(fecha);
+        String fecha1 = new SimpleDateFormat("MM/dd/yy - HH:mm").format(fecha);
         return fecha1;
     }
     
