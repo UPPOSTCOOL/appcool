@@ -21,13 +21,14 @@ and open the template in the editor.
 
 
 
-        <p:dataTable id="formularioSalon" var="curso" value="#{PruebaSalonBean.obtenerClases()}" style="margin: 0 auto;">
+        <p:dataTable id="formularioSalon" var="curso" value="#{PruebaSalonBean.obtenerClases()}" 
+                     style="margin: 0 auto;">
             <!-- <caption>Salones por periodo</caption>-->
             <p:column>  
                 <f:facet name="header">
                     <h:outputText value="fecha inicio"></h:outputText>
                 </f:facet>
-                <h:outputText value="#{curso.fecha}"></h:outputText>
+                <h:outputText value="#{}"></h:outputText>
             </p:column>  
             <p:column>  
                 <f:facet name="header">
