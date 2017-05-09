@@ -128,12 +128,13 @@ public class ServicesJUnitTest {
     @Test
     public void CF1() throws SQLException, ExcepcionServiciosUPPOST {
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
-        sp.insertarMateria();
+        
         List<Materia> materias = sp.consultarMaterias(2017, 1);
 
         String nombre = "materia prueba";
-        
-        materias.get(0).setNombre(nombre);
+        Materia mat = new Materia();
+        mat.setNombre(nombre);        
+        sp.insertarMateria(); //falta implementar insertar materia
         
         Assert.assertEquals("Deberia almacenar las materias agregadas, tamano = 1", 0, materias.size());
 
@@ -145,12 +146,14 @@ public class ServicesJUnitTest {
     @Test
     public void CF2() throws SQLException, ExcepcionServiciosUPPOST {
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
-        sp.insertarMateria();
-        List<Materia> materias = sp.consultarMaterias(2017, 1);
 
         String nombre = "materia prueba";
         
-        materias.get(0).setNombre(nombre);
+        Materia mat = new Materia();
+        mat.setNombre(nombre);
+        sp.insertarMateria();
+        
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
         
         Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
         Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
@@ -163,12 +166,15 @@ public class ServicesJUnitTest {
     @Test
     public void CF3() throws SQLException, ExcepcionServiciosUPPOST {
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
-        sp.insertarMateria();
-        List<Materia> materias = sp.consultarMaterias(2017, 1);
 
         String codigo = "COD1";
-        materias.get(0).setCodigo(codigo);
-        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
+        Materia mat = new Materia();
+        mat.setCodigo(codigo);
+        sp.insertarMateria();
+        
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+        
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 0, materias.size());
 
     }
 
@@ -179,30 +185,112 @@ public class ServicesJUnitTest {
     @Test
     public void CF4() throws SQLException, ExcepcionServiciosUPPOST {
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
-        sp.insertarMateria();
-        List<Materia> materias = sp.consultarMaterias(2017, 1);
 
         String codigo = "COD1";
+        Materia mat = new Materia();
+        mat.setCodigo(codigo);
+        sp.insertarMateria();
         
-        materias.get(0).setCodigo(codigo);
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
         
-        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
         Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
 
     }
     
  /*      CE5: Nombre y Codigo, vacios: No puede agregar una materia sin identificadores: 
  *          Nada
      */
+    
+    @Test
+    public void CF5() throws SQLException, ExcepcionServiciosUPPOST {
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+
+        String codigo = "";
+        String nombre = "";
+        Materia mat = new Materia();
+        mat.setNombre(nombre);
+        mat.setCodigo(codigo);
+        sp.insertarMateria();
+        
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+        
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 0, materias.size());
+    }
+    
  /*      CE6: Nombre y Codigo, no Vacios: Puede agregar atributos identificadores a la materia:  
  *          Agrega nombre y codigo a la materia en creación
      */
+    
+   @Test
+    public void CF6() throws SQLException, ExcepcionServiciosUPPOST {
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+
+        String codigo = "COD1";
+        String nombre = "materia prueba";
+        Materia mat = new Materia();
+        mat.setNombre(nombre);
+        mat.setCodigo(codigo);
+        sp.insertarMateria();
+        
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+        
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
+
+    }
+    
  /*      CE7: Descipcion Vacia: La materia puede no tener descripción: 
  *          Agregar Materia
      */
+    
+    
+      @Test
+    public void CF7() throws SQLException, ExcepcionServiciosUPPOST {
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+
+        String codigo = "COD1";
+        String nombre = "materia prueba";
+        String descripcion = "";
+        Materia mat = new Materia();
+        mat.setNombre(nombre);
+        mat.setCodigo(codigo);
+        mat.setDescripcion(descripcion);
+        sp.insertarMateria();
+        
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+        
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
+    }
+    
  /*      CE8: Descipcion no Vacia: Agrega la descripción a la materia: 
  *          Registra materia
      */
+ 
+ @Test
+    public void CF8() throws SQLException, ExcepcionServiciosUPPOST {
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+
+        String codigo = "COD1";
+        String nombre = "materia prueba";
+        String descripcion = "materia prueba con nombre codigo y descripcion";
+        Materia mat = new Materia();
+        mat.setNombre(nombre);
+        mat.setCodigo(codigo);
+        mat.setDescripcion(descripcion);
+        sp.insertarMateria();
+        
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+        
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getDescripcion());
+    }
+ 
  /*      CE9: Prerrequisito = Correquisito: Una materia no peude tener otras materias como prerrequisito y correquisito a la vez: 
  *          Error!
      */
