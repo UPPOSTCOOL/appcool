@@ -13,6 +13,7 @@
         <typeAlias type='edu.eci.pdsw.samples.entities.Profesor' alias='Profesor'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Asignatura' alias='Asignatura'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Periodo' alias='Periodo'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Programa' alias='Programa'/>
     </typeAliases>        
     
     
@@ -20,10 +21,17 @@
         <environment id="development">
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
+<<<<<<< HEAD
                 <property name="driver" value="org.h2.Driver" />
                 <property name="url" value="jdbc:h2:file:./target/db/testdb;MODE=PostgreSQL" />
                 <property name="username" value="anonymous" />
                 <property name="password" value="" />
+=======
+                <property name="driver" value="org.postgresql.Driver" />
+                <property name="url" value="jdbc:postgresql://ec2-54-83-205-71.compute-1.amazonaws.com:5432/db1liia9qurdk4?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"/>
+                <property name="username" value="ecwmudumtvzhdj" />
+                <property name="password" value="69798290f3c47bd702ef216ccb2c071ce63482f1b417e96738d1b01bd68260a1" />
+>>>>>>> origin/HU3_kvn
             </dataSource>
         </environment>
     </environments>
@@ -31,9 +39,11 @@
     <mappers>
         <mapper resource="mappers/ClaseMapper.xml"></mapper>
         <mapper resource="mappers/MateriaMapper.xml"></mapper> 
+        <mapper resource="mappers/MateriaReqMapper.xml"></mapper> 
         <mapper resource="mappers/ProfesorMapper.xml"></mapper> 
         <mapper resource="mappers/AsignaturaMapper.xml"></mapper> 
-        <mapper resource="mappers/PAcademicoMapper.xml"></mapper> 
+        <mapper resource="mappers/PAcademicoMapper.xml"></mapper>  
+        <mapper resource="mappers/ProgramaMapper.xml"></mapper> 
     </mappers>
         
 </configuration>

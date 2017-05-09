@@ -32,7 +32,7 @@ public class MyBatisDaoMateria implements MateriaDAO{
 
     @Override
     public Materia consultarMateriaConRequisitosDAO(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return mmap.consultarMateriaConRequisitos(codigo,id_programa);
     }
     
 }

@@ -13,19 +13,71 @@
         <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
         <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
         <collection property='clases' ofType='Clase' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='clase_'></collection>
-        <collection property='preRequisitos' ofType='Materia' resultMap='MateriaResult' columnPrefix='preReq_'></collection>
-        <collection property='coRequisitos' ofType='Materia' resultMap='MateriaResult' columnPrefix='coReq_'></collection>
+        <collection property='coRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='coReq_'></collection>
+        <collection property='preRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='preReq_'></collection>
     </resultMap>
+    <select parameterType="map" id="consultarMateriaConRequisitos" resultMap="MateriaResult">
+        (select
+            M.codigo as codigo,
+            M.nombre as nombre,
+            M.descripcion as descripcion,
+            M2.codigo as preReq_codigo,
+            M2.nombre as preReq_nombre,
+            M2.descripcion as preReq_descripcion,
+            null as coReq_codigo,
+            null as coReq_nombre,
+            null as coReq_descripcion
+        from
+            Materia M,
+            Materia M2,
+            Prerequisito P
+        WHERE
+            M.codigo=#{codigo} and
+            P.Materia_id=M.codigo and
+            P.Programa_id=#{id_p} and
+            P.Materia_id_pre=M2.codigo
+        )
+        UNION
+        (select
+            M.codigo as codigo,
+            M.nombre as nombre,
+            M.descripcion as descripcion,
+            null as preReq_codigo,
+            null as preReq_nombre,
+            null as preReq_descripcion,
+            M3.codigo as coReq_codigo,
+            M3.nombre as coReq_nombre,
+            M3.descripcion as coReq_descripcion
+        from
+            Materia M,
+            Materia M3,
+            Corequisito C
+        WHERE
+            M.codigo=#{codigo} and
+            (
+                C.Materia_id=M.codigo and
+                C.Programa_id=#{id_p} and
+                C.Materia_id_CO=M3.codigo
+            )or(
+                C.Materia_id=M3.codigo and
+                C.Programa_id=#{id_p} and
+                C.Materia_id_CO=M.codigo
+            )
+	);
+    </select>
+    
     <select parameterType="map" id="consultarMateriasPorPrograma" resultMap="MateriaResult">
         select
             M.codigo as codigo,
             M.nombre as nombre
         from
             Asignatura A,
-            Materia M
+            Materia M,
+            Asign_Mater AM
         WHERE
-            M.Asignatura_id=A.id and
-            A.posgrado_id=#{id_programa};
+            M.codigo=AM.Materia_codigo and
+            AM.Asignatura_id=A.id and
+            A.posgrado_id=#{id_programa}
         Order By M.nombre asc;
     </select>
 
@@ -66,10 +118,12 @@
             Materia M,
             Profesor P,
             Clase C,
-            Periodo PE
+            Periodo PE,
+            Asign_Mater AM
         WHERE 
             MP.Materia_id=M.codigo and 
-            M.Asignatura_id=A.id and
+            M.codigo=AM.Materia_codigo and
+            AM.Asignatura_id=A.id and
             P.id=MP.Profesor_id and
             C.Mater_Perio_Materia_id=MP.Materia_id and
             C.Mater_Perio_cohorte=MP.cohorte and
