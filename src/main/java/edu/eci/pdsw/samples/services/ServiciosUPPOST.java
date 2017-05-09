@@ -125,4 +125,9 @@ public interface ServiciosUPPOST {
      */
     public abstract List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST;
     
+    /**
+     * Inerta una materia
+     * @throws ExcepcionServiciosUPPOST 
+     */
+    public abstract void insertarMateria()throws ExcepcionServiciosUPPOST;
 }
