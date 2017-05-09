@@ -5,12 +5,34 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Programacion de periodo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+    </h:head>
+     <h:body>
+        <img src="Imagenes/eci2.jpg" height="80" />
+        <h1 style="text-align: center; color:firebrick " >Programación de periodo</h1>
+            
+        <h:form id="formularioProgramar" style="text-align: left; color:firebrick" >
+            <h:outputText>
+                <h1>#{ProgramacionPeriodoBean.selected}</h1>
+            </h:outputText>
+
+                <p:selectOneMenu id="programa" value="#{ProgramacionPeriodoBean.programa}" panelStyle="width:190px"
+                                 effect="fade" var="t" style="width:190px" filter="true" filterMatchMode="startsWith">
+                    <f:selectItems value="#{ProgramacionPeriodoBean.programa}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
+                </p:selectOneMenu>
+                <br></br>
+                <br></br>
+            </h:form>
+          
+                <br></br>
+                <br></br>
+            
+
+    </h:body>
 </html>
