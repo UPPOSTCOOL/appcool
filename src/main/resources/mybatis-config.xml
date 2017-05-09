@@ -13,9 +13,9 @@
         <typeAlias type='edu.eci.pdsw.samples.entities.Profesor' alias='Profesor'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Asignatura' alias='Asignatura'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Periodo' alias='Periodo'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Programa' alias='Programa'/>
     </typeAliases> 
 
-        
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC" />
@@ -34,7 +34,6 @@
         <mapper resource="mappers/ProfesorMapper.xml"></mapper> 
         <mapper resource="mappers/AsignaturaMapper.xml"></mapper> 
         <mapper resource="mappers/PAcademicoMapper.xml"></mapper>  
-    </mappers> 
-        
-        
+        <mapper resource="mappers/ProgramaMapper.xml"></mapper>  
+    </mappers>
 </configuration>
