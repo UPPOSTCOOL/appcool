@@ -26,53 +26,40 @@ import static org.junit.Assert.*;
  *
  * @author uppost
  */
-
-
-
-
 /**
  *
- * PRUEBAS - REGISTRAR MATERIA
- *                                                       Resultado
- *      CE1: Nombre ya existe: No puede agregar un nombre existente a otra materia: 
- *          Nada
- *      CE2: Nombre no existe: Puede agregar el nombre a la materia: 
- *          Agrega nombre a la materia en creación
- *      CE3: Codigo ya existe: No puede agregar un codigo que es de otra materia: 
- *          Nada
- *      CE4: Codigo no existe: Puede agregar el codigo unico a la materia: 
- *          Agrega codigo a la Materia en creación
- *      CE5: Nombre y Codigo, vacios: No puede agregar una materia sin identificadores: 
- *          Nada
- *      CE6: Nombre y Codigo, no Vacios: Puede agregar atributos identificadores a la materia:  
- *          Agrega nombre y codigo a la materia en creación
- *      CE7: Descipcion Vacia: La materia puede no tener descripción: 
- *          Agregar Materia
- *      CE8: Descipcion no Vacia: Agrega la descripción a la materia: 
- *          Registra materia
- *      CE9: Prerrequisito = Correquisito: Una materia no peude tener otras materias como prerrequisito y correquisito a la vez: 
- *          Error!
- *      CE10: Prerrequisito y  Correquisito, Vacios: Puede registrar una materia que no tenga dependencia de otra: 
- *          Registra materia
- *      CE11: Prerrequisito != Correquisito: Una materia puede tener prerrequisitos y correquisitosRegistra:
- *          Registra Materia
- *      CE12: M.i -> M.j -> M.k "i< j< k< Total.Materias": Si una materia tiene prerrequisitos en comun con otra 
- *          que es prerrequisito de ella, los prerrequisitos de la otra materia son tambien prerrequisitos de la primera,
- *          No puede haber una materia que sea prerrequisito de otra y esta no sea prerequisito de ella:
- *          Nada
- * 
- * 
+ * PRUEBAS - REGISTRAR MATERIA Resultado CE1: Nombre ya existe: No puede agregar
+ * un nombre existente a otra materia: Nada CE2: Nombre no existe: Puede agregar
+ * el nombre a la materia: Agrega nombre a la materia en creación CE3: Codigo ya
+ * existe: No puede agregar un codigo que es de otra materia: Nada CE4: Codigo
+ * no existe: Puede agregar el codigo unico a la materia: Agrega codigo a la
+ * Materia en creación CE5: Nombre y Codigo, vacios: No puede agregar una
+ * materia sin identificadores: Nada CE6: Nombre y Codigo, no Vacios: Puede
+ * agregar atributos identificadores a la materia: Agrega nombre y codigo a la
+ * materia en creación CE7: Descipcion Vacia: La materia puede no tener
+ * descripción: Agregar Materia CE8: Descipcion no Vacia: Agrega la descripción
+ * a la materia: Registra materia CE9: Prerrequisito = Correquisito: Una materia
+ * no peude tener otras materias como prerrequisito y correquisito a la vez:
+ * Error! CE10: Prerrequisito y Correquisito, Vacios: Puede registrar una
+ * materia que no tenga dependencia de otra: Registra materia CE11:
+ * Prerrequisito != Correquisito: Una materia puede tener prerrequisitos y
+ * correquisitosRegistra: Registra Materia CE12: M.i -> M.j -> M.k "i< j< k<
+ * Total.Materias": Si una materia tiene prerrequisitos en comun con otra que es
+ * prerrequisito de ella, los prerrequisitos de la otra materia son tambien
+ * prerrequisitos de la primera, No puede haber una materia que sea
+ * prerrequisito de otra y esta no sea prerequisito de ella: Nada
+ *
+ *
  */
 public class ServicesJUnitTest {
-    
+
     public ServicesJUnitTest() {
     }
-    
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void clearBD() throws SQLException {
         /*
@@ -95,18 +82,20 @@ public class ServicesJUnitTest {
         conn.commit();
         conn.close(); */
     }
-    
+
     /**
      * Obtiene una conexion a la base de datos de prueba
+     *
      * @return
-     * @throws SQLException 
-     * @throws edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST 
-     */ /*
+     * @throws SQLException
+     * @throws edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST
+     */
+    /*
     private Connection getConnection() throws SQLException{
         return DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=PostgreSQL", "anonymous", "");        
     }*/
 
-    /*
+ /*
    @Test
     public void pruebaCeroTest() throws SQLException, ExcepcionServiciosUPPOST {
         //Insertar datos en la base de datos de pruebas, de acuerdo con la clase
@@ -132,73 +121,101 @@ public class ServicesJUnitTest {
         //Assert.fail("Pruebas no implementadas aun...");
         
     }     */
-    
-    
+ /*
+    CE1: Nombre ya existe: No puede agregar un nombre existente a otra materia: 
+    *          Nada
+     */
     @Test
     public void CF1() throws SQLException, ExcepcionServiciosUPPOST {
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
         sp.insertarMateria();
-        List<Materia> materias=sp.consultarMaterias(2017,1);      
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+
+        String nombre = "materia prueba";
         
+        materias.get(0).setNombre(nombre);
         
-        Assert.assertEquals("Deberia almacenar las materias agregadas, tamano = 1",1, materias.size());
-        
+        Assert.assertEquals("Deberia almacenar las materias agregadas, tamano = 1", 0, materias.size());
+
     }
-    
-    
+
+    /*      CE2: Nombre no existe: Puede agregar el nombre a la materia: 
+ *          Agrega nombre a la materia en creación
+     */
     @Test
     public void CF2() throws SQLException, ExcepcionServiciosUPPOST {
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
         sp.insertarMateria();
-        List<Materia> materias=sp.consultarMaterias(2017,1);      
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+
+        String nombre = "materia prueba";
         
+        materias.get(0).setNombre(nombre);
         
-        Assert.assertEquals("Deberia almacenar las materias agregadas, tamano = 1",1, materias.size());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
+
+    }
+
+    /*      CE3: Codigo ya existe: No puede agregar un codigo que es de otra materia: 
+ *          Nada
+     */
+    @Test
+    public void CF3() throws SQLException, ExcepcionServiciosUPPOST {
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        sp.insertarMateria();
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+
+        String codigo = "COD1";
+        materias.get(0).setCodigo(codigo);
+        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
+
+    }
+
+    /*      CE4: Codigo no existe: Puede agregar el codigo unico a la materia: 
+ *          Agrega codigo a la Materia en creación
+     */
+    
+    @Test
+    public void CF4() throws SQLException, ExcepcionServiciosUPPOST {
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        sp.insertarMateria();
+        List<Materia> materias = sp.consultarMaterias(2017, 1);
+
+        String codigo = "COD1";
         
+        materias.get(0).setCodigo(codigo);
+        
+        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
+
     }
     
-    
-/**
- *
- * PRUEBAS - REGISTRAR MATERIA
- *                                                       Resultado
- *      CE1: Nombre ya existe: No puede agregar un nombre existente a otra materia: 
+ /*      CE5: Nombre y Codigo, vacios: No puede agregar una materia sin identificadores: 
  *          Nada
- *      CE2: Nombre no existe: Puede agregar el nombre a la materia: 
- *          Agrega nombre a la materia en creación
- *      CE3: Codigo ya existe: No puede agregar un codigo que es de otra materia: 
- *          Nada
- *      CE4: Codigo no existe: Puede agregar el codigo unico a la materia: 
- *          Agrega codigo a la Materia en creación
- *      CE5: Nombre y Codigo, vacios: No puede agregar una materia sin identificadores: 
- *          Nada
- *      CE6: Nombre y Codigo, no Vacios: Puede agregar atributos identificadores a la materia:  
+     */
+ /*      CE6: Nombre y Codigo, no Vacios: Puede agregar atributos identificadores a la materia:  
  *          Agrega nombre y codigo a la materia en creación
- *      CE7: Descipcion Vacia: La materia puede no tener descripción: 
+     */
+ /*      CE7: Descipcion Vacia: La materia puede no tener descripción: 
  *          Agregar Materia
- *      CE8: Descipcion no Vacia: Agrega la descripción a la materia: 
+     */
+ /*      CE8: Descipcion no Vacia: Agrega la descripción a la materia: 
  *          Registra materia
- *      CE9: Prerrequisito = Correquisito: Una materia no peude tener otras materias como prerrequisito y correquisito a la vez: 
+     */
+ /*      CE9: Prerrequisito = Correquisito: Una materia no peude tener otras materias como prerrequisito y correquisito a la vez: 
  *          Error!
- *      CE10: Prerrequisito y  Correquisito, Vacios: Puede registrar una materia que no tenga dependencia de otra: 
+     */
+ /*      CE10: Prerrequisito y  Correquisito, Vacios: Puede registrar una materia que no tenga dependencia de otra: 
  *          Registra materia
- *      CE11: Prerrequisito != Correquisito: Una materia puede tener prerrequisitos y correquisitosRegistra:
+     */
+ /*      CE11: Prerrequisito != Correquisito: Una materia puede tener prerrequisitos y correquisitosRegistra:
  *          Registra Materia
- *      CE12: M.i -> M.j -> M.k "i< j< k< Total.Materias": Si una materia tiene prerrequisitos en comun con otra 
+     */
+ /*      CE12: M.i -> M.j -> M.k "i< j< k< Total.Materias": Si una materia tiene prerrequisitos en comun con otra 
  *          que es prerrequisito de ella, los prerrequisitos de la otra materia son tambien prerrequisitos de la primera,
  *          No puede haber una materia que sea prerrequisito de otra y esta no sea prerequisito de ella:
  *          Nada
  * 
- * 
- */
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     */
 }
