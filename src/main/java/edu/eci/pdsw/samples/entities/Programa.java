@@ -16,7 +16,8 @@ public class Programa {
     private int id;
     private String nombre;
     private List<Asignatura> asignaturas;
-   
+    private Asignatura nombreAs;
+    
 
     public Programa() {
     }
@@ -50,12 +51,13 @@ public class Programa {
         this.asignaturas = asignaturas;
     }
     
-    public List<String>getNombresAsig(){
-        List<String> nombres = new ArrayList<>();        
-        for (int i=0; i<asignaturas.size(); i++) {
-            nombres.add(nombre);
+    
+    public List<String> getNombreAsignatura(){
+        ArrayList<String> ans= new ArrayList<>();
+        for (Asignatura asignatura : asignaturas) {
+            ans.add(asignatura.getNombre());
         }
-        return nombres;
+        return ans;
     }
-   
+    
 }
