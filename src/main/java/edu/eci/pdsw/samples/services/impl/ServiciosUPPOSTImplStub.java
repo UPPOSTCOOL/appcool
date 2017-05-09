@@ -52,15 +52,17 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
     
 
-    private void poblar() {        
+    private void poblar() {    
+        programasAll.add(new Programa(0," Gerencia Estrategica"));
+        programasAll.add(new Programa(0," Maestria en proyectos"));
         periodo1();
         periodo2();
+        System.out.println(programasAll.get(1).getNombre());
     }
      
     
     private void periodo1(){
-        programasAll.add(new Programa(0," Gerencia Estrategica"));
-        programasAll.add(new Programa(0," Maestria en proyectos"));
+      
         
         // PARA EL PERIODO 1
         

@@ -7,8 +7,9 @@ package edu.eci.pdsw.samples.managedbeans;
 
 import edu.eci.pdsw.samples.entities.Programa;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
+import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImpl;
+import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -22,12 +23,12 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class programacionPeriodoBean {
     private List<Programa> programa=new ArrayList<>();
-    private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
+    ServiciosUPPOSTImplStub inp=new ServiciosUPPOSTImplStub();
     private String prog=" ";
 
     
     public List<Programa> getPrograma() throws ExcepcionServiciosUPPOST {
-        return inp.consultarProgramas();
+       return inp.consultarProgramas();
         
     }
 
@@ -44,6 +45,9 @@ public class programacionPeriodoBean {
     }
 
     public programacionPeriodoBean() {
+        
     }
+
+   
     
 }
