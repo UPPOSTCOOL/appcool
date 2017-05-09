@@ -24,7 +24,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "MateriasBean")
 @SessionScoped
 public class RegistrarMateriasBean implements Serializable{
-    private List<Programa> materia=new ArrayList<>();
+    private List<Programa> programa=new ArrayList<>();
     
     private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
 
@@ -32,8 +32,8 @@ public class RegistrarMateriasBean implements Serializable{
     }
     
     public List<Programa> obtenerProgramas() throws ExcepcionServiciosUPPOST{
-        materia = inp.consultarProgramas();
-        return materia;
+        programa = inp.consultarProgramas();
+        return programa;
     }
     
 }
