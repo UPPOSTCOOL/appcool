@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.samples.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +16,7 @@ public class Programa {
     private int id;
     private String nombre;
     private List<Asignatura> asignaturas;
+   
 
     public Programa() {
     }
@@ -48,5 +50,12 @@ public class Programa {
         this.asignaturas = asignaturas;
     }
     
+    public List<String>getNombresAsig(){
+        List<String> nombres = new ArrayList<>();        
+        for (int i=0; i<asignaturas.size(); i++) {
+            nombres.add(nombre);
+        }
+        return nombres;
+    }
    
 }

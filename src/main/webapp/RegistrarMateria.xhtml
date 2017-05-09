@@ -19,7 +19,7 @@ and open the template in the editor.
         <h:form id="registrarMateria" style="color:firebrick">
             <h2>Registrar Materia</h2>
            
-            <p:dataTable  id="formularioMaterias" var="programa" value="#{MateriasBean.obtenerProgramas()}"  style="margin: 0 auto;">
+            <p:dataTable  id="formularioPrograma" var="programa" value="#{MateriasBean.obtenerProgramas()}"  style="margin: 0 auto;">
             <p:column>
                 <f:facet name="header">
                     <h:outputText value="Programas"/>
@@ -35,8 +35,7 @@ and open the template in the editor.
             </p:column>
                 
             <p:column>
-                <f:facet name="header">
-                    <h:outputText value="Cohorte"/>
+                <f:facet name="header">                    
                 </f:facet>
                 <h:commandButton id="crear1" value="Crear Nueva Asignatura" action="ReportesProgramacion"  style="margin-left: 10px"  />
             </p:column>
@@ -81,7 +80,19 @@ and open the template in the editor.
                                 <f:selectItem itemValue = "3" itemLabel = "Intersemestral" /> 
                             </h:selectOneMenu>
                         </td>
+                        <td>
+                            Co-Requisitos
+                        </td>
+                        <td>
+
+                            <h:selectOneMenu value = "#{PeriodoBean.semestre}"> 
+                                <f:selectItem itemValue = "1" itemLabel = "1" /> 
+                                <f:selectItem itemValue = "2" itemLabel = "2" /> 
+                                <f:selectItem itemValue = "3" itemLabel = "Intersemestral" /> 
+                            </h:selectOneMenu>
+                        </td>
                     </tr>
+                   
                     <tr>
                         <td>
                             Nombre Materia
