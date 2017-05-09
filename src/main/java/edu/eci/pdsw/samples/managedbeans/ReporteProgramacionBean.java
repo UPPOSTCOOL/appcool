@@ -45,7 +45,7 @@ public class ReporteProgramacionBean implements Serializable{
     public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST{
         semestre=cb.getSemestre();
         anio=cb.getAnio();
-        materia = inp.consultarMaterias(anio, semestre);
+        materia = inp.consultarMaterias(semestre, anio);
         return materia;
     }
 
