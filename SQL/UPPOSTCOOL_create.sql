@@ -1,7 +1,14 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2017-04-27 18:04:40.138
+-- Last modification date: 2017-05-09 00:24:18.38
 
 -- tables
+-- Table: Asign_Mater
+CREATE TABLE Asign_Mater (
+    Asignatura_id int  NOT NULL,
+    Materia_codigo varchar  NOT NULL,
+    CONSTRAINT Asign_Mater_pk PRIMARY KEY (Asignatura_id,Materia_codigo)
+);
+
 -- Table: Asignatura
 CREATE TABLE Asignatura (
     nombre varchar  NOT NULL,
@@ -47,7 +54,8 @@ CREATE TABLE Comite (
 CREATE TABLE Corequisito (
     Materia_id varchar  NOT NULL,
     Materia_id_co varchar  NOT NULL,
-    CONSTRAINT Corequisito_pk PRIMARY KEY (Materia_id,Materia_id_co)
+    Programa_id int  NOT NULL,
+    CONSTRAINT Corequisito_pk PRIMARY KEY (Materia_id,Materia_id_co,Programa_id)
 );
 
 -- Table: HorarioProf
@@ -72,7 +80,6 @@ CREATE TABLE Mater_Perio (
 CREATE TABLE Materia (
     codigo varchar  NOT NULL,
     nombre varchar  NOT NULL,
-    Asignatura_id int  NOT NULL,
     descripcion varchar  NOT NULL,
     CONSTRAINT Materia_pk PRIMARY KEY (codigo)
 );
@@ -89,7 +96,8 @@ CREATE TABLE Periodo (
 CREATE TABLE Prerequisito (
     Materia_id varchar  NOT NULL,
     Materia_id_pre varchar  NOT NULL,
-    CONSTRAINT Prerequisito_pk PRIMARY KEY (Materia_id,Materia_id_pre)
+    Programa_id int  NOT NULL,
+    CONSTRAINT Prerequisito_pk PRIMARY KEY (Materia_id,Materia_id_pre,Programa_id)
 );
 
 -- Table: Profesor
@@ -115,6 +123,22 @@ CREATE TABLE Recurso (
 );
 
 -- foreign keys
+-- Reference: Asign_Mater_Asignatura (table: Asign_Mater)
+ALTER TABLE Asign_Mater ADD CONSTRAINT Asign_Mater_Asignatura
+    FOREIGN KEY (Asignatura_id)
+    REFERENCES Asignatura (id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: Asign_Mater_Materia (table: Asign_Mater)
+ALTER TABLE Asign_Mater ADD CONSTRAINT Asign_Mater_Materia
+    FOREIGN KEY (Materia_codigo)
+    REFERENCES Materia (codigo)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
 -- Reference: Asignatura_Programa (table: Asignatura)
 ALTER TABLE Asignatura ADD CONSTRAINT Asignatura_Programa
     FOREIGN KEY (Posgrado_id)
@@ -199,6 +223,16 @@ ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia_CO
     INITIALLY IMMEDIATE
 ;
 
+-- Reference: Corequisito_Programa (table: Corequisito)
+ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Programa
+    FOREIGN KEY (Programa_id)
+    REFERENCES Programa (id)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
 -- Reference: HorarioProf_Profesor (table: HorarioProf)
 ALTER TABLE HorarioProf ADD CONSTRAINT HorarioProf_Profesor
     FOREIGN KEY (Profesor_id)
@@ -225,14 +259,6 @@ ALTER TABLE Mater_Perio ADD CONSTRAINT Mater_Cohor_Periodo
     INITIALLY IMMEDIATE
 ;
 
--- Reference: Materia_Asignatura (table: Materia)
-ALTER TABLE Materia ADD CONSTRAINT Materia_Asignatura
-    FOREIGN KEY (Asignatura_id)
-    REFERENCES Asignatura (id)  
-    NOT DEFERRABLE 
-    INITIALLY IMMEDIATE
-;
-
 -- Reference: Prerequisito_Materia (table: Prerequisito)
 ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia
     FOREIGN KEY (Materia_id)
@@ -245,6 +271,16 @@ ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia
 ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia_PRE
     FOREIGN KEY (Materia_id_pre)
     REFERENCES Materia (codigo)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: Prerequisito_Programa (table: Prerequisito)
+ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Programa
+    FOREIGN KEY (Programa_id)
+    REFERENCES Programa (id)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
