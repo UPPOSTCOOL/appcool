@@ -16,7 +16,7 @@
         
         c.fecha, c.horaFin,
                       
-        m.materia_id as materia, 
+        c.mater_perio_materia_id as mater_perio_materia_id,
         
         c.salon
 
@@ -33,24 +33,13 @@
     </select>
     
     <resultMap type="Clase" id='ClaseResult' >
-        <constructor>
-            <idArg column="id" javaType="_int"/> 
-            <arg column="recursos" javaType="String"/> 
-            <arg column="fecha" javaType="java.sql.Timestamp"/> 
-            <arg column="horaFin" javaType="java.sql.Time"/> 
-            <arg column="materia" javaType="String"/> 
-            <arg column="salon" javaType="String"/> 
-        </constructor>
-     
-    </resultMap>
-      	
-</mapper>
-
-<!--   
-         <id property='id' column='id'/>
+        <id property='id' column='id'/>
         <result property='recurso' column='recursos'/>
         <result property='fecha' column='fecha'/>
-        <result property='horafin' column='horaFin'/>
-        <result property= 'materia' column='materia'/>
+        <result property='horaFin' column='horaFin'/>
+        <result property='rangoHoras' column='rangoHoras'/>
+        <result property= 'idMateria' column='mater_perio_materia_id'/>
+        <result property= 'cohorte' column='mater_perio_cohorte'/>
         <result property= 'salon' column='salon'/> 
--->
+    </resultMap>
+</mapper>

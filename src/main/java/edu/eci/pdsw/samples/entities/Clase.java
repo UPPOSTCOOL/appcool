@@ -19,24 +19,25 @@ import java.text.SimpleDateFormat;
 public class Clase implements Serializable {
     
     private int id;
-
     private String recurso;
-    
     private Timestamp fecha;
-    private Time horafin;
-    
-    private String materia;
+    private Time horaFin;
+    private String rangoHoras;//indica 10 a 2pm
+    private String idMateria;
+    private int cohorte;
     private String salon;
-    
 
-    
+    public Clase() {
+    }
 
-    public Clase(int id, String recurso, java.sql.Timestamp fecha, java.sql.Time horafin, String materia, String salon) {
+    public Clase(int id, String recurso, Timestamp fecha, Time horaFin, String rangoHoras, String idMateria, int cohorte, String salon) {
         this.id = id;
         this.recurso = recurso;
         this.fecha = fecha;
-        this.horafin = horafin;
-        this.materia = materia;
+        this.horaFin = horaFin;
+        this.rangoHoras = rangoHoras;
+        this.idMateria = idMateria;
+        this.cohorte = cohorte;
         this.salon = salon;
     }
 
@@ -48,26 +49,6 @@ public class Clase implements Serializable {
         this.id = id;
     }
 
-
-
-   
-
-    public Timestamp getFecha() {
-        return fecha;
-    }
-    
-    public void setFecha(Timestamp fecha) {
-        this.fecha = fecha;
-    }
-
-    public Time getHorafin() {
-        return horafin;
-    }
-
-    public void setHorafin(Time horafin) {
-        this.horafin = horafin;
-    }
-
     public String getRecurso() {
         return recurso;
     }
@@ -76,18 +57,45 @@ public class Clase implements Serializable {
         this.recurso = recurso;
     }
 
-    public String getMateria() {
-        return materia;
+    public Timestamp getFecha() {
+        return fecha;
     }
 
-    public void setMateria(String materia) {
-        this.materia = materia;
+    public void setFecha(Timestamp fecha) {
+        this.fecha = fecha;
     }
 
+    public Time getHoraFin() {
+        return horaFin;
+    }
 
+    public void setHoraFin(Time horaFin) {
+        this.horaFin = horaFin;
+    }
 
-    
-  
+    public String getRangoHoras() {
+        return rangoHoras;
+    }
+
+    public void setRangoHoras(String rangoHoras) {
+        this.rangoHoras = rangoHoras;
+    }
+
+    public String getIdMateria() {
+        return idMateria;
+    }
+
+    public void setIdMateria(String idMateria) {
+        this.idMateria = idMateria;
+    }
+
+    public int getCohorte() {
+        return cohorte;
+    }
+
+    public void setCohorte(int cohorte) {
+        this.cohorte = cohorte;
+    }
 
     public String getSalon() {
         return salon;
@@ -97,15 +105,13 @@ public class Clase implements Serializable {
         this.salon = salon;
     }
 
-  
-   @Override
-   public String toString() {
-        return "clase{" + "id=" + id + ", descripcion=" + recurso + ", Fecha= " + fecha +", HoraFin=" + horafin +", Materia=" + materia +", Salon = " + salon +"}";
-  }
-    
+    @Override
+    public String toString() {
+        return "Clase{" + "id=" + id + ", recurso=" + recurso + ", fecha=" + fecha + ", horaFin=" + horaFin + ", rangoHoras=" + rangoHoras + ", idMateria=" + idMateria + ", cohorte=" + cohorte + ", salon=" + salon + '}';
+    }
 
     public String getHora(){
-        String hora = new SimpleDateFormat("HH:mm").format(horafin);
+        String hora = new SimpleDateFormat("HH:mm").format(horaFin);
         return hora;
     }
     
@@ -113,13 +119,5 @@ public class Clase implements Serializable {
         String fecha1 = new SimpleDateFormat("MM/dd/yy - HH:mm").format(fecha);
         return fecha1;
     }
-    
-   
-    
-    
-
-
-
-
 }
 
