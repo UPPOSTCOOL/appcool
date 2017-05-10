@@ -26,12 +26,14 @@ import javax.faces.bean.SessionScoped;
 public class programacionPeriodoBean {
     private List<Programa> programa=new ArrayList<>();
      private List<Asignatura> asignatura=new ArrayList<>();
+     private List<Materia> materia=new ArrayList<>();
     ServiciosUPPOSTImplStub inp=new ServiciosUPPOSTImplStub();
     private String prog=" ";
 
     
     public List<Programa> getPrograma() throws ExcepcionServiciosUPPOST {
-       return inp.consultarProgramas();
+        programa=inp.consultarProgramas();
+        return programa;
         
     }
 
@@ -54,9 +56,14 @@ public class programacionPeriodoBean {
        return inp.consultarAsignaturas();
         
     }
-    public List<Materia> getMaterias() throws ExcepcionServiciosUPPOST {
-       return inp.consultarMateriasPrograma(0);
-        
+    public List<Materia> getMateria() throws ExcepcionServiciosUPPOST {
+        Materia m;
+        int i = 0;
+        while (i < programa.size()) {
+            if ((programa.get(i).getNombre()).equals(prog)) {
+               materia= inp.consultarMateriasPrograma(programa.get(i).getId());
+            }
     }
-    
+    return materia;
+    }
 }

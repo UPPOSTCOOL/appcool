@@ -44,15 +44,16 @@ and open the template in the editor.
                     </td>
                     <td>
 
-                             <p:selectOneMenu id="asignatura" value="#{ProgramacionPeriodoBean.asignaturas}" panelStyle="width:190px"> 
-                        <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
-                    </p:selectOneMenu>
-                        
-                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nueva Asignatura     " action="Programar" />
-<ln>
+                        <p:selectOneMenu id="asignatura" value="#{ProgramacionPeriodoBean.asignaturas}" panelStyle="width:190px"> 
+                            <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
+                        </p:selectOneMenu>
+                        <ln>
                         </ln>
                         <ln>
                         </ln>
+
+                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nueva Asignatura     " action="Programar" />
+
                     </td>
                 </tr>
                 <tr>
@@ -61,8 +62,8 @@ and open the template in the editor.
                     </td>
                     <td>
 
-                        <p:selectOneMenu id="materia" value="#{ProgramacionPeriodoBean.materias}" panelStyle="width:190px"> 
-                            <f:selectItems value="#{ProgramacionPeriodoBean.materias}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
+                        <p:selectOneMenu id="materia" value="#{ProgramacionPeriodoBean.materia}" panelStyle="width:190px"> 
+                            <f:selectItems value="#{ProgramacionPeriodoBean.materia}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
                         </p:selectOneMenu>
                         <ln>
                         </ln>
@@ -89,9 +90,9 @@ and open the template in the editor.
 
                     </td>
                 </tr>
-                    <tr>
+                <tr>
                     <td>
-                        
+
                         <ln>
                         </ln>
                         <ln>
@@ -107,12 +108,12 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
-                    <br></br>
-                    <br></br>
-                    </h:form>
+            <br></br>
+            <br></br>
+        </h:form>
 
 
 
 
-                    </h:body>
-                    </html>
+    </h:body>
+</html>
