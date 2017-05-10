@@ -25,6 +25,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class programacionPeriodoBean {
     private List<Programa> programa=new ArrayList<>();
+     private List<Asignatura> asignatura=new ArrayList<>();
     ServiciosUPPOSTImplStub inp=new ServiciosUPPOSTImplStub();
     private String prog=" ";
 

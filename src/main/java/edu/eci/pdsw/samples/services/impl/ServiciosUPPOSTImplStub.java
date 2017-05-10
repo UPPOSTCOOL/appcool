@@ -56,9 +56,10 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     private void poblar() {    
         programasAll.add(new Programa(0," Gerencia Estrategica"));
         programasAll.add(new Programa(0," Maestria en proyectos"));
+      
         periodo1();
         periodo2();
-        System.out.println(programasAll.get(1).getNombre());
+        System.out.println(asignaturasAll.get(1).getNombre());
     }
      
     
@@ -91,7 +92,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         lista1.add(asig3); 
         lista1.add(asig4); 
         lista1.add(asig5); 
-        
+          asignaturasAll.addAll(lista1);
         post1 = new PostGrado(prof5, lista1);
         
         asig1 = new Asignatura(1, "conocimiento y habilidad es gerenciales", post1);
@@ -349,7 +350,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         lista2.add(asig3); 
         lista2.add(asig4); 
         lista2.add(asig5); 
-        
+         asignaturasAll.addAll(lista2);
         post2 = new PostGrado(prof1, lista2);
         
         asig1 = new Asignatura(1, "aplicacion dehabilidades gerenciales", post2);
@@ -679,6 +680,6 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     }
      @Override
     public List<Asignatura> consultarAsignaturas() throws ExcepcionServiciosUPPOST {
-        return null;
+        return asignaturasAll;
     }
 }
