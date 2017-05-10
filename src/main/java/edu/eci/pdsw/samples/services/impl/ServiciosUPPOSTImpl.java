@@ -122,7 +122,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public void insertarMateria() throws ExcepcionServiciosUPPOST {
+    public void insertarMateria(Materia materia) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.        
     }
 }

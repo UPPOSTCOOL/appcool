@@ -134,7 +134,7 @@ public class ServicesJUnitTest {
         String nombre = "materia prueba";
         Materia mat = new Materia();
         mat.setNombre(nombre);        
-        sp.insertarMateria(); //falta implementar insertar materia
+        sp.insertarMateria(mat); //falta implementar insertar materia
         
         Assert.assertEquals("Deberia almacenar las materias agregadas, tamano = 1", 0, materias.size());
 
@@ -151,7 +151,7 @@ public class ServicesJUnitTest {
         
         Materia mat = new Materia();
         mat.setNombre(nombre);
-        sp.insertarMateria();
+        sp.insertarMateria(mat);
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
         
@@ -170,7 +170,7 @@ public class ServicesJUnitTest {
         String codigo = "COD1";
         Materia mat = new Materia();
         mat.setCodigo(codigo);
-        sp.insertarMateria();
+        sp.insertarMateria(mat);
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
         
@@ -189,7 +189,7 @@ public class ServicesJUnitTest {
         String codigo = "COD1";
         Materia mat = new Materia();
         mat.setCodigo(codigo);
-        sp.insertarMateria();
+        sp.insertarMateria(mat);
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
         
@@ -211,7 +211,7 @@ public class ServicesJUnitTest {
         Materia mat = new Materia();
         mat.setNombre(nombre);
         mat.setCodigo(codigo);
-        sp.insertarMateria();
+        sp.insertarMateria(mat);
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
         
@@ -231,7 +231,7 @@ public class ServicesJUnitTest {
         Materia mat = new Materia();
         mat.setNombre(nombre);
         mat.setCodigo(codigo);
-        sp.insertarMateria();
+        sp.insertarMateria(mat);
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
         
@@ -257,7 +257,7 @@ public class ServicesJUnitTest {
         mat.setNombre(nombre);
         mat.setCodigo(codigo);
         mat.setDescripcion(descripcion);
-        sp.insertarMateria();
+        sp.insertarMateria(mat);
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
         
@@ -281,7 +281,7 @@ public class ServicesJUnitTest {
         mat.setNombre(nombre);
         mat.setCodigo(codigo);
         mat.setDescripcion(descripcion);
-        sp.insertarMateria();
+        sp.insertarMateria(mat);
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
         
@@ -316,7 +316,7 @@ public class ServicesJUnitTest {
         mat.setPreRequisitos(pre);
         mat.setCoRequisitos(pre);
         
-        sp.insertarMateria();
+        sp.insertarMateria(mat);
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
         
@@ -347,7 +347,7 @@ public class ServicesJUnitTest {
         mat.setPreRequisitos(pre);
         mat.setCoRequisitos(cor);
         
-        sp.insertarMateria();
+        sp.insertarMateria(mat);
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
         
@@ -392,7 +392,7 @@ public class ServicesJUnitTest {
         mat.setPreRequisitos(pre);
         mat.setPreRequisitos(cor);
         
-        sp.insertarMateria();
+        sp.insertarMateria(mat);
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
         
@@ -414,8 +414,6 @@ public class ServicesJUnitTest {
     public void CF12() throws SQLException, ExcepcionServiciosUPPOST {
     
     }
-    
-    
     
     
 }

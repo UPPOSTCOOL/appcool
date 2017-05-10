@@ -127,7 +127,8 @@ public interface ServiciosUPPOST {
     
     /**
      * Inerta una materia
+     * @param materia
      * @throws ExcepcionServiciosUPPOST 
      */
-    public abstract void insertarMateria()throws ExcepcionServiciosUPPOST;
+    public abstract void insertarMateria(Materia materia)throws ExcepcionServiciosUPPOST;
 }
