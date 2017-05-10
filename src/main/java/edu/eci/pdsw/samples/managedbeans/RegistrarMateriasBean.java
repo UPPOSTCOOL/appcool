@@ -25,6 +25,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class RegistrarMateriasBean implements Serializable{
     private List<Programa> programa=new ArrayList<>();
+    private Materia preRequisitos;
     
     private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
 
@@ -36,4 +37,10 @@ public class RegistrarMateriasBean implements Serializable{
         return programa;
     }
     
+    public Materia requisitos()throws ExcepcionServiciosUPPOST{
+        String codigo=preRequisitos.getNombre();
+        preRequisitos=inp.consultarMateriaConRequisitos(codigo, 0);
+        
+       return preRequisitos;
+    }
 }
