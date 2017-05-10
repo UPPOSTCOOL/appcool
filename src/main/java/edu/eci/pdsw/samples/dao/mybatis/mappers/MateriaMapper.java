@@ -14,4 +14,14 @@ public interface MateriaMapper {
     * consulta el listado de clases de asignaturas en el semestre=1|2 y anio
     */
     public List<Materia> consultarMateriasClase(@Param("anio") int anio,@Param("semestre") int semestre);
+    
+    /*
+    * consulta el listado de materias de un programa específico
+    */
+    public List<Materia> consultarMateriasPorPrograma(@Param("id_programa") int id_programa);
+    
+    /*
+    * consulta una materia con su información y Co y Requisitos
+    */
+    public Materia consultarMateriaConRequisitos(@Param("codigo") String codigo,@Param("id_p") int id_programa);
 }

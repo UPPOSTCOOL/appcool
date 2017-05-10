@@ -13,6 +13,7 @@
         <typeAlias type='edu.eci.pdsw.samples.entities.Profesor' alias='Profesor'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Asignatura' alias='Asignatura'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Periodo' alias='Periodo'/>
+        <typeAlias type='edu.eci.pdsw.samples.entities.Programa' alias='Programa'/>
     </typeAliases>        
     
     
@@ -21,9 +22,9 @@
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
                 <property name="driver" value="org.postgresql.Driver" />
-                <property name="url" value="jdbc:postgresql://ec2-54-243-185-132.compute-1.amazonaws.com:5432/d89mtnt556nli?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"/>
-                <property name="username" value="qdjzkuvqwqqynx" />
-                <property name="password" value="4d781a2d4ef3331e999ebaadb2c85d5e48e012294529342df9d9be156454a9c9" />
+                <property name="url" value="jdbc:postgresql://ec2-54-83-205-71.compute-1.amazonaws.com:5432/db1liia9qurdk4?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"/>
+                <property name="username" value="ecwmudumtvzhdj" />
+                <property name="password" value="69798290f3c47bd702ef216ccb2c071ce63482f1b417e96738d1b01bd68260a1" />
             </dataSource>
         </environment>
     </environments>
@@ -31,9 +32,11 @@
     <mappers>
         <mapper resource="mappers/ClaseMapper.xml"></mapper>
         <mapper resource="mappers/MateriaMapper.xml"></mapper> 
+        <mapper resource="mappers/MateriaReqMapper.xml"></mapper> 
         <mapper resource="mappers/ProfesorMapper.xml"></mapper> 
         <mapper resource="mappers/AsignaturaMapper.xml"></mapper> 
-        <mapper resource="mappers/PAcademicoMapper.xml"></mapper> 
+        <mapper resource="mappers/PAcademicoMapper.xml"></mapper>  
+        <mapper resource="mappers/ProgramaMapper.xml"></mapper> 
     </mappers>
         
 </configuration>
