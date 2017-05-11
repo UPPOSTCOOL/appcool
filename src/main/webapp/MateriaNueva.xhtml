@@ -17,22 +17,36 @@ and open the template in the editor.
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
         <h1 style="text-align: center; color:firebrick " >Registro de materia nueva en Cohorte</h1>
-        <h1 style="text-align: center; color:firebrick " >Programa:</h1>
-        <div>TODO write content</div>
-
+       
+    
         <h:form id="formulariomateria" style="text-align: left; color:firebrick" >
 
             <table>                    
+               
+                    <td style="text-align: center; color: firebrick" title="PROGRAMA">
 
-                <td style="font-size:25px">
-                    Asignatura
-                </td>
-                <td>
+                        <h1>  Programa: 
+                            <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: firebrick" />
+                        </h1>
+                    </td>
 
+                <tr>
+                    <td style=" color: black" title="PROGRAMA">
 
+                        <h2>  Asignatura:
+                            <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: black" />
+                                                    
+                            Materia
+                            <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: black" />
+                              <br></br>
+                          Periodo:
+                            <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: black" />
+                            <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: black" />
+                        </h2>
 
-                    <h:commandButton id="boton" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Seleccionar Asignatura" action="Programar" />
-                </td>
+                    </td>
+                </tr>
+
 
 
 
