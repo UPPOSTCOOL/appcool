@@ -13,11 +13,11 @@ import java.util.List;
  * @author 2083722
  */
 public class Programa {
+
     private int id;
     private String nombre;
     private List<Asignatura> asignaturas;
-    private Asignatura nombreAs;
-    
+    private List<Materia> preRequisitos;
 
     public Programa() {
     }
@@ -50,14 +50,30 @@ public class Programa {
     public void setAsignaturas(List<Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
     }
-    
-    
-    public List<String> getNombreAsignatura(){
-        ArrayList<String> ans= new ArrayList<>();
+
+    public List<String> getNombreAsignatura() {
+        ArrayList<String> ans = new ArrayList<>();
         for (Asignatura asignatura : asignaturas) {
+
             ans.add(asignatura.getNombre());
         }
         return ans;
     }
+    
+    
+    public List<Materia> getNombreRequisitos() {
+        return preRequisitos;
+    }
+    
+    /**
+    public List<String> getNombreRequisitos() {
+        ArrayList<String> ans = new ArrayList<>();
+        for (Materia req : preRequisitos) {
+            ans.add(req.getNombre());
+        }
+        return ans;
+    }
+    */
+    
     
 }

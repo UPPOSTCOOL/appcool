@@ -17,16 +17,16 @@ and open the template in the editor.
         <img src="Imagenes/escuela.jpg" height="145" />
         <h1 style="text-align:center;color:firebrick" >UNIDAD DE PROYECTOS</h1>        
         <h:form id="registrarMateria" style="color:firebrick">
-            <h2>Registrar Materia</h2>
-
-            <p:dataTable  id="formularioPrograma" var="programa" value="#{MateriasBean.obtenerProgramas()}"  style="margin: 0 auto;">
-                
+            <h1>Registro de Materias </h1>
+            <h2>Agregar Programas</h2>
+            <p:dataTable  id="formularioPrograma" var="programa" value="#{MateriasBean.obtenerProgramas()}" style="margin: 0 auto">
                 <p:column>
                     <f:facet name="header">                       
                     </f:facet>
-                    <h:selectBooleanCheckbox value="#{user.rememberMe}" />
+                                    
+                    <p:commandButton value="Agregar" icon="ui-icon-check" actionListener="#{MateriasBean.programasSeleccionados()}" update=":registrarMateria" />     
                 </p:column>
-                
+
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Programas"/>
@@ -46,10 +46,39 @@ and open the template in the editor.
                 <p:column>
                     <f:facet name="header">                    
                     </f:facet>
-                    <h:commandButton id="crear1" value="Crear Nueva Asignatura" action="ReportesProgramacion"  style="margin-left: 10px"  />               
+                    <h:commandButton id="crear1" value="Crear Nueva Asignatura" style="margin-left: 10px"  />               
+                </p:column>
+            </p:dataTable>         
+            
+            <br></br>
+            
+            <h2>Programas agregados</h2>
+            <p:dataTable  id="ProgramasAgregados" var="agregados" value="#{MateriasBean.acumulados}"  style="margin: 0 auto;">
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Programas"/>
+                    </f:facet>
+                    <h:outputText value="#{programa.nombre}" />
                 </p:column>
 
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Asignatura"/>
+                    </f:facet>
+                    <h:selectOneMenu >
+                        <f:selectItems value="#{programa.nombreAsignatura}"/>
+                    </h:selectOneMenu>
+                </p:column>
+                
+                <p:column>
+                    <f:facet name="header">                       
+                    </f:facet>
+                    <!--<h:selectBooleanCheckbox value="{user.rememberMe}" />-->                    
+                    <p:commandButton value="Eliminar" icon="ui-icon-check"   />     
+                </p:column>
+              
             </p:dataTable>
+            
             <br></br>
             <table>                    
                 <tr>
@@ -57,12 +86,11 @@ and open the template in the editor.
                         Pre-Requisitos
                     </td>
                     <td>
-
-                        <h:selectOneMenu value = "#{PeriodoBean.semestre}"> 
-                            <f:selectItem itemValue = "1" itemLabel = "1" /> 
-                            <f:selectItem itemValue = "2" itemLabel = "2" /> 
-                            <f:selectItem itemValue = "3" itemLabel = "Intersemestral" /> 
+                        <h:selectOneMenu > 
+                            <f:selectItems value="#{programa.nombreRequisitos}"/>
+                            
                         </h:selectOneMenu>
+                        
                     </td>
                     <td style="font-size: 20px">
                         Co-Requisitos
@@ -103,8 +131,7 @@ and open the template in the editor.
                 </tr>
             </table>            
             <br></br>
-            <br></br>
-            <br></br>
+           
             <div style="text-align: center"> 
                 <h:commandButton id="registrar" value="Registrar" action="ReportesProgramacion" />                
                 <h:commandButton id="cancelar" value="Cancelar" action="indice" style="margin-left: 30px" />                
