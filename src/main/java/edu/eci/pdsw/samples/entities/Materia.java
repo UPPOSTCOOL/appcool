@@ -130,8 +130,7 @@ public class Materia implements Serializable{
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    
+
     @Override
     public String toString() {
         return "Materia{" + "codigo=" + codigo + ", nombre=" + nombre + ", cohorte=" + cohorte + ", numClases=" + numClases + ", numHoras=" + numHoras + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
