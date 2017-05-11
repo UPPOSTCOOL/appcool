@@ -6,10 +6,8 @@
 
 import edu.eci.pdsw.samples.entities.*;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.samples.services.ServiciosUPPOST;
-import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
-import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImpl;
-import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
+import edu.eci.pdsw.samples.services.*;
+import edu.eci.pdsw.samples.services.impl.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -129,8 +127,8 @@ public class ServicesJUnitTest {
      */
     @Test
     public void CF1() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp =new ServiciosUPPOSTImpl();//= ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
-        
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
+                
         List<Materia> materias = sp.consultarMaterias(2017, 1);
 
         String nombre = "materia prueba";
@@ -147,7 +145,7 @@ public class ServicesJUnitTest {
      */
     @Test
     public void CF2() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
 
         String nombre = "materia prueba";
         
@@ -167,7 +165,7 @@ public class ServicesJUnitTest {
      */
     @Test
     public void CF3() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
 
         String codigo = "COD1";
         Materia mat = new Materia();
@@ -186,7 +184,7 @@ public class ServicesJUnitTest {
     
     @Test
     public void CF4() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
 
         String codigo = "COD1";
         Materia mat = new Materia();
@@ -206,7 +204,7 @@ public class ServicesJUnitTest {
     
     @Test
     public void CF5() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
 
         String codigo = "";
         String nombre = "";
@@ -226,7 +224,7 @@ public class ServicesJUnitTest {
     
    @Test
     public void CF6() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
 
         String codigo = "COD1";
         String nombre = "materia prueba";
@@ -250,7 +248,7 @@ public class ServicesJUnitTest {
     
       @Test
     public void CF7() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
 
         String codigo = "COD1";
         String nombre = "materia prueba";
@@ -274,7 +272,7 @@ public class ServicesJUnitTest {
  
  @Test
     public void CF8() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
 
         String codigo = "COD1";
         String nombre = "materia prueba";
@@ -299,7 +297,7 @@ public class ServicesJUnitTest {
     
     @Test
     public void CF9() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
 
         String codigo = "COD1";
         String nombre = "materia prueba";
@@ -332,7 +330,7 @@ public class ServicesJUnitTest {
     
     @Test
     public void CF10() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
 
         String codigo = "COD1";
         String nombre = "materia prueba";
@@ -369,7 +367,7 @@ public class ServicesJUnitTest {
     
     @Test
     public void CF11() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
 
         String codigo = "COD1";
         String nombre = "materia prueba";
