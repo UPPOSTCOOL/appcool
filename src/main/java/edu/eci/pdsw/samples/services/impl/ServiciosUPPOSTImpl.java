@@ -8,6 +8,19 @@ package edu.eci.pdsw.samples.services.impl;
 import com.google.inject.Inject;
 import edu.eci.pdsw.samples.daos.*;
 import edu.eci.pdsw.samples.entities.*;
+import edu.eci.pdsw.samples.entities.Periodo;
+import edu.eci.pdsw.samples.daos.AsignaturaDAO;
+import edu.eci.pdsw.samples.daos.ClaseDAO;
+import edu.eci.pdsw.samples.daos.PAcademicoDAO;
+import edu.eci.pdsw.samples.daos.MateriaDAO;
+import edu.eci.pdsw.samples.daos.PersistenceException;
+import edu.eci.pdsw.samples.daos.ProfesorDAO;
+import edu.eci.pdsw.samples.daos.ProgramaDAO;
+import edu.eci.pdsw.samples.entities.Asignatura;
+import edu.eci.pdsw.samples.entities.Clase;
+import edu.eci.pdsw.samples.entities.Materia;
+import edu.eci.pdsw.samples.entities.Profesor;
+import edu.eci.pdsw.samples.entities.Programa;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import java.util.ArrayList;
@@ -181,7 +194,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
                     id_asigs.add(asignaturas.get(i).getId());
                 }
                 
-                //daom.insertarMateriaDAO(materia,listaPre, listaCor, id_asigs);
+                daom.insertarMateriaDAO(materia,listaPre, listaCor, id_asigs);
             }
         }
         
@@ -193,5 +206,8 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         //return daom.comsultarMaterias();
     }
 
-   
+     @Override
+    public List<Asignatura> consultarAsignaturas () throws ExcepcionServiciosUPPOST {
+        return null;
+    }
 }

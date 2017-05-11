@@ -34,8 +34,10 @@
         function manejarLogin(xhr, status, args) {
             if (!args.validationFailed && args.estaLogeado) {
                 setTimeout(function () {
-                    location.assign("../faces/indice.xhtml")
+
+                    location.assign("http://localhost:8080/faces/indice.xhtml");
                 }, 500);
+
             }
         }
     //]]>

@@ -1,16 +1,15 @@
-/**
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- 
+ */
 package edu.eci.pdsw.samples.services.impl;
 
 import edu.eci.pdsw.samples.entities.Asignatura;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Materia;
-import edu.eci.pdsw.samples.entities.PeriodoAcademico;
-import edu.eci.pdsw.samples.entities.Programa;
+import edu.eci.pdsw.samples.entities.Periodo;
+
 import edu.eci.pdsw.samples.entities.Profesor;
 import edu.eci.pdsw.samples.entities.Programa;
 import edu.eci.pdsw.samples.entities.Recurso;
@@ -26,7 +25,7 @@ import javax.persistence.Tuple;
 /**
  *
  * @author juan
- *
+ */
 public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
     private List<Asignatura> asignaturas;
@@ -34,171 +33,144 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     private List<Materia> materias;
     private List<Periodo> periodos;
     private List<Profesor> profesores;
-    
+    private List<Programa> programas;
+    private List<Programa> programasAll;
     private List<Clase> clasesAll1;
     private List<Clase> clasesAll2;
     private List<Periodo> periodosAll;
     private List<Materia> materiasAll1;
     private List<Materia> materiasAll2;
-
+ private List<Asignatura> asignaturasAll;
     public ServiciosUPPOSTImplStub() {
         clasesAll1 = new ArrayList<>();
         materiasAll1 = new ArrayList<>();
         clasesAll2 = new ArrayList<>();
         materiasAll2 = new ArrayList<>();
         periodosAll = new ArrayList<>();
+        programasAll= new ArrayList<>();
+        asignaturasAll=new ArrayList();
         poblar();
     }
 
     
 
-    private void poblar() {        
+    private void poblar() {    
+        programasAll.add(new Programa(0," Gerencia Estrategica"));
+        programasAll.add(new Programa(0," Maestria en proyectos"));
+      
         periodo1();
-        periodo2();
+        //periodo2();
+        System.out.println(asignaturasAll.get(1).getNombre());
     }
     
     private void periodo1(){
+      
         
         // PARA EL PERIODO 1
+        
         List<Asignatura> lista1 = new ArrayList<>();
-
+        
         Profesor prof1 = new Profesor(1, "German Motta");
         Profesor prof2 = new Profesor(2, "Maria Pajon");
         Profesor prof3 = new Profesor(3, "Sonia Alcala");
         Profesor prof4 = new Profesor(4, "Paula Apple");
         Profesor prof5 = new Profesor(5, "Ivanovich Kravchenko");
-
+        
+        
         // para siganturas, se crea el prostgrado con las mismas asignaturas
-        Programa post1 = new Programa(prof5, lista1, "Programa uno"); // lista 1 es vacia
-
+        Programa post1 = new Programa(0, "gerencia proyectos");
+        // lista 1 es vacia
+                  
         Asignatura asig1 = new Asignatura(1, "conocimiento y habilidad es gerenciales", post1);
         Asignatura asig2 = new Asignatura(2, "tdgp", post1);
         Asignatura asig3 = new Asignatura(3, "semi", post1);
         Asignatura asig4 = new Asignatura(4, "conf", post1);
-        Asignatura asig5 = new Asignatura(5, "ejecucuion", post1);
-
-        lista1.add(asig1);
-        lista1.add(asig2);
-        lista1.add(asig3);
-        lista1.add(asig4);
-        lista1.add(asig5);
-
-        post1 = new Programa(prof5, lista1, "Programa uno.dos");
-
+        Asignatura asig5 = new Asignatura(5, "ejecucuion", post1);  
+        
+        lista1.add(asig1); 
+        lista1.add(asig2); 
+        lista1.add(asig3); 
+        lista1.add(asig4); 
+        lista1.add(asig5); 
+          asignaturasAll.addAll(lista1);
+        post1 = new Programa(0,"gerencia proyectos", prof5, asignaturasAll);
+        
         asig1 = new Asignatura(1, "conocimiento y habilidad es gerenciales", post1);
         asig2 = new Asignatura(2, "tdgp", post1);
         asig3 = new Asignatura(3, "semi", post1);
         asig4 = new Asignatura(4, "conf", post1);
-        asig5 = new Asignatura(5, "ejecucuion", post1);
-
-        // Materias son 5 grupos de materias
-        Materia mat1 = new Materia("GRiesgos", "Gerencia de riesgos", 24, prof1, asig1, "Descripcion para tres mierdas");// clasesM1 
-        Materia mat2 = new Materia("GComu", "G comunicaciones", 24, prof1, asig1, "Descripcion");// clasesM2
-        Materia mat3 = new Materia("GCal", "G calidad", 24, prof1, asig1, "Descripcion");// clasesM3
-        Materia mat4 = new Materia("LT", "Liderazgoy trabajo", 24, prof1, asig1, "Descripcion");// clasesM4
-        Materia mat5 = new Materia("N", "Negociación", 24, prof1, asig1, "Descripcion");// clasesM5
-        Materia mat6 = new Materia("CI", "Creatividad Inn", 24, prof1, asig1, "Descripcion");// clasesM6
-
-        Materia mat7 = new Materia("TTG", "Taller trabajo grado", 24, prof2, asig2, "Descripcion");// clasesM7
-        Materia mat8 = new Materia("TTG2", "Taller trabajo grado2", 24, prof2, asig2, "Descripcion");// clasesM8
-        Materia mat9 = new Materia("SG", "Sustentacion grup", 24, prof2, asig2, "Descripcion");// clasesM9
-        Materia mat10 = new Materia("II", "Intro a la Investigacion", 24, prof2, asig2, "Descripcion");// clasesM10
-
-        Materia mat11 = new Materia("PV", "Proyecto de vida", 24, prof3, asig3, "Descripcion");// clasesM11
-
-        Materia mat12 = new Materia("E", "Etica", 24, prof4, asig4, "Descripcion");// clasesM12
-
-        Materia mat13 = new Materia("IE", "Intro a ejecucion", 24, prof5, asig5, "Descripcion");// clasesM13
-        Materia mat14 = new Materia("R", "Requerimientos", 24, prof5, asig5, "Descripcion");// clasesM14
-        Materia mat15 = new Materia("C", "Construccion", 24, prof5, asig5, "Descripcion");// clasesM15
-
-        // todas las materias
+        asig5 = new Asignatura(5, "ejecucuion", post1);  
         
-        //ArrayList<Materia> matAll= new ArrayList<>();
-        materias.add(mat1);
-        materias.add(mat2);
-        materias.add(mat3);
-        materias.add(mat4);
-        materias.add(mat5);
-        materias.add(mat6);
-        materias.add(mat7);
-        materias.add(mat8);
-        materias.add(mat9);
-        materias.add(mat10);
-        materias.add(mat11);
-        materias.add(mat12);
-        materias.add(mat13);
-        materias.add(mat14);
-        materias.add(mat15);
 
         // Timestamp para Fecha  267: 2 de Junio (6) a las 7:00
-        Timestamp dt267 = new Timestamp(2017, 6, 2, 7, 0, 0, 0);
-        Timestamp dt2613 = new Timestamp(2017, 6, 2, 13, 0, 0, 0);
-        Timestamp dt2616 = new Timestamp(2017, 6, 2, 16, 0, 0, 0);
-
-        Timestamp dt367 = new Timestamp(2017, 6, 3, 7, 7, 0, 0);
-        Timestamp dt3610 = new Timestamp(2017, 6, 3, 10, 0, 0, 0);
-
-        Timestamp dt967 = new Timestamp(2017, 6, 9, 7, 0, 0, 0);
-        Timestamp dt9610 = new Timestamp(2017, 6, 9, 10, 0, 0, 0);
-        Timestamp dt9616 = new Timestamp(2017, 6, 9, 16, 0, 0, 0);
-
-        Timestamp dt1067 = new Timestamp(2017, 6, 10, 7, 0, 0, 0);
-        Timestamp dt10610 = new Timestamp(2017, 6, 10, 10, 0, 0, 0);
-
-        Timestamp dt1667 = new Timestamp(2017, 6, 16, 7, 0, 0, 0);
-
-        Timestamp dt1767 = new Timestamp(2017, 6, 17, 7, 0, 0, 0);
-        Timestamp dt17610 = new Timestamp(2017, 6, 17, 10, 0, 0, 0);
-
-        Timestamp dt2367 = new Timestamp(2017, 6, 23, 7, 0, 0, 0);
-        Timestamp dt23610 = new Timestamp(2017, 6, 23, 10, 0, 0, 0);
-
-        Timestamp dt2467 = new Timestamp(2017, 6, 24, 7, 0, 0, 0);
-        Timestamp dt24610 = new Timestamp(2017, 6, 24, 10, 0, 0, 0);
-
-        Timestamp dt3067 = new Timestamp(2017, 6, 30, 7, 0, 0, 0);
-        Timestamp dt30610 = new Timestamp(2017, 6, 30, 10, 0, 0, 0);
-
-        Timestamp dt177 = new Timestamp(2017, 7, 1, 1, 0, 0, 0);
-        Timestamp dt1710 = new Timestamp(2017, 7, 1, 10, 0, 0, 0);
-
-        Timestamp dt777 = new Timestamp(2017, 7, 1, 7, 0, 0, 0);
-        Timestamp dt7710 = new Timestamp(2017, 7, 1, 10, 0, 0, 0);
-
-        Timestamp dt877 = new Timestamp(2017, 7, 8, 7, 0, 0, 0);
-        Timestamp dt8710 = new Timestamp(2017, 7, 8, 10, 0, 0, 0);
-
-        Timestamp dt1477 = new Timestamp(2017, 7, 14, 7, 0, 0, 0);
-
-        Timestamp dt1577 = new Timestamp(2017, 6, 15, 7, 0, 0, 0);
-        Timestamp dt15710 = new Timestamp(2017, 6, 15, 10, 0, 0, 0);
-
-        Timestamp dt2177 = new Timestamp(2017, 6, 21, 7, 0, 0, 0);
-        Timestamp dt21710 = new Timestamp(2017, 6, 21, 10, 0, 0, 0);
-
-        Timestamp dt2277 = new Timestamp(2017, 7, 22, 7, 0, 0, 0);
-        Timestamp dt22710 = new Timestamp(2017, 7, 22, 10, 0, 0, 0);
-
+        Timestamp dt267 = new Timestamp(2017,6,2,7,0,0,0);
+        Timestamp dt2613 = new Timestamp(2017,6,2,13,0,0,0);
+        Timestamp dt2616 = new Timestamp(2017,6,2,16,0,0,0);
+        
+        Timestamp dt367 = new Timestamp(2017,6,3,7,7,0,0);
+        Timestamp dt3610 = new Timestamp(2017,6,3,10,0,0,0);
+                
+        Timestamp dt967 = new Timestamp(2017,6,9,7,0,0,0);
+        Timestamp dt9610 = new Timestamp(2017,6,9,10,0,0,0);
+        Timestamp dt9616 = new Timestamp(2017,6,9,16,0,0,0);
+        
+        Timestamp dt1067 = new Timestamp(2017,6,10,7,0,0,0);
+        Timestamp dt10610 = new Timestamp(2017,6,10,10,0,0,0);
+                
+        Timestamp dt1667 = new Timestamp(2017,6,16,7,0,0,0);
+        
+        Timestamp dt1767 = new Timestamp(2017,6,17,7,0,0,0);
+        Timestamp dt17610 = new Timestamp(2017,6,17,10,0,0,0);
+        
+        Timestamp dt2367 = new Timestamp(2017,6,23,7,0,0,0);
+        Timestamp dt23610 = new Timestamp(2017,6,23,10,0,0,0);
+        
+        Timestamp dt2467 = new Timestamp(2017,6,24,7,0,0,0);
+        Timestamp dt24610 = new Timestamp(2017,6,24,10,0,0,0);
+        
+        Timestamp dt3067 = new Timestamp(2017,6,30,7,0,0,0);
+        Timestamp dt30610 = new Timestamp(2017,6,30,10,0,0,0);
+        
+        Timestamp dt177 = new Timestamp(2017,7,1,1,0,0,0);
+        Timestamp dt1710= new Timestamp(2017,7,1,10,0,0,0);
+        
+        Timestamp dt777= new Timestamp(2017,7,1,7,0,0,0);
+        Timestamp dt7710= new Timestamp(2017,7,1,10,0,0,0);
+        
+        Timestamp dt877 = new Timestamp(2017,7,8,7,0,0,0);
+        Timestamp dt8710 = new Timestamp(2017,7,8,10,0,0,0);
+        
+        Timestamp dt1477 = new Timestamp(2017,7,14,7,0,0,0);
+                
+        Timestamp dt1577 = new Timestamp(2017,6,15,7,0,0,0);
+        Timestamp dt15710 = new Timestamp(2017,6,15,10,0,0,0);
+        
+        Timestamp dt2177 = new Timestamp(2017,6,21,7,0,0,0);
+        Timestamp dt21710 = new Timestamp(2017,6,21,10,0,0,0);
+        
+        Timestamp dt2277 = new Timestamp(2017,7,22,7,0,0,0);
+        Timestamp dt22710 = new Timestamp(2017,7,22,10,0,0,0);
+        
+        
         // Timestamp para horainicio 
-        Timestamp dt21710f = new Timestamp(2017, 7, 21, 10, 0, 0, 0);
-        Timestamp dt21713f = new Timestamp(2017, 7, 21, 13, 0, 0, 0);
-        Timestamp dt8710f = new Timestamp(2017, 7, 8, 10, 0, 0, 0);
-
-        Timestamp dt1713f = new Timestamp(2017, 7, 1, 13, 0, 0, 0);
-        Timestamp dt8713f = new Timestamp(2017, 7, 8, 13, 0, 0, 0);
-        Timestamp dt7713f = new Timestamp(2017, 7, 7, 13, 0, 0, 0);
-
-        Timestamp dt9613f = new Timestamp(2017, 6, 9, 13, 0, 0, 0);
-        Timestamp dt16610f = new Timestamp(2017, 6, 16, 10, 0, 0, 0);
-        Timestamp dt14713f = new Timestamp(2017, 7, 14, 13, 0, 0, 0);
-
-        Timestamp dt9610f = new Timestamp(2017, 6, 9, 10, 0, 0, 0);
-        Timestamp dt22713f = new Timestamp(2017, 7, 22, 13, 0, 0, 0);
-        Timestamp dt22710f = new Timestamp(2017, 7, 22, 10, 0, 0, 0);
-
-        Timestamp dt2616f = new Timestamp(2017, 6, 2, 16, 0, 0, 0);
-        Timestamp dt9619f = new Timestamp(2017, 6, 9, 19, 0, 0, 0);
+        Timestamp dt21710f = new Timestamp(2017,7,21,10,0,0,0);
+        Timestamp dt21713f = new Timestamp(2017,7,21,13,0,0,0);
+        Timestamp dt8710f = new Timestamp(2017,7,8,10,0,0,0);
+        
+        Timestamp dt1713f = new Timestamp(2017,7,1,13,0,0,0);
+        Timestamp dt8713f = new Timestamp(2017,7,8,13,0,0,0);
+        Timestamp dt7713f = new Timestamp(2017,7,7,13,0,0,0);
+        
+        Timestamp dt9613f = new Timestamp(2017,6,9,13,0,0,0);
+        Timestamp dt16610f = new Timestamp(2017,6,16,10,0,0,0);
+        Timestamp dt14713f = new Timestamp(2017,7,14,13,0,0,0);
+        
+        Timestamp dt9610f = new Timestamp(2017,6,9,10,0,0,0);
+        Timestamp dt22713f = new Timestamp(2017,7,22,13,0,0,0);
+        Timestamp dt22710f = new Timestamp(2017,7,22,10,0,0,0);
+        
+        Timestamp dt2616f = new Timestamp(2017,6,2,16,0,0,0);
+        Timestamp dt9619f = new Timestamp(2017,6,9,19,0,0,0);
         // ----------------
         
         Timestamp dt21713 = new Timestamp(2017,7,21,13,0,0,0);        
@@ -229,7 +201,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Timestamp dt7715= new Timestamp(2017,7,7,15,0,0,0);
         
         Recurso recurso = new Recurso(100, "recurso");        
-        
+        /*
         Clase cl1a = new Clase(1,recurso,dt777, dt778, "7 a 8", "M1",24);
         Clase cl2a = new Clase(2,recurso,dt778, dt7710, "8 a 10","M2",24);        
         Clase cl3a = new Clase(3,recurso,dt7710, dt7711,"10 a 11","M3",24);      
@@ -261,8 +233,8 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         ArrayList<Clase> clasesM12 = new ArrayList<>();
         ArrayList<Clase> clasesM13 = new ArrayList<>();
         ArrayList<Clase> clasesM14 = new ArrayList<>();
-        ArrayList<Clase> clasesM15 = new ArrayList<>();
-
+        ArrayList<Clase> clasesM15 = new ArrayList<>();       
+        
         // -----------------------
         // Lista de clases por materia, una calse por materia 
         clasesM1.add(cl1a);
@@ -342,7 +314,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         materiasAll1.add(mat13);
         materiasAll1.add(mat14);
         materiasAll1.add(mat15);
-                     
+              
         // Para Periodo
         
         Periodo per1 = new Periodo(1,materiasAll1,2017,1);
@@ -366,7 +338,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         // para siganturas, se crea el prostgrado con las mismas asignaturas
         
-        PostGrado post2 = new PostGrado(prof5, lista2); // lista 1 es vacia
+        Programa post2 = new Programa(1, "xx"); // lista 1 es vacia
                   
         Asignatura asig1 = new Asignatura(1, "aplicacion dehabilidades gerenciales", post2);
         Asignatura asig2 = new Asignatura(2, "tdgp 2", post2);
@@ -379,8 +351,8 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         lista2.add(asig3); 
         lista2.add(asig4); 
         lista2.add(asig5); 
-        
-        post2 = new PostGrado(prof1, lista2);
+         asignaturasAll.addAll(lista2);
+        post2 = new Programa(1, "mercadeo Estrategico", prof4, lista2);
         
         asig1 = new Asignatura(1, "aplicacion dehabilidades gerenciales", post2);
         asig2 = new Asignatura(2, "tdgp 2", post2);
@@ -488,7 +460,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Timestamp dt7815= new Timestamp(2017,8,7,15,0,0,0);
         
         Recurso recurso = new Recurso(100, "recurso -2");        
-        
+        /*
         Clase cl1a = new Clase(1,recurso,dt787, dt788, "7 a 8", "M1",24);
         Clase cl2a = new Clase(2,recurso,dt788, dt7810, "8 a 10","M2",24);        
         Clase cl3a = new Clase(3,recurso,dt7810, dt7811,"10 a 11","M3",24);      
@@ -608,7 +580,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Periodo per2 = new Periodo(2,materiasAll2,2017,2);
        
         periodosAll.add(per2);
-        
+        */
     
     }
     
@@ -655,7 +627,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         } catch (Exception e) {
             System.err.println("Consulatar clase: "+e);            
         }
-        
+        */
         if(semestre == 2){ clx = materiasAll2;}
         else{clx = materiasAll1;}
            
@@ -671,8 +643,8 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     }
 
     @Override
-    public List<Clase> consultarClasesxPeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
+        return periodosAll;
     }
     
     @Override
@@ -702,16 +674,30 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
     @Override
     public List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return programasAll;
     }
 
     @Override
     public List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+     @Override
+    public List<Asignatura> consultarAsignaturas() throws ExcepcionServiciosUPPOST {
+        return asignaturasAll;
+    }
 
     @Override
-    public Materia consultarMateriaConRequisitos(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
+    public Materia consultarMateriaConRequisitos(String codigo, int id_programa) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Clase> consultarClasesxPeriodo(int año, int semestre) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Periodo> consultarPeriodos() throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }   
 
@@ -728,4 +714,3 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
    
 }
-*/

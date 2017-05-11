@@ -9,6 +9,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 /**
  *
  * @author 2092815
@@ -23,19 +25,16 @@ public class Programa implements Serializable {
     public Programa() {
     }
 
+    public Programa(int i, String _Gerencia_Estrategica) {
+        id = i;
+        nombre = _Gerencia_Estrategica;
+    }
+
     public Programa(int id, String nombre, Profesor coordinador, List<Asignatura> asignaturas) {
         this.id = id;
         this.nombre = nombre;
         this.coordinador = coordinador;
         this.asignaturas = asignaturas;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -46,7 +45,6 @@ public class Programa implements Serializable {
         this.nombre = nombre;
     }
 
-
     public Profesor getCoordinador() {
         return coordinador;
     }
@@ -55,14 +53,22 @@ public class Programa implements Serializable {
         this.coordinador = coordinador;
     }
 
+
     public List<Asignatura> getAsignaturas() {
         return asignaturas;
+    }
+
+      public void setId(int id) {
+        this.id = id;
+    }
+     public int getId() {
+        return id;
     }
 
     public void setAsignaturas(List<Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
     }
-    
+
     @Override
     public String toString() {
         return "Programa{" + "Coordinador=" + coordinador + ", nombre=" + nombre + ", Asignaturas=" + asignaturas + '}';
