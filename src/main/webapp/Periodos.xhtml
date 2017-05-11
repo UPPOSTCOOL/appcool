@@ -15,14 +15,15 @@ and open the template in the editor.
     </h:head>
 
     <h:body>
-        <img src="Imagenes/eci2.jpg" height="80" />
+        <img src="Imagenes/escuela.jpg" height="145" />
 
-        <div style="text-align: center;">
+        
         <h:form id="periodoo" style="text-align: center; color:firebrick">
+            <div style="text-align: center;">
             <h1>Seleccione el Periodo</h1>
-            <p>Ingrese el año</p>
+            <p style="font-size: 20px"> Ingrese el año</p>
             <p:inputText value = "#{PeriodoBean.anio}" ></p:inputText>     
-            <p>Ingrese el semestre</p>         
+            <p style="font-size: 20px"> Ingrese el semestre</p>         
             <h:selectOneMenu value = "#{PeriodoBean.semestre}"> 
                 <f:selectItem itemValue = "1" itemLabel = "1" /> 
                 <f:selectItem itemValue = "2" itemLabel = "2" /> 
@@ -31,15 +32,14 @@ and open the template in the editor.
             <br></br>
             <br></br>
             <br></br>
-            <h:commandButton id="open-r" value="Ir a Reporte Programación" action="ReportesProgramacion" />
-            <br></br>
-            <br></br>
-            <h:commandButton id="open-BinP" value="Ir a Reporte Salones" action="ReportesSalones" />
-            <br></br>
-            <br></br>
-            <h:commandButton id="indice" value="Regresar al Indice" action="indice" />
-        </h:form>
         </div>
+        <div style="text-align: center">
+            <h:commandButton id="open-r" value="Ir a Reporte Programación" action="ReportesProgramacion" />           
+            <h:commandButton id="open-BinP" value="Ir a Reporte Salones" action="ReportesSalones" style="margin-left: 30px"/>            
+            <h:commandButton id="indice" value="Regresar al Indice" action="indice" style="margin-left: 30px"/>
+        </div>
+        </h:form>
+        
     </h:body>
 </html>
 

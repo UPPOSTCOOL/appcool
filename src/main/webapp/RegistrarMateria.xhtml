@@ -14,7 +14,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <img src="Imagenes/eci2.jpg" height="80" />
+        <img src="Imagenes/escuela.jpg" height="145" />
         <h1 style="text-align:center;color:firebrick" >UNIDAD DE PROYECTOS</h1>        
         <h:form id="registrarMateria" style="color:firebrick">
             <h2>Registrar Materia</h2>
@@ -38,8 +38,8 @@ and open the template in the editor.
                     <f:facet name="header">
                         <h:outputText value="Asignatura"/>
                     </f:facet>
-                    <h:selectOneMenu value="meslek">
-                        <f:selectItems id="meslek7" value="#{programa.nombreAsignatura}"/>
+                    <h:selectOneMenu >
+                        <f:selectItems value="#{programa.nombreAsignatura}"/>
                     </h:selectOneMenu>
                 </p:column>
 
