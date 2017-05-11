@@ -23,11 +23,13 @@ public class Materia implements Serializable{
     private List<Clase> clases;
     private List<Materia> preRequisitos;
     private List<Materia> coRequisitos;
+    private String descripcion;
+
 
     public Materia() {
     }
 
-    public Materia(String codigo, String nombre, int cohorte, int numClases, int numHoras, Profesor profesor, Asignatura asignatura, List<Clase> clases, List<Materia> preRequisitos, List<Materia> coRequisitos) {
+    public Materia(String codigo, String nombre, int cohorte, int numClases, int numHoras, Profesor profesor, Asignatura asignatura, List<Clase> clases, List<Materia> preRequisitos, List<Materia> coRequisitos, String descripcion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cohorte = cohorte;
@@ -38,6 +40,7 @@ public class Materia implements Serializable{
         this.clases = clases;
         this.preRequisitos = preRequisitos;
         this.coRequisitos = coRequisitos;
+        this.descripcion = descripcion;
     }
 
     public List<Materia> getPreRequisitos() {
@@ -119,6 +122,14 @@ public class Materia implements Serializable{
 
     public void setAsignatura(Asignatura asignatura) {
         this.asignatura = asignatura;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     @Override

@@ -32,7 +32,7 @@ public interface MateriaMapper {
     /*
     * Insertar una materia
     */
-    public Materia insertarMateria(@Param("codigo") String codigo,@Param("nombre") String nombre,@Param("desc") String descripcion);
+    public void insertarMateria(@Param("codigo") String codigo,@Param("nombre") String nombre,@Param("desc") String descripcion);
     
     /*
     * Insertar Prerequisito a una materia
