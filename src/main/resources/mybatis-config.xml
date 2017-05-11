@@ -8,13 +8,12 @@
     </settings>
     
     <typeAliases>
-        <typeAlias type='edu.eci.pdsw.samples.entities.Clase' alias='Clase'/>
-        <typeAlias type='edu.eci.pdsw.samples.entities.Materia' alias='Materia'/>
-        <typeAlias type='edu.eci.pdsw.samples.entities.Profesor' alias='Profesor'/>
-        <typeAlias type='edu.eci.pdsw.samples.entities.Asignatura' alias='Asignatura'/>
-
-        <typeAlias type='edu.eci.pdsw.samples.entities.Periodo' alias='Periodo'/>
-        <typeAlias type='edu.eci.pdsw.samples.entities.Programa' alias='Programa'/>
+        <typeAlias type='edu.eci.pdsw.uppostcool.entities.Clase' alias='Clase'/>
+        <typeAlias type='edu.eci.pdsw.uppostcool.entities.Materia' alias='Materia'/>
+        <typeAlias type='edu.eci.pdsw.uppostcool.entities.Profesor' alias='Profesor'/>
+        <typeAlias type='edu.eci.pdsw.uppostcool.entities.Asignatura' alias='Asignatura'/>
+        <typeAlias type='edu.eci.pdsw.uppostcool.entities.Periodo' alias='Periodo'/>
+        <typeAlias type='edu.eci.pdsw.uppostcool.entities.Programa' alias='Programa'/>
 
     </typeAliases> 
 

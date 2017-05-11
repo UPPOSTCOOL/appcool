@@ -3,11 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.ProgramaMapper">
+<mapper namespace="edu.eci.pdsw.uppostcool.dao.mybatis.mappers.ProgramaMapper">
     <resultMap type='Programa' id='ProgramaResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
-        <collection property='asignaturas' ofType='Asignatura' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></collection>
+        <collection property='asignaturas' ofType='Asignatura' resultMap='edu.eci.pdsw.uppostcool.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></collection>
     </resultMap>
     <select parameterType="map" id="consultarProgramas" resultMap="ProgramaResult">
         select

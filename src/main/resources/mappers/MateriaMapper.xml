@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaMapper">
+<mapper namespace="edu.eci.pdsw.uppostcool.dao.mybatis.mappers.MateriaMapper">
 
     <resultMap type='Materia' id='MateriaResult'>
         <id property='codigo' column='codigo'/>
@@ -11,11 +11,11 @@
         <result property='cohorte' column='cohorte'/>
         <result property='numClases' column='totClases'/>
         <result property='numHoras' column='totHoras'/>
-        <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
-        <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
-        <collection property='clases' ofType='Clase' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='clase_'></collection>
-        <collection property='coRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='coReq_'></collection>
-        <collection property='preRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='preReq_'></collection>
+        <association property="profesor" javaType="Profesor" resultMap='edu.eci.pdsw.uppostcool.dao.mybatis.mappers.ProfesorMapper.ProfesorResult' columnPrefix='profesor_'></association>
+        <association property="asignatura" javaType="Asignatura" resultMap='edu.eci.pdsw.uppostcool.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></association>
+        <collection property='clases' ofType='Clase' resultMap='edu.eci.pdsw.uppostcool.dao.mybatis.mappers.ClaseMapper.ClaseResult' columnPrefix='clase_'></collection>
+        <collection property='coRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.uppostcool.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='coReq_'></collection>
+        <collection property='preRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.uppostcool.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='preReq_'></collection>
     </resultMap>
 
     <select parameterType="map" id="consultarMateriaConRequisitos" resultMap="MateriaResult">

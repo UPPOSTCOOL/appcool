@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-import edu.eci.pdsw.samples.entities.*;
-import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.samples.services.*;
-import edu.eci.pdsw.samples.services.impl.*;
+import edu.eci.pdsw.uppostcool.entities.Asignatura;
+import edu.eci.pdsw.uppostcool.entities.Materia;
+import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
+import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
+import edu.eci.pdsw.uppostcool.services.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -100,7 +101,7 @@ public class ServicesJUnitTest {
      * Obtiene una conexion a la base de datos de prueba
      *
      * @throws SQLException
-     * @throws edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST
+     * @throws edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST
      */
     /*
     private Connection getConnection() throws SQLException{
