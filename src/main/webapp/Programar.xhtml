@@ -90,8 +90,8 @@ and open the template in the editor.
                     </td>
                     <td>
 
-                        <p:selectOneMenu id="cohorte" value="#{ProgramacionPeriodoBean.materias}" panelStyle="width:190px"> 
-                            <f:selectItems value="#{ProgramacionPeriodoBean.materias}" var="theme" itemLabel="#{theme.cohorte}" itemValue="#{theme.nombre}" />
+                        <p:selectOneMenu id="cohorte" value="#{ProgramacionPeriodoBean.asignaturas}" panelStyle="width:190px"> 
+                            <f:selectItems value="pendiente" var="theme" itemLabel="pendiente" itemValue="pendiente" />
                         </p:selectOneMenu>
                         <ln>
                         </ln>
@@ -119,6 +119,9 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
+            <h:commandButton  value="Regresar" actionListener="Indice"/>
+               
+         
             <br></br>
             <br></br>
         </h:form>

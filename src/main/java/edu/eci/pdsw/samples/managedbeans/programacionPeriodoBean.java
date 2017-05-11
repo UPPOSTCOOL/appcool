@@ -56,14 +56,20 @@ public class programacionPeriodoBean {
        return inp.consultarAsignaturas();
         
     }
+    /**
+     * Provisional para vista
+     * @return 
+     */
     public List<Materia> getMateria() throws ExcepcionServiciosUPPOST {
-        Materia m;
-        int i = 0;
-        while (i < programa.size()) {
-            if ((programa.get(i).getNombre()).equals(prog)) {
-               materia= inp.consultarMateriasPrograma(programa.get(i).getId());
-            }
-    }
-    return materia;
+      
+    
+    return inp.consultarMateriasPrograma(programa.get(0).getId());
+    } 
+    /**
+     * Provisional para vista
+     * @return 
+     */
+    public int getCohorte(){
+        return 0;
     }
 }
