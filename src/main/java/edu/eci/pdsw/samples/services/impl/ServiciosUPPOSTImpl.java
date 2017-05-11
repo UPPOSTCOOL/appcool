@@ -17,10 +17,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.Tuple;
 
+
 /**
  *
  * @author juan
  */
+
+
 public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     @Inject
@@ -47,39 +50,30 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
+    public List<Materia> consultarMaterias(int semestre, int anio) throws ExcepcionServiciosUPPOST {
         try {
-            return daoPA.loadAll();
+            return daom.consultarMateriasDAO(semestre, anio);
         } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosUPPOST("Error al consultar los periodos academicos, ServiciosUPPOSTImpl inicio de excepcion", ex);
+            throw new ExcepcionServiciosUPPOST("Error al consultar materias del semestre: " + semestre + "y año: " + anio + ex);
         }
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST {
-        return daom.consultarMateriasDAO(semestre,anio);
-    }
+
     
-    //.....//
-    @Override
-    public List<Periodo> consultarPAcademico(Periodo periodo) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public Profesor consultarProfesor(int cohorte, String materia) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Clase> consultarClasesxPeriodo(int año, int semestre) throws ExcepcionServiciosUPPOST {
+        try {
+            return daoc.consultarClasesxPeriodo(año, semestre);
+        }catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar clases del periodo: " + año + ex);
+
+        }
     }
 
     @Override
@@ -90,6 +84,15 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     @Override
     public List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Periodo> consultarPeriodos() throws ExcepcionServiciosUPPOST {
+        try {
+            return  daoPA.loadAll();
+        } catch (PersistenceException ex) {
+             throw new ExcepcionServiciosUPPOST("Error al consultar periodos academicos: " + ex);
+        }
     }
 
     @Override
@@ -105,12 +108,40 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     @Override
     public List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST {
-        return daom.consultarMateriasPorProgramaDAO(id_programa);
+        try {
+            return daom.consultarMateriasPorProgramaDAO(id_programa);
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar materias Programa en el IMPL: " + ex + id_programa);
+        }
     }
 
     @Override
     public Materia consultarMateriaConRequisitos(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
-        return daom.consultarMateriaConRequisitosDAO(codigo,id_programa);
+        try {
+            return daom.consultarMateriaConRequisitosDAO(codigo,id_programa);
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar materias con requisitos: " + ex + "codigo: " + codigo + "id_programa" + id_programa);
+        }
+    }
+
+    @Override
+    public List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Periodo> consultarPAcademico(Periodo periodo) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

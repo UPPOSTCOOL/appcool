@@ -4,12 +4,42 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.ClaseMapper">
-    <resultMap type='Clase' id='ClaseResult' >
+
+
+    <select parameterType="map" id="consultarClases" resultMap="ClaseResult">
+     
+        select  
+        
+        c.id, 
+        
+        r.nombre as recursos, 
+        
+        c.fecha, c.horaFin,
+                      
+        c.mater_perio_materia_id as mater_perio_materia_id,
+        
+        c.salon
+
+        from periodo as p, mater_perio as m, clase as c, clase_Recur as cr, recurso as r
+
+        where p.id = m.periodo_id
+        and p.ano=#{ano}
+        and p.semestre=#{semestre}
+        and m.materia_id = c.mater_perio_materia_id
+        and m.cohorte = c.mater_perio_cohorte
+        and c.id= cr.clase_id
+        and r.id = cr.recurso_id
+        
+    </select>
+    
+    <resultMap type="Clase" id='ClaseResult' >
         <id property='id' column='id'/>
+        <result property='recurso' column='recursos'/>
         <result property='fecha' column='fecha'/>
         <result property='horaFin' column='horaFin'/>
         <result property='rangoHoras' column='rangoHoras'/>
         <result property= 'idMateria' column='mater_perio_materia_id'/>
         <result property= 'cohorte' column='mater_perio_cohorte'/>
+        <result property= 'salon' column='salon'/> 
     </resultMap>
 </mapper>

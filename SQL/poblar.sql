@@ -13,17 +13,30 @@ insert into Asignatura
   (4,'gestion',2);
 
 insert into Materia 
-  (codigo,nombre,Asignatura_id,descripcion)
+  (codigo,nombre,descripcion)
   values
-  ('RED1','redes 1',1,'bases de redes'),						--1,2
-  ('RED2','redes 2',1,'avanzado de redes'),						--1,2
-  ('SEG1','Seguridad 1',2,'avanzado de seg'),					--3
-  ('SEG2','Seguridad 2',2,'avanzado de seg'),					--3
-  ('DNSS','DNS',2,'Domain Name Server'),						--1
-  ('DAGE','datos gerenciales',3,'bases de gerencia'),			--4
-  ('DAAD','datos admon',3,'avanzado de administraci|n'),		--5
-  ('GECO','gestion correcta',4,'correcta gestion de proyectos'),--3,4
-  ('DACO','datos completos',4,'avanzado datos informaticos');	--2,5
+  ('RED1','redes 1','bases de redes'),						--1,2
+  ('RED2','redes 2','avanzado de redes'),						--1,2
+  ('SEG1','Seguridad 1','avanzado de seg'),					--3
+  ('SEG2','Seguridad 2','avanzado de seg'),					--3
+  ('DNSS','DNS','Domain Name Server'),						--1
+  ('DAGE','datos gerenciales','bases de gerencia'),			--4
+  ('DAAD','datos admon','avanzado de administracion'),		--5
+  ('GECO','gestion correcta','correcta gestion de proyectos'),--3,4
+  ('DACO','datos completos','avanzado datos informaticos');	--2,5
+
+insert into Asign_Mater
+  (Materia_codigo,Asignatura_id)
+  values
+	('RED1',1),
+	('RED2',1),
+	('SEG1',2),
+	('SEG2',2),
+	('DNSS',2),
+	('DAGE',3),
+	('DAAD',3),
+	('GECO',4),
+	('DACO',4);
 
 insert into Prerequisito
   (Materia_id,Materia_id_pre,programa_id)

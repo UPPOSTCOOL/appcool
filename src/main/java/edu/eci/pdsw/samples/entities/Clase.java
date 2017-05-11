@@ -5,32 +5,38 @@
  */
 package edu.eci.pdsw.samples.entities;
 
+import java.io.Serializable;
+import java.sql.Time;
 import java.sql.Timestamp;
+
 import java.text.SimpleDateFormat;
+
 /**
  *
  * @author 
  */
-public class Clase {    
+public class Clase implements Serializable {
     private int id;
-    private Recurso descripcion=new Recurso();
+    private String recurso;
     private Timestamp fecha;
-    private Timestamp horaFin;
+    private Time horaFin;
     private String rangoHoras;//indica 10 a 2pm
     private String idMateria;
     private int cohorte;
+    private String salon;
 
     public Clase() {
     }
     
-    public Clase(int id, Recurso descripcion, Timestamp fecha, Timestamp horaFin, String rangoHoras, String idMateria, int cohorte) {
+    public Clase(int id, String recurso, Timestamp fecha, Time horaFin, String rangoHoras, String idMateria, int cohorte, String salon) {
         this.id = id;
-        this.descripcion =new Recurso();
+        this.recurso = recurso;
         this.fecha = fecha;
         this.horaFin = horaFin;
         this.rangoHoras = rangoHoras;
         this.idMateria = idMateria;
         this.cohorte = cohorte;
+        this.salon = salon;
     }
 
     public int getId() {
@@ -41,27 +47,27 @@ public class Clase {
         this.id = id;
     }
 
-    public Recurso getDescripcion() {
-        return descripcion;
+    public String getRecurso() {
+        return recurso;
     }
 
-    public void setDescripcion(Recurso descripcion) {
-        this.descripcion = descripcion;
+    public void setRecurso(String recurso) {
+        this.recurso = recurso;
     }
 
     public Timestamp getFecha() {
         return fecha;
     }
-    
+
     public void setFecha(Timestamp fecha) {
         this.fecha = fecha;
     }
 
-    public Timestamp getHoraFin() {
+    public Time getHoraFin() {
         return horaFin;
     }
 
-    public void setHoraFin(Timestamp horaFin) {
+    public void setHoraFin(Time horaFin) {
         this.horaFin = horaFin;
     }
 
@@ -88,14 +94,27 @@ public class Clase {
     public void setCohorte(int cohorte) {
         this.cohorte = cohorte;
     }
-    
+
+    public String getSalon() {
+        return salon;
+    }
+
+    public void setSalon(String salon) {
+        this.salon = salon;
+    }
+
+    @Override
+    public String toString() {
+        return "Clase{" + "id=" + id + ", recurso=" + recurso + ", fecha=" + fecha + ", horaFin=" + horaFin + ", rangoHoras=" + rangoHoras + ", idMateria=" + idMateria + ", cohorte=" + cohorte + ", salon=" + salon + '}';
+    }
+
     public String getHora(){
         String hora = new SimpleDateFormat("HH:mm").format(horaFin);
         return hora;
     }
     
     public String getFormatoFecha(){
-        String fecha1 = new SimpleDateFormat("MM/dd/yy").format(fecha);
+        String fecha1 = new SimpleDateFormat("MM/dd/yy - HH:mm").format(fecha);
         return fecha1;
     }
 }

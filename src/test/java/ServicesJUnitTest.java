@@ -99,7 +99,6 @@ public class ServicesJUnitTest {
     /**
      * Obtiene una conexion a la base de datos de prueba
      *
-     * @return
      * @throws SQLException
      * @throws edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST
      */

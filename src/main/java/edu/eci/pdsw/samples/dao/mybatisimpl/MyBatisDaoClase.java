@@ -23,11 +23,14 @@ public class MyBatisDaoClase implements ClaseDAO{
     @Inject
     private ClaseMapper pmap;
     
-
-
     @Override
     public List<Clase> loadClases() throws PersistenceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Clase> consultarClasesxPeriodo(int ano , int semestre) throws PersistenceException {
+         return pmap.consultarClases(ano, semestre);
     }
     
 }

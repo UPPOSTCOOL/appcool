@@ -5,20 +5,25 @@
  */
 package edu.eci.pdsw.samples.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
- * @author 2083722
+ * @author 2092815
  */
-public class Programa {
+public class Programa implements Serializable {
+    
     private int id;
     private String nombre;
+    private Profesor coordinador;
     private List<Asignatura> asignaturas;
 
-    public Programa(int id, String nombre) {
+    public Programa(int id, String nombre, Profesor coordinador, List<Asignatura> asignaturas) {
         this.id = id;
         this.nombre = nombre;
+        this.coordinador = coordinador;
+        this.asignaturas = asignaturas;
     }
 
     public int getId() {
@@ -37,6 +42,15 @@ public class Programa {
         this.nombre = nombre;
     }
 
+
+    public Profesor getCoordinador() {
+        return coordinador;
+    }
+
+    public void setCoordinador(Profesor coordinador) {
+        this.coordinador = coordinador;
+    }
+
     public List<Asignatura> getAsignaturas() {
         return asignaturas;
     }
@@ -44,4 +58,12 @@ public class Programa {
     public void setAsignaturas(List<Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
     }
+    
+    @Override
+    public String toString() {
+        return "Programa{" + "Coordinador=" + coordinador + ", nombre=" + nombre + ", Asignaturas=" + asignaturas + '}';
+    }
+    
+    
+    
 }

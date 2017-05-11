@@ -23,6 +23,12 @@ public class MyBatisDaoPAcademico implements PAcademicoDAO{
 
 
     @Override
+    public List<Periodo> loadAll() throws PersistenceException {
+        return pmap.consultarPAcademicos();
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
     public void save(Periodo c) throws PersistenceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -33,14 +39,13 @@ public class MyBatisDaoPAcademico implements PAcademicoDAO{
     }
 
     @Override
-    public List<Periodo> loadAll() throws PersistenceException {
-        return pmap.consultarPAcademicos();
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void saveAll() {
+    public void saveAll() throws PersistenceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+ 
+ 
+
+
     
 }

@@ -4,6 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaMapper">
+
     <resultMap type='Materia' id='MateriaResult'>
         <id property='codigo' column='codigo'/>
         <result property='nombre' column='nombre'/>
@@ -16,6 +17,7 @@
         <collection property='coRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='coReq_'></collection>
         <collection property='preRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.samples.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='preReq_'></collection>
     </resultMap>
+
     <select parameterType="map" id="consultarMateriaConRequisitos" resultMap="MateriaResult">
         (select
             M.codigo as codigo,
@@ -81,6 +83,7 @@
         Order By M.nombre asc;
     </select>
 
+
     <select parameterType="map" id="consultarMateriasClase" resultMap="MateriaResult">
         select 
             M.codigo as codigo,
@@ -122,8 +125,10 @@
             Asign_Mater AM
         WHERE 
             MP.Materia_id=M.codigo and 
+
             M.codigo=AM.Materia_codigo and
             AM.Asignatura_id=A.id and
+
             P.id=MP.Profesor_id and
             C.Mater_Perio_Materia_id=MP.Materia_id and
             C.Mater_Perio_cohorte=MP.cohorte and
@@ -131,4 +136,5 @@
             PE.ano=#{anio} and
             PE.semestre=#{semestre};
     </select>
+
 </mapper>
