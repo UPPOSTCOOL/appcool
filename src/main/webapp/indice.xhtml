@@ -12,32 +12,49 @@ and open the template in the editor.
     <h:head>
         <title>Indice </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
     </h:head>
 
     <h:body>
-        <img src="Imagenes/eci2.jpg" height="80" />
+        <img src="Imagenes/escuela.jpg" height="145" />
         <h1 style="text-align:center;color:firebrick" >UNIDAD DE PROYECTOS</h1>        
         <br></br>        
-        <h:form id="indice" style="color:firebrick">
-            <h1>Indice</h1>     
-          
-
-                <h:commandButton id="periodo" style="font-size: 20px; background-color: linen; padding: 4px; width: 350px" value="Reporte Programación Semestral" action="Periodos" />
-                <br></br>
-                <br></br>
-                 <h:commandButton id="registrarMate" style="font-size: 20px; background-color: linen; padding: 4px; width: 350px" value="Registrar Materia" action="RegistrarMateria"/>
-                <br></br>
-                <br></br>
-                 <h:commandButton id="progrPeriodo" style="font-size: 20px; background-color: linen; padding: 4px;width: 350px" value="Programación de Periodo" action="ReportesProgramacion" />
-                <br></br>
-                <br></br>
-                 <h:commandButton id="registroCohorte" style="font-size: 20px; background-color: linen; padding: 4px;width: 350px" value="Registro materia en Nueva Cohorte" action="ReportesProgramacion" />
-                <br></br>
-                <br></br>
-           
+        <h:form id="indice" style="color:firebrick"  >
+            <h1 align="center">Indice</h1>
+            <!-- <div align="center">
+                 <h:commandButton id="periodo" style="font-size: 20px; background-color: linen; padding: 4px; width: 350px" value="Reporte Programación Semestral" action="Periodos" />
+                 <br></br>
+                 <br></br>
+                  <h:commandButton id="registrarMate" style="font-size: 20px; background-color: linen; padding: 4px; width: 350px" value="Registrar Materia" action="RegistrarMateria"/>
+                 <br></br>
+                 <br></br>
+                  <h:commandButton id="progrPeriodo" style="font-size: 20px; background-color: linen; padding: 4px;width: 350px" value="Programación de Periodo" action="ReportesProgramacion" />
+                 <br></br>
+                 <br></br>
+                  <h:commandButton id="registroCohorte" style="font-size: 20px; background-color: linen; padding: 4px;width: 350px" value="Registro materia en Nueva Cohorte" action="ReportesProgramacion" />
+                 <br></br>
+                 <br></br>
+             </div>-->
+            <table>                    
+                <tr>
+                    <td >
+                        <img src="Imagenes/EscIng_2.jpg" height="300"  />
+                    </td>
+                    <td>
+                        <h:commandButton id="periodo" style="font-size: 20px; background-color: linen; padding: 4px; width: 350px; margin-left: 30px" value="Reporte Programación Semestral" action="Periodos" />
+                        
+                        <h:commandButton id="registrarMate" style="font-size: 20px; background-color: linen; padding: 4px; width: 350px ; margin-left: 30px" value="Registrar Materia" action="RegistrarMateria" />
+                        <br></br>
+                        <br></br>
+                        <h:commandButton id="progrPeriodo" style="font-size: 20px; background-color: linen; padding: 4px;width: 350px ; margin-left: 30px" value="Programación de Periodo" action="ReportesProgramacion" />
+                        
+                        <h:commandButton id="registroCohorte" style="font-size: 20px; background-color: linen; padding: 4px;width: 350px;margin-left: 30px" value="Registro materia en Nueva Cohorte" action="ReportesProgramacion" />
+                        <br></br>
+                        <br></br>
+                    </td>
+                </tr>
+            </table>   
         </h:form>
-
     </h:body>
 </html>
+
 

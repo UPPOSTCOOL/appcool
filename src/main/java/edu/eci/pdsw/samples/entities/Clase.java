@@ -5,7 +5,6 @@
  */
 package edu.eci.pdsw.samples.entities;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
 import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -17,7 +16,6 @@ import java.text.SimpleDateFormat;
  * @author 
  */
 public class Clase implements Serializable {
-    
     private int id;
     private String recurso;
     private Timestamp fecha;
@@ -29,7 +27,7 @@ public class Clase implements Serializable {
 
     public Clase() {
     }
-
+    
     public Clase(int id, String recurso, Timestamp fecha, Time horaFin, String rangoHoras, String idMateria, int cohorte, String salon) {
         this.id = id;
         this.recurso = recurso;
@@ -120,4 +118,3 @@ public class Clase implements Serializable {
         return fecha1;
     }
 }
-
