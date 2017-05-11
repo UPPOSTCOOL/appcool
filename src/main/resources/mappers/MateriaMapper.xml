@@ -137,4 +137,32 @@
             PE.semestre=#{semestre};
     </select>
 
+    <insert parameterType="map" id="insertarMateria">
+        insert into Materia
+            (codigo,nombre,descripcion)
+        values
+            (#{codigo},#{nombre},#{desc});
+    </insert>
+    
+    <insert parameterType="map" id="insertarMateriaPrerequisito">
+        insert into Prerequisito
+            (Materia_id,Materia_id_pre,Programa_id)
+        values
+            (#{codigoMat},#{codigoPre},#{id_p});
+    </insert>
+    
+    <insert parameterType="map" id="insertarMateriaCorequisito">
+        insert into Corequisito
+            (Materia_id,Materia_id_co,Programa_id)
+        values
+            (#{codigoMat},#{codigoCo},#{id_p});
+    </insert>
+    
+    <insert parameterType="map" id="insertarAsign_Mater">
+        insert into Asign_Mater
+            (Asignatura_id,Materia_codigo)
+        values
+            (#{id_asign},#{id_mater});
+    </insert>
+    
 </mapper>

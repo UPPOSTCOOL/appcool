@@ -27,6 +27,27 @@ public interface MateriaMapper {
     * consulta una materia con su información y Co y Requisitos
     */
     public Materia consultarMateriaConRequisitos(@Param("codigo") String codigo,@Param("id_p") int id_programa);
+    
+    
+    /*
+    * Insertar una materia
+    */
+    public Materia insertarMateria(@Param("codigo") String codigo,@Param("nombre") String nombre,@Param("desc") String descripcion);
+    
+    /*
+    * Insertar Prerequisito a una materia
+    */
+    public Materia insertarMateriaPrerequisito(@Param("codigoMat") String codigoMat,@Param("codigoPre") String codigoPre,@Param("id_p") int id_programa);
+    
+    /*
+    * Insertar Corequisito a una materia
+    */
+    public Materia insertarMateriaCorequisito(@Param("codigoMat") String codigoMat,@Param("codigoCo") String codigoCo,@Param("id_p") int id_programa);
+    
+    /*
+    * Relacionar Asignatura a una materia
+    */
+    public Materia insertarAsign_Mater(@Param("id_asign") int id_asign,@Param("id_mater") String codigoMateria);
 }
 
 
