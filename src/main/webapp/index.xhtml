@@ -28,16 +28,11 @@
             </p:panel>
         </h:form>
     </h:body>
-    <script type="text/javascript">
-       
-        //<![CDATA[
+    <script type="text/javascript">   
         function manejarLogin(xhr, status, args) {
             if (!args.validationFailed && args.estaLogeado) {
-                setTimeout(function () {
-                    location.assign("../faces/indice.xhtml")
-                }, 500);
+                setTimeout(function () {location.assign("../faces/Periodos.xhtml")}, 500);
             }
         }
-    //]]>
     </script>
 </html>

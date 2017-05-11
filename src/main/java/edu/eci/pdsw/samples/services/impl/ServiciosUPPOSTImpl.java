@@ -149,4 +149,9 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     public List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void insertarMateria(Materia materia) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.        
+    }
 }

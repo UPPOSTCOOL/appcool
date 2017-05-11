@@ -28,37 +28,6 @@ import java.util.stream.Stream;
  *
 public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
-<<<<<<< HEAD
-    private ArrayList<Asignatura> asignaturas;
-    private ArrayList<Clase> clases;
-    private ArrayList<Materia> materias;
-    private ArrayList<PeriodoAcademico> periodos;
-    private ArrayList<Profesor> profesores;
-
-    private ArrayList<Clase> clasesAll;
-    private ArrayList<PeriodoAcademico> periodosAll;
-    private ArrayList<Materia> materiasAll;
-
-    public ServiciosUPPOSTImplStub() {
-        clasesAll = new ArrayList<Clase>();
-        periodosAll = new ArrayList<PeriodoAcademico>();
-        materias = new ArrayList<Materia>();
-        poblar();
-    }
-
-    @Override
-    public Clase consultarClase(int id) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Clase> consultarClases() throws ExcepcionServiciosUPPOST {
-        for (int i = 0; i < clasesAll.size(); i++) {
-            System.out.println(clasesAll.get(i));
-        }
-        return clasesAll;
-    }
-=======
     private List<Asignatura> asignaturas;
     private List<Clase> clases;
     private List<Materia> materias;
@@ -81,22 +50,14 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     }
 
     
->>>>>>> origin/HU1
 
     private void poblar() {        
         periodo1();
         periodo2();
     }
-<<<<<<< HEAD
-
-    private void poblar() {
-
-=======
-     
     
     private void periodo1(){
         
->>>>>>> origin/HU1
         // PARA EL PERIODO 1
         List<Asignatura> lista1 = new ArrayList<>();
 
@@ -238,55 +199,6 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Timestamp dt2616f = new Timestamp(2017, 6, 2, 16, 0, 0, 0);
         Timestamp dt9619f = new Timestamp(2017, 6, 9, 19, 0, 0, 0);
         // ----------------
-<<<<<<< HEAD
-
-        Timestamp dt21713 = new Timestamp(2017, 7, 21, 13, 0, 0, 0);
-
-        Timestamp dt1713 = new Timestamp(2017, 7, 1, 13, 0, 0, 0);
-        Timestamp dt8713 = new Timestamp(2017, 7, 8, 13, 0, 0, 0);
-        Timestamp dt7713 = new Timestamp(2017, 7, 7, 13, 0, 0, 0);
-
-        Timestamp dt9613 = new Timestamp(2017, 6, 9, 13, 0, 0, 0);
-        Timestamp dt16610 = new Timestamp(2017, 6, 16, 10, 0, 0, 0);
-        Timestamp dt14713 = new Timestamp(2017, 7, 14, 13, 0, 0, 0);
-
-        Timestamp dt22713 = new Timestamp(2017, 7, 22, 13, 0, 0, 0);
-
-        Timestamp dt9619 = new Timestamp(2017, 6, 9, 19, 0, 0, 0);
-
-        Timestamp dt778 = new Timestamp(2017, 7, 7, 8, 0, 0, 0);
-        Timestamp dt7711 = new Timestamp(2017, 7, 7, 11, 0, 0, 0);
-        Timestamp dt7712 = new Timestamp(2017, 7, 7, 12, 0, 0, 0);
-        Timestamp dt1068 = new Timestamp(2017, 6, 10, 8, 0, 0, 0);
-        Timestamp dt10611 = new Timestamp(2017, 6, 10, 11, 0, 0, 0);
-        Timestamp dt10612 = new Timestamp(2017, 6, 10, 12, 0, 0, 0);
-        Timestamp dt10613 = new Timestamp(2017, 6, 10, 13, 0, 0, 0);
-        Timestamp dt10614 = new Timestamp(2017, 6, 10, 14, 0, 0, 0);
-        Timestamp dt30611 = new Timestamp(2017, 6, 30, 11, 0, 0, 0);
-        Timestamp dt30612 = new Timestamp(2017, 6, 30, 12, 0, 0, 0);
-        Timestamp dt7714 = new Timestamp(2017, 7, 7, 14, 0, 0, 0);
-        Timestamp dt7715 = new Timestamp(2017, 7, 7, 15, 0, 0, 0);
-
-        Recurso recurso = new Recurso(100, "recurso");
-
-        Clase cl1a = new Clase(1, recurso, dt777, dt778, mat1, "c1-201");
-        Clase cl2a = new Clase(1, recurso, dt778, dt7710, mat2, "c1-202");
-        Clase cl3a = new Clase(1, recurso, dt7710, dt7711, mat3, "c1-203");
-        Clase cl4a = new Clase(1, recurso, dt7712, dt7713, mat4, "c1-204");
-        Clase cl5a = new Clase(1, recurso, dt7713, dt7714, mat5, "c2-201");
-        Clase cl6a = new Clase(1, recurso, dt7714, dt7715, mat6, "c2-202");//2
-        Clase cl7a = new Clase(1, recurso, dt1067, dt1068,mat7, "A-105");//2
-        Clase cl8a = new Clase(1, recurso, dt1068, dt10610, mat8, "D-201");
-        Clase cl9a = new Clase(1, recurso, dt10610, dt10611, mat9, "f-301");
-        Clase cl10a = new Clase(1, recurso, dt10611, dt10612, mat10, "f-101");
-        Clase cl11a = new Clase(1, recurso, dt10612, dt10613, mat11, "f-102");//3
-        Clase cl12a = new Clase(1, recurso, dt10613, dt10614, mat12, "f-201");//4
-        Clase cl13a = new Clase(1, recurso, dt3067, dt30610, mat13, "f-205");  //5
-        Clase cl14a = new Clase(1, recurso, dt30610, dt30611, mat14, "f-206");
-        Clase cl15a = new Clase(1, recurso, dt30611, dt30612, mat15, "f-304");
-        
-//-------------------------------------------------------------------------------------------
-=======
         
         Timestamp dt21713 = new Timestamp(2017,7,21,13,0,0,0);        
         
@@ -333,7 +245,6 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         Clase cl14a = new Clase(14,recurso,dt30610, dt30611,"10 a 11","M14",25);      
         Clase cl15a = new Clase(15,recurso,dt30611, dt30612,"11 a 12","M115",25);      
         
->>>>>>> origin/HU1
         // lista clases para materias
         ArrayList<Clase> clasesM1 = new ArrayList<>();
         ArrayList<Clase> clasesM2 = new ArrayList<>();
@@ -354,51 +265,6 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         // -----------------------
         // Lista de clases por materia, una calse por materia 
         clasesM1.add(cl1a);
-<<<<<<< HEAD
-        clasesM2.add(cl2a);
-        clasesM3.add(cl3a);
-        clasesM4.add(cl4a);
-        clasesM5.add(cl5a);
-        clasesM6.add(cl6a);
-        clasesM7.add(cl7a);
-        clasesM8.add(cl8a);
-        clasesM9.add(cl9a);
-        clasesM10.add(cl10a);
-        clasesM11.add(cl11a);
-        clasesM12.add(cl12a);
-        clasesM13.add(cl13a);
-        clasesM14.add(cl14a);
-        clasesM15.add(cl15a);
-
-        // tdas las clases del periodo
-        clasesAll.add(cl1a);
-        clasesAll.add(cl2a);
-        clasesAll.add(cl3a);
-        clasesAll.add(cl4a);
-        clasesAll.add(cl5a);
-        clasesAll.add(cl6a);
-        clasesAll.add(cl7a);
-        clasesAll.add(cl8a);
-        clasesAll.add(cl9a);
-        clasesAll.add(cl10a);
-        clasesAll.add(cl11a);
-        clasesAll.add(cl12a);
-        clasesAll.add(cl13a);
-        clasesAll.add(cl14a);
-        clasesAll.add(cl15a);
-
-        // Para Periodo
-        PeriodoAcademico per1 = new PeriodoAcademico(1, materias, 2017, 1);
-
-        periodosAll.add(per1);
-
-        // PERIODO 2 - sin datos
-    }
-
-    @Override
-    public List<PeriodoAcademico> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
-        return periodosAll;
-=======
         clasesM2.add(cl2a); 
         clasesM3.add(cl3a); 
         clasesM4.add(cl4a); 
@@ -434,26 +300,28 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         
         // Materias son 5 grupos de materias
-              
-        Materia mat1 = new Materia("M1", "Gerencia de riesgos", 24, 1, 1, prof1, asig1, clasesM1 );
-        Materia mat2 = new Materia("M2", "G cominicaciones", 24, 1, 1, prof1, asig1, clasesM2 );
-        Materia mat3 = new Materia("M3", "G calidad", 24, 1, 1, prof1, asig1, clasesM3 );
-        Materia mat4 = new Materia("M4", "Liderazgoy trabajo", 24, 1, 1, prof1, asig1, clasesM4 );
-        Materia mat5 = new Materia("M5", "Negociación", 24, 1, 1, prof1, asig1, clasesM5 );
-        Materia mat6 = new Materia("M6", "Creatividad Inn", 24, 1, 1, prof1, asig1, clasesM6 );
+         
+        String descrip = "descripcion de materia P1";
         
-        Materia mat7 = new Materia("M7", "Taller trabajo grado", 24, 1, 1, prof2, asig2, clasesM7 );
-        Materia mat8 = new Materia("M8", "Taller trabajo grado2", 24, 1, 1, prof2, asig2, clasesM8 );
-        Materia mat9 = new Materia("M9", "Sustentacion grup", 24, 1, 1, prof2, asig2, clasesM9 );
-        Materia mat10 = new Materia("M10", "Intro a la Investigacion", 24, 1, 1, prof2, asig2, clasesM10 );
+        Materia mat1 = new Materia("M1", "Gerencia de riesgos", 24, 1, 1, prof1, asig1, clasesM1, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip );
+        Materia mat2 = new Materia("M2", "G cominicaciones", 24, 1, 1, prof1, asig1, clasesM2, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat3 = new Materia("M3", "G calidad", 24, 1, 1, prof1, asig1, clasesM3, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat4 = new Materia("M4", "Liderazgoy trabajo", 24, 1, 1, prof1, asig1, clasesM4, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat5 = new Materia("M5", "Negociación", 24, 1, 1, prof1, asig1, clasesM5, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat6 = new Materia("M6", "Creatividad Inn", 24, 1, 1, prof1, asig1, clasesM6, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat11 = new Materia("M11", "Proyecto de vida", 23, 1, 1, prof3, asig3, clasesM11 );
+        Materia mat7 = new Materia("M7", "Taller trabajo grado", 24, 1, 1, prof2, asig2, clasesM7, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat8 = new Materia("M8", "Taller trabajo grado2", 24, 1, 1, prof2, asig2, clasesM8, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat9 = new Materia("M9", "Sustentacion grup", 24, 1, 1, prof2, asig2, clasesM9, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat10 = new Materia("M10", "Intro a la Investigacion", 24, 1, 1, prof2, asig2, clasesM10, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12 );
+        Materia mat11 = new Materia("M11", "Proyecto de vida", 23, 1, 1, prof3, asig3, clasesM11, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat13 = new Materia("M13", "Intro a ejecucion", 25, 1, 1, prof5, asig5, clasesM13 );
-        Materia mat14 = new Materia("M14", "Requerimientos", 25, 1, 1, prof5, asig5, clasesM14 );
-        Materia mat15 = new Materia("M15", "Construccion", 25, 1, 1, prof5, asig5, clasesM15 );
+        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        
+        Materia mat13 = new Materia("M13", "Intro a ejecucion", 25, 1, 1, prof5, asig5, clasesM13, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat14 = new Materia("M14", "Requerimientos", 25, 1, 1, prof5, asig5, clasesM14, new ArrayList<Materia>(), new ArrayList<Materia>() ,descrip );
+        Materia mat15 = new Materia("M15", "Construccion", 25, 1, 1, prof5, asig5, clasesM15, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
         // todas las materias
         
@@ -474,7 +342,6 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         materiasAll1.add(mat14);
         materiasAll1.add(mat15);
                      
-        
         // Para Periodo
         
         Periodo per1 = new Periodo(1,materiasAll1,2017,1);
@@ -692,26 +559,28 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         
         // Materias son 5 grupos de materias
+        
+        String descrip = "descripcion materia P2";
               
-        Materia mat1 = new Materia("M1", "Gerencia de riesgos 2", 24, 1, 1, prof1, asig1, clasesM1 );
-        Materia mat2 = new Materia("M2", "G cominicaciones 2", 24, 1, 1, prof1, asig1, clasesM2 );
-        Materia mat3 = new Materia("M3", "G calidad 2", 24, 1, 1, prof1, asig1, clasesM3 );
-        Materia mat4 = new Materia("M4", "Liderazgoy trabajo 2", 24, 1, 1, prof1, asig1, clasesM4 );
-        Materia mat5 = new Materia("M5", "Negociación 2", 24, 1, 1, prof1, asig1, clasesM5 );
-        Materia mat6 = new Materia("M6", "Creatividad Inn 2", 24, 1, 1, prof1, asig1, clasesM6 );
+        Materia mat1 = new Materia("M1", "Gerencia de riesgos 2", 24, 1, 1, prof1, asig1, clasesM1, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat2 = new Materia("M2", "G cominicaciones 2", 24, 1, 1, prof1, asig1, clasesM2, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat3 = new Materia("M3", "G calidad 2", 24, 1, 1, prof1, asig1, clasesM3, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat4 = new Materia("M4", "Liderazgoy trabajo 2", 24, 1, 1, prof1, asig1, clasesM4, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat5 = new Materia("M5", "Negociación 2", 24, 1, 1, prof1, asig1, clasesM5, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat6 = new Materia("M6", "Creatividad Inn 2", 24, 1, 1, prof1, asig1, clasesM6, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat7 = new Materia("M7", "Taller trabajo grado 2", 24, 1, 1, prof2, asig2, clasesM7 );
-        Materia mat8 = new Materia("M8", "Taller trabajo grado2 w2", 24, 1, 1, prof2, asig2, clasesM8 );
-        Materia mat9 = new Materia("M9", "Sustentacion grup 2", 24, 1, 1, prof2, asig2, clasesM9 );
-        Materia mat10 = new Materia("M10", "Intro a la Investigacion 2", 24, 1, 1, prof2, asig2, clasesM10 );
+        Materia mat7 = new Materia("M7", "Taller trabajo grado 2", 24, 1, 1, prof2, asig2, clasesM7, new ArrayList<Materia>(), new ArrayList<Materia>() ,descrip );
+        Materia mat8 = new Materia("M8", "Taller trabajo grado2 w2", 24, 1, 1, prof2, asig2, clasesM8, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat9 = new Materia("M9", "Sustentacion grup 2", 24, 1, 1, prof2, asig2, clasesM9, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat10 = new Materia("M10", "Intro a la Investigacion 2", 24, 1, 1, prof2, asig2, clasesM10, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat11 = new Materia("M11", "Proyecto de vida 2", 23, 1, 1, prof3, asig3, clasesM11 );
+        Materia mat11 = new Materia("M11", "Proyecto de vida 2", 23, 1, 1, prof3, asig3, clasesM11, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12 );
+        Materia mat12 = new Materia("M12", "Etica", 23, 1, 1, prof4, asig4, clasesM12, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
-        Materia mat13 = new Materia("M13", "Intro a ejecucion 2", 25, 1, 1, prof5, asig5, clasesM13 );
-        Materia mat14 = new Materia("M14", "Requerimientos 2", 25, 1, 1, prof5, asig5, clasesM14 );
-        Materia mat15 = new Materia("M15", "Construccion 2", 25, 1, 1, prof5, asig5, clasesM15 );
+        Materia mat13 = new Materia("M13", "Intro a ejecucion 2", 25, 1, 1, prof5, asig5, clasesM13, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat14 = new Materia("M14", "Requerimientos 2", 25, 1, 1, prof5, asig5, clasesM14, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
+        Materia mat15 = new Materia("M15", "Construccion 2", 25, 1, 1, prof5, asig5, clasesM15, new ArrayList<Materia>(), new ArrayList<Materia>(),descrip  );
         
         // todas las materias
         
@@ -798,15 +667,12 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     public List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST {
        
         return clasesAll1;
->>>>>>> origin/HU1
     }
 
     @Override
     public List<Clase> consultarClasesxPeriodo(PeriodoAcademico periodo) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-<<<<<<< HEAD
-=======
     
     @Override
     public List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST {
@@ -833,8 +699,6 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-<<<<<<< HEAD
-=======
     @Override
     public List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -849,6 +713,10 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     public Materia consultarMateriaConRequisitos(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
->>>>>>> origin/HU3_kvn
+
+    @Override
+    public void insertarMateria(Materia materia) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
-**/
+*/
