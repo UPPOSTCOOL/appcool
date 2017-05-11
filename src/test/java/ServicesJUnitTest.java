@@ -8,6 +8,8 @@ import edu.eci.pdsw.samples.entities.*;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
+import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImpl;
+import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -127,7 +129,7 @@ public class ServicesJUnitTest {
      */
     @Test
     public void CF1() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        ServiciosUPPOST sp =new ServiciosUPPOSTImpl();//= ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
         
         List<Materia> materias = sp.consultarMaterias(2017, 1);
 
