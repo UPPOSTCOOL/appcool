@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Programacion de periodo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <img src="Imagenes/eci2.jpg" height="80" />
+        <h1 style="text-align: center; color:firebrick " >Programación de periodo</h1>
+        
+        <h:form id="formularioProgramar" style="text-align: left; color: black" >
+
+
+            <table> 
+                <tr>
+                <td style="text-align: center; color: firebrick" title="PROGRAMA">
+                
+                <h1>  Programa 
+                    <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: firebrick" />
+                    </h1>
+                </td>
+                    </tr>
+                <br></br>
+                <br></br>
+                    
+                <td style="font-size:25px">
+                    Periodo
+                </td>
+                <td>
+
+                    <p:selectOneMenu id="periodo" value="#{PeriodoBean.periodo}" panelStyle="width:190px"> 
+                        <f:selectItems value="#{PeriodoBean.periodo}" var="theme" itemLabel="#{theme.ano}" itemValue="#{theme.ano}" />
+                    </p:selectOneMenu>
+                    <p:selectOneMenu id="per" value="#{PeriodoBean.periodo}" panelStyle="width:190px"> 
+                        <f:selectItems value="#{PeriodoBean.periodo}" var="peri" itemLabel="#{peri.semestre}" itemValue="#{peri.semestre}" />
+                    </p:selectOneMenu>
+                    <ln>
+                    </ln>
+                    <ln>
+                    </ln>
+                    <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nuevo Periodo" action="Programar" />
+                </td>
+                <tr>
+                    <td style="font-size:25px">
+                        Asignatura
+                    </td>
+                    <td>
+
+                        <p:selectOneMenu id="asignatura" value="#{ProgramacionPeriodoBean.asignaturas}" panelStyle="width:190px"> 
+                            <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
+                        </p:selectOneMenu>
+                        <ln>
+                        </ln>
+                        <ln>
+                        </ln>
+
+                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nueva Asignatura     " action="Programar" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size:25px">
+                        Materia
+                    </td>
+                    <td>
+
+                        <p:selectOneMenu id="materia" value="#{ProgramacionPeriodoBean.asignaturas}" panelStyle="width:190px"> 
+                            <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
+                        </p:selectOneMenu>
+                        <ln>
+                        </ln>
+                        <ln>
+                        </ln>
+                        
+                        <h:commandButton id="materiaNueva" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nuevo Materia" action="MateriaNueva" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size:25px">
+                        Cohorte
+                    </td>
+                    <td>
+
+                        <p:selectOneMenu id="cohorte" value="#{ProgramacionPeriodoBean.asignaturas}" panelStyle="width:190px"> 
+                            <f:selectItems value="pendiente" var="theme" itemLabel="pendiente" itemValue="pendiente" />
+                        </p:selectOneMenu>
+                        <ln>
+                        </ln>
+                        <ln>
+                        </ln>
+                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nueva Cohorte" action="Programar" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <ln>
+                        </ln>
+                        <ln>
+                        </ln>
+                        <ln>
+                        </ln>
+                        <ln>
+                        </ln>
+                        <ln>
+                        </ln>
+                        <h:commandButton id="programar" style="font-size: 16px; background-color: menu; padding:20px;width: 200px;border-right-color: background" value="Programar Clases" action="Programar"/>
+
+                    </td>
+                </tr>
+            </table>
+            <h:commandButton id="indice" value="Regresar al Indice" action="indice" />
+         
+            <br></br>
+            <br></br>
+        </h:form>
+
+
+
+
+    </h:body>
+</html>

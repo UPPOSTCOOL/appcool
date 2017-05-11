@@ -5,7 +5,14 @@
  */
 package edu.eci.pdsw.samples.services;
 
+
 import edu.eci.pdsw.samples.entities.*;
+import edu.eci.pdsw.samples.entities.Asignatura;
+import edu.eci.pdsw.samples.entities.Clase;
+import edu.eci.pdsw.samples.entities.Periodo;
+import edu.eci.pdsw.samples.entities.Materia;
+import edu.eci.pdsw.samples.entities.Profesor;
+import edu.eci.pdsw.samples.entities.Programa;
 import java.util.Date;
 import java.util.List;
 
@@ -158,5 +165,13 @@ public interface ServiciosUPPOST {
      * de datos
      */
     public abstract List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST;
+
+      /**
+     * Consultar asignaturas
+     * @return  lista total de Programas
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+     public abstract List<Asignatura> consultarAsignaturas()throws ExcepcionServiciosUPPOST;
+    
 
 }

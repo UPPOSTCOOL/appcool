@@ -9,37 +9,47 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Programacion de periodo </title>
-        
+      <h:head> 
+        <title> Programación Periodo </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
-    </h:head>
+      <!--  <script>
+         function ocultarprograma() {
+                document.getElementById("formularioSeleccion").style.display = "block";
+                document.getElementById("formularioProgramacion").style.display = "none";
+              
+            }
+            function trarProgramacionPeriodo() {
+                     document.getElementById("formularioSeleccion").style.display = "none";
+                document.getElementById("formularioProgramacion").style.display = "block";
+            }
+          </script>-->
+      </h:head>
 
-    <h:body>
+    <h:body >
         <img src="Imagenes/eci2.jpg" height="80" />
-        <h1 style="text-align:center;color:firebrick" >Programación de periodo</h1>
-        <h:form id="programacion" style="text-align:left">
-        <div>
-           
-            <h2>Periodo</h2>
-            
-        </div>
-        <div>
-            
-            <h2>Asignatura</h2>
-          
-        </div>
-        <div>
-            
-            <h2>Materia</h2>
-           
-        </div>
-        <div>
-           
-            <h2>Cohorte</h2>
-           
-        </div>
+        <div id='formularioSeleccion'>
+            <h1 style="text-align:center;color:firebrick" >Programación de periodo</h1>
+            <h:form id="formularioSeleccion" style="text-align: center; color:firebrick" >
+
+                <p:selectOneMenu id="programa" value="#{ProgramacionPeriodoBean.selected}" panelStyle="width:190px"
+                                 effect="fade" var="t" style="width:190px" filter="true" filterMatchMode="startsWith" >
+                    <f:selectItems value="#{ProgramacionPeriodoBean.programa}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
+                </p:selectOneMenu>
+                <br></br>
+                <br></br>
             </h:form>
+
+        </div>
+
+        <h:form id="programacionPeriodo" style="text-align:center">
+            <br></br>
+            <br></br>
+            <h:commandButton id="botonProgramar" style="font-size: 16px; background-color: menu; padding: 8px;width: 220px;border-right-color: background " value="Programar Periodo" action="Programar" />
+            <br></br>
+            <br></br>
+
+        </h:form>
+
+
     </h:body>
 </html>

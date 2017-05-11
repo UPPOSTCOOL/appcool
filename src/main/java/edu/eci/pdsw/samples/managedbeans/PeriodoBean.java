@@ -9,6 +9,19 @@ package edu.eci.pdsw.samples.managedbeans;
 
 import java.io.Serializable;
 
+
+import edu.eci.pdsw.samples.entities.Periodo;
+import edu.eci.pdsw.samples.entities.Programa;
+import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
+import edu.eci.pdsw.samples.services.ServiciosUPPOST;
+import edu.eci.pdsw.samples.services.ServiciosUPPOSTFactory;
+import edu.eci.pdsw.samples.services.impl.ServiciosUPPOSTImplStub;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import static java.util.Collections.list;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -20,12 +33,15 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "PeriodoBean")
 @SessionScoped
 public class PeriodoBean implements Serializable{
-    
+
+    private List<Periodo> period=new ArrayList<>();
+    ServiciosUPPOSTImplStub inp=new ServiciosUPPOSTImplStub();
 
     private int anio;
     private int semestre;
 
     public PeriodoBean() {
+      
     }
 
     public int getAnio() {
@@ -45,7 +61,10 @@ public class PeriodoBean implements Serializable{
 
     }
 
-    
+
+    public List<Periodo> getPeriodo() throws ExcepcionServiciosUPPOST{
+       return inp.consultarPAcademicos();
+    }
 
     
 }

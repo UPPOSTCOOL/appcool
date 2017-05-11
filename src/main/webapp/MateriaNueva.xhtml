@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registro de materia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+
+    <h:body>
+        <img src="Imagenes/eci2.jpg" height="80" />
+        <h1 style="text-align: center; color:firebrick " >Registro de materia nueva en Cohorte</h1>
+       
+    
+        <h:form id="formulariomateria" style="text-align: left; color:firebrick" >
+
+            <table>                    
+               
+                    <td style="text-align: center; color: firebrick" title="PROGRAMA">
+
+                        <h1>  Programa: 
+                            <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: firebrick" />
+                        </h1>
+                    </td>
+
+                <tr>
+                    <td style=" color: black" title="PROGRAMA">
+
+                        <h2>  Asignatura:
+                            <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: black" />
+                                                    
+                            Materia
+                            <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: black" />
+                              <br></br>
+                          Periodo:
+                            <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: black" />
+                            <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: black" />
+                        </h2>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style=" color: black; font-size: 20px">
+                        Número de cohorte
+                        <h:inputText value = "#{ProgramacionPeriodoBean.cohorte}"></h:inputText> 
+                        
+
+                        <br></br>
+                        <br></br> 
+                        Profesor
+                        <h:inputText value = ""></h:inputText> 
+                        
+                        <h:commandButton   value="Buscar"   ></h:commandButton>
+                         <br></br>
+                        
+                    </td>
+                    
+                </tr>
+
+
+            </table>
+            <br></br>
+            <br></br>
+        </h:form>
+
+
+
+
+    </h:body>
+</html>
+
+
