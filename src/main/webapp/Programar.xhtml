@@ -19,36 +19,36 @@ and open the template in the editor.
         
         <h:form id="formularioProgramar" style="text-align: left; color: black" >
 
-
             <table> 
                 <tr>
-                <td style="text-align: center; color: firebrick" title="PROGRAMA">
-                
-                <h1>  Programa 
-                    <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: firebrick" />
-                    </h1>
-                </td>
-                    </tr>
-                <br></br>
-                <br></br>
-                    
-                <td style="font-size:25px">
-                    Periodo
-                </td>
-                <td>
+                    <td colspan="3" style="text-align: center; color: firebrick" title="PROGRAMA">
 
-                    <p:selectOneMenu id="periodo" value="#{PeriodoBean.periodo}" panelStyle="width:190px"> 
-                        <f:selectItems value="#{PeriodoBean.periodo}" var="theme" itemLabel="#{theme.ano}" itemValue="#{theme.ano}" />
-                    </p:selectOneMenu>
-                    <p:selectOneMenu id="per" value="#{PeriodoBean.periodo}" panelStyle="width:190px"> 
-                        <f:selectItems value="#{PeriodoBean.periodo}" var="peri" itemLabel="#{peri.semestre}" itemValue="#{peri.semestre}" />
-                    </p:selectOneMenu>
-                    <ln>
-                    </ln>
-                    <ln>
-                    </ln>
-                    <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nuevo Periodo" action="Programar" />
-                </td>
+                        <h1>  Programa 
+                        <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: firebrick" />
+                        </h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size:25px">
+                        Periodo
+                    </td>
+                    <td>
+
+                        <p:selectOneMenu id="periodo" value="#{PeriodoBean.periodo}" panelStyle="width:190px"> 
+                            <f:selectItems value="#{PeriodoBean.periodo}" var="theme" itemLabel="#{theme.ano}" itemValue="#{theme.ano}" />
+                        </p:selectOneMenu>
+                        <p:selectOneMenu id="per" value="#{PeriodoBean.periodo}" panelStyle="width:190px"> 
+                            <f:selectItems value="#{PeriodoBean.periodo}" var="peri" itemLabel="#{peri.semestre}" itemValue="#{peri.semestre}" />
+                        </p:selectOneMenu>
+                        <ln>
+                        </ln>
+                        <ln/>
+                        
+                    </td>
+                    <td>
+                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Registrar Nuevo Periodo" action="Programar" />
+                    </td>
+                </tr>
                 <tr>
                     <td style="font-size:25px">
                         Asignatura
@@ -63,8 +63,10 @@ and open the template in the editor.
                         <ln>
                         </ln>
 
-                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nueva Asignatura     " action="Programar" />
 
+                    </td>
+                    <td>
+                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nueva Asignatura     " action="Programar" />
                     </td>
                 </tr>
                 <tr>
@@ -80,9 +82,9 @@ and open the template in the editor.
                         </ln>
                         <ln>
                         </ln>
-                        
+                    </td>
+                    <td>
                         <h:commandButton id="materiaNueva" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nuevo Materia" action="MateriaNueva" />
-
                     </td>
                 </tr>
                 <tr>
@@ -98,25 +100,14 @@ and open the template in the editor.
                         </ln>
                         <ln>
                         </ln>
+                    </td>
+                    <td>
                         <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nueva Cohorte" action="Programar" />
-
                     </td>
                 </tr>
                 <tr>
-                    <td>
-
-                        <ln>
-                        </ln>
-                        <ln>
-                        </ln>
-                        <ln>
-                        </ln>
-                        <ln>
-                        </ln>
-                        <ln>
-                        </ln>
+                    <td colspan="3">
                         <h:commandButton id="programar" style="font-size: 16px; background-color: menu; padding:20px;width: 200px;border-right-color: background" value="Programar Clases" action="Programar"/>
-
                     </td>
                 </tr>
             </table>
@@ -125,9 +116,5 @@ and open the template in the editor.
             <br></br>
             <br></br>
         </h:form>
-
-
-
-
     </h:body>
 </html>
