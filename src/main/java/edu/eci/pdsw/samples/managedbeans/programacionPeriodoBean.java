@@ -24,52 +24,69 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "ProgramacionPeriodoBean")
 @SessionScoped
 public class programacionPeriodoBean {
-    private List<Programa> programa=new ArrayList<>();
-     private List<Asignatura> asignatura=new ArrayList<>();
-     private List<Materia> materia=new ArrayList<>();
-    ServiciosUPPOSTImplStub inp=new ServiciosUPPOSTImplStub();
-    private String prog="prueba";
 
-    
+    private List<Programa> programa = new ArrayList<>();
+    private List<Asignatura> asignatura = new ArrayList<>();
+    private List<Materia> materia = new ArrayList<>();
+    ServiciosUPPOSTImplStub inp = new ServiciosUPPOSTImplStub();
+    private String prog = "prueba";
+    private int cohorte=0;
+    private String profesor=null;
+
     public List<Programa> getPrograma() throws ExcepcionServiciosUPPOST {
-        programa=inp.consultarProgramas();
+        programa = inp.consultarProgramas();
         return programa;
-        
+
     }
 
-    public void SetSelected(String p){
-    prog=p;
-    
+    public void SetSelected(String p) {
+        prog = p;
+
     }
-   public String getSelected(){
-    return prog;
-    
+
+    public String getSelected() {
+        return prog;
+
     }
+
     public void setPrograma(List<Programa> programa) {
         this.programa = programa;
     }
 
     public programacionPeriodoBean() {
-        
+
     }
- public List<Asignatura> getAsignaturas() throws ExcepcionServiciosUPPOST {
-       return inp.consultarAsignaturas();
-        
+
+    public List<Asignatura> getAsignaturas() throws ExcepcionServiciosUPPOST {
+        return inp.consultarAsignaturas();
+
     }
+
     /**
      * Provisional para vista
-     * @return 
+     *
+     * @return
      */
     public List<Materia> getMateria() throws ExcepcionServiciosUPPOST {
-      
-    
-    return inp.consultarMateriasPrograma(programa.get(0).getId());
-    } 
+
+        return inp.consultarMateriasPrograma(programa.get(0).getId());
+    }
+
     /**
      * Provisional para vista
-     * @return 
+     *
+     * @return
      */
-    public int getCohorte(){
-        return 0;
+    public int getCohorte() {
+        return cohorte;
+    }
+    public void setCohorte(int a) {
+        cohorte=a;
+    }
+    public void setProfesor(String a) {
+        String profesor = a;
+    }
+     public String Profesor() {
+        return profesor;
     }
 }
