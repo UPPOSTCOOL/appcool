@@ -5,7 +5,6 @@
  */
 package edu.eci.pdsw.samples.entities;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
 import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;

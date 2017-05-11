@@ -29,8 +29,7 @@
                 <property name="password" value="" />
             </dataSource>
         </environment>
-    </environments>
-        
+    </environments>        
     <mappers>
         <mapper resource="mappers/ClaseMapper.xml"></mapper>
         <mapper resource="mappers/MateriaMapper.xml"></mapper> 

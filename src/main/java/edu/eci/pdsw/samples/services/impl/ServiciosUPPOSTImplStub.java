@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Stream;
+import javax.persistence.Tuple;
 
 /**
  *
@@ -712,11 +713,19 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     @Override
     public Materia consultarMateriaConRequisitos(String codigo,int id_programa) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }   
+
+
+    @Override
+    public List<Materia> consultarMaterias() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void insertarMateria(Materia materia) throws ExcepcionServiciosUPPOST {
+    public void insertarMateria(Materia materia, List<Tuple> prerequisitos, List<Tuple> corequisitos, List<Asignatura> asignaturas) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+   
 }
 */

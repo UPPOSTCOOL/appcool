@@ -6,22 +6,16 @@
 package edu.eci.pdsw.samples.services.impl;
 
 import com.google.inject.Inject;
-
-
-
-
 import edu.eci.pdsw.samples.daos.*;
-
-
 import edu.eci.pdsw.samples.entities.*;
-
-
 import edu.eci.pdsw.samples.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.samples.services.ServiciosUPPOST;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.Tuple;
 
 
 /**
@@ -151,7 +145,53 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public void insertarMateria(Materia materia) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.        
+    public void insertarMateria(Materia materia, List<Tuple> prerequisito, List<Tuple> corequisito, List<Asignatura> asignaturas) throws ExcepcionServiciosUPPOST {
+        if(materia.getNombre()!= "" && materia.getCodigo()!="" && !prerequisito.equals(corequisito) ){
+            
+            List<String> nombres = new ArrayList<>();
+            List<Materia> listaN = consultarMaterias();
+            
+            List<String> codigos = new ArrayList<>();
+            List<Materia> listaC = consultarMaterias();
+            
+            for(int i=0;i<listaN.size();i++){nombres.add(listaN.get(i).getNombre());}
+            for(int i=0;i<listaC.size();i++){codigos.add(listaC.get(i).getCodigo());}
+                    
+            if(!nombres.contains(materia.getNombre()) && !codigos.contains(materia.getCodigo())){
+                
+                List<String[]> listaPre = new ArrayList<>();
+                List<String[]> listaCor = new ArrayList<>();
+                String[] temp = new String[2];
+                
+                for(int i=0;i<prerequisito.size();i++){
+                    temp[0]=( (Materia) prerequisito.get(i).get(0) ).getCodigo();
+                    temp[1]=Integer.toString( ( (Programa) prerequisito.get(i).get(1) ).getId());
+                    listaPre.add(temp);
+                }
+                
+                for(int i=0;i<corequisito.size();i++){
+                    temp[0]=( (Materia) corequisito.get(i).get(0) ).getCodigo();
+                    temp[1]=Integer.toString( ( (Programa) corequisito.get(i).get(1) ).getId());
+                    listaCor.add(temp);
+                }
+                
+                List<Integer> id_asigs = new ArrayList<>();
+                
+                for(int i=0;i<asignaturas.size();i++){
+                    id_asigs.add(asignaturas.get(i).getId());
+                }
+                
+                //daom.insertarMateriaDAO(materia,listaPre, listaCor, id_asigs);
+            }
+        }
+        
     }
+
+    @Override
+    public List<Materia> consultarMaterias() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //return daom.comsultarMaterias();
+    }
+
+   
 }
