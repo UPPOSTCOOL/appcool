@@ -16,11 +16,22 @@ and open the template in the editor.
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
         <h1 style="text-align: center; color:firebrick " >Programación de periodo</h1>
+        
+        <h:form id="formularioProgramar" style="text-align: left; color: black" >
 
-        <h:form id="formularioProgramar" style="text-align: left; color:firebrick" >
 
-            <table>                    
-
+            <table> 
+                <tr>
+                <td style="text-align: center; color: firebrick" title="PROGRAMA">
+                
+                <h1>  Programa 
+                    <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: firebrick" />
+                    </h1>
+                </td>
+                    </tr>
+                <br></br>
+                <br></br>
+                    
                 <td style="font-size:25px">
                     Periodo
                 </td>
@@ -62,8 +73,8 @@ and open the template in the editor.
                     </td>
                     <td>
 
-                        <p:selectOneMenu id="materia" value="#{ProgramacionPeriodoBean.materia}" panelStyle="width:190px"> 
-                            <f:selectItems value="#{ProgramacionPeriodoBean.materia}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
+                        <p:selectOneMenu id="materia" value="#{ProgramacionPeriodoBean.asignaturas}" panelStyle="width:190px"> 
+                            <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
                         </p:selectOneMenu>
                         <ln>
                         </ln>

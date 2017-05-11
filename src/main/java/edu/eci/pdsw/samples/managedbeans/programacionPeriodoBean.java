@@ -28,7 +28,7 @@ public class programacionPeriodoBean {
      private List<Asignatura> asignatura=new ArrayList<>();
      private List<Materia> materia=new ArrayList<>();
     ServiciosUPPOSTImplStub inp=new ServiciosUPPOSTImplStub();
-    private String prog=" ";
+    private String prog="prueba";
 
     
     public List<Programa> getPrograma() throws ExcepcionServiciosUPPOST {
