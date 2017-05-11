@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.samples.services;
 
+import edu.eci.pdsw.samples.entities.Asignatura;
 import edu.eci.pdsw.samples.entities.Clase;
 import edu.eci.pdsw.samples.entities.Periodo;
 import edu.eci.pdsw.samples.entities.Materia;
@@ -12,6 +13,7 @@ import edu.eci.pdsw.samples.entities.Profesor;
 import edu.eci.pdsw.samples.entities.Programa;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Tuple;
 
 /**
  *
@@ -39,7 +41,6 @@ public interface ServiciosUPPOST {
     
     /**
      * Consulta la clase de la materia
-     * @param id identificados de la clase
      * @return La clase con todo sus detalles y recursos
      * @throws ExcepcionServiciosUPPOST si id es negativo o si se presenta un error
      * a nivel de base de datos, la clase no existe
@@ -66,6 +67,7 @@ public interface ServiciosUPPOST {
     
     /**
      * Consulta  un periodo academico
+     * @param periodo
      * @return Una lista con el periodo academico
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
@@ -80,6 +82,13 @@ public interface ServiciosUPPOST {
      * a nivel de base de datos, la clase no existe
      */
     public abstract List<Materia> consultarMaterias(int semestre,int anio) throws ExcepcionServiciosUPPOST;
+    
+    /**
+     * Consulta todas las materias
+     * @return
+     * @throws ExcepcionServiciosUPPOST
+     */
+    public abstract List<Materia> consultarMaterias()throws ExcepcionServiciosUPPOST;
     
     /**
      * Consulta las materias de un programa
@@ -99,6 +108,8 @@ public interface ServiciosUPPOST {
     
      /**
      * Consulta un profesor
+     * @param cohorte
+     * @param materia
      * @return profesor
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
@@ -106,6 +117,7 @@ public interface ServiciosUPPOST {
     
      /**
      * Consulta clases por periodo 
+     * @param periodo
      * @return Una lista con las clases de ese periodo
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
@@ -113,6 +125,7 @@ public interface ServiciosUPPOST {
     
      /**
      * Consultar fechas
+     * @param fecha
      * @return  una lista de fechas segun el periodo
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
@@ -128,7 +141,10 @@ public interface ServiciosUPPOST {
     /**
      * Inerta una materia
      * @param materia
+     * @param prerequisitos
+     * @param corequisitos
+     * @param programas
      * @throws ExcepcionServiciosUPPOST 
      */
-    public abstract void insertarMateria(Materia materia)throws ExcepcionServiciosUPPOST;
+    public abstract void insertarMateria(Materia materia, List<Tuple> prerequisitos, List<Tuple> corequisitos, List<Asignatura> asignaturas)throws ExcepcionServiciosUPPOST;
 }
