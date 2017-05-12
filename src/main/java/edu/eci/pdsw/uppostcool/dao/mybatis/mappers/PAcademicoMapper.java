@@ -16,6 +16,6 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface PAcademicoMapper {
     
-    public List<Periodo> consultarPAcademicos();
-    
+    public List<Periodo> consultarPAcademico();
+     
 }

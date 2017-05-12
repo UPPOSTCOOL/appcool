@@ -10,7 +10,7 @@ and open the template in the editor.
       xmlns:p="http://primefaces.org/ui" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Programacion Periodos </title>
+        <title>Registrar Periodos </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
 
@@ -18,28 +18,21 @@ and open the template in the editor.
          <img src="Imagenes/escuela.jpg" height="145" />
 
         <div style="text-align: center;">
-            <h:form id="periodoo" style="text-align: center; color:firebrick">
+            <h:form id="periodoActualizar" style="text-align: center; color:firebrick">
                 <div style="text-align: center;">
                 <h1>Seleccione el Periodo</h1>
                 <p style="font-size: 20px"> Ingrese el año</p>
                 <p:inputText value = "#{PeriodoBean.anio}" ></p:inputText>     
                 <p style="font-size: 20px"> Ingrese el semestre</p>         
-                <h:selectOneMenu value = "#{PeriodoBean.semestre}"> 
-                    <f:selectItem itemValue = "1" itemLabel = "1" /> 
-                    <f:selectItem itemValue = "2" itemLabel = "2" /> 
-                    <f:selectItem itemValue = "3" itemLabel = "Intersemestral" /> 
-                </h:selectOneMenu>
-                <br></br>
-                <br></br>
-                <br></br>
+                <p:inputText value = "#{PeriodoBean.semestre}" ></p:inputText>   
+               
             </div>
-            <div style="text-align: center">
-                <h:commandButton id="open-r" value="Ir a Reporte Programación" action="ReportesProgramacion" />           
-                <h:commandButton id="open-BinP" value="Ir a Reporte Salones" action="ReportesSalones" style="margin-left: 30px"/>            
-                <h:commandButton id="indice" value="Regresar al Indice" action="indice" style="margin-left: 30px"/>
-            </div>
+                  <td>
+                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Registrar Nuevo Periodo" action="Programar" />
+                    </td>
             </h:form>
         </div>
+        
     </h:body>
 </html>
 

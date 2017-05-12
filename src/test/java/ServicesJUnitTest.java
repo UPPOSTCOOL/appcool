@@ -64,7 +64,7 @@ import static org.junit.Assert.*;
  * prerrequisito de otra y esta no sea prerequisito de ella: Nada
  *
  *
- */
+ 
 public class ServicesJUnitTest {
 
     public ServicesJUnitTest() {
@@ -75,14 +75,14 @@ public class ServicesJUnitTest {
     }
 
     @After
-    public void clearBD() throws SQLException {
+-   public void clearBD() throws SQLException {
         /*
         Connection conn = DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=PostgreSQL", "anonymous", "");
         Statement stmt = conn.createStatement();
         stmt.execute("delete from Asignatura");
         stmt.execute("delete from Clase");
         stmt.execute("delete from Clase_Recur");
-        stmt.execute("delete from Comit_Profe");
+        stmt.execute("delete fm Comit_Profe");
         stmt.execute("delete from Comite");
         stmt.execute("delete from Corequisito");
         stmt.execute("delete from HorarioProf");
@@ -95,7 +95,7 @@ public class ServicesJUnitTest {
         stmt.execute("delete from Recurso");
         conn.commit();
         conn.close(); */
-    }
+//    }
 
     /**
      * Obtiene una conexion a la base de datos de prueba
@@ -137,7 +137,7 @@ public class ServicesJUnitTest {
  /*
     CE1: Nombre ya existe: No puede agregar un nombre existente a otra materia: 
     *          Nada
-     */
+     
     @Test
     public void CF1() throws SQLException, ExcepcionServiciosUPPOST {
         ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
@@ -160,7 +160,7 @@ public class ServicesJUnitTest {
 
     /*      CE2: Nombre no existe: Puede agregar el nombre a la materia: 
  *          Agrega nombre a la materia en creación
-     */
+     
     @Test
     public void CF2() throws SQLException, ExcepcionServiciosUPPOST {
         ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
@@ -185,7 +185,7 @@ public class ServicesJUnitTest {
 
     /*      CE3: Codigo ya existe: No puede agregar un codigo que es de otra materia: 
  *          Nada
-     */
+     
     @Test
     public void CF3() throws SQLException, ExcepcionServiciosUPPOST {
         ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
@@ -208,7 +208,7 @@ public class ServicesJUnitTest {
 
     /*      CE4: Codigo no existe: Puede agregar el codigo unico a la materia: 
  *          Agrega codigo a la Materia en creación
-     */
+     
     
     @Test
     public void CF4() throws SQLException, ExcepcionServiciosUPPOST {
@@ -233,7 +233,7 @@ public class ServicesJUnitTest {
     
  /*      CE5: Nombre y Codigo, vacios: No puede agregar una materia sin identificadores: 
  *          Nada
-     */
+     
     
     @Test
     public void CF5() throws SQLException, ExcepcionServiciosUPPOST {
@@ -258,7 +258,7 @@ public class ServicesJUnitTest {
     
  /*      CE6: Nombre y Codigo, no Vacios: Puede agregar atributos identificadores a la materia:  
  *          Agrega nombre y codigo a la materia en creación
-     */
+     
     
    @Test
     public void CF6() throws SQLException, ExcepcionServiciosUPPOST {
@@ -286,7 +286,7 @@ public class ServicesJUnitTest {
     
  /*      CE7: Descipcion Vacia: La materia puede no tener descripción: 
  *          Agregar Materia
-     */
+     
     
     
       @Test
@@ -316,7 +316,7 @@ public class ServicesJUnitTest {
     
  /*      CE8: Descipcion no Vacia: Agrega la descripción a la materia: 
  *          Registra materia
-     */
+     
  
  @Test
     public void CF8() throws SQLException, ExcepcionServiciosUPPOST {
@@ -346,7 +346,7 @@ public class ServicesJUnitTest {
  
  /*      CE9: Prerrequisito = Correquisito: Una materia no puede tener las mismas materias como prerrequisito y correquisito a la vez: 
  *          Error!
-     */
+     
     
     @Test
     public void CF9() throws SQLException, ExcepcionServiciosUPPOST {
@@ -383,7 +383,7 @@ public class ServicesJUnitTest {
     
  /*      CE10: Prerrequisito y  Correquisito, Vacios: Puede registrar una materia que no tenga dependencia de otra: 
  *          Registra materia
-     */
+     /
     
     @Test
     public void CF10() throws SQLException, ExcepcionServiciosUPPOST {
@@ -425,7 +425,7 @@ public class ServicesJUnitTest {
     
  /*      CE11: Prerrequisito != Correquisito: Una materia puede tener prerrequisitos y correquisitosRegistra:
  *          Registra Materia
-     */
+     
     
     
     @Test
@@ -476,11 +476,11 @@ public class ServicesJUnitTest {
  *          No puede haber una materia que sea prerrequisito de otra y esta no sea prerequisito de ella:
  *          Nada
  * 
-     */
+
      @Test
     public void CF12() throws SQLException, ExcepcionServiciosUPPOST {
     
     }
     
     
-}
+}*/

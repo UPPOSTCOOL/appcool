@@ -34,82 +34,18 @@ and open the template in the editor.
                     </td>
                     <td>
 
-                        <p:selectOneMenu id="periodo" value="#{PeriodoBean.periodo}" panelStyle="width:190px"> 
-                            <f:selectItems value="#{PeriodoBean.periodo}" var="theme" itemLabel="#{theme.ano}" itemValue="#{theme.ano}" />
+                        <p:selectOneMenu id="periodo" value="#{PeriodoBean.anio}" panelStyle="width:190px"> 
+                            <f:selectItems value="#{PeriodoBean.semestre}" var="theme" itemLabel="theme" itemValue="theme" />
                         </p:selectOneMenu>
-                        <p:selectOneMenu id="per" value="#{PeriodoBean.periodo}" panelStyle="width:190px"> 
-                            <f:selectItems value="#{PeriodoBean.periodo}" var="peri" itemLabel="#{peri.semestre}" itemValue="#{peri.semestre}" />
+                        <p:selectOneMenu id="periodosem" value="#{PeriodoBean.semestre}" panelStyle="width:190px"> 
+                            <f:selectItems value="#{PeriodoBean.semestre}" var="theme" itemLabel="#{theme}" itemValue="#{theme}" />
                         </p:selectOneMenu>
-                        <ln>
-                        </ln>
-                        <ln/>
-                        
                     </td>
                     <td>
-                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Registrar Nuevo Periodo" action="Programar" />
+                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Registrar Nuevo Periodo" action="RegistrarNuevoPeriodo" />
                     </td>
                 </tr>
-                <tr>
-                    <td style="font-size:25px">
-                        Asignatura
-                    </td>
-                    <td>
 
-                        <p:selectOneMenu id="asignatura" value="#{ProgramacionPeriodoBean.asignaturas}" panelStyle="width:190px"> 
-                            <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
-                        </p:selectOneMenu>
-                        <ln>
-                        </ln>
-                        <ln>
-                        </ln>
-
-
-                    </td>
-                    <td>
-                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nueva Asignatura     " action="Programar" />
-                    </td>
-                </tr>
-                <tr>
-                    <td style="font-size:25px">
-                        Materia
-                    </td>
-                    <td>
-
-                        <p:selectOneMenu id="materia" value="#{ProgramacionPeriodoBean.asignaturas}" panelStyle="width:190px"> 
-                            <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
-                        </p:selectOneMenu>
-                        <ln>
-                        </ln>
-                        <ln>
-                        </ln>
-                    </td>
-                    <td>
-                        <h:commandButton id="materiaNueva" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nuevo Materia" action="MateriaNueva" />
-                    </td>
-                </tr>
-                <tr>
-                    <td style="font-size:25px">
-                        Cohorte
-                    </td>
-                    <td>
-
-                        <p:selectOneMenu id="cohorte" value="#{ProgramacionPeriodoBean.asignaturas}" panelStyle="width:190px"> 
-                            <f:selectItems value="pendiente" var="theme" itemLabel="pendiente" itemValue="pendiente" />
-                        </p:selectOneMenu>
-                        <ln>
-                        </ln>
-                        <ln>
-                        </ln>
-                    </td>
-                    <td>
-                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px;border-right-color: background " value="Registrar Nueva Cohorte" action="Programar" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <h:commandButton id="programar" style="font-size: 16px; background-color: menu; padding:20px;width: 200px;border-right-color: background" value="Programar Clases" action="Programar"/>
-                    </td>
-                </tr>
             </table>
             <h:commandButton id="indice" value="Regresar al Indice" action="indice" />
          

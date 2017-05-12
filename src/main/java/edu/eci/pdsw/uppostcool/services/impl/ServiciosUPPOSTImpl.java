@@ -97,10 +97,9 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public List<Periodo> consultarPeriodos() throws ExcepcionServiciosUPPOST {
+    public List<Periodo> consultarPAcademico() throws ExcepcionServiciosUPPOST {
         try {
-            return  daoPA.loadAll();
+            return  daoPA.consultarPAcademico();
         } catch (PersistenceException ex) {
              throw new ExcepcionServiciosUPPOST("Error al consultar periodos academicos: " + ex);
         }
@@ -140,10 +139,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     @Override
     public List<Periodo> consultarPAcademico(Periodo periodo) throws ExcepcionServiciosUPPOST {
@@ -207,5 +203,15 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
      @Override
     public List<Asignatura> consultarAsignaturas () throws ExcepcionServiciosUPPOST {
         return null;
+    }
+
+    @Override
+    public List<Periodo> consultarPeriodos() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

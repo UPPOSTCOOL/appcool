@@ -9,6 +9,7 @@ import edu.eci.pdsw.uppostcool.entities.Asignatura;
 import edu.eci.pdsw.uppostcool.entities.Materia;
 import edu.eci.pdsw.uppostcool.entities.Programa;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
+import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImplStub;
@@ -28,7 +29,7 @@ public class programacionPeriodoBean {
     private List<Programa> programa = new ArrayList<>();
     private List<Asignatura> asignatura = new ArrayList<>();
     private List<Materia> materia = new ArrayList<>();
-    ServiciosUPPOSTImplStub inp = new ServiciosUPPOSTImplStub();
+     private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     private String prog = "prueba";
     private int cohorte=0;
     private String profesor=null;
