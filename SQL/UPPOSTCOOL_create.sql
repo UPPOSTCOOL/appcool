@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2017-05-09 00:24:18.38
+-- Last modification date: 2017-05-16 12:43:07.419
 
 -- tables
 -- Table: Asign_Mater
@@ -58,6 +58,13 @@ CREATE TABLE Corequisito (
     CONSTRAINT Corequisito_pk PRIMARY KEY (Materia_id,Materia_id_co,Programa_id)
 );
 
+-- Table: Corequisito_A
+CREATE TABLE Corequisito_A (
+    Asignatura_id int  NOT NULL,
+    Asignatura_id_co int  NOT NULL,
+    CONSTRAINT Corequisito_A_pk PRIMARY KEY (Asignatura_id,Asignatura_id_co)
+);
+
 -- Table: HorarioProf
 CREATE TABLE HorarioProf (
     id int  NOT NULL,
@@ -98,6 +105,13 @@ CREATE TABLE Prerequisito (
     Materia_id_pre varchar  NOT NULL,
     Programa_id int  NOT NULL,
     CONSTRAINT Prerequisito_pk PRIMARY KEY (Materia_id,Materia_id_pre,Programa_id)
+);
+
+-- Table: Prerequisito_A
+CREATE TABLE Prerequisito_A (
+    Asignatura_id int  NOT NULL,
+    Asignatura_id_pre int  NOT NULL,
+    CONSTRAINT Prerequisito_A_pk PRIMARY KEY (Asignatura_id,Asignatura_id_pre)
 );
 
 -- Table: Profesor
@@ -207,6 +221,22 @@ ALTER TABLE Comit_Profe ADD CONSTRAINT Comit_Profe_Profesor
     INITIALLY IMMEDIATE
 ;
 
+-- Reference: Corequisito_Asignatura (table: Corequisito_A)
+ALTER TABLE Corequisito_A ADD CONSTRAINT Corequisito_Asignatura
+    FOREIGN KEY (Asignatura_id)
+    REFERENCES Asignatura (id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: Corequisito_Asignatura_2 (table: Corequisito_A)
+ALTER TABLE Corequisito_A ADD CONSTRAINT Corequisito_Asignatura_2
+    FOREIGN KEY (Asignatura_id_co)
+    REFERENCES Asignatura (id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
 -- Reference: Corequisito_Materia (table: Corequisito)
 ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia
     FOREIGN KEY (Materia_id)
@@ -215,8 +245,8 @@ ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia
     INITIALLY IMMEDIATE
 ;
 
--- Reference: Corequisito_Materia_CO (table: Corequisito)
-ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia_CO
+-- Reference: Corequisito_Materia2 (table: Corequisito)
+ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia2
     FOREIGN KEY (Materia_id_co)
     REFERENCES Materia (codigo)  
     NOT DEFERRABLE 
@@ -226,9 +256,7 @@ ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia_CO
 -- Reference: Corequisito_Programa (table: Corequisito)
 ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Programa
     FOREIGN KEY (Programa_id)
-    REFERENCES Programa (id)
-    ON DELETE  CASCADE 
-    ON UPDATE  CASCADE 
+    REFERENCES Programa (id)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
@@ -259,6 +287,22 @@ ALTER TABLE Mater_Perio ADD CONSTRAINT Mater_Cohor_Periodo
     INITIALLY IMMEDIATE
 ;
 
+-- Reference: Prerequisito_Asignatura (table: Prerequisito_A)
+ALTER TABLE Prerequisito_A ADD CONSTRAINT Prerequisito_Asignatura
+    FOREIGN KEY (Asignatura_id_pre)
+    REFERENCES Asignatura (id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: Prerequisito_Asignatura_2 (table: Prerequisito_A)
+ALTER TABLE Prerequisito_A ADD CONSTRAINT Prerequisito_Asignatura_2
+    FOREIGN KEY (Asignatura_id)
+    REFERENCES Asignatura (id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
 -- Reference: Prerequisito_Materia (table: Prerequisito)
 ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia
     FOREIGN KEY (Materia_id)
@@ -267,8 +311,8 @@ ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia
     INITIALLY IMMEDIATE
 ;
 
--- Reference: Prerequisito_Materia_PRE (table: Prerequisito)
-ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia_PRE
+-- Reference: Prerequisito_Materia2 (table: Prerequisito)
+ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia2
     FOREIGN KEY (Materia_id_pre)
     REFERENCES Materia (codigo)  
     NOT DEFERRABLE 
@@ -278,9 +322,7 @@ ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia_PRE
 -- Reference: Prerequisito_Programa (table: Prerequisito)
 ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Programa
     FOREIGN KEY (Programa_id)
-    REFERENCES Programa (id)
-    ON DELETE  CASCADE 
-    ON UPDATE  CASCADE 
+    REFERENCES Programa (id)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
