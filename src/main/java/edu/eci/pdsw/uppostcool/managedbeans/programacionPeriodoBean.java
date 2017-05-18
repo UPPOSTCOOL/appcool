@@ -29,10 +29,19 @@ import javax.faces.bean.SessionScoped;
 public class programacionPeriodoBean {
 
     private List<Programa> programa = new ArrayList<>();
-    private List<Asignatura> asignatura = new ArrayList<>();
+    private List<Asignatura> asignaturas = new ArrayList<>();
     private List<Materia> materia = new ArrayList<>();
     private List<Periodo> periodo = new ArrayList<>();
+    private String asign;
 
+    public String getAsign() {
+        return asign;
+    }
+
+    public void setAsign(String asign) {
+        this.asign = asign;
+    }
+    
     private PeriodoBean cb;
     private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     private String prog;
@@ -40,8 +49,48 @@ public class programacionPeriodoBean {
     private String profesor = null;
     private int anio;
     private int semestre;
+    private String mate;
+
+   
+
+    public void setAsignaturas(List<Asignatura> asignaturas) {
+        this.asignaturas = asignaturas;
+    }
+
+    public List<Periodo> getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(List<Periodo> periodo) {
+        this.periodo = periodo;
+    }
+
+    public int getCohorte() {
+        return cohorte;
+    }
+
+    public void setCohorte(int cohorte) {
+        this.cohorte = cohorte;
+    }
+
+    public String getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(String profesor) {
+        this.profesor = profesor;
+    }
+
+    public String getMate() {
+        return mate;
+    }
+
+    public void setMate(String mate) {
+        this.mate = mate;
+    }
 
     public programacionPeriodoBean() {
+     
         prog = "prueba";
         anio = 2017;
     }
@@ -51,6 +100,7 @@ public class programacionPeriodoBean {
         return programa;
 
     }
+    
 
     public String getProg() {
         return prog;
@@ -77,7 +127,7 @@ public class programacionPeriodoBean {
      */
     public List<Materia> getMateria() throws ExcepcionServiciosUPPOST {
 
-        return inp.consultarMateriasPrograma(programa.get(0).getId());
+        return inp.consultarMaterias(semestre, anio);
     }
 
     public int getAnio() {
@@ -108,4 +158,5 @@ public class programacionPeriodoBean {
         periodo = inp.consultarPAcademicos();
         return inp.consultarPAcademicos();
     }
+   
 }

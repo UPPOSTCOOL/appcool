@@ -65,6 +65,11 @@ and open the template in the editor.
                 <tr>
                     <td style="font-size:25px">
                         Asignatura
+                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}"  >
+                            <f:selectItem  itemLabel="" itemValue=""  />
+                            <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme4" itemLabel="#{theme4.nombre}" itemValue="#{theme4.nombre}"  />
+
+                        </p:selectOneMenu>
                     </td>
 
 
@@ -73,13 +78,26 @@ and open the template in the editor.
                     <td style="font-size:25px">
                         Materia
                     </td>
+                     <td>
+                     <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" >
+                            <f:selectItem  itemLabel="" itemValue=""  />
+                            <f:selectItems value="#{ProgramacionPeriodoBean.materia}" var="theme5" itemLabel="#{theme5.nombre}" itemValue="#{theme5.nombre}"  />
 
+                        </p:selectOneMenu>
+                 </td>
 
                 </tr>
                    <tr>
                     <td style="font-size:25px">
                         Cohorte
                     </td>
+                         <td>
+                     <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" >
+                            <f:selectItem  itemLabel="" itemValue=""  />
+                            <f:selectItems value="#{ProgramacionPeriodoBean.materia}" var="theme6" itemLabel="#{theme6.cohorte}" itemValue="#{theme6.cohorte}"  />
+
+                        </p:selectOneMenu>
+                 </td>
 
 
                 </tr>
