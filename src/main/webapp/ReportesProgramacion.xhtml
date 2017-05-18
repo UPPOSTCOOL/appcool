@@ -66,7 +66,7 @@ and open the template in the editor.
 
             <p:column >
                 <f:facet name="header">
-                    <h:outputText value="Sesion"/>
+                    <h:outputText value="Sesión"/>
                 </f:facet>
                 <h:outputText value="#{reporte.numClases}" />
             </p:column>
@@ -74,7 +74,7 @@ and open the template in the editor.
             <p:column >
                 <f:facet name="header">
                 </f:facet>
-                <p:commandButton value="Consultar Salones" onclick="ocultarMaterias('#{reporte.codigo}');" actionListener="#{ProgramacionBean.setMateriaSelec(reporte.codigo)}" update=":tablaFechas"></p:commandButton>
+                <p:commandButton value="Consultar Sesiones" onclick="ocultarMaterias('#{reporte.codigo}');" actionListener="#{ProgramacionBean.setMateriaSelec(reporte.codigo)}" update=":tablaFechas"></p:commandButton>
 
             </p:column>
 
@@ -82,6 +82,7 @@ and open the template in the editor.
         <br></br>
         <br></br>
         <br></br>
+        
         <div id='calendario' style="display: none">
             <b id='materia'></b>
            
