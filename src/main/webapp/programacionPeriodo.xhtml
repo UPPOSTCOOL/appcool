@@ -31,7 +31,7 @@ and open the template in the editor.
             <h1 style="text-align:center;color:firebrick" >Programación de periodo</h1>
             <h:form id="formularioSeleccion" style="text-align: center; color:firebrick" >
 
-                <p:selectOneMenu value="#{ProgramacionPeriodoBean.selected}"  >
+                <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" >
                     <f:selectItems value="#{ProgramacionPeriodoBean.programa}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}" />
                     
                 </p:selectOneMenu>

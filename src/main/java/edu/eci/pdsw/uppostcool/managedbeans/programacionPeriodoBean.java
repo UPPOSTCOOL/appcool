@@ -32,14 +32,19 @@ public class programacionPeriodoBean {
     private List<Asignatura> asignatura = new ArrayList<>();
     private List<Materia> materia = new ArrayList<>();
     private List<Periodo> periodo = new ArrayList<>();
-    
+
     private PeriodoBean cb;
-    private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
-    private String prog = "prueba";
-    private int cohorte=0;
-    private String profesor=null;
-    private int anio=2017;
+    private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
+    private String prog;
+    private int cohorte = 0;
+    private String profesor = null;
+    private int anio;
     private int semestre;
+
+    public programacionPeriodoBean() {
+        prog = "prueba";
+        anio = 2017;
+    }
 
     public List<Programa> getPrograma() throws ExcepcionServiciosUPPOST {
         programa = inp.consultarProgramas();
@@ -47,23 +52,16 @@ public class programacionPeriodoBean {
 
     }
 
-    public void setSelected(String prog) {
-       this.prog = prog;
-        System.out.print(prog);
-
+    public String getProg() {
+        return prog;
     }
 
-    public String getSelected() {
-        return prog;
-
+    public void setProg(String prog) {
+        this.prog = prog;
     }
 
     public void setPrograma(List<Programa> programa) {
         this.programa = programa;
-    }
-
-    public programacionPeriodoBean() {
-
     }
 
     public List<Asignatura> getAsignaturas() throws ExcepcionServiciosUPPOST {
@@ -75,6 +73,7 @@ public class programacionPeriodoBean {
      * Provisional para vista
      *
      * @return
+     * @throws edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST
      */
     public List<Materia> getMateria() throws ExcepcionServiciosUPPOST {
 
@@ -102,10 +101,11 @@ public class programacionPeriodoBean {
     }
 
     public void setCb(PeriodoBean cb) {
-        this.cb = cb; 
+        this.cb = cb;
     }
-    public List<Periodo> getPeriodos() throws ExcepcionServiciosUPPOST{
-    periodo=inp.consultarPAcademicos();
-    return inp.consultarPAcademicos();
-    } 
+
+    public List<Periodo> getPeriodos() throws ExcepcionServiciosUPPOST {
+        periodo = inp.consultarPAcademicos();
+        return inp.consultarPAcademicos();
+    }
 }

@@ -16,39 +16,68 @@ and open the template in the editor.
     <h:body>
         <img src="Imagenes/eci2.jpg" height="80" />
         <h1 style="text-align: center; color:firebrick " >Programación de periodo</h1>
-        
-        <h:form id="formularioProgramar" style="text-align: left; color: black" >
+
+        <h:form id="seleccionarPrograma" style="text-align: left; color: black" >
 
             <table> 
+
+                <tr>
+                    <td style="font-size:25px">
+                        Programa
+                    </td>
+                    <td>
+                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}"  >
+                            <f:selectItem  itemLabel="" itemValue=""  />
+                            <f:selectItems value="#{ProgramacionPeriodoBean.programa}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}"  />
+
+                        </p:selectOneMenu>
+                    </td>
+                    <td>
+                        <p:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Seleccionar Programa" update="seleccionarPrograma"/>
+
+                    </td>
+                </tr>
                 <tr>
                     <td colspan="3" style="text-align: center; color: firebrick" title="PROGRAMA">
 
                         <h1>  Programa 
-                            <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: firebrick" />
+                            <h:outputText value="#{ProgramacionPeriodoBean.prog}" style="text-align: center;color: firebrick" />
                         </h1>
                     </td>
+                </tr>
+            </table>   
+        </h:form>
+        <h:form id="formularioProgramar" style="text-align: left; color: black" >
+            <table> 
+                <tr>
+                    <td style="font-size:25px">
+                        Periodo
+                    </td>
+                    <td>
+                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.anio}"  >
+
+                            <f:selectItem  itemLabel="" itemValue=""  />
+                            <f:selectItems value="#{ProgramacionPeriodoBean.periodos}" var="theme3" itemLabel="#{theme3.ano}" itemValue="#{theme3.ano}"  />
+                        </p:selectOneMenu>
+                    </td>
+
                 </tr>
                 <tr>
                     <td style="font-size:25px">
                         Periodo
                     </td>
-                    
-                    <td>
-                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Registrar Nuevo Periodo" action="RegistrarNuevoPeriodo" />
-                    </td>
+
+
                 </tr>
                  <tr>
                     <td style="font-size:25px">
-                        Asignatura
+                        Periodo
                     </td>
-          
-                </tr>
 
-            </table>
-            <h:commandButton id="indice" value="Regresar al Indice" action="indice" />
-         
-            <br></br>
-            <br></br>
+
+                </tr>
+                
+            </table>   
         </h:form>
     </h:body>
 </html>
