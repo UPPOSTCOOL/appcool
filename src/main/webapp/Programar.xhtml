@@ -57,7 +57,7 @@ and open the template in the editor.
                         <p:selectOneMenu value="#{ProgramacionPeriodoBean.anio}"  >
 
                             <f:selectItem  itemLabel="" itemValue=""  />
-                            
+
                         </p:selectOneMenu>
                     </td>
 
@@ -74,34 +74,48 @@ and open the template in the editor.
 
 
                 </tr>
-                 <tr>
+                <tr>
                     <td style="font-size:25px">
                         Materia
                     </td>
-                     <td>
-                     <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" >
+                    <td>
+                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" >
                             <f:selectItem  itemLabel="" itemValue=""  />
                             <f:selectItems value="#{ProgramacionPeriodoBean.materia}" var="theme5" itemLabel="#{theme5.nombre}" itemValue="#{theme5.nombre}"  />
 
                         </p:selectOneMenu>
-                 </td>
+                    </td>
 
                 </tr>
-                   <tr>
+                <tr>
                     <td style="font-size:25px">
                         Cohorte
                     </td>
-                         <td>
-                     <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" >
+                    <td>
+                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" >
                             <f:selectItem  itemLabel="" itemValue=""  />
                             <f:selectItems value="#{ProgramacionPeriodoBean.materia}" var="theme6" itemLabel="#{theme6.cohorte}" itemValue="#{theme6.cohorte}"  />
 
                         </p:selectOneMenu>
-                 </td>
+                    </td>
 
 
                 </tr>
+             
             </table>   
-        </h:form>
+      
+        <div>
+            <br/>
+               <tr >
+                   <h2 style="font-style: italic  "  >  
+                        <h:outputText value="#{ProgramacionPeriodoBean.mate}" style="text-align: center;color: firebrick" />
+                    , cohorte
+                    <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: firebrick" />
+                    Profesor
+                    </h2>
+                    
+                </tr>
+        </div>
+              </h:form>
     </h:body>
 </html>

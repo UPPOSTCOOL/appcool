@@ -33,15 +33,7 @@ public class programacionPeriodoBean {
     private List<Materia> materia = new ArrayList<>();
     private List<Periodo> periodo = new ArrayList<>();
     private String asign;
-
-    public String getAsign() {
-        return asign;
-    }
-
-    public void setAsign(String asign) {
-        this.asign = asign;
-    }
-    
+    private String mate;
     private PeriodoBean cb;
     private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     private String prog;
@@ -49,10 +41,14 @@ public class programacionPeriodoBean {
     private String profesor = null;
     private int anio;
     private int semestre;
-    private String mate;
-
+    public String getAsign() {
+        return asign;
+    }
+    public void setAsign(String asign) {
+        this.asign = asign;
+    }
+  
    
-
     public void setAsignaturas(List<Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
     }
@@ -90,9 +86,10 @@ public class programacionPeriodoBean {
     }
 
     public programacionPeriodoBean() {
-     
+
         prog = "prueba";
         anio = 2017;
+        prog = "mate";
     }
 
     public List<Programa> getPrograma() throws ExcepcionServiciosUPPOST {
@@ -100,7 +97,6 @@ public class programacionPeriodoBean {
         return programa;
 
     }
-    
 
     public String getProg() {
         return prog;
@@ -119,12 +115,6 @@ public class programacionPeriodoBean {
 
     }
 
-    /**
-     * Provisional para vista
-     *
-     * @return
-     * @throws edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST
-     */
     public List<Materia> getMateria() throws ExcepcionServiciosUPPOST {
 
         return inp.consultarMaterias(semestre, anio);
@@ -158,5 +148,5 @@ public class programacionPeriodoBean {
         periodo = inp.consultarPAcademicos();
         return inp.consultarPAcademicos();
     }
-   
+
 }
