@@ -82,28 +82,35 @@ and open the template in the editor.
         <br></br>
         <br></br>
         <br></br>
-        
+        <h1 style="color: firebrick">Sesiones </h1>
         <div id='calendario' style="display: none">
             <b id='materia'></b>
            
             <p:dataTable id="tablaFechas" var="reporte" value="#{ProgramacionBean.getClases()}">
                 <p:column>
                     <f:facet name="header">
-                        <h:outputText value="Fecha Clase"/>
+                        <h:outputText value="Fecha"/>
                     </f:facet>
                     <h:outputText value="#{reporte.formatoFecha}" />
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">
-                        <h:outputText value="Hora Clase"/>
+                        <h:outputText value="Hora de inicio"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.horaInicio}" />
+                </p:column>
+                
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Hora de finalización"/>
                     </f:facet>
                     <h:outputText value="#{reporte.hora}" />
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">
-                        <h:outputText value="Duración Horas"/>
+                        <h:outputText value="Duración en Horas de la sesión"/>
                     </f:facet>
                     <h:outputText value="#{reporte.rangoHoras}" />
                 </p:column>
