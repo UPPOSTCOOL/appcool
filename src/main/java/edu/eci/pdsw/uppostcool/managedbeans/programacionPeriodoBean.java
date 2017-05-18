@@ -7,6 +7,7 @@ package edu.eci.pdsw.uppostcool.managedbeans;
 
 import edu.eci.pdsw.uppostcool.entities.Asignatura;
 import edu.eci.pdsw.uppostcool.entities.Materia;
+import edu.eci.pdsw.uppostcool.entities.Periodo;
 import edu.eci.pdsw.uppostcool.entities.Programa;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
@@ -16,6 +17,7 @@ import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImplStub;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 /**
@@ -29,10 +31,15 @@ public class programacionPeriodoBean {
     private List<Programa> programa = new ArrayList<>();
     private List<Asignatura> asignatura = new ArrayList<>();
     private List<Materia> materia = new ArrayList<>();
-     private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
+    private List<Periodo> periodo = new ArrayList<>();
+    
+    private PeriodoBean cb;
+    private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     private String prog = "prueba";
     private int cohorte=0;
     private String profesor=null;
+    private int anio=2017;
+    private int semestre;
 
     public List<Programa> getPrograma() throws ExcepcionServiciosUPPOST {
         programa = inp.consultarProgramas();
@@ -40,8 +47,9 @@ public class programacionPeriodoBean {
 
     }
 
-    public void SetSelected(String p) {
-        prog = p;
+    public void setSelected(String prog) {
+       this.prog = prog;
+        System.out.print(prog);
 
     }
 
@@ -73,21 +81,31 @@ public class programacionPeriodoBean {
         return inp.consultarMateriasPrograma(programa.get(0).getId());
     }
 
-    /**
-     * Provisional para vista
-     *
-     * @return
-     */
-    public int getCohorte() {
-        return cohorte;
+    public int getAnio() {
+        return anio;
     }
-    public void setCohorte(int a) {
-        cohorte=a;
+
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
-    public void setProfesor(String a) {
-        String profesor = a;
+
+    public int getSemestre() {
+        return semestre;
     }
-     public String Profesor() {
-        return profesor;
+
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
     }
+
+    public PeriodoBean getCb() {
+        return cb;
+    }
+
+    public void setCb(PeriodoBean cb) {
+        this.cb = cb; 
+    }
+    public List<Periodo> getPeriodos() throws ExcepcionServiciosUPPOST{
+    periodo=inp.consultarPAcademicos();
+    return inp.consultarPAcademicos();
+    } 
 }

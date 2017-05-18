@@ -45,7 +45,7 @@ public class PeriodoBean implements Serializable{
     }
 
     public int getAnio() {
-         System.out.println(anio);
+        // System.out.println(anio);
                return anio;
     }
 

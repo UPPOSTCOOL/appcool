@@ -22,9 +22,9 @@ and open the template in the editor.
                 <div style="text-align: center;">
                 <h1>Seleccione el Periodo</h1>
                 <p style="font-size: 20px"> Ingrese el año</p>
-                <p:inputText value = "#{PeriodoBean.anio}" ></p:inputText>     
+                <p:spinner value = "#{ProgramacionPeriodoBean.anio}" min="2017" max="2030"/>     
                 <p style="font-size: 20px"> Ingrese el semestre</p>         
-                <p:inputText value = "#{PeriodoBean.semestre}" ></p:inputText>   
+                <p:inputText value = "#{PeriodoBean.semestre}" />   
                
             </div>
                   <td>
