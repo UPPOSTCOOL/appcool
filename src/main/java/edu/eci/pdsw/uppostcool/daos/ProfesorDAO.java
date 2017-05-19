@@ -2,6 +2,8 @@ package edu.eci.pdsw.uppostcool.daos;
 
 
 import edu.eci.pdsw.uppostcool.daos.PersistenceException;
+import edu.eci.pdsw.uppostcool.entities.Materia;
+import edu.eci.pdsw.uppostcool.entities.Profesor;
 
 import java.util.List;
 
@@ -22,5 +24,7 @@ public interface ProfesorDAO {
     public ProfesorDAO load(int id) throws PersistenceException;
 
     public List<ProfesorDAO> loadAll() throws PersistenceException;
+    
+    public List<Profesor> consultarProfesor() throws PersistenceException;
 
 }

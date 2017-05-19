@@ -56,7 +56,7 @@ and open the template in the editor.
                     <td>
                         <p:selectOneMenu value="#{ProgramacionPeriodoBean.anio}"  >
                             <f:selectItem itemLabel="Select One" itemValue="" />
-                            <f:selectItems value="#{ProgramacionPeriodoBean.periodo}" var="theme1" itemLabel="#{theme1.ano}" itemValue="#{theme1.ano}"  />
+
 
                         </p:selectOneMenu>
                     </td>
@@ -72,12 +72,12 @@ and open the template in the editor.
                     </td>
                     <td>
                         <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}"  >
-                            <f:selectItem  itemLabel="" itemValue=""  />
+                            <f:selectItem itemLabel="Select One" itemValue="" />
                             <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme4" itemLabel="#{theme4.nombre}" itemValue="#{theme4.nombre}"  />
 
                         </p:selectOneMenu>
                     </td>
-                      <td>
+                    <td>
                         <h:commandButton id="nuevaAsignatura" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nuevo Asignatura" action="Nueva Asignatura"/>
 
                     </td>
@@ -88,13 +88,13 @@ and open the template in the editor.
                         Materia
                     </td>
                     <td>
-                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" >
-                            <f:selectItem  itemLabel="" itemValue=""  />
+                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.mate}" >
+                            <f:selectItem itemLabel="Select One" itemValue="" />
                             <f:selectItems value="#{ProgramacionPeriodoBean.materia}" var="theme5" itemLabel="#{theme5.nombre}" itemValue="#{theme5.nombre}"  />
 
                         </p:selectOneMenu>
-                                            </td>
-                      <td>
+                    </td>
+                    <td>
                         <h:commandButton id="nuevaMateria" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nuevo Materia" action="RegistrarMateria"/>
 
                     </td>
@@ -107,13 +107,14 @@ and open the template in the editor.
                         Cohorte
                     </td>
                     <td>
-                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" editable="true">
-                            <f:selectItem  itemLabel="" itemValue=""  />
+                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.cohorte}" editable="true">
+                            <f:selectItem itemLabel="Select One" itemValue="" />
                             <f:selectItems value="#{ProgramacionPeriodoBean.materia}" var="theme6" itemLabel="#{theme6.cohorte}" itemValue="#{theme6.cohorte}"  />
 
                         </p:selectOneMenu>
-                    </td>\
+                    </td>
                     <td>
+                        <h:commandButton id="nuevaCohorte" style="font-size: 16px; background-color: menu; padding: 5px;width: 280px; " value="Registrar nuevo cohorte para materia" action="MateriaNueva"/>
 
                     </td>
 
@@ -125,13 +126,18 @@ and open the template in the editor.
             <div>
                 <br/>
                 <tr >
+                    <td>
                     <h2 style="font-style: italic  "  >  
                         <h:outputText value="#{ProgramacionPeriodoBean.mate}" style="text-align: center;color: firebrick" />
                         , cohorte
                         <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: firebrick" />
                         Profesor
                     </h2>
-
+                    </td>
+                    <td>
+                        
+                        
+                    </td>
                 </tr>
             </div>
         </h:form>

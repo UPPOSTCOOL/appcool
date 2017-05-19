@@ -26,7 +26,7 @@ and open the template in the editor.
                     <td style="text-align: center; color: firebrick" title="PROGRAMA">
 
                         <h1>  Programa: 
-                            <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: firebrick" />
+                            <h:outputText value="#{ProgramacionPeriodoBean.prog}" style="text-align: center;color: firebrick" />
                         </h1>
                     </td>
 
@@ -34,14 +34,14 @@ and open the template in the editor.
                     <td style=" color: black" title="PROGRAMA">
 
                         <h2>  Asignatura:
-                            <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: black" />
+                            <h:outputText value="#{ProgramacionPeriodoBean.asign}" style="text-align: center;color: black" />
                                                     
                             Materia
-                            <h:outputText value="#{ProgramacionPeriodoBean.selected}" style="text-align: center;color: black" />
+                            <h:outputText value="#{ProgramacionPeriodoBean.mate}" style="text-align: center;color: black" />
                               <br></br>
                           Periodo:
                             <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: black" />
-                            <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: black" />
+                          
                         </h2>
 
                     </td>
@@ -56,10 +56,9 @@ and open the template in the editor.
                         <br></br>
                         <br></br> 
                         Profesor
-                        <h:inputText value = ""></h:inputText> 
+                        <h:inputText value = "#{ProgramacionPeriodoBean.profesor}"></h:inputText> 
                         
-                        <h:commandButton   value="Buscar"   ></h:commandButton>
-                         <br></br>
+                        <p:commandButton value="Buscar"   update=":formulariomateria"></p:commandButton>
                         
                     </td>
                     
@@ -67,10 +66,9 @@ and open the template in the editor.
 
 
             </table>
-            <br></br>
-            <br></br>
+           
         </h:form>
-
+        <h:form id="formulariprofesor" style="text-align: left; color:firebrick" ></h:form>
 
 
 

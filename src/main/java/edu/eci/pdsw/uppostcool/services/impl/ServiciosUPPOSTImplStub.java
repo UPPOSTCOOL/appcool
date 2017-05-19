@@ -69,11 +69,11 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         List<Asignatura> lista1 = new ArrayList<>();
         
-        Profesor prof1 = new Profesor(1, "German Motta");
-        Profesor prof2 = new Profesor(2, "Maria Pajon");
-        Profesor prof3 = new Profesor(3, "Sonia Alcala");
-        Profesor prof4 = new Profesor(4, "Paula Apple");
-        Profesor prof5 = new Profesor(5, "Ivanovich Kravchenko");
+        Profesor prof1 = new Profesor(1, "German ","Motta","Motta");
+        Profesor prof2 = new Profesor(2, "Maria ","Pajon","Motta");
+        Profesor prof3 = new Profesor(3, "Sonia ","Alcala","Motta");
+        Profesor prof4 = new Profesor(4, "Paula ","Apple","Motta");
+        Profesor prof5 = new Profesor(5, "Ivanovich ","Kravchenko","Motta");
         
         
         // para siganturas, se crea el prostgrado con las mismas asignaturas
