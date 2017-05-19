@@ -55,23 +55,32 @@ and open the template in the editor.
                     </td>
                     <td>
                         <p:selectOneMenu value="#{ProgramacionPeriodoBean.anio}"  >
-
-                            <f:selectItem  itemLabel="" itemValue=""  />
+                            <f:selectItem itemLabel="Select One" itemValue="" />
+                            <f:selectItems value="#{ProgramacionPeriodoBean.periodo}" var="theme1" itemLabel="#{theme1.ano}" itemValue="#{theme1.ano}"  />
 
                         </p:selectOneMenu>
+                    </td>
+                    <td>
+                        <h:commandButton id="nuevoPeriodo" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nuevo Periodo" action="RegistrarNuevoPeriodo"/>
+
                     </td>
 
                 </tr>
                 <tr>
                     <td style="font-size:25px">
                         Asignatura
+                    </td>
+                    <td>
                         <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}"  >
                             <f:selectItem  itemLabel="" itemValue=""  />
                             <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme4" itemLabel="#{theme4.nombre}" itemValue="#{theme4.nombre}"  />
 
                         </p:selectOneMenu>
                     </td>
+                      <td>
+                        <h:commandButton id="nuevaAsignatura" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nuevo Asignatura" action="Nueva Asignatura"/>
 
+                    </td>
 
                 </tr>
                 <tr>
@@ -84,38 +93,47 @@ and open the template in the editor.
                             <f:selectItems value="#{ProgramacionPeriodoBean.materia}" var="theme5" itemLabel="#{theme5.nombre}" itemValue="#{theme5.nombre}"  />
 
                         </p:selectOneMenu>
-                    </td>
+                                            </td>
+                      <td>
+                        <h:commandButton id="nuevaMateria" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nuevo Materia" action="RegistrarMateria"/>
 
+                    </td>
+                    <td>
+
+                    </td>
                 </tr>
                 <tr>
                     <td style="font-size:25px">
                         Cohorte
                     </td>
                     <td>
-                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" >
+                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}" editable="true">
                             <f:selectItem  itemLabel="" itemValue=""  />
                             <f:selectItems value="#{ProgramacionPeriodoBean.materia}" var="theme6" itemLabel="#{theme6.cohorte}" itemValue="#{theme6.cohorte}"  />
 
                         </p:selectOneMenu>
+                    </td>\
+                    <td>
+
                     </td>
 
 
                 </tr>
-             
+
             </table>   
-      
-        <div>
-            <br/>
-               <tr >
-                   <h2 style="font-style: italic  "  >  
+
+            <div>
+                <br/>
+                <tr >
+                    <h2 style="font-style: italic  "  >  
                         <h:outputText value="#{ProgramacionPeriodoBean.mate}" style="text-align: center;color: firebrick" />
-                    , cohorte
-                    <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: firebrick" />
-                    Profesor
+                        , cohorte
+                        <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: firebrick" />
+                        Profesor
                     </h2>
-                    
+
                 </tr>
-        </div>
-              </h:form>
+            </div>
+        </h:form>
     </h:body>
 </html>

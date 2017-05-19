@@ -41,24 +41,23 @@ public class programacionPeriodoBean {
     private String profesor = null;
     private int anio;
     private int semestre;
+ 
+    public programacionPeriodoBean() throws ExcepcionServiciosUPPOST {
+
+        prog = "prueba";
+        anio = 2017;
+        prog = "mate";
+    }
+    
     public String getAsign() {
         return asign;
     }
     public void setAsign(String asign) {
         this.asign = asign;
     }
-  
-   
+    
     public void setAsignaturas(List<Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
-    }
-
-    public List<Periodo> getPeriodo() {
-        return periodo;
-    }
-
-    public void setPeriodo(List<Periodo> periodo) {
-        this.periodo = periodo;
     }
 
     public int getCohorte() {
@@ -85,17 +84,20 @@ public class programacionPeriodoBean {
         this.mate = mate;
     }
 
-    public programacionPeriodoBean() {
-
-        prog = "prueba";
-        anio = 2017;
-        prog = "mate";
-    }
-
     public List<Programa> getPrograma() throws ExcepcionServiciosUPPOST {
         programa = inp.consultarProgramas();
         return programa;
+    }
+    public void setPrograma(List<Programa> programa) {
+        this.programa = programa;
+    }
+    public List<Periodo> getPeriodo() throws ExcepcionServiciosUPPOST {
+        periodo = inp.consultarPAcademicos();
+        return periodo;
 
+    }
+    public void setPeriodo(List<Periodo> periodo) {
+        this.periodo = periodo;
     }
 
     public String getProg() {
@@ -106,9 +108,8 @@ public class programacionPeriodoBean {
         this.prog = prog;
     }
 
-    public void setPrograma(List<Programa> programa) {
-        this.programa = programa;
-    }
+
+    
 
     public List<Asignatura> getAsignaturas() throws ExcepcionServiciosUPPOST {
         return inp.consultarAsignaturas();
@@ -144,9 +145,6 @@ public class programacionPeriodoBean {
         this.cb = cb;
     }
 
-    public List<Periodo> getPeriodos() throws ExcepcionServiciosUPPOST {
-        periodo = inp.consultarPAcademicos();
-        return inp.consultarPAcademicos();
-    }
+   
 
 }
