@@ -4,11 +4,16 @@
  * and open the template in the editor.
  */
 
+
+
 import edu.eci.pdsw.uppostcool.entities.Asignatura;
 import edu.eci.pdsw.uppostcool.entities.Materia;
-import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
+import edu.eci.pdsw.uppostcool.entities.Profesor;
+import edu.eci.pdsw.uppostcool.entities.Programa;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.*;
+import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
+import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
+import java.lang.reflect.Constructor;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -367,29 +372,59 @@ public class ServicesJUnitTest {
     @Test
     public void CF9() throws SQLException, ExcepcionServiciosUPPOST {
         ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
-
+        
+        // mat
         String codigo = "COD1";
         String nombre = "materia prueba";
         String descripcion = "materia prueba con nombre codigo y descripcion";
         Materia mat = new Materia();
         Materia matP = new Materia();       
         
+        //mat como prer
+        String codigoP = "COD2";
+        String nombreP = "materia prerr de materia";
+        String descripcionP = "materia prueba con nombre codigo y descripcion de correquisito";
+        
+        // programa
+        int idProg = 100;
+        String nombreProg = "avanzado";
+        Profesor profesor = new Profesor(10,"Jesus David");
+        List<Asignatura> asigs = new ArrayList<>();
+        
+        
+        //datos para materia
         mat.setNombre(nombre);
         mat.setCodigo(codigo);
         mat.setDescripcion(descripcion);
         
-        //prerrequisito y correquisito -
-        List<Materia> pre = new ArrayList<>();        
-        pre.add(matP);
+        //datos para materia pre
+        matP.setNombre(nombreP);
+        matP.setCodigo(codigoP);
+        matP.setDescripcion(descripcionP);
+
+        //datos para Programa
+        Programa prog = new Programa(idProg,nombreProg, profesor, asigs);
         
-        mat.setPreRequisitos(pre);
-        mat.setCoRequisitos(pre);
+        //lista de prerrequisitos
+        List<Materia> lista = new ArrayList<>();        
+        lista.add(matP);
+        
+        //lista de programas
+        List<Programa> listaPro = new ArrayList<>();        
+        listaPro.add(prog);
+        
+        mat.setPreRequisitos(lista);
+        mat.setCoRequisitos(lista);
+        
+        // tupla (pre, programa)
         
         List<Tuple> tPre = new ArrayList<>();
         List<Tuple> tCor = new ArrayList<>();
-        List<Asignatura> asigs = new ArrayList<>();
-        //agregar pre  tPre y tCor
         
+        //agregar pre  tPre y tCor . Tuple(mat, programa)
+        Constructor<Tuple> tupla =Tuple.class.getConstructor(ArrayList<Materia>(),ArrayList<Materia>());
+        
+                
         sp.insertarMateria(mat, tPre, tCor, asigs);
         
         List<Materia> materias = sp.consultarMaterias();
