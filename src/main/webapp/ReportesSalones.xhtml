@@ -21,20 +21,20 @@ and open the template in the editor.
 
 
 
-        <p:dataTable id="formularioSalon" var="curso" value="#{PruebaSalonBean.obtenerClases()}" 
+        <p:dataTable id="formularioSalon" var="curso" value="#{PruebaSalonBean.getClases()}" 
                      style="margin: 0 auto;">
             <!-- <caption>Salones por periodo</caption>-->
             <p:column>  
                 <f:facet name="header">
-                    <h:outputText value="Fecha y hora inicio"></h:outputText>
+                    <h:outputText value="Fecha  HoraInicio"></h:outputText>
                 </f:facet>
-                <h:outputText value="#{curso.formatoFecha}"></h:outputText>
+                <h:outputText value="#{curso.fecha}"></h:outputText>
             </p:column>  
             <p:column>  
                 <f:facet name="header">
                     <h:outputText value="Hora fin"></h:outputText>
                 </f:facet>
-                <h:outputText value="#{curso.hora}"></h:outputText>
+                <h:outputText value="#{curso.horaFin}"></h:outputText>
             </p:column> 
             <p:column>  
                 <f:facet name="header">

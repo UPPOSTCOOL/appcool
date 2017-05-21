@@ -33,9 +33,14 @@ public class programacionPeriodoBean {
     private List<Asignatura> asignaturas = new ArrayList<>();
     private List<Materia> materia = new ArrayList<>();
     private List<Periodo> periodo = new ArrayList<>();
-     private List<Profesor> profesores = new ArrayList<>();
+     private final List<Profesor> profesores = new ArrayList<>();
+     private List<Profesor> profesorSelect = new ArrayList<>();
     private String asign;
     private String mate;
+
+    public List<Profesor> getProfesorSelect() {
+        return profesorSelect;
+    }
     private PeriodoBean cb;
     private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     private String prog;
@@ -50,6 +55,7 @@ public class programacionPeriodoBean {
         anio = 2017;
         prog = "mate";
         semestre=1;
+        
     }
     
     public String getAsign() {
@@ -144,7 +150,8 @@ public class programacionPeriodoBean {
     public void setCb(PeriodoBean cb) {
         this.cb = cb;
     }
-    public List<Profesor> setProfesores() throws ExcepcionServiciosUPPOST {
+    public void setProfesorSelect() throws ExcepcionServiciosUPPOST {
+        
         List<Profesor> p=new ArrayList<>();
         List<Profesor> p1=new ArrayList<>();
         p=inp.consultarProfesores();
@@ -152,7 +159,8 @@ public class programacionPeriodoBean {
             if(p.get(i).getApellidoUno().equals(profesor)||p.get(i).getApellidoDos().equals(profesor) ) p1.add(p.get(i));
         
         }
-       return p1;
+       profesorSelect=p;
+        System.out.println(profesorSelect.get(0).getNombre());
     }
    
 
