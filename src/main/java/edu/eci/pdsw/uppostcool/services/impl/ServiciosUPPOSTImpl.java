@@ -68,10 +68,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
             throw new ExcepcionServiciosUPPOST("Error al consultar materias del semestre: " + semestre + "y año: " + anio + ex);
         }
     }
-
-
     
-
     @Override
     public Profesor consultarProfesor(int cohorte, String materia) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
