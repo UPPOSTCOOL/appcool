@@ -185,8 +185,8 @@ public class ServicesJUnitTest {
         
         List<Materia> materias = sp.consultarMaterias();
         
-        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
-        Assert.assertEquals("Deberia agregar la materia", 1, materias.size());
+        Assert.assertEquals("Deberia agregar la materia, tamano = 1", 1, materias.size());
+        Assert.assertEquals("Deberia ser la materia con nombre nombre, nombre = mat.nombre()", nombre, materias.get(0).getNombre());
 
     }
 
@@ -217,7 +217,7 @@ public class ServicesJUnitTest {
         
         List<Materia> materias = sp.consultarMaterias();
         
-        Assert.assertEquals("No deberia agregar la materia con cidigo codigo, tamano = 1", 1, materias.size());
+        Assert.assertEquals("No deberia agregar la materia con codigo codigo, tamano = 1", 1, materias.size());
 
     }
 
@@ -241,8 +241,8 @@ public class ServicesJUnitTest {
         
         List<Materia> materias = sp.consultarMaterias();
         
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia agregar la materia con codigo codigo, tamano = 1", 1, materias.size());
+        Assert.assertEquals("Deberia ser el codigo de la materia agregada, codigo = mat.codigo()", codigo, materias.get(0).getCodigo());
 
     }
     
@@ -293,9 +293,9 @@ public class ServicesJUnitTest {
         
         List<Materia> materias = sp.consultarMaterias();
         
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
+        Assert.assertEquals("Deberia la materia, tamaño = 1", 1, materias.size());
+        Assert.assertEquals("Deberia ser el codigo de la materia agregada, codigo = mat.codigo()", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia ser el nombre de la materia agregada, nomnbre = mat.nombre()", nombre, materias.get(0).getNombre());
 
     }
     
