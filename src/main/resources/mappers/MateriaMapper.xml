@@ -169,4 +169,27 @@
             (#{id_asign},#{id_mater});
     </insert>
     
+    <update parameterType="map" id="actualizarMateria">
+        update Materia
+            set codigo=#{codigo},
+            set nombre=#{nombre},
+            set descripcion=#{desc}
+        where codigo=#{codigoAnterior} limit 1;
+    </update>
+    
+    <delete parameterType="map" id="eliminarMateriaPrerequisitos">
+        delete from Prerequisito
+        where materia_id=#{id_materia};
+    </delete>
+    
+    <delete parameterType="map" id="eliminarMateriaCorequisitos">
+        delete from Corequisito
+        where materia_id=#{id_materia} or materia_id_co=#{id_materia};
+    </delete>
+    
+    <delete parameterType="map" id="eliminarAsign_Mater">
+        delete from Asing_Mater
+        where materia_codigo=#{id_materia};
+    </delete>
+    
 </mapper>

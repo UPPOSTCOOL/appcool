@@ -23,5 +23,7 @@ public interface MateriaDAO {
     
     public void insertarMateriaDAO(Materia materia, List<String[]> pre, List<String[]> co,List<Integer> ids_asignatura);
     
+    public void actualizarMateriaDAO(String codigoAnterior,Materia materia, List<String[]> pre, List<String[]> co,List<Integer> ids_asignatura);
+    
     public List<Materia> consultarMateriasDAO();
 }
