@@ -179,6 +179,7 @@ public interface ServiciosUPPOST {
      * @param materia
      * @param prerequisitos
      * @param corequisitos
+     * @param asignaturas
      * @throws ExcepcionServiciosUPPOST 
      */
     public abstract void insertarMateria(Materia materia, List<Tuple> prerequisitos, List<Tuple> corequisitos, List<Asignatura> asignaturas)throws ExcepcionServiciosUPPOST;

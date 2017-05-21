@@ -324,9 +324,10 @@ public class ServicesJUnitTest {
         
         List<Materia> materias = sp.consultarMaterias();
         
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
+        Assert.assertEquals("Deberia la materia, tamaño = 1", 1, materias.size());
+        Assert.assertEquals("Deberia ser el codigo de la materia agregada, codigo = mat.codigo()", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia ser el nombre de la materia agregada, nomnbre = mat.nombre()", nombre, materias.get(0).getNombre());
+        Assert.assertEquals("Deberia tene la descripcion vacia, ''= mat.descripcion()",descripcion, materias.get(0).getDescripcion() );
     }
     
  /*      CE8: Descipcion no Vacia: Agrega la descripción a la materia: 
@@ -353,10 +354,10 @@ public class ServicesJUnitTest {
         
         List<Materia> materias = sp.consultarMaterias();
         
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getDescripcion());
+        Assert.assertEquals("Deberia la materia, tamaño = 1", 1, materias.size());
+        Assert.assertEquals("Deberia ser el codigo de la materia agregada, codigo = mat.codigo()", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia ser el nombre de la materia agregada, nomnbre = mat.nombre()", nombre, materias.get(0).getNombre());
+        Assert.assertEquals("Deberia tene la descripcion vacia, descripcion = mat.descripcion()",descripcion, materias.get(0).getDescripcion() );
     }
  
  /*      CE9: Prerrequisito = Correquisito: Una materia no puede tener las mismas materias como prerrequisito y correquisito a la vez: 
@@ -377,8 +378,8 @@ public class ServicesJUnitTest {
         mat.setCodigo(codigo);
         mat.setDescripcion(descripcion);
         
-        List<Materia> pre = new ArrayList<>(); 
-        
+        //prerrequisito y correquisito -
+        List<Materia> pre = new ArrayList<>();        
         pre.add(matP);
         
         mat.setPreRequisitos(pre);
@@ -387,6 +388,7 @@ public class ServicesJUnitTest {
         List<Tuple> tPre = new ArrayList<>();
         List<Tuple> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
+        //agregar pre  tPre y tCor
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
         
