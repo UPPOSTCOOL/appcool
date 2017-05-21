@@ -154,7 +154,14 @@ public class ServicesJUnitTest {
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
         
-        Assert.assertEquals("Deberia almacenar las materias agregadas, tamano = 1", 0, materias.size());
+        Materia maP = new Materia();
+        mat.setNombre(nombre);
+        List<Tuple> tPreP = new ArrayList<>();
+        List<Tuple> tCorP = new ArrayList<>();
+        List<Asignatura> asigsP = new ArrayList<>();
+        sp.insertarMateria(mat, tPreP, tCorP, asigsP);
+        
+        Assert.assertEquals("Deberia almacenar las materias agregadas, tamano = 1", 1, materias.size());
 
     }
 
