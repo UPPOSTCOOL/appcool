@@ -153,15 +153,15 @@ public class ServicesJUnitTest {
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
-        
-        Materia maP = new Materia();
+        // No deberia agregar la materia con nombre nombre
+        Materia matP = new Materia();
         mat.setNombre(nombre);
         List<Tuple> tPreP = new ArrayList<>();
         List<Tuple> tCorP = new ArrayList<>();
         List<Asignatura> asigsP = new ArrayList<>();
-        sp.insertarMateria(mat, tPreP, tCorP, asigsP);
+        sp.insertarMateria(matP, tPreP, tCorP, asigsP);
         
-        Assert.assertEquals("Deberia almacenar las materias agregadas, tamano = 1", 1, materias.size());
+        Assert.assertEquals("No deberia agregar la materia con nombre nombre, tamano = 1", 1, materias.size());
 
     }
 
@@ -186,7 +186,7 @@ public class ServicesJUnitTest {
         List<Materia> materias = sp.consultarMaterias();
         
         Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
+        Assert.assertEquals("Deberia agregar la materia", 1, materias.size());
 
     }
 
@@ -207,9 +207,17 @@ public class ServicesJUnitTest {
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
         
+        Materia matP = new Materia();
+        mat.setCodigo(codigo);
+        List<Tuple> tPreP = new ArrayList<>();
+        List<Tuple> tCorP = new ArrayList<>();
+        List<Asignatura> asigsP = new ArrayList<>();
+        
+        sp.insertarMateria(matP, tPreP, tCorP, asigsP);
+        
         List<Materia> materias = sp.consultarMaterias();
         
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 0, materias.size());
+        Assert.assertEquals("No deberia agregar la materia con cidigo codigo, tamano = 1", 1, materias.size());
 
     }
 

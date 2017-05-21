@@ -201,7 +201,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     @Override
     public List<Materia> consultarMaterias() throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        //return daom.comsultarMaterias();
+        //return daom.consultarMaterias();
     }
 
      @Override
