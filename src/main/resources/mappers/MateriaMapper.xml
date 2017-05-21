@@ -8,6 +8,7 @@
     <resultMap type='Materia' id='MateriaResult'>
         <id property='codigo' column='codigo'/>
         <result property='nombre' column='nombre'/>
+        <result property='descripcion' column='descripcion'/>
         <result property='cohorte' column='cohorte'/>
         <result property='numClases' column='totClases'/>
         <result property='numHoras' column='totHoras'/>
@@ -17,6 +18,9 @@
         <collection property='coRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.uppostcool.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='coReq_'></collection>
         <collection property='preRequisitos' ofType='Materia' resultMap='edu.eci.pdsw.uppostcool.dao.mybatis.mappers.MateriaReqMapper.MateriaReqResult' columnPrefix='preReq_'></collection>
     </resultMap>
+    <select parameterType="map" id="consultarMaterias" resultMap="MateriaResult">
+        select codigo,nombre,descripcion from Materia;
+    </select>
 
     <select parameterType="map" id="consultarMateriaConRequisitos" resultMap="MateriaResult">
         (select

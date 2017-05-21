@@ -48,6 +48,12 @@ public interface MateriaMapper {
     * Relacionar Asignatura a una materia
     */
     public Materia insertarAsign_Mater(@Param("id_asign") int id_asign,@Param("id_mater") String codigoMateria);
+    
+    /**
+     * consulta todas las materias registradas
+     * @return lista de materias registradas
+     */
+    public List<Materia> consultarMaterias();
 }
 
 

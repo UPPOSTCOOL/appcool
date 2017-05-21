@@ -43,4 +43,9 @@ public class MyBatisDaoMateria implements MateriaDAO{
         for(int i=0; i<co.size();i++)mmap.insertarMateriaCorequisito(materia.getCodigo(),co.get(i)[0], Integer.parseInt(co.get(i)[1]));
         for(int i=0; i<co.size();i++)mmap.insertarAsign_Mater(ids_asignatura.get(i), materia.getCodigo());
     }
+
+    @Override
+    public List<Materia> consultarMateriasDAO() {
+        return mmap.consultarMaterias();
+    }
 }
