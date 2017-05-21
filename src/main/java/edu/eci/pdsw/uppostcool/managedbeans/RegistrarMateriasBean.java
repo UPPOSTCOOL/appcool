@@ -77,7 +77,5 @@ public class RegistrarMateriasBean implements Serializable {
 
     public void setAcumulados(ArrayList<Programa> acumulados) {
         this.acumulados = acumulados;
-    }
-    
-   
+    }   
 }

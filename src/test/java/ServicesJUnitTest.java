@@ -13,6 +13,7 @@ import edu.eci.pdsw.uppostcool.entities.Programa;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
+import edu.eci.pdsw.uppostcool.services.impl.TupleImp;
 import java.lang.reflect.Constructor;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +21,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Tuple;
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -153,16 +153,16 @@ public class ServicesJUnitTest {
         Materia mat = new Materia();
         mat.setNombre(nombre);  
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
         // No deberia agregar la materia con nombre nombre
         Materia matP = new Materia();
         mat.setNombre(nombre);
-        List<Tuple> tPreP = new ArrayList<>();
-        List<Tuple> tCorP = new ArrayList<>();
+        List<TupleImp> tPreP = new ArrayList<>();
+        List<TupleImp> tCorP = new ArrayList<>();
         List<Asignatura> asigsP = new ArrayList<>();
         sp.insertarMateria(matP, tPreP, tCorP, asigsP);
         
@@ -182,8 +182,8 @@ public class ServicesJUnitTest {
         Materia mat = new Materia();
         mat.setNombre(nombre);
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
@@ -206,16 +206,16 @@ public class ServicesJUnitTest {
         Materia mat = new Materia();
         mat.setCodigo(codigo);
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
         
         Materia matP = new Materia();
         mat.setCodigo(codigo);
-        List<Tuple> tPreP = new ArrayList<>();
-        List<Tuple> tCorP = new ArrayList<>();
+        List<TupleImp> tPreP = new ArrayList<>();
+        List<TupleImp> tCorP = new ArrayList<>();
         List<Asignatura> asigsP = new ArrayList<>();
         
         sp.insertarMateria(matP, tPreP, tCorP, asigsP);
@@ -238,8 +238,8 @@ public class ServicesJUnitTest {
         Materia mat = new Materia();
         mat.setCodigo(codigo);
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
@@ -265,8 +265,8 @@ public class ServicesJUnitTest {
         mat.setNombre(nombre);
         mat.setCodigo(codigo);
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
@@ -290,8 +290,8 @@ public class ServicesJUnitTest {
         mat.setNombre(nombre);
         mat.setCodigo(codigo);
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
@@ -321,8 +321,8 @@ public class ServicesJUnitTest {
         mat.setCodigo(codigo);
         mat.setDescripcion(descripcion);
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
@@ -351,8 +351,8 @@ public class ServicesJUnitTest {
         mat.setCodigo(codigo);
         mat.setDescripcion(descripcion);
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
@@ -418,11 +418,13 @@ public class ServicesJUnitTest {
         
         // tupla (pre, programa)
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         
-        //agregar pre  tPre y tCor . Tuple(mat, programa)
-        Constructor<Tuple> tupla =Tuple.class.getConstructor(ArrayList<Materia>(),ArrayList<Materia>());
+        //agregar pre  tPre y tCor . TupleImp(mat, programa)
+        TupleImp tupla;
+        tupla = new TupleImp(new Programa(),new Programa());
+        //Constructor<TupleImp> tupla =TupleImp.class.getConstructor(ArrayList<Materia>(),ArrayList<Materia>());
         
                 
         sp.insertarMateria(mat, tPre, tCor, asigs);
@@ -456,8 +458,8 @@ public class ServicesJUnitTest {
         mat.setPreRequisitos(pre);
         mat.setCoRequisitos(cor);
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
@@ -507,8 +509,8 @@ public class ServicesJUnitTest {
         mat.setPreRequisitos(pre);
         mat.setPreRequisitos(cor);
         
-        List<Tuple> tPre = new ArrayList<>();
-        List<Tuple> tCor = new ArrayList<>();
+        List<TupleImp> tPre = new ArrayList<>();
+        List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
