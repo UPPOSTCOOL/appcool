@@ -38,7 +38,7 @@ and open the template in the editor.
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3" style="text-align: center; color: firebrick" title="PROGRAMA">
+                    <td colspan="4" style="text-align: center; color: firebrick" title="PROGRAMA">
 
                         <h1>  Programa 
                             <h:outputText value="#{ProgramacionPeriodoBean.prog}" style="text-align: center;color: firebrick" />
@@ -54,11 +54,10 @@ and open the template in the editor.
                         Periodo
                     </td>
                     <td>
-                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.anio}"  >
-                            <f:selectItem itemLabel="Select One" itemValue="" />
-
-
-                        </p:selectOneMenu>
+                         <p:spinner value = "#{ProgramacionPeriodoBean.anio}" min="2017" max="2030"/>  
+                    </td>
+                 <td>
+                         <p:spinner value = "#{ProgramacionPeriodoBean.semestre}" min="1" max="3"/>  
                     </td>
                     <td>
                         <h:commandButton id="nuevoPeriodo" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nuevo Periodo" action="RegistrarNuevoPeriodo"/>
@@ -71,14 +70,15 @@ and open the template in the editor.
                         Asignatura
                     </td>
                     <td>
-                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}"  >
+                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.asign}"  >
                             <f:selectItem itemLabel="Select One" itemValue="" />
-                            <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="theme4" itemLabel="#{theme4.nombre}" itemValue="#{theme4.nombre}"  />
+                            <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="asg" itemLabel="#{asg.nombre}" itemValue="#{asg.nombre}"  />
 
                         </p:selectOneMenu>
                     </td>
+                    <td/>
                     <td>
-                        <h:commandButton id="nuevaAsignatura" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nuevo Asignatura" action="Nueva Asignatura"/>
+                        <h:commandButton id="nuevaAsignatura" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nueva Asignatura" action="NuevaAsignatura"/>
 
                     </td>
 
@@ -94,8 +94,9 @@ and open the template in the editor.
 
                         </p:selectOneMenu>
                     </td>
+                     <td/>
                     <td>
-                        <h:commandButton id="nuevaMateria" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nuevo Materia" action="RegistrarMateria"/>
+                        <h:commandButton id="nuevaMateria" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nueva Materia" action="RegistrarMateria"/>
 
                     </td>
                     <td>
@@ -113,6 +114,7 @@ and open the template in the editor.
 
                         </p:selectOneMenu>
                     </td>
+                     <td/>
                     <td>
                         <h:commandButton id="nuevaCohorte" style="font-size: 16px; background-color: menu; padding: 5px;width: 280px; " value="Registrar nuevo cohorte para materia" action="MateriaNueva"/>
 

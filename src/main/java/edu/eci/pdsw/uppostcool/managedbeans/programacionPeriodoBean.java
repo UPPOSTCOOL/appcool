@@ -33,10 +33,13 @@ public class programacionPeriodoBean {
     private List<Asignatura> asignaturas = new ArrayList<>();
     private List<Materia> materia = new ArrayList<>();
     private List<Periodo> periodo = new ArrayList<>();
-     private final List<Profesor> profesores = new ArrayList<>();
-     private List<Profesor> profesorSelect = new ArrayList<>();
+    private List<Profesor> profesorSelect = new ArrayList<>();
     private String asign;
     private String mate;
+    private int idasign;
+    private Programa programaP;
+
+ 
 
     public List<Profesor> getProfesorSelect() {
         return profesorSelect;
@@ -55,16 +58,25 @@ public class programacionPeriodoBean {
         anio = 2017;
         prog = "mate";
         semestre=1;
+        programaP=null;
         
     }
-    
+   
     public String getAsign() {
         return asign;
     }
+
     public void setAsign(String asign) {
         this.asign = asign;
     }
-    
+
+    public int getIdasign() {
+        return idasign;
+    }
+
+    public void setIdasign(int Idasign) {
+        this.idasign = Idasign;
+    }
     public void setAsignaturas(List<Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
     }
@@ -118,8 +130,14 @@ public class programacionPeriodoBean {
     }
 
     public List<Asignatura> getAsignaturas() throws ExcepcionServiciosUPPOST {
+        System.out.println(prog);
+        Programa p=null;
+        for(int i=0;i<programa.size();i++){
+        if((programa.get(i).getNombre()).equals(prog)) p=programa.get(i);
+        }
+          // asignaturas=p.getAsignaturas();
+          asignaturas=inp.consultarAsignaturas();
         return inp.consultarAsignaturas();
-
     }
 
     public List<Materia> getMateria() throws ExcepcionServiciosUPPOST {
@@ -161,6 +179,20 @@ public class programacionPeriodoBean {
         }
        profesorSelect=p;
         System.out.println(profesorSelect.get(0).getNombre());
+    }
+    public void nuevaAsignatura(){
+        programaP=convertir(prog);
+        Asignatura a=new Asignatura(idasign,asign,programaP);
+        
+    
+    
+    }
+    public Programa convertir(String p){
+     for(int i=0;i<programa.size();i++){
+        if((programa.get(i).getNombre()).equals(p)) programaP=programa.get(i);
+        }
+    return programaP;
+    
     }
    
 

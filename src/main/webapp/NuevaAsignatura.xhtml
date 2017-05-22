@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Nueva Asignatura</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+
+    <h:body>
+    <img src="Imagenes/escuela.jpg" height="145" />
+        <h1 style="text-align: center; color:firebrick " >Registro de materia nueva en Cohorte</h1>
+       
+    
+        <h:form id="formularioAsignatura" style="text-align: left; color:firebrick" >
+
+            <table >                    
+                <tr>
+                    <td style=" color: black; font-size: 25px">
+                        Programa
+                    </td>
+                    <td>
+                        <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}"  >
+                            <f:selectItem  itemLabel="" itemValue=""  />
+                            <f:selectItems value="#{ProgramacionPeriodoBean.programa}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}"  />
+
+                        </p:selectOneMenu>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style=" color: black; font-size: 25px">
+                        ID Asignatura
+                    </td>
+                    <td>
+                        <p:inputText value="#{ProgramacionPeriodoBean.idasign}"/>
+                    </td>
+                        
+                </tr>
+                <tr>
+
+                    <td style=" color: black; font-size: 25px">
+
+                        Asignatura:
+                    </td>
+                    <td>
+                        <p:inputText value="#{ProgramacionPeriodoBean.asign}"  />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style=" color: black; font-size: 25px">
+                       
+                        <p:commandButton style="font-size:medium ;border-left-style: double" onclick="alert('Registrando asignatura')" value="Registrar" action="Programar" actionListener="#{ProgramacionPeriodoBean.nuevaAsignatura()}" update="formularioAsignatura"></p:commandButton>
+                        
+                    </td>
+                    
+                </tr>
+                <tr>
+                   
+
+                </tr>
+
+            </table>
+            
+        </h:form> 
+    </h:body>
+</html>
+
+
