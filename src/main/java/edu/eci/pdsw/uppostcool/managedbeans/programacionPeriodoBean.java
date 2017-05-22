@@ -17,6 +17,7 @@ import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImplStub;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -50,6 +51,16 @@ public class programacionPeriodoBean {
     private int semestre;
     private int cohorte = 0;
     private int idasign;
+    private Date date =new Date();
+
+    public Date getDate() {
+        
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
  
      private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
 
