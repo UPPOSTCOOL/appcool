@@ -28,6 +28,16 @@ public class MyBatisDaoPrograma implements ProgramaDAO{
         return pmap.consultarProgramas();
     }
 
+    @Override
+    public Programa cargar(String nombre) throws PersistenceException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void save(Programa programa) throws PersistenceException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
     
 }

@@ -16,4 +16,8 @@ public interface ProgramaDAO {
    
 
     public List<Programa> loadAll() throws PersistenceException;
+    
+    public Programa cargar(String nombre) throws PersistenceException;
+    
+    public void save(Programa programa) throws PersistenceException; 
 }

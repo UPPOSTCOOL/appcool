@@ -16,11 +16,13 @@ import java.util.List;
  * @author 2092815
  */
 public class Programa implements Serializable {
+    
     private int id;
     private String nombre;
-    private Profesor coordinador;
+    //private Profesor coordinador;
     private List<Asignatura> asignaturas;
-    private List<Materia> preRequisitos;
+    
+  
 
     public Programa() {
     }
@@ -33,7 +35,7 @@ public class Programa implements Serializable {
     public Programa(int id, String nombre, Profesor coordinador, List<Asignatura> asignaturas) {
         this.id = id;
         this.nombre = nombre;
-        this.coordinador = coordinador;
+        //this.coordinador = coordinador;
         this.asignaturas = asignaturas;
     }
 
@@ -45,6 +47,7 @@ public class Programa implements Serializable {
         this.nombre = nombre;
     }
 
+    /**
     public Profesor getCoordinador() {
         return coordinador;
     }
@@ -52,8 +55,11 @@ public class Programa implements Serializable {
     public void setCoordinador(Profesor coordinador) {
         this.coordinador = coordinador;
     }
+    * 
+    **/
 
 
+    
     public List<Asignatura> getAsignaturas() {
         return asignaturas;
     }
@@ -71,7 +77,7 @@ public class Programa implements Serializable {
 
     @Override
     public String toString() {
-        return "Programa{" + "Coordinador=" + coordinador + ", nombre=" + nombre + ", Asignaturas=" + asignaturas + '}';
+        return "Programa{" + /**"Coordinador=" + coordinador +*/ ", nombre=" + nombre + ", Asignaturas=" + asignaturas + '}';
     }
 
     public List<String> getNombreAsignatura() {
@@ -83,11 +89,7 @@ public class Programa implements Serializable {
         return ans;
     }
     
-    
-    public List<Materia> getNombreRequisitos() {
-        return preRequisitos;
-    }
-    
+
     /**
     public List<String> getNombreRequisitos() {
         ArrayList<String> ans = new ArrayList<>();

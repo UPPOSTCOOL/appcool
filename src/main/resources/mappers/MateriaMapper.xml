@@ -42,7 +42,7 @@
         UNION
         (select
             M.codigo as codigo,
-            M.nombre as nombre,
+            M.nombre as nombre,                                                                                                                                                        
             M.descripcion as descripcion,
             null as preReq_codigo,
             null as preReq_nombre,
