@@ -6,6 +6,7 @@
 package edu.eci.pdsw.uppostcool.managedbeans;
 
 import edu.eci.pdsw.uppostcool.entities.Asignatura;
+import edu.eci.pdsw.uppostcool.entities.Clase;
 import edu.eci.pdsw.uppostcool.entities.Materia;
 import edu.eci.pdsw.uppostcool.entities.Periodo;
 import edu.eci.pdsw.uppostcool.entities.Profesor;
@@ -34,24 +35,28 @@ public class programacionPeriodoBean {
     private List<Materia> materia = new ArrayList<>();
     private List<Periodo> periodo = new ArrayList<>();
     private List<Profesor> profesorSelect = new ArrayList<>();
+    private List<Clase> clases= new ArrayList<>();
+    
+    private Programa programaP;
+    private Materia materi;
+    private PeriodoBean cb;
+   
+    private String prog;
+    private String profesor = null;
     private String asign;
     private String mate;
+    
+    private int anio;
+    private int semestre;
+    private int cohorte = 0;
     private int idasign;
-    private Programa programaP;
-
  
+     private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
 
     public List<Profesor> getProfesorSelect() {
         return profesorSelect;
     }
-    private PeriodoBean cb;
-    private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
-    private String prog;
-    private int cohorte = 0;
-    private String profesor = null;
-    private int anio;
-    private int semestre;
- 
+  
     public programacionPeriodoBean() throws ExcepcionServiciosUPPOST {
 
         prog = "prueba";
@@ -80,6 +85,16 @@ public class programacionPeriodoBean {
     public void setAsignaturas(List<Asignatura> asignaturas) {
         this.asignaturas = asignaturas;
     }
+        public List<Asignatura> getAsignaturas() throws ExcepcionServiciosUPPOST {
+        System.out.println(prog);
+        Programa p=null;
+        for(int i=0;i<programa.size();i++){
+        if((programa.get(i).getNombre()).equals(prog)) p=programa.get(i);
+        }
+          // asignaturas=p.getAsignaturas();
+          asignaturas=inp.consultarAsignaturas();
+        return inp.consultarAsignaturas();
+    }
 
     public int getCohorte() {
         return cohorte;
@@ -105,11 +120,11 @@ public class programacionPeriodoBean {
         this.mate = mate;
     }
 
-    public List<Programa> getPrograma() throws ExcepcionServiciosUPPOST {
+    public List<Programa> getProgramas() throws ExcepcionServiciosUPPOST {
         programa = inp.consultarProgramas();
         return programa;
     }
-    public void setPrograma(List<Programa> programa) {
+    public void setProgramas(List<Programa> programa) {
         this.programa = programa;
     }
     public List<Periodo> getPeriodo() throws ExcepcionServiciosUPPOST {
@@ -129,16 +144,7 @@ public class programacionPeriodoBean {
         this.prog = prog;
     }
 
-    public List<Asignatura> getAsignaturas() throws ExcepcionServiciosUPPOST {
-        System.out.println(prog);
-        Programa p=null;
-        for(int i=0;i<programa.size();i++){
-        if((programa.get(i).getNombre()).equals(prog)) p=programa.get(i);
-        }
-          // asignaturas=p.getAsignaturas();
-          asignaturas=inp.consultarAsignaturas();
-        return inp.consultarAsignaturas();
-    }
+
 
     public List<Materia> getMateria() throws ExcepcionServiciosUPPOST {
         materia = inp.consultarMaterias(semestre, anio);
@@ -181,19 +187,36 @@ public class programacionPeriodoBean {
         System.out.println(profesorSelect.get(0).getNombre());
     }
     public void nuevaAsignatura(){
-        programaP=convertir(prog);
+        
         Asignatura a=new Asignatura(idasign,asign,programaP);
         
     
     
     }
-    public Programa convertir(String p){
+    public Programa getPrograma(){
      for(int i=0;i<programa.size();i++){
-        if((programa.get(i).getNombre()).equals(p)) programaP=programa.get(i);
+        if((programa.get(i).getNombre()).equals(prog)) programaP=programa.get(i);
         }
     return programaP;
     
     }
+     public Materia convertir(){
+     for(int i=0;i<materia.size();i++){
+        if((materia.get(i).getNombre()).equals(mate)) materi=materia.get(i);
+        }
+    return materi;
+    
+    }
+    public List<Clase> getClase(){
+            
+          clases=materi.getClases();
+           clases=null;
+           return clases;
+    
+    
+    }
+    public void cancelarClase(){}
+    //pendiente por servicio
    
 
 }

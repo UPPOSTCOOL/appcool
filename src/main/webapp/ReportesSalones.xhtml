@@ -26,25 +26,31 @@ and open the template in the editor.
             <!-- <caption>Salones por periodo</caption>-->
             <p:column>  
                 <f:facet name="header">
-                    <h:outputText value="Fecha  HoraInicio"></h:outputText>
+                    <h:outputText value="Fecha"></h:outputText>
                 </f:facet>
-                <h:outputText value="#{curso.fecha}"></h:outputText>
+                <h:outputText value="#{curso.formatoFecha}"></h:outputText>
             </p:column>  
             <p:column>  
                 <f:facet name="header">
+                    <h:outputText value="HoraInicio"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{curso.horaInicio}"></h:outputText>
+            </p:column> 
+             <p:column>  
+                <f:facet name="header">
                     <h:outputText value="Hora fin"></h:outputText>
                 </f:facet>
-                <h:outputText value="#{curso.horaFin}"></h:outputText>
+                 <h:outputText value="#{curso.horaFin}"></h:outputText>
             </p:column> 
             <p:column>  
                 <f:facet name="header">
-                    <h:outputText value="Salon"></h:outputText>
+                    <h:outputText value="Salón"></h:outputText>
                 </f:facet>
                 <h:outputText value="#{curso.salon}"></h:outputText>
             </p:column>  
             <p:column>  
                 <f:facet name="header">
-                    <h:outputText value="Caracteristicas"></h:outputText>
+                    <h:outputText value="Características"></h:outputText>
                 </f:facet>
                 <h:outputText value="#{curso.recurso}"></h:outputText>
             </p:column> 

@@ -28,7 +28,7 @@ and open the template in the editor.
                     <td>
                         <p:selectOneMenu value="#{ProgramacionPeriodoBean.prog}"  >
                             <f:selectItem  itemLabel="" itemValue=""  />
-                            <f:selectItems value="#{ProgramacionPeriodoBean.programa}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}"  />
+                            <f:selectItems value="#{ProgramacionPeriodoBean.programas}" var="theme" itemLabel="#{theme.nombre}" itemValue="#{theme.nombre}"  />
 
                         </p:selectOneMenu>
                     </td>
@@ -45,10 +45,7 @@ and open the template in the editor.
                         </h1>
                     </td>
                 </tr>
-            </table>   
-        </h:form>
-        <h:form id="formularioProgramar" style="text-align: left; color: black" >
-            <table> 
+           
                 <tr>
                     <td style="font-size:25px">
                         Periodo
@@ -71,8 +68,8 @@ and open the template in the editor.
                     </td>
                     <td>
                         <p:selectOneMenu value="#{ProgramacionPeriodoBean.asign}"  >
-                            <f:selectItem itemLabel="Select One" itemValue="" />
-                            <f:selectItems value="#{ProgramacionPeriodoBean.asignaturas}" var="asg" itemLabel="#{asg.nombre}" itemValue="#{asg.nombre}"  />
+                            <f:selectItem itemLabel="Select One"/>
+                            <f:selectItems value="#{ProgramacionPeriodoBean.programa.asignaturas}" var="asg" itemLabel="#{asg.nombre}" itemValue="#{asg.nombre}"  />
 
                         </p:selectOneMenu>
                     </td>
