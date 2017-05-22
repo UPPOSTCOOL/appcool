@@ -187,6 +187,18 @@ public interface ServiciosUPPOST {
      * @return  lista total de Programas
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
      */
-     public abstract List<Asignatura> consultarAsignaturas()throws ExcepcionServiciosUPPOST;
+    public abstract List<Asignatura> consultarAsignaturas()throws ExcepcionServiciosUPPOST;
+    
+     /**
+     * Consultar profesores por atributo de nombre
+     * @return  lista total de profesores seleccionados
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+    public abstract List<Profesor> consultarProfesoresXnombre(String nombre)throws ExcepcionServiciosUPPOST;
+    
+   
+    
+     
+     
 
 }

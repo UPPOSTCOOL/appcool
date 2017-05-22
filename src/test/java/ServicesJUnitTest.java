@@ -6,6 +6,7 @@
 
 import edu.eci.pdsw.uppostcool.entities.Asignatura;
 import edu.eci.pdsw.uppostcool.entities.Materia;
+import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.*;
@@ -477,10 +478,7 @@ public class ServicesJUnitTest {
  *          Nada
  * 
      */
-     @Test
-    public void CF12() throws SQLException, ExcepcionServiciosUPPOST {
-    
-    }
+     
     
     
 }

@@ -208,4 +208,17 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     public List<Asignatura> consultarAsignaturas () throws ExcepcionServiciosUPPOST {
         return null;
     }
+
+    @Override
+    public List<Profesor> consultarProfesoresXnombre(String nombre) throws ExcepcionServiciosUPPOST {
+        try {
+            return daoPO.consultarProfesoresXnombre(nombre);
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar profesores con nombres o apellidos: " + nombre + ex );
+        }
+    }
+
+        
+    
+    
 }
