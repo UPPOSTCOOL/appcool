@@ -24,7 +24,7 @@ and open the template in the editor.
                     <f:facet name="header">                       
                     </f:facet>
                                     
-                    <p:commandButton value="Agregar" icon="ui-icon-check" actionListener="#{MateriasBean.programasSeleccionados()}" update=":registrarMateria" />     
+                    <p:commandButton value="Agregar" icon="ui-icon-check" actionListener="#{MateriasBean.programasSeleccionados(programa.id)}" update=":registrarMateria" />     
                 </p:column>
 
                 <p:column>
@@ -65,9 +65,7 @@ and open the template in the editor.
                     <f:facet name="header">
                         <h:outputText value="Asignatura"/>
                     </f:facet>
-                    <h:selectOneMenu >
-                        <f:selectItems value="#{agregados.nombreAsignatura}"/>
-                    </h:selectOneMenu>
+                    <h:outputText value="#{agregados.nombreAsignatura}" />
                 </p:column>
                 
                 <p:column>

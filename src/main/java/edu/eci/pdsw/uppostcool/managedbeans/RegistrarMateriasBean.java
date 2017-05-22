@@ -64,15 +64,24 @@ public class RegistrarMateriasBean implements Serializable {
     }
     
     
-    public void programasSeleccionados() {
+    public void programasSeleccionados(int id_prog) {
+        //obtenemos el id del programa para con él buscar cuál es 
+        //la asignatura que se seleccionó
+        
+        //en esta listo podemos guardar la asignatura que se seleccionó
         acumulados.add(0, prog);
         
     }
     
 
-    public ArrayList<Programa> getAcumulados() {
+    public ArrayList<String[]> getAcumulados() {
         System.out.println("hola");
-        return acumulados;
+        //aca debemos ARMAR mediante acumulados los textos que se quieren mostrar en la tabla
+        //recuerda que acumulados seraá una lista de ASIGNATURAS
+        
+        ArrayList<String[]> respuesta = null;
+        //= ejemplo:(id_asignatura,nombrePrograma,nombreAsignatura)
+        return respuesta;
     }
 
     public void setAcumulados(ArrayList<Programa> acumulados) {
