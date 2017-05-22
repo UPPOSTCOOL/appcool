@@ -20,25 +20,33 @@ and open the template in the editor.
         <div style="text-align: center;">
             <h:form id="periodoo" style="text-align: center; color:firebrick">
                 <div style="text-align: center;">
-                    <h1>Seleccione el Periodo</h1>
-                    <p style="font-size: 20px"> Ingrese el año</p>
-                    <p:inputText value = "#{PeriodoBean.anio}" ></p:inputText>     
-                    <p style="font-size: 20px"> Ingrese el semestre</p>         
-                    <h:selectOneMenu value = "#{PeriodoBean.semestre}"> 
-                        <f:selectItem itemValue = "1" itemLabel = "1" /> 
-                        <f:selectItem itemValue = "2" itemLabel = "2" /> 
-                        <f:selectItem itemValue = "3" itemLabel = "Intersemestral" /> 
-                    </h:selectOneMenu>
-                    <br></br>
-                    <br></br>
-                    <br></br>
 
-                </div>
-                <div style="text-align: center">
-                    <h:commandButton id="open-r" value="Ir a Reporte Programación" action="ReportesProgramacion" />           
-                    <h:commandButton id="open-BinP" value="Ir a Reporte Salones" action="ReportesSalones" style="margin-left: 30px"/>            
-                    <h:commandButton id="indice" value="Regresar al Indice" action="indice" style="margin-left: 30px"/>
-                </div>
+                <h1>Seleccione el Periodo que desea consultar</h1>
+                <p style="font-size: 20px"> Seleccione el año</p>
+                <h:selectOneMenu value = "#{PeriodoBean.anio}" >
+                    <f:selectItem itemValue = "2016" itemLabel = "2016" /> 
+                    <f:selectItem itemValue = "2017" itemLabel = "2017" /> 
+                    <f:selectItem itemValue = "2018" itemLabel = "2018" /> 
+                    <f:selectItem itemValue = "2019" itemLabel = "2019" />
+                    <f:selectItem itemValue = "2020" itemLabel = "2020" />
+                </h:selectOneMenu>
+                
+                <p style="font-size: 20px"> Seleccione el semestre</p>         
+                <h:selectOneMenu value = "#{PeriodoBean.semestre}"> 
+                    <f:selectItem itemValue = "1" itemLabel = "1" /> 
+                    <f:selectItem itemValue = "2" itemLabel = "2" /> 
+                    <f:selectItem itemValue = "3" itemLabel = "Intersemestral" /> 
+                </h:selectOneMenu>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div>
+            <div style="text-align: center">
+                <h:commandButton id="open-r" value="Ir a Reporte Programación" action="ReportesProgramacion" />           
+                <h:commandButton id="open-BinP" value="Ir a Reporte Salones" action="ReportesSalones" style="margin-left: 30px"/>            
+                <h:commandButton id="indice" value="Regresar al Indice" action="indice" style="margin-left: 30px"/>
+            </div>
+
             </h:form>
         </div>
     </h:body>
