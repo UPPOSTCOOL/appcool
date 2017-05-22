@@ -58,7 +58,7 @@ and open the template in the editor.
                     <f:facet name="header">
                         <h:outputText value="Programas"/>
                     </f:facet>
-                    <h:outputText value="#{programa.nombre}" />
+                    <h:outputText value="#{agregados.nombre}" />
                 </p:column>
 
                 <p:column>
@@ -66,15 +66,15 @@ and open the template in the editor.
                         <h:outputText value="Asignatura"/>
                     </f:facet>
                     <h:selectOneMenu >
-                        <f:selectItems value="#{programa.nombreAsignatura}"/>
+                        <f:selectItems value="#{agregados.nombreAsignatura}"/>
                     </h:selectOneMenu>
                 </p:column>
                 
                 <p:column>
                     <f:facet name="header">                       
                     </f:facet>
-                    <!--<h:selectBooleanCheckbox value="{user.rememberMe}" />-->                    
-                    <p:commandButton value="Eliminar" icon="ui-icon-check"   />     
+                     
+                    <p:commandButton value="Eliminar" icon="ui-icon-check"  />     
                 </p:column>
               
             </p:dataTable>

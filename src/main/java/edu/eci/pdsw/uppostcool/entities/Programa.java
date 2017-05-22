@@ -36,8 +36,9 @@ public class Programa implements Serializable {
         this.coordinador = coordinador;
         this.asignaturas = asignaturas;
     }
-
-    public String getNombre() {
+    
+    
+    public String getNombre() {//
         return nombre;
     }
 
@@ -74,7 +75,7 @@ public class Programa implements Serializable {
         return "Programa{" + "Coordinador=" + coordinador + ", nombre=" + nombre + ", Asignaturas=" + asignaturas + '}';
     }
 
-    public List<String> getNombreAsignatura() {
+    public List<String> getNombreAsignatura() {//
         ArrayList<String> ans = new ArrayList<>();
         for (Asignatura asignatura : asignaturas) {
 

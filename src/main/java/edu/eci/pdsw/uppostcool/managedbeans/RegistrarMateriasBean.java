@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.uppostcool.managedbeans;
 
+import edu.eci.pdsw.uppostcool.entities.Asignatura;
 import edu.eci.pdsw.uppostcool.entities.Materia;
 import edu.eci.pdsw.uppostcool.entities.Programa;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
@@ -28,7 +29,6 @@ public class RegistrarMateriasBean implements Serializable {
 
     private List<Programa> programa = new ArrayList<>();
     private Materia preRequisitos;
-
     Programa prog;
     
     ArrayList<Programa> acumulados= new ArrayList<>();
@@ -59,19 +59,19 @@ public class RegistrarMateriasBean implements Serializable {
         programa.remove(id);
 
     }
-     public Programa getProductoSelect() {
+     public Programa getProgrSeleccionados() {
         return prog;
     }
     
-    /** 
+    
     public void programasSeleccionados() {
-        Programa programas= new Programa(prog.getId(), prog.getNombre());
-        acumulados.add(programas);
+        acumulados.add(0, prog);
         
     }
-    */
+    
 
     public ArrayList<Programa> getAcumulados() {
+        System.out.println("hola");
         return acumulados;
     }
 
