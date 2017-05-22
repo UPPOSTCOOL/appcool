@@ -54,8 +54,8 @@ public class pruebasServicios {
         //consultar profesor por nombre o apellido segun sea el criterio del usuario
         
         ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
-        List<Profesor> profesor = sp.consultarProfesoresXnombre("claudia");
-        Assert.assertTrue("el nombre del profesor no coicide con Claudia", profesor.get(0).getNombre().contains("claudia"));
+        List<Profesor> profesor = sp.consultarProfesoresXnombre("Claudia");
+        Assert.assertTrue("el nombre del profesor no coicide con Claudia", profesor.get(0).getNombre().contains("Claudia"));
 
     }
 
