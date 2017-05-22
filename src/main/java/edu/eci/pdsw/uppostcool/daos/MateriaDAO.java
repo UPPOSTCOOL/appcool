@@ -19,6 +19,8 @@ public interface MateriaDAO {
     
     public List<Materia> consultarMateriasPorProgramaDAO(int id_programa) throws PersistenceException;
     
+    public List<Materia> consultarMateriasPorProgramaExceptMateriaDAO(int id_programa, String codigoMateria);
+    
     public Materia consultarMateriaConRequisitosDAO(String codigo,int id_programa) throws PersistenceException;
     
     public void insertarMateriaDAO(Materia materia, List<String[]> pre, List<String[]> co,List<Integer> ids_asignatura);

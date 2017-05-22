@@ -118,6 +118,15 @@ public interface ServiciosUPPOST {
      * error a nivel de base de datos, la clase no existe
      */
     public abstract List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST;
+    
+    /**
+     * Consulta las materias de un programa excepto la materia indicada
+     * @param id_programa
+     * @param codigoMateria que se excluye de la lista de respuesta
+     * @return Las materias del programa
+     * @throws ExcepcionServiciosUPPOST 
+     */
+    public abstract List<Materia> consultarMateriasProgramaExceptMateria(int id_programa, String codigoMateria) throws ExcepcionServiciosUPPOST;
 
     /**
      * Consulta todos los profesores

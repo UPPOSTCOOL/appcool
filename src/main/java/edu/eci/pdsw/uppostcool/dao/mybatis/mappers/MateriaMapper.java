@@ -25,6 +25,9 @@ public interface MateriaMapper {
      */
     public List<Materia> consultarMateriasPorPrograma(@Param("id_programa") int id_programa);
     
+    
+    public List<Materia> consultarMateriasPorProgramaExceptMateria(@Param("id_programa") int id_programa,@Param("codMateriaExcept") String cod);
+
     /**
      * consulta una materia con su información y Co y Requisitos
      * @param codigo

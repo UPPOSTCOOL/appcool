@@ -62,4 +62,9 @@ public class MyBatisDaoMateria implements MateriaDAO{
         mmap.eliminarAsign_Mater(codigoAnterior);
         for(int i=0; i<ids_asignatura.size();i++)mmap.insertarAsign_Mater(ids_asignatura.get(i), materia.getCodigo());
     }
+
+    @Override
+    public List<Materia> consultarMateriasPorProgramaExceptMateriaDAO(int id_programa, String codigoMateria){
+        return mmap.consultarMateriasPorProgramaExceptMateria(id_programa, codigoMateria);
+    }
 }
