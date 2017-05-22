@@ -1,8 +1,53 @@
 # UPPOST-COOL 
 
+Nombre del Proyecto: UPPOST-COOL
+Asignatura: Proceso de Desarrollo de Sooftware 
+Periodo Academico: 2017-1 (PDSW)
+
+Rol - Integrante:                    
+- Team: Carol Johana Meneses Pineda    
+- Team: Maria Paula Pinzón Cardozo
+- Team: Javier Fernando silva leon
+- Scrum master: Juan felipe Ortiz Niño   
+- Team: Kevin Julian Alavarado Pérez
+- Team: Manuel Sergio Pérez Espitia   
+- Product Owner: Hector Fabio Cadavid Rengifo
+
+# Descrición General
+
+<------------------------------>
+
+-   Funcionalidades 
+
+<------------------------------>
+
+# Arquitectura
+
+Modelo E-R
+
+<-----------Modelo entidad relación------------------->
+
+Capa de presentación 
+
+<------------------------------>
+
+Caoa Lógica
+
+<------------------------------>
+
+Capa de Persistencia
+
+<------------------------------>
+
+Stack Tecnológico
+
+Len
+
+
+
 Aplicación: https://appcool.herokuapp.com
 
-Desarrollo de la aplicación por el equipo UPPOSTCOOL según la metodologia SCRUM vista en el curso de PDSW, el proyecto esta divido en 3 Sprints.
+Desarrollo de la aplicación por el equipo UPPOST-COOL según la metodologia SCRUM vista en el curso de PDSW, el proyecto esta divido en 3 Sprints.
 
 Plataforma de programación de clases y gestión de recursos de programas de postgrado de la Unidad de Proyectos de la Escuela Colombiana de Ingeniería
 
