@@ -41,11 +41,23 @@ Capa de Persistencia
 
 Stack Tecnológico
 
-Len
-
-
+Lenguaje: Java 1.8
+Gestión: Maven Apache 4.0.0
+Web: JavaServer Pages (JSP)
+Framework visual: JavaServer Faces (JSF)
+Biblioteca visual: PrimeFaces 5.0
+Inyección-persistencia: MyBatis 3.2.7
+Creación MyBatis: Google Guice
+Tag Libraries para JSP: JSTL 1.2
+BD: PostgreSQL 42.0.0
+Registro: Log4j 1.2.17
+Administrado BD: H2 1.4.184
+Entorno Web: Tomcat 7
+Pruebas: Maven Surefire 2.18.1
 
 Aplicación: https://appcool.herokuapp.com
+
+
 
 Desarrollo de la aplicación por el equipo UPPOST-COOL según la metodologia SCRUM vista en el curso de PDSW, el proyecto esta divido en 3 Sprints.
 
