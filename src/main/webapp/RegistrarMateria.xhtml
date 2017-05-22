@@ -33,16 +33,6 @@ and open the template in the editor.
                     </f:facet>
                     <h:outputText value="#{programa.nombre}" />
                 </p:column>
-
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Asignatura"/>
-                    </f:facet>
-                    <h:selectOneMenu >
-                        <f:selectItems value="#{programa.nombreAsignatura}"/>
-                    </h:selectOneMenu>
-                </p:column>
-
                 <p:column>
                     <f:facet name="header">                    
                     </f:facet>
@@ -51,7 +41,14 @@ and open the template in the editor.
             </p:dataTable>         
             
             <br></br>
-            
+            SELECCIONE LA ASIGNATURA DEL PROGRAMA A AGREGAR
+            <br/>
+            <h:selectOneMenu value="#MateriasBean.id_asignaturaSeleccionada">
+                <f:selectItems value="#{MateriasBean.asignaturaProgramaSeleccionado}"/>
+            </h:selectOneMenu>
+            <p:commandButton value="Agregar" actionListener="#{MateriasBean.guardarAsignaturaPrograma()}" /> 
+            <br/>
+            <br/>
             <h2>Programas agregados</h2>
             <p:dataTable  id="ProgramasAgregados" var="agregados" value="#{MateriasBean.acumulados}"  style="margin: 0 auto;">
                 <p:column>

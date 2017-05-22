@@ -28,16 +28,30 @@ import javax.faces.context.FacesContext;
 public class RegistrarMateriasBean implements Serializable {
 
     private List<Programa> programa = new ArrayList<>();
+    private List<Asignatura> asignaturasProgramaSeleccionado = new ArrayList<>();
+    private int id_asignaturaSeleccionada;
     private Materia preRequisitos;
-    Programa prog;
+    private Programa prog;
     
-    ArrayList<Programa> acumulados= new ArrayList<>();
+    ArrayList<Asignatura> acumulados= new ArrayList<>();
 
     private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
+
+    public List<Asignatura> getAsignaturasProgramaSeleccionado() {
+        return asignaturasProgramaSeleccionado;
+    }
+
 
     public RegistrarMateriasBean() {
     }
 
+    public int getId_asignaturaSeleccionada() {
+        return id_asignaturaSeleccionada;
+    }
+
+    public void setId_asignaturaSeleccionada(int id_asignaturaSeleccionada) {
+        this.id_asignaturaSeleccionada = id_asignaturaSeleccionada;
+    }
     public List<Programa> obtenerProgramas() throws ExcepcionServiciosUPPOST {
         programa = inp.consultarProgramas();
         return programa;
@@ -65,12 +79,25 @@ public class RegistrarMateriasBean implements Serializable {
     
     
     public void programasSeleccionados(int id_prog) {
+        //luego de seleccionar el programa guardamos las asignaturas
+        for (int i = 0; i < programa.size(); i++) {
+            if(programa.get(i).getId()==id_prog){
+                prog=programa.get(i);
+                asignaturasProgramaSeleccionado=programa.get(i).getAsignaturas();
+            }
+        }
+    }
+    
+    public void guardarAsignaturaPrograma(){
         //obtenemos el id del programa para con él buscar cuál es 
         //la asignatura que se seleccionó
         
-        //en esta listo podemos guardar la asignatura que se seleccionó
-        acumulados.add(0, prog);
-        
+        //en esta lista podemos guardar la asignatura que se seleccionó
+        for (int i = 0; i < programa.size(); i++) {
+            if(asignaturasProgramaSeleccionado.get(i).getId()==id_asignaturaSeleccionada){
+                acumulados.add(asignaturasProgramaSeleccionado.get(i));
+            }
+        }
     }
     
 
@@ -84,7 +111,7 @@ public class RegistrarMateriasBean implements Serializable {
         return respuesta;
     }
 
-    public void setAcumulados(ArrayList<Programa> acumulados) {
+    public void setAcumulados(ArrayList<Asignatura> acumulados) {
         this.acumulados = acumulados;
     }
     
