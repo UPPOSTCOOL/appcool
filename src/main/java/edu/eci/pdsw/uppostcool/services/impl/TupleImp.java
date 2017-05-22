@@ -11,7 +11,7 @@ import javax.persistence.TupleElement;
 
 /**
  *
- * @author kevin
+ * @author UPPOST
  */
 public class TupleImp implements Tuple {
 

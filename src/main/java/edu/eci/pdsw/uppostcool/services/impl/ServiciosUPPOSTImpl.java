@@ -26,7 +26,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.Tuple;
+
 
 
 /**
@@ -153,7 +153,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public void insertarMateria(Materia materia, List<Tuple> prerequisito, List<Tuple> corequisito, List<Asignatura> asignaturas) throws ExcepcionServiciosUPPOST {
+    public void insertarMateria(Materia materia, List<TupleImp> prerequisito, List<TupleImp> corequisito, List<Asignatura> asignaturas) throws ExcepcionServiciosUPPOST {
         if(materia.getNombre()!= "" && materia.getCodigo()!="" && !prerequisito.equals(corequisito) ){
             
             List<String> nombres = new ArrayList<>();

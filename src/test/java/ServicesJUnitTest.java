@@ -422,10 +422,11 @@ public class ServicesJUnitTest {
         List<TupleImp> tCor = new ArrayList<>();
         
         //agregar pre  tPre y tCor . TupleImp(mat, programa)
-        TupleImp tupla;
-        tupla = new TupleImp(new Programa(),new Programa());
-        //Constructor<TupleImp> tupla =TupleImp.class.getConstructor(ArrayList<Materia>(),ArrayList<Materia>());
+        TupleImp tupla = new TupleImp(matP,prog);
         
+        //agregando tupla a tPre y tCor
+        tPre.add(tupla);
+        tCor.add(tupla);
                 
         sp.insertarMateria(mat, tPre, tCor, asigs);
         

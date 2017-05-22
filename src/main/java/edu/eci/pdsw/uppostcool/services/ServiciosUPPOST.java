@@ -12,9 +12,9 @@ import edu.eci.pdsw.uppostcool.entities.Periodo;
 import edu.eci.pdsw.uppostcool.entities.Materia;
 import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.entities.Programa;
+import edu.eci.pdsw.uppostcool.services.impl.TupleImp;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.Tuple;
 
 /**
  *
@@ -182,7 +182,7 @@ public interface ServiciosUPPOST {
      * @param asignaturas
      * @throws ExcepcionServiciosUPPOST 
      */
-    public abstract void insertarMateria(Materia materia, List<Tuple> prerequisitos, List<Tuple> corequisitos, List<Asignatura> asignaturas)throws ExcepcionServiciosUPPOST;
+    public abstract void insertarMateria(Materia materia, List<TupleImp> prerequisitos, List<TupleImp> corequisitos, List<Asignatura> asignaturas)throws ExcepcionServiciosUPPOST;
       /**
      * Consultar asignaturas
      * @return  lista total de Programas
