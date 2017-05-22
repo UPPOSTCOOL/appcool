@@ -9,6 +9,7 @@ import com.google.inject.Inject;
 import edu.eci.pdsw.uppostcool.daos.PersistenceException;
 import edu.eci.pdsw.uppostcool.daos.ProfesorDAO;
 import edu.eci.pdsw.uppostcool.dao.mybatis.mappers.ProfesorMapper;
+import edu.eci.pdsw.uppostcool.entities.Profesor;
 
 import java.util.List;
 
@@ -35,6 +36,11 @@ public class MyBatisDaoProfesor implements ProfesorDAO{
     @Override
     public List<ProfesorDAO> loadAll() throws PersistenceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Profesor> consultarProfesoresXnombre(String nombre) throws PersistenceException {
+       return pmap.consultarProfesoresXclases(nombre);
     }
     
 }

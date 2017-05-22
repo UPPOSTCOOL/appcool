@@ -21,6 +21,7 @@ import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.entities.Programa;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -81,6 +82,15 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     @Override
     public List<Clase> consultarClasesMateria() throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public void insertarClase(Date fecha, Time horaInicio, Time horaFin) throws ExcepcionServiciosUPPOST {
+        try {
+            daoc.insertarClase(fecha, horaInicio, horaFin);
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("No se pudo agregas sesion de clase en la fecha: " + fecha + "y en la hora: "+ horaInicio + ex );
+        }
     }
     
     //---------------------------------------------------------------ServiciosMateria
@@ -193,6 +203,15 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     public List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public List<Profesor> consultarProfesoresXnombre(String nombre) throws ExcepcionServiciosUPPOST {
+        try {
+            return daoPO.consultarProfesoresXnombre(nombre);
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar profesores con nombres o apellidos: " + nombre + ex );
+        }
+    }
 
     
     //---------------------------------------------------------------ServiciosPrograma
@@ -227,6 +246,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     public List<Asignatura> consultarAsignaturas () throws ExcepcionServiciosUPPOST {
         return null;
     }
+
     
     //----------------------------------------------------------------ServiciosVarios
     
@@ -235,14 +255,6 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
-
-    
-    
-
- 
-
-    
 
     
 }

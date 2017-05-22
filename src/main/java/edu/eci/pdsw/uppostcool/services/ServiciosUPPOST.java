@@ -11,6 +11,7 @@ import edu.eci.pdsw.uppostcool.entities.Periodo;
 import edu.eci.pdsw.uppostcool.entities.Materia;
 import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.entities.Programa;
+import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Tuple;
@@ -72,6 +73,15 @@ public interface ServiciosUPPOST {
      * de datos
      */
     public abstract List<Clase> consultarClasePeriodo(Periodo periodo) throws ExcepcionServiciosUPPOST;
+    
+      /**
+     * Inserta clase
+     * @param fecha
+     * @param horaInicio
+     * @param horaFin
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+    public abstract void insertarClase(Date fecha, Time horaInicio, Time horaFin)throws ExcepcionServiciosUPPOST;
 
     //---------------------------------------------------------------ServiciosMateria
     
@@ -183,6 +193,13 @@ public interface ServiciosUPPOST {
      */
     public abstract Profesor consultarProfesor(int cohorte, String materia) throws ExcepcionServiciosUPPOST;
     
+     /**
+     * Consultar profesores por atributo de nombre
+     * @return  lista total de profesores seleccionados
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+     */
+    public abstract List<Profesor> consultarProfesoresXnombre(String nombre)throws ExcepcionServiciosUPPOST;
+    
     //---------------------------------------------------------------ServiciosPrograma
         
     /**
@@ -235,5 +252,10 @@ public interface ServiciosUPPOST {
      * de datos
      */
     public abstract List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST;
+
+    
+    
+    
+ 
 
 }
