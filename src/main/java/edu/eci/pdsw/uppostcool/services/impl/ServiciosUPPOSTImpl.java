@@ -21,6 +21,7 @@ import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.entities.Programa;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -215,6 +216,15 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
             return daoPO.consultarProfesoresXnombre(nombre);
         } catch (PersistenceException ex) {
             throw new ExcepcionServiciosUPPOST("Error al consultar profesores con nombres o apellidos: " + nombre + ex );
+        }
+    }
+
+    @Override
+    public void insertarClase(Date fecha, Time horaInicio, Time horaFin) throws ExcepcionServiciosUPPOST {
+        try {
+            daoc.insertarClase(fecha, horaInicio, horaFin);
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("No se pudo agregas sesion de clase en la fecha: " + fecha + "y en la hora: "+ horaInicio + ex );
         }
     }
 

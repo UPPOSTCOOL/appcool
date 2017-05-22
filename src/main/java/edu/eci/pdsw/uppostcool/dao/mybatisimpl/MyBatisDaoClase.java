@@ -11,6 +11,8 @@ import edu.eci.pdsw.uppostcool.daos.PersistenceException;
 import edu.eci.pdsw.uppostcool.dao.mybatis.mappers.ClaseMapper;
 
 import edu.eci.pdsw.uppostcool.entities.Clase;
+import java.sql.Time;
+import java.util.Date;
 
 import java.util.List;
 
@@ -31,6 +33,13 @@ public class MyBatisDaoClase implements ClaseDAO{
     @Override
     public List<Clase> consultarClasesxPeriodo(int ano , int semestre) throws PersistenceException {
          return pmap.consultarClases(ano, semestre);
+    }
+
+    @Override
+    public void insertarClase(Date fecha, Time horaInicio, Time horaFin) throws PersistenceException {
+        
+        java.sql.Timestamp s = new java.sql.Timestamp(fecha.getYear(), fecha.getMonth(), fecha.getDay(), horaInicio.getHours(), horaInicio.getMinutes(), 0, 0);
+        pmap.insertarClase(s, horaFin);
     }
     
 }
