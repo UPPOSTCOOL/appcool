@@ -6,12 +6,7 @@
 package edu.eci.pdsw.uppostcool.managedbeans;
 
 
-
-import java.io.Serializable;
-
-
 import edu.eci.pdsw.uppostcool.entities.Periodo;
-import edu.eci.pdsw.uppostcool.entities.Programa;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
@@ -19,7 +14,6 @@ import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImplStub;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import static java.util.Collections.list;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;

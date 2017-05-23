@@ -11,7 +11,11 @@ import edu.eci.pdsw.uppostcool.entities.Periodo;
 import edu.eci.pdsw.uppostcool.entities.Materia;
 import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.entities.Programa;
+
 import java.sql.Time;
+
+import edu.eci.pdsw.uppostcool.services.impl.TupleImp;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Tuple;
@@ -125,17 +129,18 @@ public interface ServiciosUPPOST {
      * error a nivel de base de datos, la clase no existe
      */
     public abstract List<Materia> consultarMateriasPrograma(int id_programa) throws ExcepcionServiciosUPPOST;
-
     
     /**
-     * Inerta una materia
-     *
-     * @param materia
-     * @param prerequisitos
-     * @param corequisitos
-     * @throws ExcepcionServiciosUPPOST
+     * Consulta las materias de un programa excepto la materia indicada
+     * @param id_programa
+     * @param codigoMateria que se excluye de la lista de respuesta
+     * @return Las materias del programa
+     * @throws ExcepcionServiciosUPPOST 
      */
-    public abstract void insertarMateria(Materia materia, List<Tuple> prerequisitos, List<Tuple> corequisitos, List<Asignatura> asignaturas) throws ExcepcionServiciosUPPOST;
+    public abstract List<Materia> consultarMateriasProgramaExceptMateria(int id_programa, String codigoMateria) throws ExcepcionServiciosUPPOST;
+
+    
+    
     
     //---------------------------------------------------------------ServiciosPeriodo
     
@@ -242,12 +247,27 @@ public interface ServiciosUPPOST {
     //----------------------------------------------------------------ServiciosVarios
     
     /**
+<<<<<<< HEAD
      * Consultar fechas
      *
      * @param fecha
      * @return una lista de fechas segun el periodo
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base
      * de datos
+=======
+     * Inerta una materia
+     * @param materia
+     * @param prerequisitos
+     * @param corequisitos
+     * @param asignaturas
+     * @throws ExcepcionServiciosUPPOST 
+     */
+    public abstract void insertarMateria(Materia materia, List<TupleImp> prerequisitos, List<TupleImp> corequisitos, List<Asignatura> asignaturas)throws ExcepcionServiciosUPPOST;
+      /**
+     * Consultar asignaturas
+     * @return  lista total de Programas
+     * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base de datos
+>>>>>>> origin/HU3
      */
     public abstract List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST;
 

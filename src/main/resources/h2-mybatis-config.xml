@@ -14,7 +14,6 @@
         <typeAlias type='edu.eci.pdsw.uppostcool.entities.Asignatura' alias='Asignatura'/>
         <typeAlias type='edu.eci.pdsw.uppostcool.entities.Periodo' alias='Periodo'/>
         <typeAlias type='edu.eci.pdsw.uppostcool.entities.Programa' alias='Programa'/>
-
     </typeAliases>        
     
     

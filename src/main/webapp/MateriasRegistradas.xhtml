@@ -19,21 +19,25 @@ and open the template in the editor.
         <h:form id="registrarMateria" style="color:firebrick">
             <h2>Materias registradas</h2>
 
-            <p:dataTable  id="formularioMateriasRegistradas" var="registradas"   style="margin: 0 auto;">
+            <p:dataTable  id="materia" value="#{listarMateria.materias}"    style="margin: 0 auto;">
                 <p:column>
                     <f:facet name="header">
-                        <h:outputText value="Asignatura"/>
+                        <h:outputText value="Asignatura" />
                     </f:facet>
+                        <h:outputText value="#{materia.asignatura.nombre}" />
                 </p:column>
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Materia"/>
                     </f:facet>
+                    <h:outputText value="#{materia.nombre}"/>
                 </p:column>
+              
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Acción"/>
                     </f:facet>
+                    <h:outputText value="Acción"/>
                     <p:commandButton value="Modificar materia" ></p:commandButton>
                 </p:column>
             </p:dataTable>

@@ -21,8 +21,6 @@ import edu.eci.pdsw.uppostcool.daos.PAcademicoDAO;
 import edu.eci.pdsw.uppostcool.daos.ProfesorDAO;
 import edu.eci.pdsw.uppostcool.daos.ProgramaDAO;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
-//import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImplStub;
-
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 
