@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2017-05-09 00:24:18.38
+-- Last modification date: 2017-05-21 22:58:09.425
 
 -- tables
 -- Table: Asign_Mater
@@ -58,6 +58,13 @@ CREATE TABLE Corequisito (
     CONSTRAINT Corequisito_pk PRIMARY KEY (Materia_id,Materia_id_co,Programa_id)
 );
 
+-- Table: Corequisito_A
+CREATE TABLE Corequisito_A (
+    Asignatura_id int  NOT NULL,
+    Asignatura_id_co int  NOT NULL,
+    CONSTRAINT Corequisito_A_pk PRIMARY KEY (Asignatura_id,Asignatura_id_co)
+);
+
 -- Table: HorarioProf
 CREATE TABLE HorarioProf (
     id int  NOT NULL,
@@ -100,6 +107,13 @@ CREATE TABLE Prerequisito (
     CONSTRAINT Prerequisito_pk PRIMARY KEY (Materia_id,Materia_id_pre,Programa_id)
 );
 
+-- Table: Prerequisito_A
+CREATE TABLE Prerequisito_A (
+    Asignatura_id int  NOT NULL,
+    Asignatura_id_pre int  NOT NULL,
+    CONSTRAINT Prerequisito_A_pk PRIMARY KEY (Asignatura_id,Asignatura_id_pre)
+);
+
 -- Table: Profesor
 CREATE TABLE Profesor (
     id int  NOT NULL,
@@ -126,7 +140,9 @@ CREATE TABLE Recurso (
 -- Reference: Asign_Mater_Asignatura (table: Asign_Mater)
 ALTER TABLE Asign_Mater ADD CONSTRAINT Asign_Mater_Asignatura
     FOREIGN KEY (Asignatura_id)
-    REFERENCES Asignatura (id)  
+    REFERENCES Asignatura (id)
+    ON DELETE  RESTRICT 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
@@ -134,7 +150,9 @@ ALTER TABLE Asign_Mater ADD CONSTRAINT Asign_Mater_Asignatura
 -- Reference: Asign_Mater_Materia (table: Asign_Mater)
 ALTER TABLE Asign_Mater ADD CONSTRAINT Asign_Mater_Materia
     FOREIGN KEY (Materia_codigo)
-    REFERENCES Materia (codigo)  
+    REFERENCES Materia (codigo)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
@@ -162,7 +180,9 @@ ALTER TABLE Mater_Perio ADD CONSTRAINT Asing_Cohor_Profesor
 -- Reference: Clase_Mater_Perio (table: Clase)
 ALTER TABLE Clase ADD CONSTRAINT Clase_Mater_Perio
     FOREIGN KEY (Mater_Perio_Materia_id, Mater_Perio_cohorte)
-    REFERENCES Mater_Perio (Materia_id, cohorte)  
+    REFERENCES Mater_Perio (Materia_id, cohorte)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
@@ -207,18 +227,42 @@ ALTER TABLE Comit_Profe ADD CONSTRAINT Comit_Profe_Profesor
     INITIALLY IMMEDIATE
 ;
 
--- Reference: Corequisito_Materia (table: Corequisito)
-ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia
-    FOREIGN KEY (Materia_id)
-    REFERENCES Materia (codigo)  
+-- Reference: Corequisito_Asignatura (table: Corequisito_A)
+ALTER TABLE Corequisito_A ADD CONSTRAINT Corequisito_Asignatura
+    FOREIGN KEY (Asignatura_id)
+    REFERENCES Asignatura (id)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: Corequisito_Materia_CO (table: Corequisito)
-ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia_CO
+-- Reference: Corequisito_Asignatura_2 (table: Corequisito_A)
+ALTER TABLE Corequisito_A ADD CONSTRAINT Corequisito_Asignatura_2
+    FOREIGN KEY (Asignatura_id_co)
+    REFERENCES Asignatura (id)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: Corequisito_Materia (table: Corequisito)
+ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia
+    FOREIGN KEY (Materia_id)
+    REFERENCES Materia (codigo)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: Corequisito_Materia2 (table: Corequisito)
+ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia2
     FOREIGN KEY (Materia_id_co)
-    REFERENCES Materia (codigo)  
+    REFERENCES Materia (codigo)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
@@ -227,7 +271,7 @@ ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Materia_CO
 ALTER TABLE Corequisito ADD CONSTRAINT Corequisito_Programa
     FOREIGN KEY (Programa_id)
     REFERENCES Programa (id)
-    ON DELETE  CASCADE 
+    ON DELETE  RESTRICT 
     ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
@@ -246,7 +290,9 @@ ALTER TABLE HorarioProf ADD CONSTRAINT HorarioProf_Profesor
 -- Reference: Mater_Cohor_Materia (table: Mater_Perio)
 ALTER TABLE Mater_Perio ADD CONSTRAINT Mater_Cohor_Materia
     FOREIGN KEY (Materia_id)
-    REFERENCES Materia (codigo)  
+    REFERENCES Materia (codigo)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
@@ -254,7 +300,27 @@ ALTER TABLE Mater_Perio ADD CONSTRAINT Mater_Cohor_Materia
 -- Reference: Mater_Cohor_Periodo (table: Mater_Perio)
 ALTER TABLE Mater_Perio ADD CONSTRAINT Mater_Cohor_Periodo
     FOREIGN KEY (Periodo_id)
-    REFERENCES Periodo (id)  
+    REFERENCES Periodo (id)
+    ON DELETE  RESTRICT 
+    ON UPDATE  CASCADE 
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: Prerequisito_Asignatura (table: Prerequisito_A)
+ALTER TABLE Prerequisito_A ADD CONSTRAINT Prerequisito_Asignatura
+    FOREIGN KEY (Asignatura_id_pre)
+    REFERENCES Asignatura (id)  
+    NOT DEFERRABLE 
+    INITIALLY IMMEDIATE
+;
+
+-- Reference: Prerequisito_Asignatura_2 (table: Prerequisito_A)
+ALTER TABLE Prerequisito_A ADD CONSTRAINT Prerequisito_Asignatura_2
+    FOREIGN KEY (Asignatura_id)
+    REFERENCES Asignatura (id)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
@@ -262,15 +328,19 @@ ALTER TABLE Mater_Perio ADD CONSTRAINT Mater_Cohor_Periodo
 -- Reference: Prerequisito_Materia (table: Prerequisito)
 ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia
     FOREIGN KEY (Materia_id)
-    REFERENCES Materia (codigo)  
+    REFERENCES Materia (codigo)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: Prerequisito_Materia_PRE (table: Prerequisito)
-ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia_PRE
+-- Reference: Prerequisito_Materia2 (table: Prerequisito)
+ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia2
     FOREIGN KEY (Materia_id_pre)
-    REFERENCES Materia (codigo)  
+    REFERENCES Materia (codigo)
+    ON DELETE  CASCADE 
+    ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
@@ -279,7 +349,7 @@ ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Materia_PRE
 ALTER TABLE Prerequisito ADD CONSTRAINT Prerequisito_Programa
     FOREIGN KEY (Programa_id)
     REFERENCES Programa (id)
-    ON DELETE  CASCADE 
+    ON DELETE  RESTRICT 
     ON UPDATE  CASCADE 
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
