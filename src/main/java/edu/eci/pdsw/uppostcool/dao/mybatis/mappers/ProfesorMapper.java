@@ -14,4 +14,6 @@ public interface ProfesorMapper {
     
     public List<Profesor> consultarProfesoresXclases(@Param("nombre") String nombre);
     
+    public List<Profesor> consultarProfesores();
+    
 }

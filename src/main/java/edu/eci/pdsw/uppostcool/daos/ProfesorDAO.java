@@ -22,7 +22,7 @@ public interface ProfesorDAO {
 
     public ProfesorDAO load(int id) throws PersistenceException;
 
-    public List<ProfesorDAO> loadAll() throws PersistenceException;
+    public List<Profesor> loadAll() throws PersistenceException;
 
     public List<Profesor> consultarProfesoresXnombre(String nombre) throws PersistenceException;
 }

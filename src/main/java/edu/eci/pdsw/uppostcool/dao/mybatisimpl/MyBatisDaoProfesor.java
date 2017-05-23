@@ -34,8 +34,8 @@ public class MyBatisDaoProfesor implements ProfesorDAO{
     }
 
     @Override
-    public List<ProfesorDAO> loadAll() throws PersistenceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Profesor> loadAll() throws PersistenceException {
+        return pmap.consultarProfesores();
     }
 
     @Override
