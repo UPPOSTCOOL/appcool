@@ -16,6 +16,20 @@
         
     </select>
     
+    <select parameterType="map" id="consultarProfesores" resultMap="ProfesorResult">
+     
+        select  
+        
+        id, nombre 
+
+        from profesor
+        
+        
+        
+    </select>
+    
+    
+    
     <resultMap type='Profesor' id='ProfesorResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>

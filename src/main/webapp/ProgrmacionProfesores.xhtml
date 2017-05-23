@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Programacion Profesores </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+
+    <h:body>
+        <img src="Imagenes/escuela.jpg" height="145" />
+
+        <div style="text-align: center;">
+            <h:form id="periodoo" style="text-align: center; color:firebrick">
+                <div style="text-align: center;">
+                <h1>Seleccione el Profesor</h1>
+                    
+                <p style="font-size: 20px"> Seleccione el nombre</p>         
+                <h:selectOneMenu value = "#{reporteProfesorBean.obtenerProfesores()}"> 
+                    <f:selectItem itemValue = "#{reporteProfesorBean.obtenerProfesores()}"></f:selectItem>
+                </h:selectOneMenu>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div>
+            <div style="text-align: center">
+                <h:commandButton id="open-BinP" value="Consultar periodo completo" action="ReportesSalones" style="margin-left: 30px"/>            
+                <h:commandButton id="indice" value="Consultar semana" action="indice" style="margin-left: 30px"/>
+            </div>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

@@ -206,7 +206,13 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     @Override
     public List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            return daoPO.loadAll();
+        } catch (PersistenceException ex) {
+            throw new ExcepcionServiciosUPPOST("Error al consultar todos los profesores: " + ex );
+
+        }
+        
     }
 
     @Override
@@ -265,6 +271,11 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     public List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Clase> consultarClasesXprofesor(int ano, int semestre, Profesor profesor) {
+        return daoc.consultarClasesXprofesor(ano, semestre, profesor);
     }
 
 
