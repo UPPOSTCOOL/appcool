@@ -40,6 +40,6 @@ public interface ClaseDAO {
      */
     public void insertarClase (Date fecha, Time horaInicio, Time horaFin) throws PersistenceException;
     
-    public List<Clase> consultarClasesXprofesor (int ano, int semestre, Profesor profesor);
+    public List<Clase> consultarClasesXprofesor (int ano, int semestre, String profesor);
     
 }

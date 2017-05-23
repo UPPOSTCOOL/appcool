@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Programacion periodo profesor </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <img src="Imagenes/escuela.jpg" height="145" />
+        <h1 style="text-align:center; color:firebrick">Programacion de periodo completo</h1>
+
+        
+
+        <p:dataTable id="formularioProfe" var="profe" value="#{reporteProfesorBean.obtenerClases()}" 
+                     style="margin: 0 auto;">
+            <!-- <caption>Salones por periodo</caption>-->
+            <p:column>  
+                <f:facet name="header">
+                    <h:outputText value="Fecha"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{profe.formatoFecha}"></h:outputText>
+            </p:column>  
+            <p:column>  
+                <f:facet name="header">
+
+                    <h:outputText value="Hora inicio"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{profe.formatoHoraInicio}"></h:outputText>
+            </p:column>  
+            <p:column>  
+
+                <f:facet name="header">
+                    <h:outputText value="Hora fin"></h:outputText>
+                </f:facet>
+                 <h:outputText value="#{profe.horaFin}"></h:outputText>
+            </p:column> 
+            <p:column>  
+                <f:facet name="header">
+
+                    <h:outputText value="Materia"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{profe.idMateria}"></h:outputText>
+            </p:column>
+            <p:column>  
+                <f:facet name="header">
+                    <h:outputText value="Salon"></h:outputText>
+
+                </f:facet>
+                <h:outputText value="#{profe.salon}"></h:outputText>
+            </p:column>  
+            
+              
+
+
+
+        </p:dataTable>
+
+
+
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <h:form id="op-button" style="text-align:center">
+            <h:commandButton id="open-r" value="Elegir profesor" action="ProgramacionProfesores" />
+        </h:form>
+    </h:body>
+
+
+
+</html>
+

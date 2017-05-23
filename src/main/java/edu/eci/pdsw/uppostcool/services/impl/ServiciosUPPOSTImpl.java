@@ -274,7 +274,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     @Override
-    public List<Clase> consultarClasesXprofesor(int ano, int semestre, Profesor profesor) {
+    public List<Clase> consultarClasesXprofesor(int ano, int semestre, String profesor) {
         return daoc.consultarClasesXprofesor(ano, semestre, profesor);
     }
 

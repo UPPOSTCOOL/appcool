@@ -252,7 +252,7 @@ public interface ServiciosUPPOST {
     public abstract List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST;
 
     
-    public abstract List<Clase> consultarClasesXprofesor(int ano, int semestre, Profesor profesor);
+    public abstract List<Clase> consultarClasesXprofesor(int ano, int semestre, String profesor);
     
     
     

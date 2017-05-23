@@ -58,13 +58,11 @@ public class ReporteProfesores {
     }
     
 
-    public List<Clase> obtenerClases(Profesor profesor) throws ExcepcionServiciosUPPOST{
+    public List<Clase> obtenerClases() throws ExcepcionServiciosUPPOST{
         int semestre=pb.getSemestre();
         int anio=pb.getAnio();
-        List<Clase> clases = null;
         
-        clases = inp.consultarClasesXprofesor(anio, semestre, profesor);
-        return clases;
+        return inp.consultarClasesXprofesor(anio, semestre, profesor);
     }
     
 }

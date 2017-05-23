@@ -52,8 +52,8 @@ public class MyBatisDaoClase implements ClaseDAO{
      * @throws PersistenceException
      */
     @Override
-    public List<Clase> consultarClasesXprofesor(int ano, int semestre, Profesor profesor){
-        return pmap.consultarClasesXprofesor(ano, semestre, profesor.getNombre());
+    public List<Clase> consultarClasesXprofesor(int ano, int semestre, String profesor){
+        return pmap.consultarClasesXprofesor(ano, semestre, profesor);
     }
     
 }
