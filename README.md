@@ -220,8 +220,34 @@ Reporte GIT general
 [back-char-2]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/backchart-2.png
 [git-2]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/git/git-2.png
         
+
+#### Reporte Sprint No 3
     
+##### Sprint-backlog
+---
+![alt text][back-3]
+---   
+
+##### sprint-burndown chart
+
+----
+![alt text][back-char-3]
+----
+
+##### Reporte GIT
  
+  Reporte GIT general
+----
+![alt text][git-3]
+> [Ver reporte completo Sprint 2](http://profesores.is.escuelaing.edu.co/hcadavid/reportes/2017-1/pdsw/reports/05-11-2017-09H-43M/appcool.repo/)
+----
+   
+[back-3]: https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/back-3.png
+[back-char-3]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/backchart-3.png
+[git-3]:
+
+------
+
 # Reporte de Pruebas
 
 ## Casos de Equivalencia
