@@ -24,7 +24,7 @@ and open the template in the editor.
                     <f:facet name="header">
                         <h:outputText value="Asignatura" />
                     </f:facet>
-                        <h:outputText value="#{materia.asignatura}" />
+                        <h:outputText value="#{materia.asignatura.nombre}" />
                 </p:column>
                 <p:column>
                     <f:facet name="header">
@@ -32,7 +32,7 @@ and open the template in the editor.
                     </f:facet>
                     <h:outputText value="#{materia.nombre}"/>
                 </p:column>
-                <h:outputText value="#{materia.nombre}" />
+              
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Acción"/>

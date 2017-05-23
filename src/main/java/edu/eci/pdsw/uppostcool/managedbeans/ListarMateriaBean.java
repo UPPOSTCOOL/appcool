@@ -7,6 +7,8 @@ package edu.eci.pdsw.uppostcool.managedbeans;
 
 import edu.eci.pdsw.uppostcool.entities.Materia;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
+import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
+import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,14 +24,19 @@ import javax.faces.bean.SessionScoped;
 public class ListarMateriaBean{
     
     private List<Materia> materias;
-    ServiciosUPPOSTImpl inp=new ServiciosUPPOSTImpl();
+
+   
+    private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     
     public ListarMateriaBean(){
         materias = new ArrayList<>();
     }
 
     public List<Materia> getMaterias() throws ExcepcionServiciosUPPOST {
-        return inp.consultarMaterias();
+        materias=inp.consultarMaterias();
+        return materias;
     }
-
+ public void setMaterias(List<Materia> materias) {
+        this.materias = materias;
+    }
 }
