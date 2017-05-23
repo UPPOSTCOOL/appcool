@@ -1,21 +1,27 @@
 # UPPOST-COOL 
 
-Nombre del Proyecto: UPPOST-COOL
-Nombre de la Aplicación: AppCOOL
-Asignatura: Proceso de Desarrollo de Sooftware 
-Periodo Academico: 2017-1 (PDSW)
+![alt text][upppost-img]
+[uppost-img]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/appcool2.jpeg
+
+Nombre del Proyecto: [UPPOST-COOL](https://github.com/UPPOSTCOOL)
+
+Nombre de la Aplicación: [AppCOOL](https://appcool.herokuapp.com)
+
+Asignatura: Proceso de Desarrollo de Sooftware - [PDSW](https://github.com/PDSW-ECI)
+
+Periodo Academico: 2017-1 
 
 ## Rol - Integrante:   
 
 |No.| Rol            | Nombre                        |
 |:--|:---------------|:------------------------------|
-|1  | team           | Carol Johana Meneses Pineda   |   
-|2  | team           | Maria Paula Pinzón Cardozo    |
-|3  | team           | Javier Fernando Silva León    |
-|4  | Scrum master   | Juan felipe Ortiz Niño        |
-|5  | team           | Kevin Julian Alavarado Pérez  |
-|6  | team           | Manuel Sergio Pérez Espitia   |
-|7  | Product Owner  | Hector Fabio Cadavid Rengifo  |
+|1  | team           | [Carol Johana Meneses Pineda](https://github.com/orgs/UPPOSTCOOL/people/carolMeneses)   |   
+|2  | team           | [Maria Paula Pinzón Cardozo](https://github.com/orgs/UPPOSTCOOL/people/MariaPaulaP)    |
+|3  | team           | [Javier Fernando Silva León](https://github.com/orgs/UPPOSTCOOL/people/javierfsilva7)    |
+|4  | Scrum master   | [Juan felipe Ortiz Niño](https://github.com/orgs/UPPOSTCOOL/people/JuanFelipeON)        |
+|5  | team           | [Kevin Julian Alavarado Pérez](https://github.com/orgs/UPPOSTCOOL/people/kvncf)  |
+|6  | team           | [Manuel Sergio Pérez Espitia](https://github.com/orgs/UPPOSTCOOL/people/dark07perez)   |
+|7  | Product Owner  | [Hector Fabio Cadavid Rengifo](https://github.com/hcadavid)  |
 
 
 # Descripción del Producto
