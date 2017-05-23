@@ -12,7 +12,7 @@ public interface ProgramaMapper {
     
     public List<Programa> consultarProgramas();
     
-    public List<Programa> consultarPrograma();
+    public Programa consultarPrograma(@Param("nombrePrograma") String nombre);
     
-    public void insertarCliente(@Param("cliente") Programa p);
+    public void insertarPrograma(@Param("programa") Programa p);
 }

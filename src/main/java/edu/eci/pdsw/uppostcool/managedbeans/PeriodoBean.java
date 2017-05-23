@@ -35,7 +35,7 @@ import javax.faces.bean.SessionScoped;
 public class PeriodoBean implements Serializable{
 
     private List<Periodo> period=new ArrayList<>();
-    ServiciosUPPOSTImplStub inp=new ServiciosUPPOSTImplStub();
+   private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
 
     private int anio;
     private int semestre;
@@ -45,7 +45,8 @@ public class PeriodoBean implements Serializable{
     }
 
     public int getAnio() {
-        return anio;
+        // System.out.println(anio);
+               return anio;
     }
 
     public void setAnio(int anio) {
@@ -64,6 +65,9 @@ public class PeriodoBean implements Serializable{
 
     public List<Periodo> getPeriodo() throws ExcepcionServiciosUPPOST{
        return inp.consultarPAcademicos();
+    }
+    public void setPeriodo(List<Periodo> p) throws ExcepcionServiciosUPPOST{
+       period=p;
     }
 
     

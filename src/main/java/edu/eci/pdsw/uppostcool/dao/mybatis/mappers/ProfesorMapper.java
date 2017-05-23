@@ -11,9 +11,11 @@ import org.apache.ibatis.annotations.Param;
  * @author 2083722
  */
 public interface ProfesorMapper {
+
     
     public List<Profesor> consultarProfesoresXclases(@Param("nombre") String nombre);
     
     public List<Profesor> consultarProfesores();
     
+
 }

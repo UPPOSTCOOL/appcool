@@ -21,7 +21,7 @@ and open the template in the editor.
 
 
 
-        <p:dataTable id="formularioSalon" var="curso" value="#{PruebaSalonBean.obtenerClases()}" 
+        <p:dataTable id="formularioSalon" var="curso" value="#{PruebaSalonBean.getClases()}" 
                      style="margin: 0 auto;">
             <!-- <caption>Salones por periodo</caption>-->
             <p:column>  
@@ -32,18 +32,21 @@ and open the template in the editor.
             </p:column>  
             <p:column>  
                 <f:facet name="header">
+
                     <h:outputText value="Hora inicio"></h:outputText>
                 </f:facet>
                 <h:outputText value="#{curso.formatoHoraInicio}"></h:outputText>
             </p:column>  
             <p:column>  
+
                 <f:facet name="header">
                     <h:outputText value="Hora fin"></h:outputText>
                 </f:facet>
-                <h:outputText value="#{curso.hora}"></h:outputText>
+                 <h:outputText value="#{curso.horaFin}"></h:outputText>
             </p:column> 
             <p:column>  
                 <f:facet name="header">
+
                     <h:outputText value="Materia"></h:outputText>
                 </f:facet>
                 <h:outputText value="#{curso.idMateria}"></h:outputText>
@@ -51,12 +54,13 @@ and open the template in the editor.
             <p:column>  
                 <f:facet name="header">
                     <h:outputText value="Salon"></h:outputText>
+
                 </f:facet>
                 <h:outputText value="#{curso.salon}"></h:outputText>
             </p:column>  
             <p:column>  
                 <f:facet name="header">
-                    <h:outputText value="Caracteristicas"></h:outputText>
+                    <h:outputText value="Características"></h:outputText>
                 </f:facet>
                 <h:outputText value="#{curso.recurso}"></h:outputText>
             </p:column> 

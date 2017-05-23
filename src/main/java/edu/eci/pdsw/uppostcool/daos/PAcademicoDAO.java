@@ -19,7 +19,8 @@ public interface PAcademicoDAO {
 
     public Periodo load(int id) throws PersistenceException;
 
-    public List<Periodo> loadAll() throws PersistenceException;
+
+     public List<Periodo> consultarPAcademico() throws PersistenceException;
     
     public void saveAll() throws PersistenceException;
 

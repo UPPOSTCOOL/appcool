@@ -14,13 +14,33 @@ import java.io.Serializable;
 public class Profesor implements Serializable{
     private int id;
     private String nombre;
+    private String primerApellido;
+    private String segundoApellido;
 
     public Profesor() {
     }
 
-    public Profesor(int id, String nombre) {
+    public Profesor(int id, String nombre, String apellido, String apellido2) {
         this.id = id;
         this.nombre = nombre;
+        this.primerApellido = apellido;
+        this.segundoApellido = apellido2;
+    }
+
+    public String getApellidoUno() {
+        return primerApellido;
+    }
+
+    public void setApellidoUno(String apellido) {
+        this.primerApellido = apellido;
+    }
+
+    public String getApellidoDos() {
+        return segundoApellido;
+    }
+
+    public void setApellidoDos(String apellido) {
+        this.segundoApellido = apellido;
     }
 
     public int getId() {

@@ -61,7 +61,10 @@ public class Periodo {
         this.materias = materias;
     }
     
+    public void nuevoPeriodo(){
     
+    
+    }
     
     
 }
