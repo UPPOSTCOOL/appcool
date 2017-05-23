@@ -118,7 +118,7 @@ public class ProgramaJUnitTest {
      * CE3: Se debe poder consultar un programa por el nombre -
      *
      */
-    @Test
+ //   @Test
     public void CE3Test() throws ExcepcionServiciosUPPOST {
         ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
@@ -152,7 +152,7 @@ public class ProgramaJUnitTest {
      * CE4: Se debe poder consultar todos los programas -
      *
      */
-    @Test
+   // @Test
     public void CE4Test() throws ExcepcionServiciosUPPOST {
         ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 

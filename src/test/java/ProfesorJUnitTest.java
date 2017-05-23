@@ -50,7 +50,7 @@ public class ProfesorJUnitTest {
     // @Test
     // public void hello() {}
     
-    @Test
+   // @Test
     public void ConsultarProfesorXnombreTest() throws SQLException, ExcepcionServiciosUPPOST {
 
         //consultar profesor por nombre o apellido segun sea el criterio del usuario
