@@ -8,7 +8,7 @@ Periodo Academico: 2017-1 (PDSW)
 ## Rol - Integrante:   
 
 |No.| Rol            | Nombre                        |
-|:-:|:---------------|:------------------------------|
+|:--|:---------------|:------------------------------|
 |1  | team           | Carol Johana Meneses Pineda   |   
 |2  | team           | Maria Paula Pinzón Cardozo    |
 |3  | team           | Javier Fernando Silva León    |
@@ -107,17 +107,15 @@ Se ofrece la funcionalidad de Registrar una Materia en en Nuevo Cohorte y por ú
 
 ## Capa de presentación 
 
-<------------------------------>
+La capa de presentación usa elementos de PrimeFaces, la parte de la aplicación que esta en interacción directa con el usuario.
 
 ## Capa Lógica
 
 La capa logica esta diseñda bajo un modelo orientado a objetos.
 
-
 ## Capa de Persistencia
 
-La capa de persistencia esta diseña bajo un modelo relacional, usando una base de datos relacional como motor de persistencia en el lenguaje PostgeeSQL. Se utilizo la tecnica del mapping para convertir datos entre estas dos capas. 
-
+La capa de persistencia esta diseña bajo un modelo relacional, usando una base de datos relacional como motor de persistencia en el lenguaje PostgeeSQL. Se utilizo la tecnica del mapping para convertir datos entre estas dos capas.
 
 
 ## Stack Tecnológico
@@ -141,10 +139,10 @@ La capa de persistencia esta diseña bajo un modelo relacional, usando una base 
 > [Link de la Aplicación AppCOOL en Heroku](https://appcool.herokuapp.com)
 
 
-# Proceso 
+# Descripción del Proceso
 
-## Descripción
 
+# Descripción de la Metodología 
 Desarrollo de la aplicación por el equipo UPPOST-COOL según la metodologia SCRUM vista en el curso de PDSW, el proyecto esta divido en 3 Sprints. Plataforma de programación de clases y gestión de recursos de programas de postgrado de la Unidad de Proyectos de la Escuela Colombiana de Ingeniería
 
 
@@ -181,94 +179,65 @@ Historias de usuaro no relaizadas en el proyecto
 ----
 
 ##### Reporte GIT
-    
+ 
+Reporte GIT general
 ----
 ![alt text][git-1]
+> [Ver reporte completo Sprint 1](http://profesores.is.escuelaing.edu.co/hcadavid/reportes/2017-1/pdsw/reports/04-24-2017-15H-18M/appcool.repo/index.html)
 ----
    
 [back-1]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/back-1.png
 [back-char-1]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/backchar-1.png
-[git-1]:
+[git-1]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/git/git-1.png
     
     
-       
+#### Reporte Sprint No 2
     
-    
-    
-CE1: Nombre ya existe: 
-   No puede agregar un nombre existente a otra materia: 
-   Nada
-    
-CE2: Nombre no existe: 
-  Puede agregar el nombre a la materia: 
-  Agrega nombre a la materia en creación    
-    
-CE3: Codigo ya existe: 
-  No puede agregar un codigo que es de otra materia: 
-  Nada
-  
-CE4: Codigo no existe: 
-  Puede agregar el codigo unico a la materia: 
-  Agrega codigo a la Materia en creación  
-    
-CE5: Nombre y Codigo, vacios: 
-  No puede agregar una materia sin identificadores: 
-  Nada
-    
-CE6: Nombre y Codigo, no Vacios: 
-  Puede agregar atributos identificadores a la materia:  
-  Agrega nombre y codigo a la materia en creación
+##### Sprint-backlog
+---
+![alt text][back-2]
+---   
+
+##### sprint-burndown chart
+
+----
+![alt text][back-char2]
+----
+
+##### Reporte GIT
+ 
+Reporte GIT general
+----
+![alt text][git-2]
+> [Ver reporte completo Sprint 2](http://profesores.is.escuelaing.edu.co/hcadavid/reportes/2017-1/pdsw/reports/05-11-2017-09H-43M/appcool.repo/)
+----
    
-CE7: Descipcion Vacia: 
-  La materia puede no tener descripción: 
-  Agregar Materia
+[back-2]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/back-2.png
+[back-char-2]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/backchart-2.png
+[git-2]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/git/git-2.png
+        
     
-CE8: Descipcion no Vacia: 
-  Agrega la descripción a la materia: 
-  Registra materia
-    
-CE9: Prerrequisito = Correquisito: 
-  Una materia no puede tener las mismas materias como prerrequisito y correquisito a la vez: 
-  Error!
-   
-CE10: Prerrequisito y  Correquisito, Vacios: 
-  Puede registrar una materia que no tenga dependencia de otra: 
-  Registra materia
-   
-CE11: Prerrequisito != Correquisito: 
-  Una materia puede tener prerrequisitos y correquisitosRegistra:
-  Registra Materia
-   
-CE12: M.i -> M.j -> M.k "i< j< k< Total.Materias": 
-  Si una materia tiene prerrequisitos en comun con otra 
-  que es prerrequisito de ella, los prerrequisitos de la otra materia son tambien prerrequisitos de la primera,
-  No puede haber una materia que sea prerrequisito de otra y esta no sea prerequisito de ella:
-  Nada
-   
+ 
 # Reporte de Pruebas
 
-  Clases de fronteras
+## Casos de Equivalencia
+
+|No. |Clase de Equivalencia   | Análisis                                              |Resultado |
+|:----|:-----------------------|:------------------------------------------------------|:---------|
+|CE1  |Nombre ya existe        |No puede agregar un nombre existente a otra materia    |Nada      |
+|CE2  |Nombre no existe |Puede agregar el nombre a la materia |Agrega nombre a la materia en creación
+|CE3  |Codigo ya existe |No puede agregar un codigo que es de otra materia |Nada |
+|CE4  |Codigo no existe |Puede agregar el codigo unico a la materia |Agrega codigo a la Materia en creación
+|CE5  |Nombre y Codigo, vacios  |No puede agregar una materia sin identificadores |Nada |
+|CE6  |Nombre y Codigo, no Vacios |Puede agregar atributos identificadores a la materia |Agrega nombre y codigo a la materia en creación |
+|CE7  |Descipcion Vacia |La materia puede no tener descripción | Registra materia |
+|CE8  |Descipcion no Vacia  |Agrega la descripción a la materia | Registra materia |
+|CE9  |Prerrequisito = Correquisito |Una materia no puede tener las mismas materias como prerrequisito y correquisito a la vez |Error! |
+|CE10  |Prerrequisito y  Correquisito, Vacios |Puede registrar una materia que no tenga dependencia de otra |Registra materia |
+|CE11 |Prerrequisito != Correquisito  |Una materia puede tener prerrequisitos y correquisitosRegistra |Registra materia |
+|CE12 |M.i -> M.j -> M.k "i< j< k< Total.Materias"  |Si una materia tiene prerrequisitos en comun con otra que es prerrequisito de ella, los prerrequisitos de la otra materia son tambien prerrequisitos de la primera,No puede haber una materia que sea prerrequisito de otra y esta no sea prerequisito de ella |Nada|
   
- PRUEBAS - REGISTRAR MATERIA 
+----
  
- 
- 
+   <-------imagen de pruebas---------->
 
-  <--------------->
-  <-------imagen de pruebas---------->
-
-
-
-  
-
-
-
-    
-    
-    
-    
-
-
-
-
-Equipo UPPOST-COOL
