@@ -1,7 +1,6 @@
 # UPPOST-COOL 
 
-![alt text][upppost-img]
-[uppost-img]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/appcool2.jpeg
+![alt text](https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/appcool2.jpeg)
 
 Nombre del Proyecto: [UPPOST-COOL](https://github.com/UPPOSTCOOL)
 
@@ -183,9 +182,8 @@ Historias de usuaro no relaizadas en el proyecto
 ----
 ![alt text][back-char-1]
 ----
-
-##### Reporte GIT
- 
+---
+### Reporte GIT 
 Reporte GIT general
 ----
 ![alt text][git-1]
@@ -207,12 +205,12 @@ Reporte GIT general
 ##### sprint-burndown chart
 
 ----
-![alt text][back-char2]
+![alt text][back-char-2]
 ----
 
 ##### Reporte GIT
  
-Reporte GIT general
+  Reporte GIT general
 ----
 ![alt text][git-2]
 > [Ver reporte completo Sprint 2](http://profesores.is.escuelaing.edu.co/hcadavid/reportes/2017-1/pdsw/reports/05-11-2017-09H-43M/appcool.repo/)
