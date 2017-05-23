@@ -76,7 +76,7 @@ La capa logica esta diseñda bajo un modelo orientado a objetos.
 
 Capa de Persistencia
 
-La capa de persistencia esta diseña bajo un modelo relacional.
+La capa de persistencia esta diseña bajo un modelo relacional, usando una base de datos relacional como motor de persistencia en el lenguaje PostgeeSQL. Se utilizo la tecnica del mapping para convertir datos entre estas dos capas. 
 
 <------------------------------>
 
