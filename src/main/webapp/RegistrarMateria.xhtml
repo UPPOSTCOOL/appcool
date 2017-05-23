@@ -20,8 +20,6 @@ and open the template in the editor.
             <h1>Registro de Materias </h1>
             <h2>Agregar Programas</h2>
             <p:dataTable  id="formularioPrograma" var="programa" value="#{MateriasBean.obtenerProgramas()}" style="margin: 0 auto">
-
-
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Programas"/>
@@ -41,34 +39,14 @@ and open the template in the editor.
                 <tr>                    
                     <h3>Seleccione la asignatura relacionada con el programa: <h:outputText value="#{MateriasBean.progrSeleccionados.nombre}"/> </h3>                      
                     <td>
-                        <h:selectOneMenu  >
-                            <f:selectItems value="#{MateriasBean.asignaturasProgramaSeleccionado}" var="asi" itemLabel="#{asi.nombre}"/>
+                        <h:selectOneMenu value="#{MateriasBean.id_asignaturaSeleccionada}" >
+                            <f:selectItems value="#{MateriasBean.asignaturasProgramaSeleccionado}" var="asi" itemValue="#{asi.id}" itemLabel="#{asi.nombre}"/>
                             
                         </h:selectOneMenu>
                         
                         <p:commandButton value="Agregar" actionListener="#{MateriasBean.guardarAsignaturaPrograma()}" style="margin-left: 30px" update=":registrarMateria:ProgramasAgregados"/>
                     </td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <h3>Crear nueva asignatura relacionada con el programa: <h:outputText value="#{MateriasBean.progrSeleccionados.nombre}"/></h3>
-                    <td>
-                        id
-                    </td>
-                    <td >
-                        <h:inputText value = "id"/>
-                    </td>
-                    <td>
-                        nombre
-                    </td>
-                    <td>
-                        <h:inputText value="nombre"/>
-                    </td>
-                    <td>
-                        <p:commandButton  value="Crear Nueva Asignatura" style="margin-left: 10px"  /> 
-                    </td>
-                    
+                    <td><p:commandButton  value="Crear Nueva Asignatura" style="margin-left: 10px"  /> </td>
                 </tr>
             </table>
             <br/>
@@ -79,51 +57,90 @@ and open the template in the editor.
                     <f:facet name="header">
                         <h:outputText value="Programas"/>
                     </f:facet>
-                    <h:outputText value="#{agregados.nombre}" />
+                    <h:outputText value="#{agregados[1]}" />
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Asignatura"/>
                     </f:facet>
-                    <h:outputText value="#{agregados.nombreAsignatura}" />
+                    <h:outputText value="#{agregados[2]}" />
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">                       
                     </f:facet>
 
-                    <p:commandButton value="Eliminar" icon="ui-icon-check"  />     
+                    <p:commandButton value="Eliminar" icon="ui-icon-check"  actionListener="#{MateriasBean.eliminarAsignaturaPrograma(agregados[0])}" update=":registrarMateria:ProgramasAgregados" />     
                 </p:column>
 
             </p:dataTable>
-
             <br></br>
+            <h2>Pre-Requisitos y Co-requisitos</h2><br/>
             <table>                    
                 <tr>
-                    <td style="font-size: 20px">
-                        Pre-Requisitos
+                    <td style="font-size: 20px"> 
+                        Programa: 
                     </td>
                     <td>
-                        <h:selectOneMenu > 
-                            <f:selectItems value="#{programa.nombreRequisitos}"/>
-
+                        <h:selectOneMenu value="#{MateriasBean.progParaMateriaSeleccionado}"> 
+                            <f:selectItems value="#{MateriasBean.obtenerProgramas()}" var="asi" itemValue="#{asi.id}" itemLabel="#{asi.nombre}"/>
                         </h:selectOneMenu>
-
+                        <p:commandButton value="Actualizar Materias Requisito" update=":registrarMateria:materiasParaPre,:registrarMateria:materiasParaCo"/>
+                    </td>
+                    <td style="font-size: 20px">
+                        Pre-Requisitos:
+                    </td>
+                    <td>
+                        <h:selectOneMenu id="materiasParaPre" value="#{MateriasBean.preRequisitoSeleccionado}"> 
+                            <f:selectItems value="#{MateriasBean.getMateriasParaPrerequisito()}" var="asi" itemValue="#{asi.codigo}" itemLabel="#{asi.nombre}"/>
+                        </h:selectOneMenu>
+                        <p:commandButton value="Agregar" actionListener="#{MateriasBean.guardarPrerequisito()}" style="margin-left: 30px" update=":registrarMateria:RequisitosAgregados"/>
                     </td>
                     <td style="font-size: 20px">
                         Co-Requisitos
                     </td>
                     <td>
-
-                        <h:selectOneMenu value = "#{PeriodoBean.semestre}"> 
-                            <f:selectItem itemValue = "1" itemLabel = "1" /> 
-                            <f:selectItem itemValue = "2" itemLabel = "2" /> 
-                            <f:selectItem itemValue = "3" itemLabel = "Intersemestral" /> 
+                        <h:selectOneMenu id="materiasParaCo" value="#{MateriasBean.coRequisitoSeleccionado}"> 
+                            
+                            <f:selectItems value="#{MateriasBean.getMateriasParaCorequisito()}" var="asi" itemValue="#{asi.codigo}" itemLabel="#{asi.nombre}"/>
                         </h:selectOneMenu>
+                        <p:commandButton value="Agregar" actionListener="#{MateriasBean.guardarCorequisito()}" style="margin-left: 30px" update=":registrarMateria:RequisitosAgregados"/>
                     </td>
                 </tr>
+            </table>
+            <h2>Requisitos agregados</h2>
+            <p:dataTable  id="RequisitosAgregados" var="agregados" value="#{MateriasBean.requisitos}"  style="margin: 0 auto;">
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Programa"/>
+                    </f:facet>
+                    <h:outputText value="#{agregados[1]}" />
+                </p:column>
 
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Tipo"/>
+                    </f:facet>
+                    <h:outputText value="#{agregados[2]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Requisito"/>
+                    </f:facet>
+                    <h:outputText value="#{agregados[3]}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">                       
+                    </f:facet>
+                    <p:commandButton value="Eliminar" icon="ui-icon-check"  actionListener="#{MateriasBean.eliminarAsignaturaPrograma(agregados[0])}" update=":registrarMateria:RequisitosAgregados" />
+                </p:column>
+
+            </p:dataTable>
+            <br/>
+            <br/>
+            <h2>Datos de la materia</h2><br/>
+            <table> 
                 <tr>
                     <td style="font-size: 20px">
                         Nombre Materia
