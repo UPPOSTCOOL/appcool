@@ -4,7 +4,32 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.uppostcool.dao.mybatis.mappers.ProfesorMapper">
+    <select parameterType="map" id="consultarProfesoresXclases" resultMap="ProfesorResult">
+     
+        select  
+        
+        id, nombre 
 
+        from profesor
+        
+        where nombre like '%#{nombre}%'
+        
+    </select>
+    
+    <select parameterType="map" id="consultarProfesores" resultMap="ProfesorResult">
+     
+        select  
+        
+        id, nombre 
+
+        from profesor
+        
+        
+        
+    </select>
+    
+    
+    
     <resultMap type='Profesor' id='ProfesorResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>

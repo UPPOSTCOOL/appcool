@@ -42,4 +42,27 @@
         <result property= 'cohorte' column='mater_perio_cohorte'/>
         <result property= 'salon' column='salon'/> 
     </resultMap>
+    
+    <select parameterType="map" id="consultarClasesXprofesor" resultMap="ClaseResult">
+        
+        select pr.nombre, c.fecha, c.horaFin, c.mater_perio_materia_id as mater_perio_materia_id,
+        
+        c.salon
+        
+        from profesor pr, mater_perio mp, clase c, periodo p
+
+        where
+
+
+        mp.profesor_id = pr.id and
+        mp.materia_id = c.mater_perio_materia_id and
+        mp.cohorte = c.mater_perio_cohorte and
+        p.id = periodo_id
+
+        and p.ano=#{ano} and p.semestre = #{semestre}
+
+        and pr.nombre = #{profesor}
+        
+    </select>
+
 </mapper>

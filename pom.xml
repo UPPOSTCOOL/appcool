@@ -120,7 +120,7 @@
                         </goals>
                         <configuration>
                             <srcFiles>                                
-                                <srcFile>tables.sql</srcFile>                                
+                                <srcFile>SQL/UPPOSTCOOL_create.sql</srcFile>                                
                             </srcFiles>
                         </configuration>
                     </execution>

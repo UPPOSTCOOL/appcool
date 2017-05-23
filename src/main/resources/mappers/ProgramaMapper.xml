@@ -4,11 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.eci.pdsw.uppostcool.dao.mybatis.mappers.ProgramaMapper">
+    
     <resultMap type='Programa' id='ProgramaResult'>
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
         <collection property='asignaturas' ofType='Asignatura' resultMap='edu.eci.pdsw.uppostcool.dao.mybatis.mappers.AsignaturaMapper.AsignaturaResult' columnPrefix='asignatura_'></collection>
     </resultMap>
+    
     <select parameterType="map" id="consultarProgramas" resultMap="ProgramaResult">
         select
             P.id,
@@ -23,4 +25,27 @@
             A.posgrado_id=P.id
         Order By P.nombre asc;
     </select>
+    
+    <select parameterType="map" id="consultarPrograma" resultMap="ProgramaResult">
+        select
+            P.id,
+            P.nombre,
+            
+            A.id as asignatura_id,
+            A.nombre as asignatura_nombre
+        from 
+            Programa P,
+            Asignatura A
+        WHERE
+            A.posgrado_id=P.id and P.nombre=#{nombrePrograma}
+        
+    </select>
+    
+    <insert id="insertarPrograma" parameterType="map" >
+        insert into Programa (id, nombre) 
+        values (#{programa.id}, #{programa.nombre});
+    </insert>
+    
+    
+    
 </mapper>

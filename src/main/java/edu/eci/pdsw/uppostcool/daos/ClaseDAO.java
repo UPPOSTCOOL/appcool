@@ -6,6 +6,9 @@
 package edu.eci.pdsw.uppostcool.daos;
 
 import edu.eci.pdsw.uppostcool.entities.Clase;
+import edu.eci.pdsw.uppostcool.entities.Profesor;
+import java.sql.Time;
+import java.util.Date;
 
 import java.util.List;
 
@@ -28,5 +31,15 @@ public interface ClaseDAO {
      */
     public List<Clase> consultarClasesxPeriodo(int ano , int semestre) throws PersistenceException;
     
+    /**
+     *
+     * @param fecha
+     * @param horaInicio
+     * @param horaFin
+     * @throws edu.eci.pdsw.uppostcool.daos.PersistenceException
+     */
+    public void insertarClase (Date fecha, Time horaInicio, Time horaFin) throws PersistenceException;
+    
+    public List<Clase> consultarClasesXprofesor (int ano, int semestre, String profesor);
     
 }

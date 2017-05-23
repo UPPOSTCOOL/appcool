@@ -113,8 +113,21 @@ public class Clase implements Serializable {
         return hora;
     }
     
+    public String getHoraInicio(){
+        String horaInicio=new SimpleDateFormat("HH:mm").format(fecha);
+        return horaInicio;
+    }
+    
+    
     public String getFormatoFecha(){
-        String fecha1 = new SimpleDateFormat("MM/dd/yy - HH:mm").format(fecha);
+        String fecha1 = new SimpleDateFormat("MM/dd/yy").format(fecha);
+
+        return fecha1;
+    }
+    
+    public String getFormatoHoraInicio(){
+        String fecha1 = new SimpleDateFormat("HH:mm").format(fecha);
+
         return fecha1;
     }
 }

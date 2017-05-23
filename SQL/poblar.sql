@@ -12,6 +12,16 @@ insert into Asignatura
   (3,'datos',2),
   (4,'gestion',2);
 
+insert into Prerequisito_A
+  (Asignatura_id,Asignatura_id_pre)
+  values
+  (3,4);
+
+insert into Corequisito_A
+  (Asignatura_id,Asignatura_id_co)
+  values
+  (1,2);
+
 insert into Materia 
   (codigo,nombre,descripcion)
   values
