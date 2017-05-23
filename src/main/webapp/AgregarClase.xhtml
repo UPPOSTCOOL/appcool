@@ -81,19 +81,24 @@
 
                             </p:dataTable>
                         </td>
-                    <td >
-                        <h3 style="margin-top:0">Agregar Recursos Requeridos</h3>
-                        <p:dataTable var="recurso" value="#{ProgramacionPeriodoBean.recursos}" scrollable="true" scrollHeight="150">
-                            <p:column>
-                                <p:commandButton value="Solicitar" icon="ui-icon-check" actionListener="#{ProgramacionPeriodoBean.recursos}" update=":agregarClase" /> 
-                            </p:column>
-                            <p:column >
-                                <h:outputText value="#{recurso}" />
-                            </p:column>
+                        <td >
+                            <h3 style="margin-top:0">Agregar Recursos Requeridos</h3>
+                            <p:dataTable var="recurso" value="#{ProgramacionPeriodoBean.recursos}" scrollable="true" scrollHeight="150">
+                                <p:column>
+                                    <p:commandButton value="Solicitar" icon="ui-icon-check" actionListener="#{ProgramacionPeriodoBean.recursos}" update=":agregarClase" /> 
+                                </p:column>
+                                <p:column >
+                                    <h:outputText value="#{recurso}" />
+                                </p:column>
 
 
-                        </p:dataTable>
-                    </td>
+                            </p:dataTable>
+                        </td>
+                    
+                       <td >
+                        <p:commandButton value="Adicionar" icon="ui-icon-check" actionListener="#{ProgramacionPeriodoBean.recursos}" update=":agregarClase" /> 
+                        <p:commandButton value="Cancelar" icon="ui-icon-check" actionListener="#{ProgramacionPeriodoBean.recursos}" update=":agregarClase" /> 
+                   </td>
                     </tr>
 
                 </table>
