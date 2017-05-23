@@ -18,4 +18,6 @@ public interface ClaseMapper {
     public List<Clase> consultarClases(@Param("ano") int ano, @Param("semestre") int semestre);
     
     public void insertarClase(@Param("fechaYhoraInicio") Timestamp fechayhora, @Param("horaFin") Time horaFin);
+    
+    public List<Clase> consultarClasesXprofesor(@Param("ano") int ano, @Param("semestre") int semestre, @Param("profesor") String profesor);
 }

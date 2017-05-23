@@ -255,6 +255,11 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public List<Clase> consultarClasesXprofesor(int ano, int semestre, Profesor profesor) {
+        return daoc.consultarClasesXprofesor(ano, semestre, profesor);
+    }
+
 
     
 }
