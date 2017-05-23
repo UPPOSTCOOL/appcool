@@ -105,14 +105,64 @@ Plataforma de programación de clases y gestión de recursos de programas de pos
     
     Descripción: 
     
+CE1: Nombre ya existe: 
+   No puede agregar un nombre existente a otra materia: 
+   Nada
     
+CE2: Nombre no existe: 
+  Puede agregar el nombre a la materia: 
+  Agrega nombre a la materia en creación    
     
+CE3: Codigo ya existe: 
+  No puede agregar un codigo que es de otra materia: 
+  Nada
+  
+CE4: Codigo no existe: 
+  Puede agregar el codigo unico a la materia: 
+  Agrega codigo a la Materia en creación  
     
+CE5: Nombre y Codigo, vacios: 
+  No puede agregar una materia sin identificadores: 
+  Nada
     
+CE6: Nombre y Codigo, no Vacios: 
+  Puede agregar atributos identificadores a la materia:  
+  Agrega nombre y codigo a la materia en creación
+   
+CE7: Descipcion Vacia: 
+  La materia puede no tener descripción: 
+  Agregar Materia
     
+CE8: Descipcion no Vacia: 
+  Agrega la descripción a la materia: 
+  Registra materia
+    
+CE9: Prerrequisito = Correquisito: 
+  Una materia no puede tener las mismas materias como prerrequisito y correquisito a la vez: 
+  Error!
+   
+CE10: Prerrequisito y  Correquisito, Vacios: 
+  Puede registrar una materia que no tenga dependencia de otra: 
+  Registra materia
+   
+CE11: Prerrequisito != Correquisito: 
+  Una materia puede tener prerrequisitos y correquisitosRegistra:
+  Registra Materia
+   
+CE12: M.i -> M.j -> M.k "i< j< k< Total.Materias": 
+  Si una materia tiene prerrequisitos en comun con otra 
+  que es prerrequisito de ella, los prerrequisitos de la otra materia son tambien prerrequisitos de la primera,
+  No puede haber una materia que sea prerrequisito de otra y esta no sea prerequisito de ella:
+  Nada
+   
 # Reporte de Pruebas
 
   Clases de fronteras
+  
+ PRUEBAS - REGISTRAR MATERIA 
+ 
+ 
+ 
 
   <--------------->
   <-------imagen de pruebas---------->
