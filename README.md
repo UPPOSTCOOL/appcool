@@ -121,7 +121,8 @@ Plataforma de programación de clases y gestión de recursos de programas de pos
 
   Backlog
 
-<----------Imagen Trello Backlog--------------------->
+https://trello.com/b/JxxWMfSY
+
 
   Release Burndown
 <----------Grafica grafica -Backlog--------------------->
