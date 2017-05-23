@@ -63,19 +63,27 @@ Y enseguida se muestra un indice donde se muestran las funcionaldiades principal
 
 Con AppCOOL  el usuario puede consultar el *Reportes de Programación*, *Registrar una Materia*, consultar la *Programación de Peridos* y realizar el *Registro de una materia en un nuevo Cohorte*. Para consultar los reportes de Programación se debe ingresar el año y el semestre del periodo al cual se quiera consultar. Se puede consultar el *Reporte de Salones* que muestra le fecha y hora de inicio, hora de finalización de la clase, el salon las caracteristicas que debe tener el salon y la Materia de la cual hace parte la clase. 
 
+---
 ![alt text][repo1]
+---
 
 Tambien se puede consultar el *Reporte de Programación* del periodo escogido y muestra el cohorte, la asignatura que ofrece, las Materias de la asignatura, el profesor encargado, las hora de la sesión y la cantidad de horas de cada una de ellas; a cada una de las materias se le pueden *Consultar los Salones* donde se describe la fecha de la clase, la hora de la clase y su duración. 
 
+---
 ![alt text][repo2]
+---
 
 Por otra parte en Registrar Materia, se puede registrar una materia agregando los programas al cual va a pertenecer la materia, se agregan los Prerrequisitos y Correquitos, el nombre que se le quiere dar la materia, el codigo o Mnemónico y una descripción. En caso de que no exista la asignatura, tambien se puede crear cuando se estan agregando los programas. Luego de hacer el registro se pueden *Consultar las Naterias Registradas*.
 
+---
 ![alt text][repo3]
+---
 
 Se ofrece la funcionalidad de Registrar una Materia en en Nuevo Cohorte y por último, en Programación de Periodo, se puede programar seleccionado uno existente. Tiene funciones como asignarle un Periodo, una Asignatura, una Materia y un cohorte, se puede acceder a la pagina de regsitro de Nuevo Periodo, Registrar Nueva Asignatura, Registrar Nueva Materia y Registrar Nuevo Cohorte desde acá. 
 
+---
 ![alt text][repo4]
+---
 
 [repo1]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/funciones/reporteProgram.png
 [repo2]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/funciones/reporteProg-lista.png
@@ -114,58 +122,78 @@ La capa de persistencia esta diseña bajo un modelo relacional, usando una base 
 
 ## Stack Tecnológico
 
-> Lenguaje: Java 1.8 <Enter>
-> Gestión: Maven Apache 4.0.0 <Enter>
-> Web: JavaServer Pages (JSP) <Enter>
-> Framework visual: JavaServer Faces (JSF) <Enter>
-> Biblioteca visual: PrimeFaces 5.0 <Enter>
-> Inyección-persistencia: MyBatis 3.2.7 <Enter>
-> Creación MyBatis: Google Guice <Enter>
-> Tag Libraries para JSP: JSTL 1.2 <Enter>
-> BD: PostgreSQL 42.0.0 <Enter>
-> Registro: Log4j 1.2.17 <Enter>
-> Administrado BD: H2 1.4.184 <Enter>
-> Entorno Web: Tomcat 7 <Enter>
-> Pruebas: Maven Surefire 2.18.1 <Enter>
+* Lenguaje: Java 1.8 
+* Gestión: Maven Apache 4.0.0 
+* Web: JavaServer Pages (JSP) 
+* Framework visual: JavaServer Faces (JSF)
+* Biblioteca visual: PrimeFaces 5.0 
+* Inyección-persistencia: MyBatis 3.2.7 
+* Creación MyBatis: Google Guice 
+* Tag Libraries para JSP: JSTL 1.2 
+* BD: PostgreSQL 42.0.0 
+* Registro: Log4j 1.2.17 
+* Administrado BD: H2 1.4.184 
+* Entorno Web: Tomcat 7
+* Pruebas: Maven Surefire 2.18.1
+* Despliegue: Heroku
 
-[Link de la Aplicación AppCOOL](https://appcool.herokuapp.com)
+
+> [Link de la Aplicación AppCOOL en Heroku](https://appcool.herokuapp.com)
 
 
 # Proceso 
 
-  Descripción
-Desarrollo de la aplicación por el equipo UPPOST-COOL según la metodologia SCRUM vista en el curso de PDSW, el proyecto esta divido en 3 Sprints.
+## Descripción
 
-Plataforma de programación de clases y gestión de recursos de programas de postgrado de la Unidad de Proyectos de la Escuela Colombiana de Ingeniería
-
-
-  Backlog
-
-https://trello.com/b/JxxWMfSY
+Desarrollo de la aplicación por el equipo UPPOST-COOL según la metodologia SCRUM vista en el curso de PDSW, el proyecto esta divido en 3 Sprints. Plataforma de programación de clases y gestión de recursos de programas de postgrado de la Unidad de Proyectos de la Escuela Colombiana de Ingeniería
 
 
-  Release Burndown
-<----------Grafica grafica -Backlog--------------------->
+## Backlog del Proyecto
 
-    Historias de Usuario Realizadas
-    
-    
-    Historias de Usuario Faltantes
+> [Backlog en Trello.com](https://trello.com/b/JxxWMfSY)
 
 
-  Descripción de Sprints
+### Release Burndown
+
+ Burndown del proyecto
+
+#### Historias de Usuario Realizadas
+
+Historias de usuaro relaizadas en el proyecto
+
+#### Historias de Usuario Faltantes
+
+Historias de usuaro no relaizadas en el proyecto
+
+### Descripción de Sprints
   
-    Reporte Sprint No 1
+#### Reporte Sprint No 1
     
-    <----Imagen sprint-backlog S1----->
+##### Sprint-backlog
+---
+![alt text][back-1]
+---   
+
+##### sprint-burndown chart
+
+----
+![alt text][back-char-1]
+----
+
+##### Reporte GIT
+    
+----
+![alt text][git-1]
+----
+   
+[back-1]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/back-1.png
+[back-char-1]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/backchar-1.png
+[git-1]:
     
     
-    <----Imagen sprint-burndown S1----->
-    
-    <----Imagen sprint-burndown HCADAVID S1----->
+       
     
     
-    Descripción: 
     
 CE1: Nombre ya existe: 
    No puede agregar un nombre existente a otra materia: 
