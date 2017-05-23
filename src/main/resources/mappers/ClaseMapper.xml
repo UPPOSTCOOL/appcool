@@ -45,7 +45,11 @@
     
     <select parameterType="map" id="consultarClasesXprofesor" resultMap="ClaseResult">
         
-        select pr.nombre, c.fecha, c.horaFin from profesor pr, mater_perio mp, clase c, periodo p
+        select pr.nombre, c.fecha, c.horaFin, c.mater_perio_materia_id as mater_perio_materia_id,
+        
+        c.salon
+        
+        from profesor pr, mater_perio mp, clase c, periodo p
 
         where
 

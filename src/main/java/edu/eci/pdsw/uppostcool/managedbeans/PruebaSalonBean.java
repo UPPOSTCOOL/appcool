@@ -40,6 +40,15 @@ public class PruebaSalonBean implements Serializable {
 
     public PruebaSalonBean() {
     }
+    
+    public List<Clase> clases() throws ExcepcionServiciosUPPOST {
+        
+        semestre = cb.getSemestre();
+        anio = cb.getAnio();
+        
+        return inp.consultarClasesxPeriodo(anio, semestre);
+        
+    }
 
     public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST {
 
