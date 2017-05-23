@@ -154,7 +154,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     @Override
     public void insertarMateria(Materia materia, List<TupleImp> prerequisito, List<TupleImp> corequisito, List<Asignatura> asignaturas) throws ExcepcionServiciosUPPOST {
-        if(materia.getNombre()!= "" && materia.getCodigo()!="" && !prerequisito.equals(corequisito) ){
+        if(!"".equals(materia.getNombre()) && !"".equals(materia.getCodigo()) && (prerequisito.size()==0 || prerequisito.size()>0 && !prerequisito.equals(corequisito))){
             
             List<String> nombres = new ArrayList<>();
             List<Materia> listaN = consultarMaterias();
@@ -165,7 +165,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
             for(int i=0;i<listaN.size();i++){nombres.add(listaN.get(i).getNombre());}
             for(int i=0;i<listaC.size();i++){codigos.add(listaC.get(i).getCodigo());}
                     
-            if(!nombres.contains(materia.getNombre()) && !codigos.contains(materia.getCodigo())){
+            if(!codigos.contains(materia.getCodigo())){
                 
                 List<String[]> listaPre = new ArrayList<>();
                 List<String[]> listaCor = new ArrayList<>();
@@ -188,22 +188,17 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
                 for(int i=0;i<asignaturas.size();i++){
                     id_asigs.add(asignaturas.get(i).getId());
                 }
-                
                 daom.insertarMateriaDAO(materia,listaPre, listaCor, id_asigs);
             }
         }
-        
     }
 
     @Override
     public List<Materia> consultarMaterias() throws ExcepcionServiciosUPPOST {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        System.out.println("------------------KKKKKKKKKKKKKKKK----------------");
-        System.out.println(daom.consultarMateriasDAO().size());
         return daom.consultarMateriasDAO();
     }
 
-     @Override
+    @Override
     public List<Asignatura> consultarAsignaturas () throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         //return daom.consultarAsignaturasDAO();
