@@ -80,27 +80,29 @@ public class ServicesJUnitTest {
     public void setUp() {
     }
 
-    @After
+    //@After
     public void clearBD() throws SQLException {
-        /*
         Connection conn = DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=PostgreSQL", "anonymous", "");
         Statement stmt = conn.createStatement();
-        stmt.execute("delete from Asignatura");
-        stmt.execute("delete from Clase");
-        stmt.execute("delete from Clase_Recur");
-        stmt.execute("delete from Comit_Profe");
-        stmt.execute("delete from Comite");
-        stmt.execute("delete from Corequisito");
-        stmt.execute("delete from HorarioProf");
-        stmt.execute("delete from Mater_Perio");
-        stmt.execute("delete from Materia");
-        stmt.execute("delete from Periodo");
-        stmt.execute("delete from Prerequisito");
-        stmt.execute("delete from Profesor");
-        stmt.execute("delete from Programa");
-        stmt.execute("delete from Recurso");
+        stmt.execute("delete from recurso");
+        stmt.execute("delete from clase");
+        stmt.execute("delete from horarioprof");
+        stmt.execute("delete from profesor");
+        stmt.execute("delete from comite");
+        stmt.execute("delete from clase_recur");
+        stmt.execute("delete from comit_profe");
+        stmt.execute("delete from mater_perio");
+        stmt.execute("delete from periodo");
+        stmt.execute("delete from corequisito");
+        stmt.execute("delete from corequisito_a");
+        stmt.execute("delete from prerequisito");
+        stmt.execute("delete from prerequisito_a");
+        stmt.execute("delete from asign_mater");
+        stmt.execute("delete from materia");
+        stmt.execute("delete from asignatura");
+        stmt.execute("delete from programa");
         conn.commit();
-        conn.close(); */
+        conn.close();
     }
 
     /**
@@ -146,14 +148,15 @@ public class ServicesJUnitTest {
      */
     @Test
     public void CF1() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
                 
-        List<Materia> materias = sp.consultarMaterias();
+        
 
         String nombre = "materia prueba";
         Materia mat = new Materia();
         mat.setNombre(nombre);
-        mat.setCodigo("CODIGO");
+        mat.setCodigo("CODIGO2");
         mat.setDescripcion("descripcion");
         
         List<TupleImp> tPre = new ArrayList<>();
@@ -161,9 +164,10 @@ public class ServicesJUnitTest {
         List<Asignatura> asigs = new ArrayList<>();
         
         sp.insertarMateria(mat, tPre, tCor, asigs);
+        mat.setCodigo("CODIGO2");
         // No deberia agregar la materia con nombre nombre
         sp.insertarMateria(mat, tPre, tCor, asigs);
-        
+        List<Materia> materias = sp.consultarMaterias();
         Assert.assertEquals("No deberia agregar la materia 2 veces 'materia prueba', tamano = 1", 1, materias.size());
 
     }
@@ -173,6 +177,7 @@ public class ServicesJUnitTest {
      */
     @Test
     public void CF2() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
         String nombre = "materia prueba";
@@ -180,6 +185,7 @@ public class ServicesJUnitTest {
         Materia mat = new Materia();
         mat.setNombre(nombre);
         mat.setCodigo("CODIGO");
+        mat.setDescripcion("descrip");
         
         List<TupleImp> tPre = new ArrayList<>();
         List<TupleImp> tCor = new ArrayList<>();
@@ -199,11 +205,14 @@ public class ServicesJUnitTest {
      */
     @Test
     public void CF3() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
         String codigo = "COD1";
         Materia mat = new Materia();
+        mat.setNombre("materia 1");
         mat.setCodigo(codigo);
+        mat.setDescripcion("descrip");
         
         List<TupleImp> tPre = new ArrayList<>();
         List<TupleImp> tCor = new ArrayList<>();
@@ -212,7 +221,9 @@ public class ServicesJUnitTest {
         sp.insertarMateria(mat, tPre, tCor, asigs);
         
         Materia matP = new Materia();
-        mat.setCodigo(codigo);
+        matP.setNombre("materia 2");
+        matP.setCodigo(codigo);
+        mat.setDescripcion("descrip");
         List<TupleImp> tPreP = new ArrayList<>();
         List<TupleImp> tCorP = new ArrayList<>();
         List<Asignatura> asigsP = new ArrayList<>();
@@ -231,11 +242,14 @@ public class ServicesJUnitTest {
     
     @Test
     public void CF4() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
         String codigo = "COD1";
         Materia mat = new Materia();
+        mat.setNombre("nombre");
         mat.setCodigo(codigo);
+        mat.setDescripcion("desc");
         
         List<TupleImp> tPre = new ArrayList<>();
         List<TupleImp> tCor = new ArrayList<>();
@@ -256,6 +270,7 @@ public class ServicesJUnitTest {
     
     @Test
     public void CF5() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
         String codigo = "";
@@ -281,6 +296,7 @@ public class ServicesJUnitTest {
     
    @Test
     public void CF6() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
         String codigo = "COD1";
@@ -288,6 +304,7 @@ public class ServicesJUnitTest {
         Materia mat = new Materia();
         mat.setNombre(nombre);
         mat.setCodigo(codigo);
+        mat.setDescripcion("desc");
         
         List<TupleImp> tPre = new ArrayList<>();
         List<TupleImp> tCor = new ArrayList<>();
@@ -310,6 +327,7 @@ public class ServicesJUnitTest {
     
       @Test
     public void CF7() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
         String codigo = "COD1";
@@ -340,6 +358,7 @@ public class ServicesJUnitTest {
  
  @Test
     public void CF8() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
         String codigo = "COD1";
@@ -370,6 +389,7 @@ public class ServicesJUnitTest {
     
     @Test
     public void CF9() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
         
         // mat
@@ -441,6 +461,7 @@ public class ServicesJUnitTest {
     
     @Test
     public void CF10() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
         String codigo = "COD1";
@@ -469,11 +490,11 @@ public class ServicesJUnitTest {
         List<Materia> materias = sp.consultarMaterias();
         
         Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
+        Assert.assertEquals("Deberia agregar el codigo a la materia", codigo, materias.get(0).getCodigo());
         Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getDescripcion());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 0, materias.get(0).getPreRequisitos().size());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 0, materias.get(0).getCoRequisitos().size());
+        Assert.assertEquals("Deberia agregar el desc a la materia", descripcion, materias.get(0).getDescripcion());
+        Assert.assertEquals("Deberia agregar el prerequisitos a la materia", 0, materias.get(0).getPreRequisitos().size());
+        Assert.assertEquals("Deberia agregar el corequisitos a la materia", 0, materias.get(0).getCoRequisitos().size());
     }
     
     
@@ -484,6 +505,7 @@ public class ServicesJUnitTest {
     
     @Test
     public void CF11() throws SQLException, ExcepcionServiciosUPPOST {
+        clearBD();
         ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
         String codigo = "COD1";
@@ -496,6 +518,14 @@ public class ServicesJUnitTest {
         mat.setNombre(nombre);
         mat.setCodigo(codigo);
         mat.setDescripcion(descripcion);
+        matP.setNombre("m2");
+        matP.setCodigo("cod2");
+        matP.setDescripcion("desc");
+        sp.insertarMateria(matP, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+        matC.setNombre("m3");
+        matC.setCodigo("cod3");
+        matC.setDescripcion("desc");
+        sp.insertarMateria(matC, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
         
         matP.setNombre("pre");
         matC.setNombre("cor");
@@ -513,16 +543,30 @@ public class ServicesJUnitTest {
         List<TupleImp> tCor = new ArrayList<>();
         List<Asignatura> asigs = new ArrayList<>();
         
+        
+        Connection conn = DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=PostgreSQL", "anonymous", "");
+        Statement stmt = conn.createStatement();
+        stmt.execute("insert into Programa (id,nombre)values(1,'prog prueba')");
+        conn.commit();
+        conn.close();
+        List<Programa> progs=new ArrayList<>();
+        Programa p=new Programa(1, "proo");
+        progs.add(p);
+        System.err.println(progs.size());
+        TupleImp t=new TupleImp(matP,progs.get(0));
+        tPre.add(t);
+        t=new TupleImp(matC,progs.get(0));
+        tCor.add(t);
         sp.insertarMateria(mat, tPre, tCor, asigs);
         
         List<Materia> materias = sp.consultarMaterias();
         
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.size());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", codigo, materias.get(0).getCodigo());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getNombre());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(0).getDescripcion());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 1, materias.get(0).getPreRequisitos().size());
-        Assert.assertEquals("Deberia agregar el nombre a la materia", 0, materias.get(0).getCoRequisitos().size());
+        Assert.assertEquals("Deberia agregar el numero de materias", 3, materias.size());
+        Assert.assertEquals("Deberia agregar el codigo a la materia", codigo, materias.get(2).getCodigo());
+        Assert.assertEquals("Deberia agregar el nombre a la materia", nombre, materias.get(2).getNombre());
+        Assert.assertEquals("Deberia agregar el desc a la materia", descripcion, materias.get(2).getDescripcion());
+        Assert.assertEquals("Deberia agregar el prereq a la materia", 0, materias.get(2).getPreRequisitos().size());
+        Assert.assertEquals("Deberia agregar el coreq a la materia", 0, materias.get(2).getCoRequisitos().size());
     }
     
  /*      CE12: M.i -> M.j -> M.k "i< j< k< Total.Materias": Si una materia tiene prerrequisitos en comun con otra 
@@ -533,7 +577,7 @@ public class ServicesJUnitTest {
      */
      @Test
     public void CF12() throws SQLException, ExcepcionServiciosUPPOST {
-    
+        clearBD();
     }
     
     
