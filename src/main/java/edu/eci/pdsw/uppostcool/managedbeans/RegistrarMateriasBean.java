@@ -99,16 +99,20 @@ public class RegistrarMateriasBean implements Serializable {
             }
         }
     }
-    
+     
 
     public ArrayList<String[]> getAcumulados() {
-        System.out.println("hola");
+        
         //aca debemos ARMAR mediante acumulados los textos que se quieren mostrar en la tabla
         //recuerda que acumulados seraá una lista de ASIGNATURAS
         
-        ArrayList<String[]> respuesta = null;
+        ArrayList<String[]> respuesta = new ArrayList<>();
+        for (Asignatura asig:asignaturasProgramaSeleccionado){
+            //respuesta.add(asig.getNombre());
+        }
         //= ejemplo:(id_asignatura,nombrePrograma,nombreAsignatura)
         return respuesta;
+        
     }
 
     public void setAcumulados(ArrayList<Asignatura> acumulados) {

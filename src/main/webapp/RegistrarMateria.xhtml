@@ -41,10 +41,10 @@ and open the template in the editor.
             </p:dataTable>         
             
             <br></br>
-            SELECCIONE LA ASIGNATURA DEL PROGRAMA A AGREGAR
+            <h2>Seleccione la asignatura del programa a agregar</h2>
             <br/>
             <h:selectOneMenu value="#MateriasBean.id_asignaturaSeleccionada">
-                <f:selectItems value="#{MateriasBean.asignaturaProgramaSeleccionado}"/>
+                <f:selectItems value="#{MateriasBean.asignaturasProgramaSeleccionado}"/>
             </h:selectOneMenu>
             <p:commandButton value="Agregar" actionListener="#{MateriasBean.guardarAsignaturaPrograma()}" /> 
             <br/>
