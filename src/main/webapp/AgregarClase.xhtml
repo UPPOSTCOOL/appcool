@@ -1,44 +1,110 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
-	<h:head>
-            <title>Calendar</title>
-            <script name="jquery/jquery.js" library="primefaces"></script>
-        </h:head>
-        <h:body>
-            <div style="height:500px">
-                <h:form>
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Calendar</title>
+        <script name="jquery/jquery.js" library="primefaces"></script>
+    </h:head>
+    <h:body>
+        <div style="height:500px">
+            <h:form id="agregarClase">
+
+                <tr>
+                    <td >
+                        <h2 style="font-style: italic"> Agregar Clase a Materia :
+                            <h:outputText value="#{ProgramacionPeriodoBean.mate}"/>
+                            , Cohorte                          
+                            <h:outputText value="#{ProgramacionPeriodoBean.cohorte}"/>
+                        </h2> 
+                        <h2> Profesor: 
+                            <h:outputText value="#{ProgramacionPeriodoBean.profesor}"/>
+                        </h2>
+                    </td>
+                    <br/>
+                    <br/>
+                    <td>
+                        <h3> Fecha
+                            <p:calendar value="#{ProgramacionPeriodoBean.date}" ></p:calendar>
+                        </h3>
+                    </td>
+                    <td>
+                        <h3> Hora inicio bloque
+                            <p:selectOneMenu value = "#{ProgramacionPeriodoBean.horaInicio}">   
+                                <f:selectItem itemValue = "7:00" itemLabel = "7:00"  /> 
+                                <f:selectItem itemValue = "8:30" itemLabel = "8:30" /> 
+                                <f:selectItem itemValue = "10:00" itemLabel ="10:00" />
+                                <f:selectItem itemValue = "11:30" itemLabel = "11:30"  />
+                                <f:selectItem itemValue = "13:00" itemLabel = "13:00"  />
+                                <f:selectItem itemValue = "14:30" itemLabel = "14:30" /> 
+                                <f:selectItem itemValue = "16:00" itemLabel ="16:00" />
+                                <f:selectItem itemValue = "17:30" itemLabel = "17:30"  />
+                                <f:selectItem itemValue = "19:00" itemLabel = "19:00"  />
+
+                            </p:selectOneMenu>
+
+
+                        </h3>
+                    </td>
+                    <td>
+                        <h3> Hora Fin bloque
+                            <p:selectOneMenu value = "#{ProgramacionPeriodoBean.horaInicio}">   
+                                <f:selectItem itemValue = "8:30" itemLabel = "8:30" /> 
+                                <f:selectItem itemValue = "10:00" itemLabel ="10:00" />
+                                <f:selectItem itemValue = "11:30" itemLabel = "11:30"  />
+                                <f:selectItem itemValue = "13:00" itemLabel = "13:00"  />
+                                <f:selectItem itemValue = "14:30" itemLabel = "14:30" /> 
+                                <f:selectItem itemValue = "16:00" itemLabel ="16:00" />
+                                <f:selectItem itemValue = "17:30" itemLabel = "17:30"  />
+                                <f:selectItem itemValue = "19:00" itemLabel = "19:00"  />
+                                <f:selectItem itemValue = "20:30" itemLabel = "20:30" /> 
+
+                            </p:selectOneMenu>
+
+
+                        </h3>
+                    </td>
+                    <td>
+                        <h3>Caracteristicas del salón</h3> 
+                    </td>
+                </tr>
+                <table>
+
                     <tr>
                         <td >
-                            <h2 style="font-style: italic"> Agregar Clase a Materia :
-                           <h:outputText value="#{ProgramacionPeriodoBean.mate}"/>
-                           , Cohorte                          
-                           <h:outputText value="#{ProgramacionPeriodoBean.cohorte}"/>
-                            </h2> 
-                            <h2> Profesor: 
-                                <h:outputText value="#{ProgramacionPeriodoBean.profesor}"/>
-                            </h2>
+                            <h3 style="margin-top:0">Recursos Requeridos</h3>
+                            <p:dataTable var="recursoSelect" value="#{ProgramacionPeriodoBean.recursosSelect}" scrollable="true" scrollHeight="150">
+                                <p:column >
+                                    <h:outputText value="#{recursoSelect}" />
+                                </p:column>
+
+                            </p:dataTable>
                         </td>
-                        <br/>
-                        <br/>
-                        <td>
-                            <h3> Fecha
-                                <p:calendar value="#{ProgramacionPeriodoBean.date}" ></p:calendar>
-                            </h3>
+                        <td >
+                            <h3 style="margin-top:0">Agregar Recursos Requeridos</h3>
+                            <p:dataTable var="recurso" value="#{ProgramacionPeriodoBean.recursos}" scrollable="true" scrollHeight="150" rowKey="#{recurso}" selection="#{ProgramacionPeriodoBean.recursoSelect}" selectionMode="single">
+                                <p:column>
+                                    <p:commandButton value="Solicitar" icon="ui-icon-check" actionListener="#{ProgramacionPeriodoBean.recursosSelect}" update=":agregarClase" /> 
+                                </p:column>
+                                <p:column >
+                                    <h:outputText value="#{recurso}" />
+                                </p:column>
+
+
+                            </p:dataTable>
                         </td>
-                         <td>
-                            <h3> Hora inicio bloque
-                             
-                            </h3>
-                        </td>
+                    
+                       <td >
+                           <h:commandButton value="Adicionar"  style="font-size: medium" actionListener="#{ProgramacionPeriodoBean.recursos}" action="Programar" /> 
+                           <br/>
+                        <h:commandButton value="Cancelar"  style="font-size: medium" actionListener="#{ProgramacionPeriodoBean.recursos}" action="Programar" /> 
+                   </td>
                     </tr>
-                    <tr>
-                       
-                       
-                    </tr>
-                </h:form>
-            </div>
-        </h:body>
+
+                </table>
+
+            </h:form>
+        </div>
+    </h:body>
 </html>
