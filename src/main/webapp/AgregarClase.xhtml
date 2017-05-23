@@ -73,19 +73,19 @@
 
                     <tr>
                         <td >
-                            <h3 style="margin-top:0">Agregar Recursos Requeridos</h3>
-                            <p:dataTable var="recursoSelect"  scrollable="true" scrollHeight="150">
+                            <h3 style="margin-top:0">Recursos Requeridos</h3>
+                            <p:dataTable var="recursoSelect" value="#{ProgramacionPeriodoBean.recursosSelect}" scrollable="true" scrollHeight="150">
                                 <p:column >
-                                    <h:outputText value="" />
+                                    <h:outputText value="#{recursoSelect}" />
                                 </p:column>
 
                             </p:dataTable>
                         </td>
                         <td >
                             <h3 style="margin-top:0">Agregar Recursos Requeridos</h3>
-                            <p:dataTable var="recurso" value="#{ProgramacionPeriodoBean.recursos}" scrollable="true" scrollHeight="150">
+                            <p:dataTable var="recurso" value="#{ProgramacionPeriodoBean.recursos}" scrollable="true" scrollHeight="150" rowKey="#{recurso}" selection="#{ProgramacionPeriodoBean.recursoSelect}" selectionMode="single">
                                 <p:column>
-                                    <p:commandButton value="Solicitar" icon="ui-icon-check" actionListener="#{ProgramacionPeriodoBean.recursos}" update=":agregarClase" /> 
+                                    <p:commandButton value="Solicitar" icon="ui-icon-check" actionListener="#{ProgramacionPeriodoBean.recursosSelect}" update=":agregarClase" /> 
                                 </p:column>
                                 <p:column >
                                     <h:outputText value="#{recurso}" />
@@ -96,8 +96,9 @@
                         </td>
                     
                        <td >
-                        <p:commandButton value="Adicionar" icon="ui-icon-check" actionListener="#{ProgramacionPeriodoBean.recursos}" update=":agregarClase" /> 
-                        <p:commandButton value="Cancelar" icon="ui-icon-check" actionListener="#{ProgramacionPeriodoBean.recursos}" update=":agregarClase" /> 
+                           <h:commandButton value="Adicionar"  style="font-size: medium" actionListener="#{ProgramacionPeriodoBean.recursos}" action="Programar" /> 
+                           <br/>
+                        <h:commandButton value="Cancelar"  style="font-size: medium" actionListener="#{ProgramacionPeriodoBean.recursos}" action="Programar" /> 
                    </td>
                     </tr>
 
