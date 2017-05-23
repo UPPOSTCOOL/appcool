@@ -5,17 +5,20 @@
  */
 package edu.eci.pdsw.uppostcool.managedbeans;
 
+import com.sun.javafx.scene.control.skin.VirtualFlow;
 import edu.eci.pdsw.uppostcool.entities.Asignatura;
 import edu.eci.pdsw.uppostcool.entities.Clase;
 import edu.eci.pdsw.uppostcool.entities.Materia;
 import edu.eci.pdsw.uppostcool.entities.Periodo;
 import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.entities.Programa;
+import edu.eci.pdsw.uppostcool.entities.Recurso;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImplStub;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -37,7 +40,10 @@ public class programacionPeriodoBean {
     private List<Periodo> periodo = new ArrayList<>();
     private List<Profesor> profesorSelect = new ArrayList<>();
     private List<Clase> clases= new ArrayList<>();
-    
+    private List<String> recursos=new ArrayList<>();
+    private List<String> recusosSelect=new ArrayList<>();
+
+   
     private Programa programaP;
     private Materia materi;
     private PeriodoBean cb;
@@ -46,12 +52,31 @@ public class programacionPeriodoBean {
     private String profesor = null;
     private String asign;
     private String mate;
+
     
     private int anio;
     private int semestre;
     private int cohorte = 0;
     private int idasign;
     private Date date =new Date();
+    private Time horaInicio;
+    private Time horaFin;
+
+    public Time getHoraFin() {
+        return horaFin;
+    }
+
+    public void setHoraFin(Time horaFin) {
+        this.horaFin = horaFin;
+    }
+    
+    public Time getHoraInicio() {
+        return horaInicio;
+    }
+
+    public void setHoraInicio(Time horaInicio) {
+        this.horaInicio = horaInicio;
+    }
 
     public Date getDate() {
         
@@ -72,9 +97,10 @@ public class programacionPeriodoBean {
 
         prog = "prueba";
         anio = 2017;
-        prog = "mate";
+        prog = " ";
         semestre=1;
         programaP=null;
+        
         
     }
    
@@ -228,6 +254,26 @@ public class programacionPeriodoBean {
     }
     public void cancelarClase(){}
     //pendiente por servicio
-   
 
+    public List<String> getRecursos() throws ExcepcionServiciosUPPOST {
+
+        clases = inp.consultarClasesxPeriodo(anio, semestre);
+        for (int i = 0; i < clases.size(); i++) {
+            recursos.add(clases.get(i).getRecurso());
+
+        }
+        return recursos;
+    }
+
+    public void setRecursos(List<String> recursos) {
+        this.recursos = recursos;
+    }
+     public List<String> getRecusosSelect() {
+         recusosSelect.add(mate);
+        return recusosSelect;
+    }
+
+    public void setRecusosSelect(List<String> recusosSelect) {
+        this.recusosSelect = recusosSelect;
+    }
 }
