@@ -70,11 +70,11 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         
         List<Asignatura> lista1 = new ArrayList<>();
         
-        Profesor prof1 = new Profesor(1, "German Motta");
-        Profesor prof2 = new Profesor(2, "Maria Pajon");
-        Profesor prof3 = new Profesor(3, "Sonia Alcala");
-        Profesor prof4 = new Profesor(4, "Paula Apple");
-        Profesor prof5 = new Profesor(5, "Ivanovich Kravchenko");
+        Profesor prof1 = new Profesor(1, "German ","Motta","Motta");
+        Profesor prof2 = new Profesor(2, "Maria ","Pajon","Motta");
+        Profesor prof3 = new Profesor(3, "Sonia ","Alcala","Motta");
+        Profesor prof4 = new Profesor(4, "Paula ","Apple","Motta");
+        Profesor prof5 = new Profesor(5, "Ivanovich ","Kravchenko","Motta");
         
         
         // para siganturas, se crea el prostgrado con las mismas asignaturas
@@ -667,10 +667,7 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }   
 
-    @Override
-    public List<Periodo> consultarPAcademico(Periodo periodo) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public List<Programa> consultarProgramas() throws ExcepcionServiciosUPPOST {
@@ -729,6 +726,11 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
 
     @Override
     public void registrarPrograma(Programa programa) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Periodo> consultarPAcademico() throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

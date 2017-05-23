@@ -150,15 +150,13 @@ public interface ServiciosUPPOST {
     public abstract List<Periodo> consultarPAcademicos() throws ExcepcionServiciosUPPOST;
 
     /**
-     * Consulta un periodo academico
-     *
-     * @param periodo
+     * Consulta  periodos academicos
      *
      * @return Una lista con el periodo academico
      * @throws ExcepcionServiciosUPPOST si se presenta un error a nivel de base
      * de datos
      */
-    public abstract List<Periodo> consultarPAcademico(Periodo periodo) throws ExcepcionServiciosUPPOST;
+    public abstract List<Periodo> consultarPAcademico() throws ExcepcionServiciosUPPOST;
     
     /**
      * Consulta todos los periodos academicos de la base de datos

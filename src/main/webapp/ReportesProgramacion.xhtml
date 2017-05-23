@@ -25,7 +25,7 @@ and open the template in the editor.
         </script>
     </h:head>
     <h:body>
-        <img src="Imagenes/escuela.jpg" height="145" />
+       <img src="Imagenes/escuela.jpg" height="145" />
         <h1 style="text-align: center; color:firebrick " > Reporte Programación Semestral <h:outputText value="#{ProgramacionBean.periodoSeleccionado()}"/></h1>
 
         <p:dataTable  id="formularioProgramacion" var="reporte" value="#{ProgramacionBean.obtenerLista()}"  style="margin: 0 auto;">
@@ -59,14 +59,14 @@ and open the template in the editor.
 
             <p:column>
                 <f:facet name="header">
-                    <h:outputText value="Horas"/>
+                    <h:outputText value="Horas Totales"/>
                 </f:facet>
                 <h:outputText value="#{reporte.numHoras}" />
             </p:column>
 
             <p:column >
                 <f:facet name="header">
-                    <h:outputText value="Sesion"/>
+                    <h:outputText value="Sesiones"/>
                 </f:facet>
                 <h:outputText value="#{reporte.numClases}" />
             </p:column>
@@ -74,7 +74,7 @@ and open the template in the editor.
             <p:column >
                 <f:facet name="header">
                 </f:facet>
-                <p:commandButton value="Consultar Salones" onclick="ocultarMaterias('#{reporte.codigo}');" actionListener="#{ProgramacionBean.setMateriaSelec(reporte.codigo)}" update=":tablaFechas"></p:commandButton>
+                <p:commandButton value="Consultar Sesiones" onclick="ocultarMaterias('#{reporte.codigo}');" actionListener="#{ProgramacionBean.setMateriaSelec(reporte.codigo)}" update=":tablaFechas"></p:commandButton>
 
             </p:column>
 
@@ -82,27 +82,35 @@ and open the template in the editor.
         <br></br>
         <br></br>
         <br></br>
+        
         <div id='calendario' style="display: none">
             <b id='materia'></b>
            
             <p:dataTable id="tablaFechas" var="reporte" value="#{ProgramacionBean.getClases()}">
                 <p:column>
                     <f:facet name="header">
-                        <h:outputText value="Fecha Clase"/>
+                        <h:outputText value="Fecha"/>
                     </f:facet>
                     <h:outputText value="#{reporte.formatoFecha}" />
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">
-                        <h:outputText value="Hora Clase"/>
+                        <h:outputText value="Hora de inicio"/>
+                    </f:facet>
+                    <h:outputText value="#{reporte.horaInicio}" />
+                </p:column>
+                
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Hora de finalización"/>
                     </f:facet>
                     <h:outputText value="#{reporte.hora}" />
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">
-                        <h:outputText value="Duración Horas"/>
+                        <h:outputText value="Duración en Horas de la sesión"/>
                     </f:facet>
                     <h:outputText value="#{reporte.rangoHoras}" />
                 </p:column>

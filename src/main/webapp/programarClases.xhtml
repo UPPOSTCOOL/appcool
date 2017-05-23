@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Programar clases </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <img src="Imagenes/escuela.jpg" height="145" />
+        <h1 style="text-align:center; color:firebrick">Programación de Clases</h1>
+        <table>
+
+        <!--Seleccionar el periodo-->
+        <tr>
+            <td>
+        <p:dataTable id="formularioSalon" var="curso"   style="margin: 0 auto;">
+            <!-- <caption>Salones por periodo</caption>-->
+            <p:column>  
+                <f:facet name="header">
+                    <h:outputText value="Fecha"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{curso.formatoFecha}"></h:outputText>
+            </p:column>  
+            <p:column>  
+                <f:facet name="header">
+                    <h:outputText value="Hora"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{curso.horaInicio}"></h:outputText>
+                <h:outputText value="#{curso.horaFin}"></h:outputText>
+            </p:column> 
+            <p:column>  
+                <f:facet name="header">
+                    <h:outputText value="Acción"></h:outputText>
+                </f:facet>
+                <p:commandButton onclick="alert('Clase cancelada')" value="Cancelar Clase" action="Programar" actionListener="#{ProgramacionPeriodoBean.cancelarClase()}"/>
+            </p:column>  
+        </p:dataTable>
+           </td>
+            <td/>
+            <td/>
+                <td>
+           <p:commandButton  value="Agregar Clase" action="AgregarClase" />  
+            </td>
+        </tr>
+        
+        </table>
+        <br/><br/><br/>
+        <h:form id="op-button" style="text-align:center">
+            <h:commandButton id="open-r" value="Regresar" action="Programar" />
+        </h:form>
+    </h:body>
+
+</html>
+
