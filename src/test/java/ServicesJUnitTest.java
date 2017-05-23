@@ -12,6 +12,7 @@ import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.entities.Programa;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
+import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
 import edu.eci.pdsw.uppostcool.services.impl.TupleImp;
 import java.lang.reflect.Constructor;
@@ -145,7 +146,7 @@ public class ServicesJUnitTest {
      */
     @Test
     public void CF1() throws SQLException, ExcepcionServiciosUPPOST {
-        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
+        ServiciosUPPOST sp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
                 
         List<Materia> materias = sp.consultarMaterias();
 

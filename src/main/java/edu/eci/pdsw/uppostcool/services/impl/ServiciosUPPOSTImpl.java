@@ -198,6 +198,8 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     @Override
     public List<Materia> consultarMaterias() throws ExcepcionServiciosUPPOST {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("------------------KKKKKKKKKKKKKKKK----------------");
+        System.out.println(daom.consultarMateriasDAO().size());
         return daom.consultarMateriasDAO();
     }
 
