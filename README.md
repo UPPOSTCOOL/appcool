@@ -242,9 +242,9 @@ Reporte GIT general
 > [Ver reporte completo Sprint 2](http://profesores.is.escuelaing.edu.co/hcadavid/reportes/2017-1/pdsw/reports/05-11-2017-09H-43M/appcool.repo/)
 ----
    
-[back-3]: https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/back-3.png
-[back-char-3]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/backchart-3.png
-[git-3]:
+[back-3]: https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/back-3.PNG
+[back-char-3]:https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/sprints/backchart-3.PNG
+[git-3]: https://github.com/UPPOSTCOOL/appcool/blob/master/img-readme/git/git-2.png
 
 ------
 
