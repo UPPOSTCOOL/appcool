@@ -20,12 +20,7 @@ and open the template in the editor.
             <h1>Registro de Materias </h1>
             <h2>Agregar Programas</h2>
             <p:dataTable  id="formularioPrograma" var="programa" value="#{MateriasBean.obtenerProgramas()}" style="margin: 0 auto">
-                <p:column>
-                    <f:facet name="header">                       
-                    </f:facet>
-                                    
-                    <p:commandButton value="Agregar" icon="ui-icon-check" actionListener="#{MateriasBean.programasSeleccionados(programa.id)}" update=":registrarMateria" />     
-                </p:column>
+
 
                 <p:column>
                     <f:facet name="header">
@@ -33,20 +28,49 @@ and open the template in the editor.
                     </f:facet>
                     <h:outputText value="#{programa.nombre}" />
                 </p:column>
+
                 <p:column>
-                    <f:facet name="header">                    
+                    <f:facet name="header">                       
                     </f:facet>
-                    <h:commandButton id="crear1" value="Crear Nueva Asignatura" style="margin-left: 10px"  />               
+
+                    <p:commandButton value="Seleccionar Programa" icon="ui-icon-check" actionListener="#{MateriasBean.programasSeleccionados(programa.id)}" update=":registrarMateria" />     
                 </p:column>
             </p:dataTable>         
-            
-            <br></br>
-            <h2>Seleccione la asignatura del programa a agregar</h2>
-            <br/>
-            <h:selectOneMenu value="#MateriasBean.id_asignaturaSeleccionada">
-                <f:selectItems value="#{MateriasBean.asignaturasProgramaSeleccionado}"/>
-            </h:selectOneMenu>
-            <p:commandButton value="Agregar" actionListener="#{MateriasBean.guardarAsignaturaPrograma()}" /> 
+
+            <table>
+                <tr>                    
+                    <h3>Seleccione la asignatura relacionada con el programa: <h:outputText value="#{MateriasBean.progrSeleccionados.nombre}"/> </h3>                      
+                    <td>
+                        <h:selectOneMenu  >
+                            <f:selectItems value="#{MateriasBean.asignaturasProgramaSeleccionado}" var="asi" itemLabel="#{asi.nombre}"/>
+                            
+                        </h:selectOneMenu>
+                        
+                        <p:commandButton value="Agregar" actionListener="#{MateriasBean.guardarAsignaturaPrograma()}" style="margin-left: 30px" update=":registrarMateria:ProgramasAgregados"/>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <h3>Crear nueva asignatura relacionada con el programa: <h:outputText value="#{MateriasBean.progrSeleccionados.nombre}"/></h3>
+                    <td>
+                        id
+                    </td>
+                    <td >
+                        <h:inputText value = "id"/>
+                    </td>
+                    <td>
+                        nombre
+                    </td>
+                    <td>
+                        <h:inputText value="nombre"/>
+                    </td>
+                    <td>
+                        <p:commandButton  value="Crear Nueva Asignatura" style="margin-left: 10px"  /> 
+                    </td>
+                    
+                </tr>
+            </table>
             <br/>
             <br/>
             <h2>Programas agregados</h2>
@@ -64,16 +88,16 @@ and open the template in the editor.
                     </f:facet>
                     <h:outputText value="#{agregados.nombreAsignatura}" />
                 </p:column>
-                
+
                 <p:column>
                     <f:facet name="header">                       
                     </f:facet>
-                     
+
                     <p:commandButton value="Eliminar" icon="ui-icon-check"  />     
                 </p:column>
-              
+
             </p:dataTable>
-            
+
             <br></br>
             <table>                    
                 <tr>
@@ -83,9 +107,9 @@ and open the template in the editor.
                     <td>
                         <h:selectOneMenu > 
                             <f:selectItems value="#{programa.nombreRequisitos}"/>
-                            
+
                         </h:selectOneMenu>
-                        
+
                     </td>
                     <td style="font-size: 20px">
                         Co-Requisitos
@@ -126,7 +150,7 @@ and open the template in the editor.
                 </tr>
             </table>            
             <br></br>
-           
+
             <div style="text-align: center"> 
                 <h:commandButton id="registrar" value="Registrar" action="ReportesProgramacion" />                
                 <h:commandButton id="cancelar" value="Cancelar" action="indice" style="margin-left: 30px" />                

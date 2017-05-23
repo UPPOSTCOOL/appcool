@@ -64,13 +64,8 @@ public class RegistrarMateriasBean implements Serializable {
         return preRequisitos;
     }
 
-    /**
-     * Eliminar el programa de la tabla
-     *
-     * @param id
-     */
-    public void eliminarPrograma(Programa id) {
-        programa.remove(id);
+    public void eliminarPrograma(int id_prog) {
+        programa.remove(id_prog);
 
     }
      public Programa getProgrSeleccionados() {
@@ -96,6 +91,7 @@ public class RegistrarMateriasBean implements Serializable {
         for (int i = 0; i < programa.size(); i++) {
             if(asignaturasProgramaSeleccionado.get(i).getId()==id_asignaturaSeleccionada){
                 acumulados.add(asignaturasProgramaSeleccionado.get(i));
+                acumulados.get(i).getNombre();
             }
         }
     }
@@ -107,8 +103,8 @@ public class RegistrarMateriasBean implements Serializable {
         //recuerda que acumulados seraá una lista de ASIGNATURAS
         
         ArrayList<String[]> respuesta = new ArrayList<>();
-        for (Asignatura asig:asignaturasProgramaSeleccionado){
-            //respuesta.add(asig.getNombre());
+        for (int i=0;i<respuesta.size();i++){
+           
         }
         //= ejemplo:(id_asignatura,nombrePrograma,nombreAsignatura)
         return respuesta;
