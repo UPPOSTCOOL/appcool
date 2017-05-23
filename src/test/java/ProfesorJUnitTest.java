@@ -7,6 +7,7 @@
 import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
+import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
 import java.sql.SQLException;
 import java.util.List;
@@ -22,9 +23,9 @@ import static org.junit.Assert.*;
  *
  * @author 2092669
  */
-public class pruebasServicios {
+public class ProfesorJUnitTest {
     
-    public pruebasServicios() {
+    public ProfesorJUnitTest() {
     }
     
     @BeforeClass
@@ -48,14 +49,16 @@ public class pruebasServicios {
     //
     // @Test
     // public void hello() {}
+    
     @Test
-    public void ConsultarProfesorXnombre() throws SQLException, ExcepcionServiciosUPPOST {
+    public void ConsultarProfesorXnombreTest() throws SQLException, ExcepcionServiciosUPPOST {
 
         //consultar profesor por nombre o apellido segun sea el criterio del usuario
         
-        ServiciosUPPOST sp = new ServiciosUPPOSTImpl();
-        List<Profesor> profesor = sp.consultarProfesoresXnombre("Claudia");
-        Assert.assertTrue("el nombre del profesor no coicide con Claudia", profesor.get(0).getNombre().contains("Claudia"));
+        ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
+        //System.out.println("HOla aqui estoy");
+        List<Profesor> profesor = inp.consultarProfesoresXnombre("Claudia");
+        Assert.assertTrue("el nombre del profesor no coicide con Claudia", profesor.get(1).getNombre().contains("Claudia"));
 
     }
     

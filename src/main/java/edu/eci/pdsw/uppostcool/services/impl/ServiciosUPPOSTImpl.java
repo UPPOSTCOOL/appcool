@@ -231,12 +231,23 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     
     @Override
     public Programa consultarPrograma(String nombre) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            return daoP.cargar(nombre);
+        } catch (PersistenceException ex) {
+            //Logger.getLogger(ServiciosUPPOSTImpl.class.getName()).log(Level.SEVERE, null, ex);
+            throw new ExcepcionServiciosUPPOST("Error al consultar el programa con nombre: "+ nombre + ex);
+        }
     }
 
     @Override
     public void registrarPrograma(Programa programa) throws ExcepcionServiciosUPPOST {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            daoP.save(programa);
+        } catch (PersistenceException ex) {
+            //Logger.getLogger(ServiciosUPPOSTImpl.class.getName()).log(Level.SEVERE, null, ex);
+            throw new ExcepcionServiciosUPPOST("Error al registrar el programa con nombre: "+ programa.getNombre() + ex);
+        }
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

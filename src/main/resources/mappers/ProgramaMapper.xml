@@ -26,6 +26,26 @@
         Order By P.nombre asc;
     </select>
     
+    <select parameterType="map" id="consultarPrograma" resultMap="ProgramaResult">
+        select
+            P.id,
+            P.nombre,
+            
+            A.id as asignatura_id,
+            A.nombre as asignatura_nombre
+        from 
+            Programa P,
+            Asignatura A
+        WHERE
+            A.posgrado_id=P.id and P.nombre=#{nombrePrograma}
+        
+    </select>
+    
+    <insert id="insertarPrograma" parameterType="map" >
+        insert into Programa (id, nombre) 
+        values (#{programa.id}, #{programa.nombre});
+    </insert>
+    
     
     
 </mapper>
