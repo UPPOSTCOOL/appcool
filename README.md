@@ -11,7 +11,7 @@ Periodo Academico: 2017-1 (PDSW)
 |:-:|:---------------|:------------------------------|
 |1  | team           | Carol Johana Meneses Pineda   |   
 |2  | team           | Maria Paula Pinzón Cardozo    |
-|3  | team           | Javier Fernando silva leon    |
+|3  | team           | Javier Fernando Silva León    |
 |4  | Scrum master   | Juan felipe Ortiz Niño        |
 |5  | team           | Kevin Julian Alavarado Pérez  |
 |6  | team           | Manuel Sergio Pérez Espitia   |
@@ -62,15 +62,21 @@ Modelo E-R
 
 <-----------Modelo entidad relación------------------->
 
+# Arquitectura por capas
+
 Capa de presentación 
 
 <------------------------------>
 
-Caoa Lógica
+Capa Lógica
+
+La capa logica esta diseñda bajo un modelo orientado a objetos.
 
 <------------------------------>
 
 Capa de Persistencia
+
+La capa de persistencia esta diseña bajo un modelo relacional.
 
 <------------------------------>
 
