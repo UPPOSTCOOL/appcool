@@ -207,4 +207,9 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         //return daom.consultarAsignaturasDAO();
             
     }
+
+    @Override
+    public List<Materia> consultarMateriasProgramaExceptMateria(int id_programa, String codigoMateria) throws ExcepcionServiciosUPPOST {
+        return daom.consultarMateriasPorProgramaExceptMateriaDAO(id_programa, codigoMateria);
+    }
 }

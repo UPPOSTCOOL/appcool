@@ -709,5 +709,13 @@ public class ServiciosUPPOSTImplStub implements ServiciosUPPOST {
     public void insertarMateria(Materia materia, List<TupleImp> prerequisitos, List<TupleImp> corequisitos, List<Asignatura> asignaturas) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+
+    @Override
+    public List<Materia> consultarMateriasProgramaExceptMateria(int id_programa, String codigoMateria) throws ExcepcionServiciosUPPOST {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
    
 }
