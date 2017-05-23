@@ -51,6 +51,9 @@ UPPOST-COOL es un proyecto para desarrollar una aplicación para la gestión de 
 
 Con AppCOOL  el usuario puede consultar el *Reportes de Programación*, *Registrar una Materia*, consultar la *Programación de Peridos* y realizar el *Registro de una materia en un nuevo Cohorte*. Para consultar los reportes de Programación se debe ingresar el año y el semestre del periodo al cual se quiera consultar, se puede consultar el *Reporte de Salones* que muestra le fecha y hora de inicio, hora de finalización de la clase, el salon las caracteristicas que debe tener el salon y la Materia de la cual hace parte la clase. Tambien se puede consultar el *Reporte de Programación* del periodo escogido y muestra el cohorte, la asignatura que ofrece, las Materias de la asignatura, el profesor encargado, las hora de la sesión y la cantidad de horas de cada una de ellas; a cada una de las materias se le pueden *Consultar los Salones* donde se describe la fecha de la clase, la hora de la clase y su duración. 
 
+Por otra parte en Registrar Materia, se resgistra puede regstrar una materia agregando los programas al cual va a pertenecer la materia, se agregan los Prerrequisitos y Correquitos, el nombre que se le quiere dar la materia, el codigo o Mnemónico y una descripción. En caso de que no exista la asignatura, tambien se puede crear cuando se estan agregando los programas. Luego de hacer el registro se pueden *Consultar las Naterias Registradas*.
+
+Se ofrece la funcionalidad de Registrar una Materia en en Nuevo Cohorte y por último, en Programación de Periodo, se puede programar seleccionado uno existente. Tiene funciones como asignarle un Periodo, una Asignatura, una Materia y un cohorte, se puede acceder a la pagina de regsitro de Nuevo Periodo, Registrar Nueva Asignatura, Registrar Nueva Materia y Registrar Nuevo Cohorte desde acá. 
 
 
 # Arquitectura
