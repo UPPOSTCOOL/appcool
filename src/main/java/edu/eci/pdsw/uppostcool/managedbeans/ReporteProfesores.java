@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.uppostcool.managedbeans;
 
+import com.sun.org.apache.bcel.internal.Constants;
 import edu.eci.pdsw.uppostcool.entities.Clase;
 import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
@@ -14,6 +15,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.model.SelectItem;
 
 /**
  *
@@ -26,11 +28,24 @@ public class ReporteProfesores {
     
     @ManagedProperty(value = "#{PeriodoBean}")
     private PeriodoBean pb;
+
+    
+    private String profesor;
+
+    public String getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(String profesor) {
+        this.profesor = profesor;
+    }
+    
+    
     
     private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     
     public List<Profesor> obtenerProfesores() throws ExcepcionServiciosUPPOST{
-    
+        
         return inp.consultarProfesores();
     }
 

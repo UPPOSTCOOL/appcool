@@ -23,8 +23,8 @@ and open the template in the editor.
                 <h1>Seleccione el Profesor</h1>
                     
                 <p style="font-size: 20px"> Seleccione el nombre</p>         
-                <h:selectOneMenu value = "#{reporteProfesorBean.obtenerProfesores()}"> 
-                    <f:selectItem itemValue = "#{reporteProfesorBean.obtenerProfesores()}"></f:selectItem>
+                <h:selectOneMenu value = "#{reporteProfesorBean.profesor}"> 
+                    <f:selectItems value="#{reporteProfesorBean.obtenerProfesores()}" var="profes" itemValue="#{profes.nombre}" itemLabel="#{profes.nombre}" ></f:selectItems>
                 </h:selectOneMenu>
                 <br></br>
                 <br></br>
