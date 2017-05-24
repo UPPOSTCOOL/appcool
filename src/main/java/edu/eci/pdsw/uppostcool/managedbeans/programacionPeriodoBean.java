@@ -5,25 +5,20 @@
  */
 package edu.eci.pdsw.uppostcool.managedbeans;
 
-import com.sun.javafx.scene.control.skin.VirtualFlow;
 import edu.eci.pdsw.uppostcool.entities.Asignatura;
 import edu.eci.pdsw.uppostcool.entities.Clase;
 import edu.eci.pdsw.uppostcool.entities.Materia;
 import edu.eci.pdsw.uppostcool.entities.Periodo;
 import edu.eci.pdsw.uppostcool.entities.Profesor;
 import edu.eci.pdsw.uppostcool.entities.Programa;
-import edu.eci.pdsw.uppostcool.entities.Recurso;
 import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
 import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
-import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
-import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImplStub;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 
