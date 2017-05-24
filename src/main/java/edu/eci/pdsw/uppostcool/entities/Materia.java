@@ -10,26 +10,25 @@ import java.util.List;
 
 /**
  *
- * @author kvn
+ * @author UPPOST-COOL
  */
-public class Materia implements Serializable{
-    
+public class Materia implements Serializable {
+
     private String codigo;
     private String nombre;
     private String descripcion;
-    
+
     private int cohorte;
     private int numClases;
     private int numHoras;
-    
+
     private Profesor profesor;
-    
+
     private Asignatura asignatura;
-    
+
     private List<Clase> clases;
     private List<Materia> preRequisitos;
     private List<Materia> coRequisitos;
-   
 
     public Materia() {
     }
@@ -72,13 +71,12 @@ public class Materia implements Serializable{
         this.clases = clases;
     }
 
-
     public String getCodigo() {
         return codigo;
     }
 
     public void setCodigo(String codigo) {
-        this.codigo= codigo;
+        this.codigo = codigo;
     }
 
     public String getNombre() {
@@ -129,7 +127,6 @@ public class Materia implements Serializable{
         this.asignatura = asignatura;
     }
 
-    
     public String getDescripcion() {
         return descripcion;
     }
@@ -137,12 +134,10 @@ public class Materia implements Serializable{
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    
+
     @Override
     public String toString() {
         return "Materia{" + "codigo=" + codigo + ", nombre=" + nombre + ", cohorte=" + cohorte + ", numClases=" + numClases + ", numHoras=" + numHoras + ", profesor=" + profesor + ", asignatura=" + asignatura + '}';
     }
-    
-    
+
 }

@@ -5,15 +5,8 @@
  */
 package edu.eci.pdsw.uppostcool.managedbeans;
 
-import edu.eci.pdsw.uppostcool.entities.Asignatura;
-import edu.eci.pdsw.uppostcool.entities.Clase;
-import edu.eci.pdsw.uppostcool.entities.Materia;
-import edu.eci.pdsw.uppostcool.entities.Periodo;
-import edu.eci.pdsw.uppostcool.entities.Profesor;
-import edu.eci.pdsw.uppostcool.entities.Programa;
-import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
+import edu.eci.pdsw.uppostcool.entities.*;
+import edu.eci.pdsw.uppostcool.services.*;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,10 +14,9 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-
 /**
  *
- * @author 3070465
+ * @author UPPOST-COOL
  */
 @ManagedBean(name = "ProgramacionPeriodoBean")
 @SessionScoped
@@ -38,19 +30,14 @@ public class programacionPeriodoBean {
     private List<Clase> clases = new ArrayList<>();
     private List<String> recursos = new ArrayList<>();
     private List<String> recursosSelect = new ArrayList<>();
-
-    
-
     private Programa programaP;
     private Materia materi;
     private PeriodoBean cb;
-
     private String prog;
     private String profesor = null;
     private String asign;
     private String mate;
     private String recursoSelect;
-
     private int anio;
     private int semestre;
     private int cohorte = 0;
@@ -58,10 +45,7 @@ public class programacionPeriodoBean {
     private Date date = new Date();
     private Time horaInicio;
     private Time horaFin;
-    
     private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
-
-   
 
     public programacionPeriodoBean() throws ExcepcionServiciosUPPOST {
 
@@ -97,8 +81,8 @@ public class programacionPeriodoBean {
     public void setDate(Date date) {
         this.date = date;
     }
-    
-     public List<Profesor> getProfesorSelect() {
+
+    public List<Profesor> getProfesorSelect() {
         return profesorSelect;
     }
 
@@ -130,7 +114,6 @@ public class programacionPeriodoBean {
                 p = programa.get(i);
             }
         }
-        // asignaturas=p.getAsignaturas();
         asignaturas = inp.consultarAsignaturas();
         return inp.consultarAsignaturas();
     }
@@ -266,8 +249,8 @@ public class programacionPeriodoBean {
 
     public void cancelarClase() {
     }
-    //pendiente por servicio
 
+    //pendiente por servicio
     public List<String> getRecursos() throws ExcepcionServiciosUPPOST {
 
         clases = inp.consultarClasesxPeriodo(anio, semestre);
@@ -283,15 +266,16 @@ public class programacionPeriodoBean {
     }
 
     public String getRecursoSelect() {
-          System.out.println(recursoSelect);
+        System.out.println(recursoSelect);
         return recursoSelect;
     }
 
     public void setRecursoSelect(String recusosSelect) {
         this.recursoSelect = recusosSelect;
     }
+
     public List<String> getRecursosSelect() {
-      
+
         recursosSelect.add(recursoSelect);
         return recursosSelect;
     }

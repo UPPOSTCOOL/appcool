@@ -7,9 +7,7 @@ package edu.eci.pdsw.uppostcool.managedbeans;
 
 import edu.eci.pdsw.uppostcool.entities.Clase;
 import edu.eci.pdsw.uppostcool.entities.Materia;
-import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
+import edu.eci.pdsw.uppostcool.services.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +15,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
-/**
- *
- *
- */
 @ManagedBean(name = "PruebaSalonBean")
 @SessionScoped
+
 public class PruebaSalonBean implements Serializable {
 
     private List<Materia> materia = new ArrayList<>();
@@ -32,22 +27,18 @@ public class PruebaSalonBean implements Serializable {
     private String materiaSelec = null;
     @ManagedProperty(value = "#{PeriodoBean}")
     private PeriodoBean cb;
-    //se eligen base de datos local o POSTGRES
-    //POSTGRES
     private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
-    //LOCAL
-    //private final ServiciosUPPOST inp=new ServiciosUPPOSTImplStub();
 
     public PruebaSalonBean() {
     }
-    
+
     public List<Clase> clases() throws ExcepcionServiciosUPPOST {
-        
+
         semestre = cb.getSemestre();
         anio = cb.getAnio();
-        
+
         return inp.consultarClasesxPeriodo(anio, semestre);
-        
+
     }
 
     public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST {

@@ -1,12 +1,6 @@
 package edu.eci.pdsw.uppostcool.daos;
 
-
-import edu.eci.pdsw.uppostcool.daos.PersistenceException;
-
-import edu.eci.pdsw.uppostcool.entities.Materia;
-
 import edu.eci.pdsw.uppostcool.entities.Profesor;
-
 import java.util.List;
 
 /*
@@ -14,19 +8,17 @@ import java.util.List;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
 public interface ProfesorDAO {
-    
+
     public void save(Profesor c) throws PersistenceException;
 
     public Profesor load(int id) throws PersistenceException;
 
     public List<Profesor> loadAll() throws PersistenceException;
-
 
     public List<Profesor> consultarProfesoresXnombre(String nombre) throws PersistenceException;
 }

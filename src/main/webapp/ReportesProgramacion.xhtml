@@ -25,7 +25,7 @@ and open the template in the editor.
         </script>
     </h:head>
     <h:body>
-       <img src="Imagenes/escuela.jpg" height="145" />
+        <img src="Imagenes/escuela.jpg" height="145" />
         <h1 style="text-align: center; color:firebrick " > Reporte Programación Semestral <h:outputText value="#{ProgramacionBean.periodoSeleccionado()}"/></h1>
 
         <p:dataTable  id="formularioProgramacion" var="reporte" value="#{ProgramacionBean.obtenerLista()}"  style="margin: 0 auto;">
@@ -82,10 +82,10 @@ and open the template in the editor.
         <br></br>
         <br></br>
         <br></br>
-        
+
         <div id='calendario' style="display: none">
             <b id='materia'></b>
-           
+
             <p:dataTable id="tablaFechas" var="reporte" value="#{ProgramacionBean.getClases()}">
                 <p:column>
                     <f:facet name="header">
@@ -100,7 +100,7 @@ and open the template in the editor.
                     </f:facet>
                     <h:outputText value="#{reporte.horaInicio}" />
                 </p:column>
-                
+
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Hora de finalización"/>

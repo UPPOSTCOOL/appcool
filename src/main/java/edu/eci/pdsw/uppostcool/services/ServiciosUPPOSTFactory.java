@@ -7,30 +7,19 @@ package edu.eci.pdsw.uppostcool.services;
 
 import static com.google.inject.Guice.createInjector;
 import com.google.inject.Injector;
-import edu.eci.pdsw.uppostcool.dao.mybatisimpl.MyBatisDaoAsignatura;
-
-import edu.eci.pdsw.uppostcool.daos.ClaseDAO;
-import edu.eci.pdsw.uppostcool.dao.mybatisimpl.MyBatisDaoClase;
-import edu.eci.pdsw.uppostcool.dao.mybatisimpl.MyBatisDaoMateria;
-import edu.eci.pdsw.uppostcool.dao.mybatisimpl.MyBatisDaoPAcademico;
-import edu.eci.pdsw.uppostcool.dao.mybatisimpl.MyBatisDaoProfesor;
-import edu.eci.pdsw.uppostcool.dao.mybatisimpl.MyBatisDaoPrograma;
-import edu.eci.pdsw.uppostcool.daos.AsignaturaDAO;
-import edu.eci.pdsw.uppostcool.daos.MateriaDAO;
-import edu.eci.pdsw.uppostcool.daos.PAcademicoDAO;
-import edu.eci.pdsw.uppostcool.daos.ProfesorDAO;
-import edu.eci.pdsw.uppostcool.daos.ProgramaDAO;
+import edu.eci.pdsw.uppostcool.dao.mybatisimpl.*;
+import edu.eci.pdsw.uppostcool.daos.*;
 import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImpl;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 
 /**
  *
- * @author juan
+ * @author UPPOST-COOL
  */
 public class ServiciosUPPOSTFactory {
 
-    private static ServiciosUPPOSTFactory instance = new ServiciosUPPOSTFactory();
+    private static final ServiciosUPPOSTFactory instance = new ServiciosUPPOSTFactory();
 
     private static Injector injector;
     private static Injector testingInjector;
@@ -122,13 +111,13 @@ public class ServiciosUPPOSTFactory {
     public ProfesorDAO getProfesorDAOTest() {
         return testingInjector.getInstance(ProfesorDAO.class);
     }
-      public ProgramaDAO getProgramaDAOTest() {
+
+    public ProgramaDAO getProgramaDAOTest() {
         return testingInjector.getInstance(ProgramaDAO.class);
     }
 
     public static void main(String a[]) throws ExcepcionServiciosUPPOST {
-        //System.out.println(ServiciosSuscripcionesFactory.getInstance().getSuscriptionServices().comenteriosMasBajosPorRangoEdad(1, 10));
 
     }
-    
+
 }

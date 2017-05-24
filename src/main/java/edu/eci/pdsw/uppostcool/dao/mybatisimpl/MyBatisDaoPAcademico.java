@@ -14,18 +14,16 @@ import java.util.List;
 
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
-public class MyBatisDaoPAcademico implements PAcademicoDAO{
-    
+public class MyBatisDaoPAcademico implements PAcademicoDAO {
+
     @Inject
     private PAcademicoMapper pmap;
-
 
     @Override
     public List<Periodo> consultarPAcademico() throws PersistenceException {
         return pmap.consultarPAcademico();
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -43,10 +41,4 @@ public class MyBatisDaoPAcademico implements PAcademicoDAO{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   
- 
- 
-
-
-    
 }

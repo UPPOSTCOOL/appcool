@@ -5,12 +5,9 @@
  */
 package edu.eci.pdsw.uppostcool.managedbeans;
 
-
 import edu.eci.pdsw.uppostcool.entities.Clase;
 import edu.eci.pdsw.uppostcool.entities.Materia;
-import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
+import edu.eci.pdsw.uppostcool.services.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,40 +17,39 @@ import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author Paula
+ * @author UPPOST-COOL
  */
-
 @ManagedBean(name = "ProgramacionBean")
 @SessionScoped
-public class ReporteProgramacionBean implements Serializable{
-    private List<Materia> materia=new ArrayList<>();
+public class ReporteProgramacionBean implements Serializable {
+
+    private List<Materia> materia = new ArrayList<>();
     private int anio;
     private int semestre;
-    private String materiaSelec=null;
+    private String materiaSelec = null;
     @ManagedProperty(value = "#{PeriodoBean}")
     private PeriodoBean cb;
     //se eligen base de datos local o POSTGRES
     //POSTGRES
-    private final ServiciosUPPOST inp=ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
+    private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
     //LOCAL
     //private final ServiciosUPPOST inp=new ServiciosUPPOSTImplStub();
-        
-    
-    public ReporteProgramacionBean(){
+
+    public ReporteProgramacionBean() {
     }
-    
-    public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST{
-        semestre=cb.getSemestre();
-        anio=cb.getAnio();
+
+    public List<Materia> obtenerLista() throws ExcepcionServiciosUPPOST {
+        semestre = cb.getSemestre();
+        anio = cb.getAnio();
         materia = inp.consultarMaterias(semestre, anio);
         return materia;
     }
 
     public List<Clase> getClases() {
-        List<Clase> clases=null;
-        for(int i=0; i<materia.size();i++){
-            if(materia.get(i).getCodigo().equals(materiaSelec)){
-                clases=materia.get(i).getClases();
+        List<Clase> clases = null;
+        for (int i = 0; i < materia.size(); i++) {
+            if (materia.get(i).getCodigo().equals(materiaSelec)) {
+                clases = materia.get(i).getClases();
             }
         }
         return clases;
@@ -73,7 +69,7 @@ public class ReporteProgramacionBean implements Serializable{
 
     public void setMateriaSelec(String materiaSelec) {
         this.materiaSelec = materiaSelec;
-        
+
     }
 
     public int getAnio() {
@@ -97,14 +93,15 @@ public class ReporteProgramacionBean implements Serializable{
     }
 
     public void setCb(PeriodoBean cb) {
-        this.cb = cb; 
+        this.cb = cb;
     }
+
     public String periodoSeleccionado() {
-        if(cb.getSemestre()==3){
-            return cb.getAnio() + "-" + "Intersemestral" ;
-        }else{
-            return cb.getAnio() + "-" + cb.getSemestre() ;
+        if (cb.getSemestre() == 3) {
+            return cb.getAnio() + "-" + "Intersemestral";
+        } else {
+            return cb.getAnio() + "-" + cb.getSemestre();
         }
-        
+
     }
 }

@@ -7,7 +7,7 @@ package edu.eci.pdsw.uppostcool.daos;
 
 /**
  *
- * @author hcadavid
+ * @author UPPOST-COOL hcadavid
  */
 public class PersistenceException extends Exception {
 
@@ -18,5 +18,5 @@ public class PersistenceException extends Exception {
     public PersistenceException(String message, Throwable cause) {
         super(message, cause);
     }
-    
+
 }

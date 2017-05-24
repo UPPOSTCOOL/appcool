@@ -9,22 +9,17 @@ import com.google.inject.Inject;
 import edu.eci.pdsw.uppostcool.daos.PersistenceException;
 import edu.eci.pdsw.uppostcool.daos.ProfesorDAO;
 import edu.eci.pdsw.uppostcool.dao.mybatis.mappers.ProfesorMapper;
-
-import edu.eci.pdsw.uppostcool.entities.Clase;
-
 import edu.eci.pdsw.uppostcool.entities.Profesor;
-
 import java.util.List;
 
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
-public class MyBatisDaoProfesor implements ProfesorDAO{
-    
+public class MyBatisDaoProfesor implements ProfesorDAO {
+
     @Inject
     private ProfesorMapper pmap;
-
 
     @Override
     public void save(Profesor c) throws PersistenceException {
@@ -45,8 +40,4 @@ public class MyBatisDaoProfesor implements ProfesorDAO{
     public List<Profesor> consultarProfesoresXnombre(String nombre) throws PersistenceException {
         return pmap.consultarProfesoresXclases(nombre);
     }
-
-
-
-    
 }

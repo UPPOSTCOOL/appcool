@@ -9,10 +9,10 @@ import java.util.List;
 
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
 public class Periodo {
-    
+
     private int id;
     private List<Materia> materias;
     private int ano;
@@ -44,7 +44,6 @@ public class Periodo {
         this.semestre = semestre;
     }
 
- 
     public int getId() {
         return id;
     }
@@ -60,11 +59,9 @@ public class Periodo {
     public void setMaterias(List<Materia> materias) {
         this.materias = materias;
     }
-    
-    public void nuevoPeriodo(){
-    
-    
+
+    public void nuevoPeriodo() {
+
     }
-    
-    
+
 }

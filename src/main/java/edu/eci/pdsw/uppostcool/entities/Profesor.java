@@ -9,9 +9,10 @@ import java.io.Serializable;
 
 /**
  *
- * @author kvn
+ * @author UPPOST-COOL
  */
-public class Profesor implements Serializable{
+public class Profesor implements Serializable {
+
     private int id;
     private String nombre;
     private String primerApellido;
@@ -63,5 +64,5 @@ public class Profesor implements Serializable{
     public String toString() {
         return "Profesor{" + "id=" + id + ", nombre=" + nombre + '}';
     }
-    
+
 }

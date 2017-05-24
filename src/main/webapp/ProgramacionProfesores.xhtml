@@ -20,20 +20,20 @@ and open the template in the editor.
         <div style="text-align: center;">
             <h:form id="periodoo" style="text-align: center; color:firebrick">
                 <div style="text-align: center;">
-                <h1>Seleccione el Profesor</h1>
-                    
-                <p style="font-size: 20px"> Seleccione el nombre</p>         
-                <h:selectOneMenu value = "#{reporteProfesorBean.profesor}"> 
-                    <f:selectItems value="#{reporteProfesorBean.obtenerProfesores()}" var="profes" itemValue="#{profes.nombre}" itemLabel="#{profes.nombre}" ></f:selectItems>
-                </h:selectOneMenu>
-                <br></br>
-                <br></br>
-                <br></br>
-            </div>
-            <div style="text-align: center">
-                <h:commandButton id="open-BinP" value="Consultar periodo completo" action="ProfesorPcompleto" style="margin-left: 30px"/>            
-                <h:commandButton id="indice" value="Consultar semana" action="indice" style="margin-left: 30px"/>
-            </div>
+                    <h1>Seleccione el Profesor</h1>
+
+                    <p style="font-size: 20px"> Seleccione el nombre</p>         
+                    <h:selectOneMenu value = "#{reporteProfesorBean.profesor}"> 
+                        <f:selectItems value="#{reporteProfesorBean.obtenerProfesores()}" var="profes" itemValue="#{profes.nombre}" itemLabel="#{profes.nombre}" ></f:selectItems>
+                    </h:selectOneMenu>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                </div>
+                <div style="text-align: center">
+                    <h:commandButton id="open-BinP" value="Consultar periodo completo" action="ProfesorPcompleto" style="margin-left: 30px"/>            
+                    <h:commandButton id="indice" value="Consultar semana" action="indice" style="margin-left: 30px"/>
+                </div>
             </h:form>
         </div>
     </h:body>

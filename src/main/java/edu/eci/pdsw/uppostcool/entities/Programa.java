@@ -9,20 +9,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
 public class Programa implements Serializable {
-    
+
     private int id;
     private String nombre;
-    //private Profesor coordinador;
     private List<Asignatura> asignaturas;
-    
-  
 
     public Programa() {
     }
@@ -38,8 +33,7 @@ public class Programa implements Serializable {
         //this.coordinador = coordinador;
         this.asignaturas = asignaturas;
     }
-    
-    
+
     public String getNombre() {//
         return nombre;
     }
@@ -49,26 +43,18 @@ public class Programa implements Serializable {
     }
 
     /**
-    public Profesor getCoordinador() {
-        return coordinador;
-    }
-
-    public void setCoordinador(Profesor coordinador) {
-        this.coordinador = coordinador;
-    }
-    * 
-    **/
-
-
-    
+     *
+     * @return lista de asignaturas
+     */
     public List<Asignatura> getAsignaturas() {
         return asignaturas;
     }
 
-      public void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
-     public int getId() {
+
+    public int getId() {
         return id;
     }
 
@@ -78,7 +64,11 @@ public class Programa implements Serializable {
 
     @Override
     public String toString() {
-        return "Programa{" + /**"Coordinador=" + coordinador +*/ ", nombre=" + nombre + ", Asignaturas=" + asignaturas + '}';
+        return "Programa{"
+                + /**
+                 * "Coordinador=" + coordinador +
+                 */
+                ", nombre=" + nombre + ", Asignaturas=" + asignaturas + '}';
     }
 
     public List<String> getNombreAsignatura() {//
@@ -89,15 +79,10 @@ public class Programa implements Serializable {
         }
         return ans;
     }
-    
 
     /**
-    public List<String> getNombreRequisitos() {
-        ArrayList<String> ans = new ArrayList<>();
-        for (Materia req : preRequisitos) {
-            ans.add(req.getNombre());
-        }
-        return ans;
-    }
-    */
+     * public List<String> getNombreRequisitos() { ArrayList<String> ans = new
+     * ArrayList<>(); for (Materia req : preRequisitos) {
+     * ans.add(req.getNombre()); } return ans; }
+     */
 }

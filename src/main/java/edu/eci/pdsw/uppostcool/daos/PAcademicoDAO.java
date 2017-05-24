@@ -10,18 +10,16 @@ import java.util.List;
 
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
 public interface PAcademicoDAO {
-
 
     public void save(Periodo c) throws PersistenceException;
 
     public Periodo load(int id) throws PersistenceException;
 
+    public List<Periodo> consultarPAcademico() throws PersistenceException;
 
-     public List<Periodo> consultarPAcademico() throws PersistenceException;
-    
     public void saveAll() throws PersistenceException;
 
 }

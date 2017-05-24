@@ -8,7 +8,6 @@ package edu.eci.pdsw.uppostcool.dao.mybatisimpl;
 import com.google.inject.Inject;
 import edu.eci.pdsw.uppostcool.dao.mybatis.mappers.ProgramaMapper;
 import edu.eci.pdsw.uppostcool.daos.PersistenceException;
-import edu.eci.pdsw.uppostcool.daos.ProfesorDAO;
 import edu.eci.pdsw.uppostcool.daos.ProgramaDAO;
 import edu.eci.pdsw.uppostcool.entities.Programa;
 
@@ -16,10 +15,10 @@ import java.util.List;
 
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
-public class MyBatisDaoPrograma implements ProgramaDAO{
-    
+public class MyBatisDaoPrograma implements ProgramaDAO {
+
     @Inject
     private ProgramaMapper pmap;
 
@@ -40,6 +39,4 @@ public class MyBatisDaoPrograma implements ProgramaDAO{
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   
-    
 }

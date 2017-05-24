@@ -6,13 +6,13 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  *
- * @author 2083722
+ * @author UPPOST-COOL UPPOST-COOL
  */
 public interface ProgramaMapper {
-    
+
     public List<Programa> consultarProgramas();
-    
+
     public Programa consultarPrograma(@Param("nombrePrograma") String nombre);
-    
+
     public void insertarPrograma(@Param("programa") Programa p);
 }

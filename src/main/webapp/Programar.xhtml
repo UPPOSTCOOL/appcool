@@ -45,16 +45,16 @@ and open the template in the editor.
                         </h1>
                     </td>
                 </tr>
-           
+
                 <tr>
                     <td style="font-size:25px">
                         Periodo
                     </td>
                     <td>
-                         <p:spinner value = "#{ProgramacionPeriodoBean.anio}" min="2017" max="2030"/>  
+                        <p:spinner value = "#{ProgramacionPeriodoBean.anio}" min="2017" max="2030"/>  
                     </td>
-                 <td>
-                         <p:spinner value = "#{ProgramacionPeriodoBean.semestre}" min="1" max="3"/>  
+                    <td>
+                        <p:spinner value = "#{ProgramacionPeriodoBean.semestre}" min="1" max="3"/>  
                     </td>
                     <td>
                         <h:commandButton id="nuevoPeriodo" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nuevo Periodo" action="RegistrarNuevoPeriodo"/>
@@ -91,7 +91,7 @@ and open the template in the editor.
 
                         </p:selectOneMenu>
                     </td>
-                     <td/>
+                    <td/>
                     <td>
                         <h:commandButton id="nuevaMateria" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Nueva Materia" action="RegistrarMateria"/>
 
@@ -111,7 +111,7 @@ and open the template in the editor.
 
                         </p:selectOneMenu>
                     </td>
-                     <td/>
+                    <td/>
                     <td>
                         <h:commandButton id="nuevaCohorte" style="font-size: 16px; background-color: menu; padding: 5px;width: 280px; " value="Registrar nuevo cohorte para materia" action="MateriaNueva"/>
 
@@ -126,17 +126,17 @@ and open the template in the editor.
                 <br/>
                 <tr >
                     <td>
-                    <h2 style="font-style: italic  "  >  
-                        <h:outputText value="#{ProgramacionPeriodoBean.mate}" style="text-align: center;color: firebrick" />
-                        , cohorte
-                        <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: firebrick" />
-                        Profesor
-                    </h2>
-                          <h:commandButton id="programarClases" style="font-size: 16px; background-color: menu; padding: 5px;width: 280px; " value="Programar Clases" action="programarClases"/> 
+                        <h2 style="font-style: italic  "  >  
+                            <h:outputText value="#{ProgramacionPeriodoBean.mate}" style="text-align: center;color: firebrick" />
+                            , cohorte
+                            <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: firebrick" />
+                            Profesor
+                        </h2>
+                        <h:commandButton id="programarClases" style="font-size: 16px; background-color: menu; padding: 5px;width: 280px; " value="Programar Clases" action="programarClases"/> 
                     </td>
                     <td>
-                      
-                        
+
+
                     </td>
                 </tr>
             </div>

@@ -11,15 +11,16 @@ import javax.persistence.TupleElement;
 
 /**
  *
- * @author UPPOST
+ * @author UPPOST-COOL UPPOST
  */
 public class TupleImp implements Tuple {
 
     private Object o;
     private Object o2;
+
     public TupleImp(Object o, Object o2) {
-        this.o=o;
-        this.o2=o2;
+        this.o = o;
+        this.o2 = o2;
     }
 
     @Override
@@ -44,8 +45,11 @@ public class TupleImp implements Tuple {
 
     @Override
     public Object get(int i) {
-        if(i==0)return o;
-        else return o2;
+        if (i == 0) {
+            return o;
+        } else {
+            return o2;
+        }
     }
 
     @Override
@@ -57,5 +61,5 @@ public class TupleImp implements Tuple {
     public List<TupleElement<?>> getElements() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

@@ -9,10 +9,10 @@ import java.io.Serializable;
 
 /**
  *
- * @author 2095957
+ * @author UPPOST-COOL
  */
 public class Recurso implements Serializable {
-    
+
     private int id;
     private String nombre;
 
@@ -20,8 +20,8 @@ public class Recurso implements Serializable {
     }
 
     public Recurso(int id, String nombre) {
-        this.id=id;
-        this.nombre=nombre;
+        this.id = id;
+        this.nombre = nombre;
     }
 
     public int getId() {
@@ -39,11 +39,10 @@ public class Recurso implements Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     @Override
     public String toString() {
-        return "Recurso{" + "ID=" + id + ", nombre=" + nombre  + '}';
+        return "Recurso{" + "ID=" + id + ", nombre=" + nombre + '}';
     }
-    
 
 }

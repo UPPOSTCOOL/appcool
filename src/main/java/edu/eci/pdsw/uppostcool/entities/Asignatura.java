@@ -9,21 +9,18 @@ import java.io.Serializable;
 
 /**
  *
- * @author kvn
+ * @author UPPOST-COOL
  */
-public class Asignatura implements Serializable{
-    
+public class Asignatura implements Serializable {
+
     private int id;
     private String nombre;
 
     private Programa postgrado;
 
     //secuencia de materias la asignatura la compone diferentes materias
-
     public Asignatura() {
     }
-    
-
 
     public Asignatura(int id, String nombre, Programa postgrado) {
 
@@ -39,9 +36,6 @@ public class Asignatura implements Serializable{
     public void setPostgrado(Programa postgrado) {
         this.postgrado = postgrado;
     }
-    
-    
-    
 
     public int getId() {
         return id;
@@ -59,10 +53,9 @@ public class Asignatura implements Serializable{
         this.nombre = nombre;
     }
 
-    
     @Override
     public String toString() {
         return "Asignatura{" + "id=" + id + ", nombre=" + nombre + '}';
     }
-    
+
 }

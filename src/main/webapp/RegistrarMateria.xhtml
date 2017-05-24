@@ -14,7 +14,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-         <img src="Imagenes/escuela.jpg" height="145" />
+        <img src="Imagenes/escuela.jpg" height="145" />
         <h1 style="text-align:center;color:firebrick" >UNIDAD DE PROYECTOS</h1>        
         <h:form id="registrarMateria" style="color:firebrick">
             <h1>Registro de Materias </h1>
@@ -41,9 +41,9 @@ and open the template in the editor.
                     <td>
                         <h:selectOneMenu value="#{MateriasBean.id_asignaturaSeleccionada}" >
                             <f:selectItems value="#{MateriasBean.asignaturasProgramaSeleccionado}" var="asi" itemValue="#{asi.id}" itemLabel="#{asi.nombre}"/>
-                            
+
                         </h:selectOneMenu>
-                        
+
                         <p:commandButton value="Agregar" actionListener="#{MateriasBean.guardarAsignaturaPrograma()}" style="margin-left: 30px" update=":registrarMateria:ProgramasAgregados"/>
                     </td>
                     <td><p:commandButton  value="Crear Nueva Asignatura" style="margin-left: 10px"  /> </td>
@@ -102,7 +102,7 @@ and open the template in the editor.
                     </td>
                     <td>
                         <h:selectOneMenu id="materiasParaCo" value="#{MateriasBean.coRequisitoSeleccionado}"> 
-                            
+
                             <f:selectItems value="#{MateriasBean.getMateriasParaCorequisito()}" var="asi" itemValue="#{asi.codigo}" itemLabel="#{asi.nombre}"/>
                         </h:selectOneMenu>
                         <p:commandButton value="Agregar" actionListener="#{MateriasBean.guardarCorequisito()}" style="margin-left: 30px" update=":registrarMateria:RequisitosAgregados"/>

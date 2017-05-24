@@ -15,23 +15,23 @@ and open the template in the editor.
     </h:head>
 
     <h:body>
-         <img src="Imagenes/escuela.jpg" height="145" />
+        <img src="Imagenes/escuela.jpg" height="145" />
 
         <div style="text-align: center;">
             <h:form id="periodoActualizar" style="text-align: center; color:firebrick">
                 <div style="text-align: center;">
-                <h1>Seleccione el Periodo</h1>
-                <p style="font-size: 20px"> Ingrese el año</p>
-                <p:spinner value = "#{ProgramacionPeriodoBean.anio}" min="2017" max="2030"/>     
-            
-               
-            </div>
-                  <td>
-                        <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Registrar Nuevo Periodo" action="Programar" />
-                    </td>
+                    <h1>Seleccione el Periodo</h1>
+                    <p style="font-size: 20px"> Ingrese el anio</p>
+                    <p:spinner value = "#{ProgramacionPeriodoBean.anio}" min="2017" max="2030"/>     
+
+
+                </div>
+                <td>
+                    <h:commandButton id="programacion" style="font-size: 16px; background-color: menu; padding: 5px;width: 200px; " value="Registrar Nuevo Periodo" action="Programar" />
+                </td>
             </h:form>
         </div>
-        
+
     </h:body>
 </html>
 

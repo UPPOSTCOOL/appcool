@@ -6,8 +6,8 @@
 
 /**
  *
- * @author Carol
+ * @author UPPOST-COOL
  */
 public class NuevaAsignatura {
-    
+
 }

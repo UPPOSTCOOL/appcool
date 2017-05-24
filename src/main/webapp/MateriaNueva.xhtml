@@ -15,33 +15,33 @@ and open the template in the editor.
     </h:head>
 
     <h:body>
-    <img src="Imagenes/escuela.jpg" height="145" />
+        <img src="Imagenes/escuela.jpg" height="145" />
         <h1 style="text-align: center; color:firebrick " >Registro de materia nueva en Cohorte</h1>
-       
-    
+
+
         <h:form id="formulariomateria" style="text-align: left; color:firebrick" >
 
             <table>                    
-               
-                    <td style="text-align: center; color: firebrick" title="PROGRAMA">
 
-                        <h1>  Programa: 
-                            <h:outputText value="#{ProgramacionPeriodoBean.prog}" style="text-align: center;color: firebrick" />
-                        </h1>
-                    </td>
+                <td style="text-align: center; color: firebrick" title="PROGRAMA">
+
+                    <h1>  Programa: 
+                        <h:outputText value="#{ProgramacionPeriodoBean.prog}" style="text-align: center;color: firebrick" />
+                    </h1>
+                </td>
 
                 <tr>
                     <td style=" color: black" title="PROGRAMA">
 
                         <h2>  Asignatura:
                             <h:outputText value="#{ProgramacionPeriodoBean.asign}" style="text-align: center;color: black" />
-                                                    
+
                             Materia
                             <h:outputText value="#{ProgramacionPeriodoBean.mate}" style="text-align: center;color: black" />
-                              <br></br>
-                          Periodo:
+                            <br></br>
+                            Periodo:
                             <h:outputText value="#{ProgramacionPeriodoBean.cohorte}" style="text-align: center;color: black" />
-                          
+
                         </h2>
 
                     </td>
@@ -51,7 +51,7 @@ and open the template in the editor.
                     <td style=" color: black; font-size: 25px">
                         Número de cohorte
                         <h:inputText value = "#{ProgramacionPeriodoBean.cohorte}"></h:inputText> 
-                        
+
 
                         <br></br>
                         <br></br> 
@@ -59,25 +59,25 @@ and open the template in the editor.
                         <h:inputText value = "#{ProgramacionPeriodoBean.profesor}"></h:inputText> 
                         <ln/>
                         <p:commandButton style="font-size:medium ;border-left-style: double" value="Buscar"  actionListener="#{ProgramacionPeriodoBean.profesorSelect()}" update=":formulariprofesor"></p:commandButton>
-                        
+
                     </td>
-                    
+
                 </tr>
 
 
             </table>
-           
+
         </h:form>
         <p:dataTable id="formulariprofesor" style="text-align: left; color:firebrick" var="profesor" value="#{ProgramacionPeriodoBean.profesorSelect}">
-           <p:column headerText="Nombre">
-               <h:outputText value="#{profesor.nombre}" />
-               <h:outputText value="#{profesor.apellidoUno}" />
-               <h:outputText value="#{profesor.apellidoDos}" />
-        </p:column>
-             <p:column selectionMode="single" style="width:16px;text-align:center"/>
-            
-            
-            
+            <p:column headerText="Nombre">
+                <h:outputText value="#{profesor.nombre}" />
+                <h:outputText value="#{profesor.apellidoUno}" />
+                <h:outputText value="#{profesor.apellidoDos}" />
+            </p:column>
+            <p:column selectionMode="single" style="width:16px;text-align:center"/>
+
+
+
         </p:dataTable>>
 
 

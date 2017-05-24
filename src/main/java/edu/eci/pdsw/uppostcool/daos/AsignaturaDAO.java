@@ -9,14 +9,14 @@ import java.util.List;
 
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
 public interface AsignaturaDAO {
-    
+
     public void save(AsignaturaDAO c) throws PersistenceException;
 
     public AsignaturaDAO load(int id) throws PersistenceException;
 
     public List<AsignaturaDAO> loadAll() throws PersistenceException;
-    
+
 }

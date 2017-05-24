@@ -18,39 +18,39 @@ and open the template in the editor.
         <h1 style="text-align:center; color:firebrick">Programación de Clases</h1>
         <table>
 
-        <!--Seleccionar el periodo-->
-        <tr>
-            <td>
-        <p:dataTable id="formularioSalon" var="curso"   style="margin: 0 auto;">
-            <!-- <caption>Salones por periodo</caption>-->
-            <p:column>  
-                <f:facet name="header">
-                    <h:outputText value="Fecha"></h:outputText>
-                </f:facet>
-                <h:outputText value="#{curso.formatoFecha}"></h:outputText>
-            </p:column>  
-            <p:column>  
-                <f:facet name="header">
-                    <h:outputText value="Hora"></h:outputText>
-                </f:facet>
-                <h:outputText value="#{curso.horaInicio}"></h:outputText>
-                <h:outputText value="#{curso.horaFin}"></h:outputText>
-            </p:column> 
-            <p:column>  
-                <f:facet name="header">
-                    <h:outputText value="Acción"></h:outputText>
-                </f:facet>
-                <p:commandButton onclick="alert('Clase cancelada')" value="Cancelar Clase" action="Programar" actionListener="#{ProgramacionPeriodoBean.cancelarClase()}"/>
-            </p:column>  
-        </p:dataTable>
-           </td>
-            <td/>
-            <td/>
+            <!--Seleccionar el periodo-->
+            <tr>
                 <td>
-           <p:commandButton  value="Agregar Clase" action="AgregarClase" />  
-            </td>
-        </tr>
-        
+                    <p:dataTable id="formularioSalon" var="curso"   style="margin: 0 auto;">
+                        <!-- <caption>Salones por periodo</caption>-->
+                        <p:column>  
+                            <f:facet name="header">
+                                <h:outputText value="Fecha"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{curso.formatoFecha}"></h:outputText>
+                        </p:column>  
+                        <p:column>  
+                            <f:facet name="header">
+                                <h:outputText value="Hora"></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{curso.horaInicio}"></h:outputText>
+                            <h:outputText value="#{curso.horaFin}"></h:outputText>
+                        </p:column> 
+                        <p:column>  
+                            <f:facet name="header">
+                                <h:outputText value="Acción"></h:outputText>
+                            </f:facet>
+                            <p:commandButton onclick="alert('Clase cancelada')" value="Cancelar Clase" action="Programar" actionListener="#{ProgramacionPeriodoBean.cancelarClase()}"/>
+                        </p:column>  
+                    </p:dataTable>
+                </td>
+                <td/>
+                <td/>
+                <td>
+                    <p:commandButton  value="Agregar Clase" action="AgregarClase" />  
+                </td>
+            </tr>
+
         </table>
         <br/><br/><br/>
         <h:form id="op-button" style="text-align:center">

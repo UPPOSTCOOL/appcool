@@ -6,14 +6,10 @@
 
 import edu.eci.pdsw.uppostcool.entities.Asignatura;
 import edu.eci.pdsw.uppostcool.entities.Programa;
-import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
+import edu.eci.pdsw.uppostcool.services.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import junit.framework.Assert;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.junit.After;
@@ -21,11 +17,10 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  *
  * Pruebas para los servicios de Programa
  *
@@ -73,6 +68,8 @@ public class ProgramaJUnitTest {
     /**
      * CE1: No se puede agregar un programa que ya existe - ResultadoEsperado:
      * ExcepcionServiciosUPPOST
+     *
+     * @throws edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST
      */
     @Test
     public void CE1Test() throws ExcepcionServiciosUPPOST {
@@ -117,8 +114,9 @@ public class ProgramaJUnitTest {
     /**
      * CE3: Se debe poder consultar un programa por el nombre -
      *
+     * @throws edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST
      */
- //   @Test
+    //   @Test
     public void CE3Test() throws ExcepcionServiciosUPPOST {
         ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 
@@ -137,7 +135,7 @@ public class ProgramaJUnitTest {
         lista1.add(asig3);
         lista1.add(asig4);
         lista1.add(asig5);
-        
+
         p1.setAsignaturas(lista1);
 
         inp.registrarPrograma(p1);
@@ -151,8 +149,9 @@ public class ProgramaJUnitTest {
     /**
      * CE4: Se debe poder consultar todos los programas -
      *
+     * @throws edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST
      */
-   // @Test
+    // @Test
     public void CE4Test() throws ExcepcionServiciosUPPOST {
         ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServicesForTesting();
 

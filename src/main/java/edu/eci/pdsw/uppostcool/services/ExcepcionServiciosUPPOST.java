@@ -7,10 +7,10 @@ package edu.eci.pdsw.uppostcool.services;
 
 /**
  *
- * @author juan
+ * @author UPPOST-COOL
  */
 public class ExcepcionServiciosUPPOST extends Exception {
-    
+
     public ExcepcionServiciosUPPOST() {
     }
 

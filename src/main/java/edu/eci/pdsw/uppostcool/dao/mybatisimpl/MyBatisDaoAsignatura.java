@@ -14,10 +14,10 @@ import java.util.List;
 
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
-public class MyBatisDaoAsignatura implements AsignaturaDAO{
-    
+public class MyBatisDaoAsignatura implements AsignaturaDAO {
+
     @Inject
     private AsignaturaMapper pmap;
 
@@ -35,5 +35,5 @@ public class MyBatisDaoAsignatura implements AsignaturaDAO{
     public List<AsignaturaDAO> loadAll() throws PersistenceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

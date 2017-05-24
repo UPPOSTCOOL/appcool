@@ -66,7 +66,7 @@ Y enseguida se muestra un indice donde se muestran las funcionaldiades principal
 
 ### Funcionalidades 
 
-Con AppCOOL  el usuario puede consultar el *Reportes de Programación*, *Registrar una Materia*, consultar la *Programación de Peridos* y realizar el *Registro de una materia en un nuevo Cohorte*. Para consultar los reportes de Programación se debe ingresar el año y el semestre del periodo al cual se quiera consultar. Se puede consultar el *Reporte de Salones* que muestra le fecha y hora de inicio, hora de finalización de la clase, el salon las caracteristicas que debe tener el salon y la Materia de la cual hace parte la clase. 
+Con AppCOOL  el usuario puede consultar el *Reportes de Programación*, *Registrar una Materia*, consultar la *Programación de Peridos* y realizar el *Registro de una materia en un nuevo Cohorte*. Para consultar los reportes de Programación se debe ingresar el anio y el semestre del periodo al cual se quiera consultar. Se puede consultar el *Reporte de Salones* que muestra le fecha y hora de inicio, hora de finalización de la clase, el salon las caracteristicas que debe tener el salon y la Materia de la cual hace parte la clase. 
 
 ---
 ![alt text][repo1]

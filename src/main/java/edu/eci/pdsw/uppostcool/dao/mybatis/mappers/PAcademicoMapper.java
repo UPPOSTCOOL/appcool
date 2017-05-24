@@ -5,17 +5,15 @@
  */
 package edu.eci.pdsw.uppostcool.dao.mybatis.mappers;
 
-
 import edu.eci.pdsw.uppostcool.entities.Periodo;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
 public interface PAcademicoMapper {
-    
+
     public List<Periodo> consultarPAcademico();
-     
+
 }

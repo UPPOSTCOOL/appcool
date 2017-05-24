@@ -13,31 +13,31 @@
     
     <select parameterType="map" id="consultarProgramas" resultMap="ProgramaResult">
         select
-            P.id,
-            P.nombre,
+        P.id,
+        P.nombre,
             
-            A.id as asignatura_id,
-            A.nombre as asignatura_nombre
+        A.id as asignatura_id,
+        A.nombre as asignatura_nombre
         from 
-            Programa P,
-            Asignatura A
+        Programa P,
+        Asignatura A
         WHERE
-            A.posgrado_id=P.id
+        A.posgrado_id=P.id
         Order By P.nombre asc;
     </select>
     
     <select parameterType="map" id="consultarPrograma" resultMap="ProgramaResult">
         select
-            P.id,
-            P.nombre,
+        P.id,
+        P.nombre,
             
-            A.id as asignatura_id,
-            A.nombre as asignatura_nombre
+        A.id as asignatura_id,
+        A.nombre as asignatura_nombre
         from 
-            Programa P,
-            Asignatura A
+        Programa P,
+        Asignatura A
         WHERE
-            A.posgrado_id=P.id and P.nombre=#{nombrePrograma}
+        A.posgrado_id=P.id and P.nombre=#{nombrePrograma}
         
     </select>
     

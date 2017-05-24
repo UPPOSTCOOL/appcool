@@ -6,32 +6,17 @@
 package edu.eci.pdsw.uppostcool.services.impl;
 
 import com.google.inject.Inject;
-import edu.eci.pdsw.uppostcool.entities.Periodo;
-import edu.eci.pdsw.uppostcool.daos.AsignaturaDAO;
-import edu.eci.pdsw.uppostcool.daos.ClaseDAO;
-import edu.eci.pdsw.uppostcool.daos.PAcademicoDAO;
-import edu.eci.pdsw.uppostcool.daos.MateriaDAO;
-import edu.eci.pdsw.uppostcool.daos.PersistenceException;
-import edu.eci.pdsw.uppostcool.daos.ProfesorDAO;
-import edu.eci.pdsw.uppostcool.daos.ProgramaDAO;
-import edu.eci.pdsw.uppostcool.entities.Asignatura;
-import edu.eci.pdsw.uppostcool.entities.Clase;
-import edu.eci.pdsw.uppostcool.entities.Materia;
-import edu.eci.pdsw.uppostcool.entities.Profesor;
-import edu.eci.pdsw.uppostcool.entities.Programa;
-import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
+import edu.eci.pdsw.uppostcool.entities.*;
+import edu.eci.pdsw.uppostcool.daos.*;
+import edu.eci.pdsw.uppostcool.services.*;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 /**
  *
- * @author juan
+ * @author UPPOST-COOL
  */
 public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
@@ -59,8 +44,6 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-
-    
     @Override
     public Profesor consultarProfesor(int cohorte, String materia) throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -68,11 +51,11 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
 
     @Override
 
-    public List<Clase> consultarClasesxPeriodo(int año, int semestre) throws ExcepcionServiciosUPPOST {
+    public List<Clase> consultarClasesxPeriodo(int anio, int semestre) throws ExcepcionServiciosUPPOST {
         try {
-            return daoc.consultarClasesxPeriodo(año, semestre);
+            return daoc.consultarClasesxPeriodo(anio, semestre);
         } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosUPPOST("Error al consultar clases del periodo: " + año + ex);
+            throw new ExcepcionServiciosUPPOST("Error al consultar clases del periodo: " + anio + ex);
 
         }
     }
@@ -97,13 +80,12 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     //---------------------------------------------------------------ServiciosMateria
-    
     @Override
     public List<Materia> consultarMaterias(int semestre, int anio) throws ExcepcionServiciosUPPOST {
         try {
             return daom.consultarMateriasDAO(semestre, anio);
         } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosUPPOST("Error al consultar materias del semestre: " + semestre + "y año: " + anio + ex);
+            throw new ExcepcionServiciosUPPOST("Error al consultar materias del semestre: " + semestre + "y anio: " + anio + ex);
         }
     }
 
@@ -125,15 +107,9 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         }
     }
 
- 
- 
-
-
-  
     @Override
     public void insertarMateria(Materia materia, List<TupleImp> prerequisito, List<TupleImp> corequisito, List<Asignatura> asignaturas) throws ExcepcionServiciosUPPOST {
-        if(!"".equals(materia.getNombre()) && !"".equals(materia.getCodigo()) && (prerequisito.size()==0 || prerequisito.size()>0 && !prerequisito.equals(corequisito))){
-            
+        if (!"".equals(materia.getNombre()) && !"".equals(materia.getCodigo()) && (prerequisito.size() == 0 || prerequisito.size() > 0 && !prerequisito.equals(corequisito))) {
 
             List<String> nombres = new ArrayList<>();
             List<Materia> listaN = consultarMaterias();
@@ -141,11 +117,14 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
             List<String> codigos = new ArrayList<>();
             List<Materia> listaC = consultarMaterias();
 
-            
-            for(int i=0;i<listaN.size();i++){nombres.add(listaN.get(i).getNombre());}
-            for(int i=0;i<listaC.size();i++){codigos.add(listaC.get(i).getCodigo());}
-                    
-            if(!codigos.contains(materia.getCodigo())){
+            for (int i = 0; i < listaN.size(); i++) {
+                nombres.add(listaN.get(i).getNombre());
+            }
+            for (int i = 0; i < listaC.size(); i++) {
+                codigos.add(listaC.get(i).getCodigo());
+            }
+
+            if (!codigos.contains(materia.getCodigo())) {
 
                 List<String[]> listaPre = new ArrayList<>();
                 List<String[]> listaCor = new ArrayList<>();
@@ -169,13 +148,10 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
                     id_asigs.add(asignaturas.get(i).getId());
                 }
 
-
-
-                daom.insertarMateriaDAO(materia,listaPre, listaCor, id_asigs);
+                daom.insertarMateriaDAO(materia, listaPre, listaCor, id_asigs);
             }
         }
     }
-
 
     @Override
     public List<Materia> consultarMaterias() throws ExcepcionServiciosUPPOST {
@@ -183,7 +159,6 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     //---------------------------------------------------------------ServiciosPeriodo
-    
     @Override
     public List<Periodo> consultarPeriodos() throws ExcepcionServiciosUPPOST {
         /*try {
@@ -200,7 +175,6 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-
     @Override
     public List<Periodo> consultarPAcademico() throws ExcepcionServiciosUPPOST {
         try {
@@ -211,17 +185,15 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     //---------------------------------------------------------------ServiciosProfesor
-   
-
     @Override
     public List<Profesor> consultarProfesores() throws ExcepcionServiciosUPPOST {
         try {
             return daoPO.loadAll();
         } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosUPPOST("Error al consultar todos los profesores: " + ex );
+            throw new ExcepcionServiciosUPPOST("Error al consultar todos los profesores: " + ex);
 
         }
-        
+
     }
 
     @Override
@@ -268,11 +240,7 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
     }
 
     //---------------------------------------------------------------ServiciosAsignatura
-  
-
-    
     //----------------------------------------------------------------ServiciosVarios
-    
     @Override
 
     public List<Date> consultarFechas(Periodo fecha) throws ExcepcionServiciosUPPOST {
@@ -284,16 +252,11 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         return daoc.consultarClasesXprofesor(ano, semestre, profesor);
     }
 
-
-
-  
-
-
     @Override
-    public List<Asignatura> consultarAsignaturas () throws ExcepcionServiciosUPPOST {
+    public List<Asignatura> consultarAsignaturas() throws ExcepcionServiciosUPPOST {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         //return daom.consultarAsignaturasDAO();
-            
+
     }
 
     @Override
@@ -301,4 +264,3 @@ public class ServiciosUPPOSTImpl implements ServiciosUPPOST {
         return daom.consultarMateriasPorProgramaExceptMateriaDAO(id_programa, codigoMateria);
     }
 }
-

@@ -15,10 +15,10 @@ and open the template in the editor.
     </h:head>
 
     <h:body>
-    <img src="Imagenes/escuela.jpg" height="145" />
+        <img src="Imagenes/escuela.jpg" height="145" />
         <h1 style="text-align: center; color:firebrick " >Registro de materia nueva en Cohorte</h1>
-       
-    
+
+
         <h:form id="formularioAsignatura" style="text-align: left; color:firebrick" >
 
             <table >                    
@@ -42,7 +42,7 @@ and open the template in the editor.
                     <td>
                         <p:inputText value="#{ProgramacionPeriodoBean.idasign}"/>
                     </td>
-                        
+
                 </tr>
                 <tr>
 
@@ -57,19 +57,19 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td style=" color: black; font-size: 25px">
-                       
+
                         <p:commandButton style="font-size:medium ;border-left-style: double" onclick="alert('Registrando asignatura')" value="Registrar" action="Programar" actionListener="#{ProgramacionPeriodoBean.nuevaAsignatura()}" update="formularioAsignatura"></p:commandButton>
-                        
+
                     </td>
-                    
+
                 </tr>
                 <tr>
-                   
+
 
                 </tr>
 
             </table>
-            
+
         </h:form> 
     </h:body>
 </html>

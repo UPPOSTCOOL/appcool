@@ -8,14 +8,14 @@ package edu.eci.pdsw.uppostcool.entities;
 import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
-
 import java.text.SimpleDateFormat;
 
 /**
  *
- * @author 
+ * @author UPPOST-COOL
  */
 public class Clase implements Serializable {
+
     private int id;
     private String recurso;
     private Timestamp fecha;
@@ -27,7 +27,7 @@ public class Clase implements Serializable {
 
     public Clase() {
     }
-    
+
     public Clase(int id, String recurso, Timestamp fecha, Time horaFin, String rangoHoras, String idMateria, int cohorte, String salon) {
         this.id = id;
         this.recurso = recurso;
@@ -108,24 +108,23 @@ public class Clase implements Serializable {
         return "Clase{" + "id=" + id + ", recurso=" + recurso + ", fecha=" + fecha + ", horaFin=" + horaFin + ", rangoHoras=" + rangoHoras + ", idMateria=" + idMateria + ", cohorte=" + cohorte + ", salon=" + salon + '}';
     }
 
-    public String getHora(){
+    public String getHora() {
         String hora = new SimpleDateFormat("HH:mm").format(horaFin);
         return hora;
     }
-    
-    public String getHoraInicio(){
-        String horaInicio=new SimpleDateFormat("HH:mm").format(fecha);
+
+    public String getHoraInicio() {
+        String horaInicio = new SimpleDateFormat("HH:mm").format(fecha);
         return horaInicio;
     }
-    
-    
-    public String getFormatoFecha(){
+
+    public String getFormatoFecha() {
         String fecha1 = new SimpleDateFormat("MM/dd/yy").format(fecha);
 
         return fecha1;
     }
-    
-    public String getFormatoHoraInicio(){
+
+    public String getFormatoHoraInicio() {
         String fecha1 = new SimpleDateFormat("HH:mm").format(fecha);
 
         return fecha1;

@@ -5,42 +5,35 @@
  */
 package edu.eci.pdsw.uppostcool.managedbeans;
 
-
 import edu.eci.pdsw.uppostcool.entities.Periodo;
-import edu.eci.pdsw.uppostcool.services.ExcepcionServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOST;
-import edu.eci.pdsw.uppostcool.services.ServiciosUPPOSTFactory;
-import edu.eci.pdsw.uppostcool.services.impl.ServiciosUPPOSTImplStub;
-
+import edu.eci.pdsw.uppostcool.services.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-
 /**
  *
- * @author 2092815
+ * @author UPPOST-COOL
  */
 @ManagedBean(name = "PeriodoBean")
 @SessionScoped
-public class PeriodoBean implements Serializable{
+public class PeriodoBean implements Serializable {
 
-    private List<Periodo> period=new ArrayList<>();
-   private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
+    private List<Periodo> period = new ArrayList<>();
+    private final ServiciosUPPOST inp = ServiciosUPPOSTFactory.getInstance().getUPPOSTServices();
 
     private int anio;
     private int semestre;
 
     public PeriodoBean() {
-      
+
     }
 
     public int getAnio() {
         // System.out.println(anio);
-               return anio;
+        return anio;
     }
 
     public void setAnio(int anio) {
@@ -56,13 +49,12 @@ public class PeriodoBean implements Serializable{
 
     }
 
-
-    public List<Periodo> getPeriodo() throws ExcepcionServiciosUPPOST{
-       return inp.consultarPAcademicos();
-    }
-    public void setPeriodo(List<Periodo> p) throws ExcepcionServiciosUPPOST{
-       period=p;
+    public List<Periodo> getPeriodo() throws ExcepcionServiciosUPPOST {
+        return inp.consultarPAcademicos();
     }
 
-    
+    public void setPeriodo(List<Periodo> p) throws ExcepcionServiciosUPPOST {
+        period = p;
+    }
+
 }

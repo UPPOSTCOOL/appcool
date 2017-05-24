@@ -6,26 +6,25 @@
 package edu.eci.pdsw.uppostcool.daos;
 
 import edu.eci.pdsw.uppostcool.entities.Materia;
-
 import java.util.List;
 
 /**
  *
- * @author appcool
+ * @author UPPOST-COOL appcool
  */
 public interface MateriaDAO {
 
-    public List<Materia> consultarMateriasDAO(int semestre,int anio) throws PersistenceException;
-    
+    public List<Materia> consultarMateriasDAO(int semestre, int anio) throws PersistenceException;
+
     public List<Materia> consultarMateriasPorProgramaDAO(int id_programa) throws PersistenceException;
-    
+
     public List<Materia> consultarMateriasPorProgramaExceptMateriaDAO(int id_programa, String codigoMateria);
-    
-    public Materia consultarMateriaConRequisitosDAO(String codigo,int id_programa) throws PersistenceException;
-    
-    public void insertarMateriaDAO(Materia materia, List<String[]> pre, List<String[]> co,List<Integer> ids_asignatura);
-    
-    public void actualizarMateriaDAO(String codigoAnterior,Materia materia, List<String[]> pre, List<String[]> co,List<Integer> ids_asignatura);
-    
+
+    public Materia consultarMateriaConRequisitosDAO(String codigo, int id_programa) throws PersistenceException;
+
+    public void insertarMateriaDAO(Materia materia, List<String[]> pre, List<String[]> co, List<Integer> ids_asignatura);
+
+    public void actualizarMateriaDAO(String codigoAnterior, Materia materia, List<String[]> pre, List<String[]> co, List<Integer> ids_asignatura);
+
     public List<Materia> consultarMateriasDAO();
 }

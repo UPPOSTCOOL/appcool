@@ -15,39 +15,32 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Carol
+ * @author UPPOST-COOL
  */
 @ManagedBean(name = "loginBean")
 @SessionScoped
-    public class LoginBean
-{
+public class LoginBean {
+
     private String name;
     private String password;
     private boolean logeado = false;
 
-
-    public String getName ()
-    {
+    public String getName() {
         return name;
     }
 
-
-    public void setName (final String name)
-    {
+    public void setName(final String name) {
         this.name = name;
     }
 
-
-    public String getPassword ()
-    {
+    public String getPassword() {
         return password;
     }
 
-
-    public void setPassword (final String password)
-    {
+    public void setPassword(final String password) {
         this.password = password;
     }
+
     public void login(ActionEvent actionEvent) {
         RequestContext context = RequestContext.getCurrentInstance();
         FacesMessage msg = null;
